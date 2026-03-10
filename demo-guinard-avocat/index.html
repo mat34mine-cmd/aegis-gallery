@@ -1,1 +1,353 @@
-{"id":"/demo-guinard-avocat/index.html","path":"/demo-guinard-avocat/index.html","sha":"5a0641514b28857b41f4702663da2928f848a0d3","mime_type":"text/html","size":28913,"site_id":"4c3dbfa6-f3d7-495d-8a15-3db158b88252","deploy_id":"69af858c2e4a894555af51ff"}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me Timothee Guinard | Avocat Fiscaliste Patrimoine - Rennes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --navy: #0f1b2d; --copper: #b87333; --copper-light: #f5ebe0; --charcoal: #2c3e50; --ivory: #fefcf8; }
+        body { font-family: 'Inter', sans-serif; color: var(--charcoal); }
+        .font-serif { font-family: 'Libre Baskerville', serif; }
+        .bg-navy { background-color: var(--navy); }
+        .bg-copper-light { background-color: var(--copper-light); }
+        .bg-ivory { background-color: var(--ivory); }
+        .text-copper { color: var(--copper); }
+        .text-navy { color: var(--navy); }
+        .border-copper { border-color: var(--copper); }
+        .btn-copper { background-color: var(--copper); color: white; transition: all 0.3s; }
+        .btn-copper:hover { background-color: #a0622b; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(184,115,51,0.3); }
+        .btn-outline-copper { border: 2px solid var(--copper); color: var(--copper); transition: all 0.3s; }
+        .btn-outline-copper:hover { background-color: var(--copper); color: white; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .faq-answer.open { max-height: 500px; }
+        .expertise-card { transition: all 0.4s; position: relative; overflow: hidden; }
+        .expertise-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--copper); transform: scaleY(0); transition: transform 0.4s; }
+        .expertise-card:hover::before { transform: scaleY(1); }
+        .expertise-card:hover { box-shadow: 0 15px 50px rgba(0,0,0,0.08); transform: translateY(-3px); }
+    </style>
+</head>
+<body class="bg-ivory">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-navy/95 backdrop-blur-md shadow-lg">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-serif text-2xl font-bold text-white">Me <span class="text-copper">Guinard</span></a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#expertise" class="text-white/80 hover:text-copper transition">Expertise</a>
+                <a href="#parcours" class="text-white/80 hover:text-copper transition">Parcours</a>
+                <a href="#temoignages" class="text-white/80 hover:text-copper transition">Temoignages</a>
+                <a href="#faq" class="text-white/80 hover:text-copper transition">FAQ</a>
+                <a href="#contact" class="btn-copper px-5 py-2 rounded-lg text-sm font-semibold">Consultation</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="bg-navy min-h-screen flex items-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23b87333%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        <div class="max-w-7xl mx-auto px-6 py-32 relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 bg-copper/10 border border-copper/30 rounded-full px-5 py-2 mb-8">
+                    <div class="w-2 h-2 bg-copper rounded-full animate-pulse"></div>
+                    <span class="text-copper text-sm font-medium">Avocat fiscaliste a Rennes</span>
+                </div>
+                <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-8">
+                    Fiscalite &<br><span class="text-copper italic">patrimoine</span>,<br>une vision globale
+                </h1>
+                <p class="text-white/60 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl">
+                    Conseil en fiscalite patrimoniale, transmission d'entreprise et optimisation fiscale. Un accompagnement personnalise pour securiser et valoriser votre patrimoine.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 mb-16">
+                    <a href="#contact" class="btn-copper px-8 py-4 rounded-lg text-lg font-semibold text-center">Prendre rendez-vous</a>
+                    <a href="tel:0620205357" class="btn-outline-copper px-8 py-4 rounded-lg text-lg font-semibold text-center">06 20 20 53 57</a>
+                </div>
+                <div class="grid grid-cols-3 gap-8 max-w-lg">
+                    <div class="text-center">
+                        <p class="text-copper font-serif text-3xl font-bold">12+</p>
+                        <p class="text-white/40 text-sm mt-1">Ans d'exercice</p>
+                    </div>
+                    <div class="text-center border-x border-white/10">
+                        <p class="text-copper font-serif text-3xl font-bold">350+</p>
+                        <p class="text-white/40 text-sm mt-1">Clients accompagnes</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-copper font-serif text-3xl font-bold">95%</p>
+                        <p class="text-white/40 text-sm mt-1">Satisfaction client</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise -->
+    <section id="expertise" class="py-24 bg-ivory">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <p class="text-copper font-semibold text-sm tracking-widest uppercase mb-3">Domaines d'expertise</p>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-navy">Un conseil fiscal<br>a forte valeur ajoutee</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6 reveal">
+                <div class="expertise-card bg-white rounded-xl p-8">
+                    <div class="w-14 h-14 bg-copper-light rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-7 h-7 text-copper" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-navy mb-3">Fiscalite patrimoniale</h3>
+                    <p class="text-gray-600 leading-relaxed">Structuration et optimisation de votre patrimoine personnel et professionnel. IFI, plus-values, revenus fonciers, assurance-vie et dispositifs de defiscalisation.</p>
+                </div>
+                <div class="expertise-card bg-white rounded-xl p-8">
+                    <div class="w-14 h-14 bg-copper-light rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-7 h-7 text-copper" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-navy mb-3">Transmission d'entreprise</h3>
+                    <p class="text-gray-600 leading-relaxed">Accompagnement fiscal des cessions, transmissions familiales et restructurations. Pacte Dutreil, apport-cession, holding de reprise et management package.</p>
+                </div>
+                <div class="expertise-card bg-white rounded-xl p-8">
+                    <div class="w-14 h-14 bg-copper-light rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-7 h-7 text-copper" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-navy mb-3">Controle & contentieux</h3>
+                    <p class="text-gray-600 leading-relaxed">Defense lors de controles fiscaux, negociation avec l'administration, recours contentieux devant le tribunal administratif et procedures amiables.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parcours -->
+    <section id="parcours" class="py-24 bg-copper-light">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <p class="text-copper font-semibold text-sm tracking-widest uppercase mb-3">Le cabinet</p>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-navy mb-8">Une approche<br><span class="text-copper italic">patrimoniale</span><br>du droit fiscal</h2>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                        Me Timothee Guinard est avocat fiscaliste au Barreau de Rennes, specialise dans la gestion fiscale du patrimoine et la transmission d'entreprise. Son approche allie rigueur technique et vision strategique a long terme.
+                    </p>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-8">
+                        Fort d'une formation en droit fiscal et en gestion de patrimoine, il accompagne une clientele de chefs d'entreprise, professions liberales et familles dans leurs decisions patrimoniales les plus structurantes.
+                    </p>
+                    <div class="flex gap-4">
+                        <div class="bg-white rounded-xl p-5 flex-1 text-center">
+                            <p class="text-copper font-serif text-2xl font-bold">Rennes</p>
+                            <p class="text-gray-500 text-sm mt-1">Barreau</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 flex-1 text-center">
+                            <p class="text-copper font-serif text-2xl font-bold">Fiscal</p>
+                            <p class="text-gray-500 text-sm mt-1">Specialisation</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 flex-1 text-center">
+                            <p class="text-copper font-serif text-2xl font-bold">Patrimoine</p>
+                            <p class="text-gray-500 text-sm mt-1">Focus</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <div class="bg-navy rounded-2xl p-8 text-white">
+                        <h3 class="font-serif text-2xl font-bold mb-8 text-copper">Methodologie</h3>
+                        <div class="space-y-8">
+                            <div class="flex gap-5">
+                                <div class="w-10 h-10 border-2 border-copper rounded-full flex items-center justify-center flex-shrink-0">
+                                    <span class="text-copper font-bold">1</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-lg">Diagnostic patrimonial</p>
+                                    <p class="text-white/50 mt-1">Cartographie complete de votre patrimoine et analyse de votre situation fiscale globale</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-5">
+                                <div class="w-10 h-10 border-2 border-copper rounded-full flex items-center justify-center flex-shrink-0">
+                                    <span class="text-copper font-bold">2</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-lg">Strategie personnalisee</p>
+                                    <p class="text-white/50 mt-1">Elaboration de scenarios fiscaux chiffres avec simulation d'impact a court et long terme</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-5">
+                                <div class="w-10 h-10 border-2 border-copper rounded-full flex items-center justify-center flex-shrink-0">
+                                    <span class="text-copper font-bold">3</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-lg">Mise en oeuvre & suivi</p>
+                                    <p class="text-white/50 mt-1">Execution des operations, coordination avec vos autres conseils et suivi annuel de votre situation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Temoignages -->
+    <section id="temoignages" class="py-24 bg-navy text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <p class="text-copper font-semibold text-sm tracking-widest uppercase mb-3">Temoignages</p>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold">Ils nous font confiance</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 reveal">
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8">
+                    <div class="flex text-copper mb-4"><span>&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+                    <p class="text-white/70 italic leading-relaxed mb-6">"Me Guinard m'a accompagne dans la transmission de mon entreprise familiale. Grace au montage Dutreil qu'il a mis en place, nous avons realise une economie fiscale considerable tout en preservant l'equilibre familial."</p>
+                    <div class="border-t border-white/10 pt-4"><p class="font-semibold">Jean-Marc L.</p><p class="text-sm text-white/40">Dirigeant industriel, Rennes</p></div>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8">
+                    <div class="flex text-copper mb-4"><span>&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+                    <p class="text-white/70 italic leading-relaxed mb-6">"Un fiscaliste d'une rare clarte. Il a restructure l'ensemble de mes investissements immobiliers en SCI avec une strategie fiscale qui a reduit mon IFI de 40%. Tres pedagogique et toujours disponible."</p>
+                    <div class="border-t border-white/10 pt-4"><p class="font-semibold">Isabelle R.</p><p class="text-sm text-white/40">Chirurgien-dentiste, Vannes</p></div>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8">
+                    <div class="flex text-copper mb-4"><span>&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+                    <p class="text-white/70 italic leading-relaxed mb-6">"Suite a un controle fiscal sur ma societe, Me Guinard a obtenu l'abandon quasi-total des redressements proposes. Sa maitrise des procedures et sa combativite ont fait toute la difference."</p>
+                    <div class="border-t border-white/10 pt-4"><p class="font-semibold">Sebastien P.</p><p class="text-sm text-white/40">Gerant de PME, Saint-Brieuc</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-24 bg-ivory">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <p class="text-copper font-semibold text-sm tracking-widest uppercase mb-3">FAQ</p>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-navy">Questions frequentes</h2>
+            </div>
+            <div class="space-y-4 reveal">
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-navy">Qu'est-ce que le Pacte Dutreil ?</span>
+                        <svg class="w-5 h-5 text-copper transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-6"><p class="pb-5 text-gray-600 leading-relaxed">Le Pacte Dutreil est un dispositif fiscal permettant de transmettre une entreprise avec un abattement de 75% sur la valeur des parts ou actions. Il necessite un engagement collectif de conservation des titres, suivi d'un engagement individuel. C'est l'outil principal pour optimiser la fiscalite de la transmission d'entreprise.</p></div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-navy">A quel moment consulter un avocat fiscaliste ?</span>
+                        <svg class="w-5 h-5 text-copper transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-6"><p class="pb-5 text-gray-600 leading-relaxed">Idealement en amont de toute decision patrimoniale importante : cession d'entreprise, investissement immobilier, donation, reorganisation de groupe. En cas de controle fiscal, consultez immediatement des la reception de l'avis de verification. Anticiper permet d'optimiser ; reagir tardivement limite les options.</p></div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-navy">Intervenez-vous en dehors de Rennes ?</span>
+                        <svg class="w-5 h-5 text-copper transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-6"><p class="pb-5 text-gray-600 leading-relaxed">Oui, j'interviens sur toute la Bretagne et au-dela sur l'ensemble du territoire national. Les consultations peuvent se derouler en visioconference et je me deplace pour les audiences et rendez-vous importants partout en France.</p></div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-navy">Comment sont fixes vos honoraires ?</span>
+                        <svg class="w-5 h-5 text-copper transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-6"><p class="pb-5 text-gray-600 leading-relaxed">Mes honoraires sont definis de maniere transparente apres le premier entretien. Selon la nature de la mission, je propose soit un forfait (conseil, structuration), soit une facturation au temps passe (contentieux). Un devis detaille vous est systematiquement remis avant tout engagement.</p></div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-navy">Quelle difference entre un avocat fiscaliste et un expert-comptable ?</span>
+                        <svg class="w-5 h-5 text-copper transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-6"><p class="pb-5 text-gray-600 leading-relaxed">L'expert-comptable gere votre comptabilite courante et vos declarations. L'avocat fiscaliste intervient sur les questions strategiques et complexes : optimisation patrimoniale, restructurations, contentieux avec l'administration. Les deux professions sont complementaires et je travaille regulierement en coordination avec les experts-comptables de mes clients.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16">
+                <div class="reveal">
+                    <p class="text-copper font-semibold text-sm tracking-widest uppercase mb-3">Contact</p>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-navy mb-8">Echangeons sur<br>votre situation</h2>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-10">Que vous souhaitiez anticiper une transmission, optimiser votre patrimoine ou faire face a un controle fiscal, prenez contact pour une premiere analyse confidentielle.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-copper-light rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-copper" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-navy">Adresse</p>
+                                <p class="text-gray-600">2 Avenue Charles et Raymonde Tillon<br>35000 Rennes</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-copper-light rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-copper" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-navy">Telephone</p>
+                                <a href="tel:0620205357" class="text-copper hover:underline">06 20 20 53 57</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-copper-light rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-copper" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-navy">Site web</p>
+                                <a href="https://maitre-timothee-guinard.fr" target="_blank" class="text-copper hover:underline">maitre-timothee-guinard.fr</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <form class="bg-copper-light rounded-2xl p-8">
+                        <div class="space-y-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <input type="text" placeholder="Nom" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-copper focus:ring-2 focus:ring-copper/20 outline-none transition bg-white">
+                                <input type="text" placeholder="Prenom" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-copper focus:ring-2 focus:ring-copper/20 outline-none transition bg-white">
+                            </div>
+                            <input type="email" placeholder="Email" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-copper focus:ring-2 focus:ring-copper/20 outline-none transition bg-white">
+                            <input type="tel" placeholder="Telephone" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-copper focus:ring-2 focus:ring-copper/20 outline-none transition bg-white">
+                            <select class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-copper focus:ring-2 focus:ring-copper/20 outline-none transition bg-white text-gray-500">
+                                <option>Nature de votre demande</option>
+                                <option>Fiscalite patrimoniale</option>
+                                <option>Transmission d'entreprise</option>
+                                <option>Controle fiscal</option>
+                                <option>Optimisation IFI</option>
+                                <option>Autre</option>
+                            </select>
+                            <textarea rows="4" placeholder="Decrivez votre situation..." class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-copper focus:ring-2 focus:ring-copper/20 outline-none transition resize-none bg-white"></textarea>
+                            <button type="submit" class="w-full btn-copper py-4 rounded-lg font-semibold text-lg">Demander un rendez-vous</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div>
+                    <p class="font-serif text-xl font-bold">Me Timothee <span class="text-copper">Guinard</span></p>
+                    <p class="text-white/50 text-sm mt-1">Avocat fiscaliste - Barreau de Rennes</p>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-white/40 text-xs">Demo realisee par AEGIS Agency</p>
+                    <p class="text-white/30 text-xs mt-1">aegis-agency.fr</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(btn) {
+            const answer = btn.nextElementSibling;
+            const icon = btn.querySelector('svg');
+            const isOpen = answer.classList.contains('open');
+            document.querySelectorAll('.faq-answer').forEach(a => { a.classList.remove('open'); });
+            document.querySelectorAll('.faq-answer').forEach(a => { a.previousElementSibling.querySelector('svg').style.transform = ''; });
+            if (!isOpen) { answer.classList.add('open'); icon.style.transform = 'rotate(180deg)'; }
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
