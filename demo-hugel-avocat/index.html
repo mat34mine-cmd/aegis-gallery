@@ -1,1 +1,615 @@
-{"id":"/demo-hugel-avocat/index.html","path":"/demo-hugel-avocat/index.html","sha":"7070a2c187cfeb2e439269880f29be9807473b91","mime_type":"text/html","size":29416,"site_id":"4c3dbfa6-f3d7-495d-8a15-3db158b88252","deploy_id":"69af858c2e4a894555af51ff"}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabinet Hugel Avocat | Spécialiste Droit Immobilier à Angers</title>
+    <meta name="description" content="Maître Patrice Hugel, avocat spécialiste en droit immobilier à Angers. 28 ans d'expérience. Baux commerciaux, copropriété, urbanisme, contentieux.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#1B2A4A',
+                        'navy-light': '#2A3D66',
+                        'navy-dark': '#0F1A30',
+                        gold: '#C9A84C',
+                        'gold-light': '#D4BA6A',
+                        'gold-dark': '#A88A30',
+                        cream: '#F5F0EB',
+                        'cream-dark': '#EBE3D9',
+                        graphite: '#2D2D2D',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['DM Serif Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .fade-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-left.visible { opacity: 1; transform: translateX(0); }
+        .fade-right { opacity: 0; transform: translateX(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-right.visible { opacity: 1; transform: translateX(0); }
+        html { scroll-behavior: smooth; }
+        .hero-arch { background: linear-gradient(160deg, #1B2A4A 0%, #0F1A30 60%, #1B2A4A 100%); }
+        .gold-line { height: 1px; background: linear-gradient(90deg, transparent, #C9A84C, transparent); }
+        .service-card { border: 1px solid rgba(201,168,76,0.15); transition: all 0.4s ease; }
+        .service-card:hover { border-color: rgba(201,168,76,0.5); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(27,42,74,0.1); }
+        .geo-shape { position: absolute; border: 1px solid rgba(201,168,76,0.2); }
+        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+        .faq-content.open { max-height: 500px; }
+        .faq-chevron { transition: transform 0.3s ease; }
+        .faq-chevron.rotate { transform: rotate(180deg); }
+        .timeline-dot { width: 12px; height: 12px; background: #C9A84C; border-radius: 50%; position: relative; }
+        .timeline-dot::before { content: ''; position: absolute; top: 50%; left: 50%; width: 24px; height: 24px; background: rgba(201,168,76,0.2); border-radius: 50%; transform: translate(-50%, -50%); }
+        .team-card:hover .team-overlay { opacity: 1; }
+        .team-overlay { opacity: 0; transition: opacity 0.4s ease; }
+        @keyframes slideIn { from { width: 0; } to { width: 100%; } }
+        .gold-underline { position: relative; }
+        .gold-underline::after { content: ''; position: absolute; bottom: -6px; left: 0; height: 2px; width: 60px; background: #C9A84C; }
+    </style>
+</head>
+<body class="font-sans text-graphite bg-white">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-cream-dark transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-navy rounded-lg flex items-center justify-center">
+                    <span class="text-gold font-display text-lg">H</span>
+                </div>
+                <div>
+                    <div class="font-display text-navy text-lg leading-tight">Cabinet Hugel</div>
+                    <div class="text-xs text-graphite/40 tracking-wider uppercase">Avocat · Angers</div>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#expertises" class="text-sm font-medium text-graphite/60 hover:text-navy transition-colors">Expertises</a>
+                <a href="#parcours" class="text-sm font-medium text-graphite/60 hover:text-navy transition-colors">Parcours</a>
+                <a href="#equipe" class="text-sm font-medium text-graphite/60 hover:text-navy transition-colors">Équipe</a>
+                <a href="#temoignages" class="text-sm font-medium text-graphite/60 hover:text-navy transition-colors">Témoignages</a>
+                <a href="#contact" class="bg-navy text-white px-6 py-2.5 rounded text-sm font-semibold hover:bg-navy-light transition-colors">Consultation</a>
+            </div>
+            <button class="md:hidden" onclick="document.getElementById('mob-menu').classList.toggle('hidden')">
+                <svg class="w-6 h-6 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+        <div id="mob-menu" class="hidden md:hidden bg-white border-t border-cream px-6 py-4">
+            <a href="#expertises" class="block py-2 text-graphite/70">Expertises</a>
+            <a href="#parcours" class="block py-2 text-graphite/70">Parcours</a>
+            <a href="#equipe" class="block py-2 text-graphite/70">Équipe</a>
+            <a href="#temoignages" class="block py-2 text-graphite/70">Témoignages</a>
+            <a href="#contact" class="block mt-3 bg-navy text-white px-6 py-2.5 rounded text-sm font-semibold text-center">Consultation</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-arch relative min-h-screen flex items-center overflow-hidden">
+        <div class="geo-shape w-96 h-96 top-20 -right-20 rotate-45"></div>
+        <div class="geo-shape w-64 h-64 bottom-32 left-10 rotate-12"></div>
+        <div class="geo-shape w-48 h-48 top-40 left-1/3 -rotate-6" style="border-color: rgba(201,168,76,0.1);"></div>
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-gold/5 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-6 pt-28 pb-20 relative z-10">
+            <div class="max-w-3xl">
+                <div class="flex items-center gap-3 mb-8 fade-up">
+                    <div class="h-px w-12 bg-gold"></div>
+                    <span class="text-gold text-sm font-semibold uppercase tracking-widest">Spécialiste certifié depuis 2007</span>
+                </div>
+                <h1 class="font-display text-5xl lg:text-6xl xl:text-7xl text-white leading-tight mb-6 fade-up">
+                    Le droit immobilier<br>
+                    exige de <span class="text-gold italic">l'expertise</span>
+                </h1>
+                <p class="text-white/50 text-lg leading-relaxed mb-10 max-w-xl fade-up">
+                    Baux commerciaux, copropriété, urbanisme, contentieux immobilier. 28 ans d'expérience au service de votre patrimoine à Angers et dans tout le Grand Ouest.
+                </p>
+                <div class="flex flex-wrap gap-4 fade-up">
+                    <a href="#contact" class="bg-gold text-navy-dark px-8 py-3.5 rounded font-semibold hover:bg-gold-light transition-all">Prendre rendez-vous</a>
+                    <a href="#expertises" class="border border-white/20 text-white px-8 py-3.5 rounded font-semibold hover:bg-white/5 transition-all">Nos expertises</a>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 fade-up">
+                <div class="border border-white/10 rounded-lg p-5 text-center">
+                    <div class="font-display text-3xl text-gold">28</div>
+                    <div class="text-white/40 text-sm mt-1">Années d'expérience</div>
+                </div>
+                <div class="border border-white/10 rounded-lg p-5 text-center">
+                    <div class="font-display text-3xl text-gold">2007</div>
+                    <div class="text-white/40 text-sm mt-1">Certification immobilier</div>
+                </div>
+                <div class="border border-white/10 rounded-lg p-5 text-center">
+                    <div class="font-display text-3xl text-gold">3</div>
+                    <div class="text-white/40 text-sm mt-1">Experts dédiés</div>
+                </div>
+                <div class="border border-white/10 rounded-lg p-5 text-center">
+                    <div class="font-display text-3xl text-gold">270</div>
+                    <div class="text-white/40 text-sm mt-1">EUR HT / heure</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertises Section -->
+    <section id="expertises" class="py-24 bg-cream">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center gap-3 mb-3 fade-up">
+                <div class="h-px w-12 bg-gold"></div>
+                <span class="text-gold text-sm font-semibold uppercase tracking-widest">Expertises</span>
+            </div>
+            <h2 class="font-display text-4xl lg:text-5xl text-navy mb-4 fade-up">Domaines <span class="text-gold italic">d'intervention</span></h2>
+            <p class="text-graphite/60 max-w-2xl mb-16 fade-up">Spécialiste certifié en droit immobilier, le cabinet intervient sur l'ensemble des problématiques liées au patrimoine bâti et foncier.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="service-card bg-white rounded-xl p-7 fade-up">
+                    <div class="w-12 h-12 bg-navy/5 rounded-lg flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                    </div>
+                    <h3 class="font-display text-lg text-navy mb-2">Baux commerciaux</h3>
+                    <p class="text-graphite/50 text-sm leading-relaxed">Négociation, rédaction, renouvellement, déplafonnement des loyers et contentieux locatif commercial.</p>
+                </div>
+                <div class="service-card bg-white rounded-xl p-7 fade-up" style="transition-delay:0.1s">
+                    <div class="w-12 h-12 bg-navy/5 rounded-lg flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                    </div>
+                    <h3 class="font-display text-lg text-navy mb-2">Baux d'habitation</h3>
+                    <p class="text-graphite/50 text-sm leading-relaxed">Litiges locatifs, congés, expulsions, loyers impayés, troubles de voisinage et réparations locatives.</p>
+                </div>
+                <div class="service-card bg-white rounded-xl p-7 fade-up" style="transition-delay:0.2s">
+                    <div class="w-12 h-12 bg-navy/5 rounded-lg flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <h3 class="font-display text-lg text-navy mb-2">Copropriété</h3>
+                    <p class="text-graphite/50 text-sm leading-relaxed">Contentieux de copropriété, contestation d'assemblées générales, charges, travaux et syndic.</p>
+                </div>
+                <div class="service-card bg-white rounded-xl p-7 fade-up" style="transition-delay:0.3s">
+                    <div class="w-12 h-12 bg-navy/5 rounded-lg flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+                    </div>
+                    <h3 class="font-display text-lg text-navy mb-2">Urbanisme</h3>
+                    <p class="text-graphite/50 text-sm leading-relaxed">Permis de construire, recours, droit de préemption, certificats d'urbanisme et PLU.</p>
+                </div>
+                <div class="service-card bg-white rounded-xl p-7 fade-up">
+                    <div class="w-12 h-12 bg-navy/5 rounded-lg flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+                    </div>
+                    <h3 class="font-display text-lg text-navy mb-2">Droit administratif</h3>
+                    <p class="text-graphite/50 text-sm leading-relaxed">Contentieux administratif lié à l'immobilier, marchés publics de travaux et responsabilité administrative.</p>
+                </div>
+                <div class="service-card bg-white rounded-xl p-7 fade-up" style="transition-delay:0.1s">
+                    <div class="w-12 h-12 bg-navy/5 rounded-lg flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
+                    <h3 class="font-display text-lg text-navy mb-2">Droit de propriété</h3>
+                    <p class="text-graphite/50 text-sm leading-relaxed">Bornage, servitudes, mitoyenneté, usucapion, troubles de voisinage et droit de passage.</p>
+                </div>
+                <div class="service-card bg-white rounded-xl p-7 fade-up" style="transition-delay:0.2s">
+                    <div class="w-12 h-12 bg-navy/5 rounded-lg flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="font-display text-lg text-navy mb-2">Recouvrement</h3>
+                    <p class="text-graphite/50 text-sm leading-relaxed">Recouvrement de créances immobilières, loyers impayés, charges de copropriété et indemnités.</p>
+                </div>
+                <div class="service-card bg-white rounded-xl p-7 fade-up" style="transition-delay:0.3s">
+                    <div class="w-12 h-12 bg-navy/5 rounded-lg flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                    </div>
+                    <h3 class="font-display text-lg text-navy mb-2">Formation</h3>
+                    <p class="text-graphite/50 text-sm leading-relaxed">Formateur en baux commerciaux auprès de l'ECOA, l'ICES et l'IXAD. Transmission de l'expertise.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parcours / Timeline -->
+    <section id="parcours" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="fade-left">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="h-px w-12 bg-gold"></div>
+                        <span class="text-gold text-sm font-semibold uppercase tracking-widest">Parcours</span>
+                    </div>
+                    <h2 class="font-display text-4xl text-navy mb-6">28 ans au service du <span class="text-gold italic">patrimoine immobilier</span></h2>
+                    <p class="text-graphite/60 leading-relaxed mb-8">Depuis 1998, Maître Patrice Hugel met son expertise au service des propriétaires, investisseurs et professionnels de l'immobilier à Angers et dans tout le Grand Ouest.</p>
+                    <div class="space-y-8">
+                        <div class="flex gap-4">
+                            <div class="flex flex-col items-center">
+                                <div class="timeline-dot"></div>
+                                <div class="w-px h-full bg-gold/20 mt-2"></div>
+                            </div>
+                            <div>
+                                <div class="text-gold font-semibold text-sm">1995</div>
+                                <div class="font-semibold text-navy">DEA Transdisciplinaire</div>
+                                <div class="text-graphite/50 text-sm">Actes juridiques -- fondation académique solide</div>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex flex-col items-center">
+                                <div class="timeline-dot"></div>
+                                <div class="w-px h-full bg-gold/20 mt-2"></div>
+                            </div>
+                            <div>
+                                <div class="text-gold font-semibold text-sm">1998</div>
+                                <div class="font-semibold text-navy">Prestation de serment</div>
+                                <div class="text-graphite/50 text-sm">Début de carrière au Barreau d'Angers</div>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex flex-col items-center">
+                                <div class="timeline-dot"></div>
+                                <div class="w-px h-full bg-gold/20 mt-2"></div>
+                            </div>
+                            <div>
+                                <div class="text-gold font-semibold text-sm">2007</div>
+                                <div class="font-semibold text-navy">Certification Droit Immobilier</div>
+                                <div class="text-graphite/50 text-sm">Spécialiste certifié par le CNB</div>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex flex-col items-center">
+                                <div class="timeline-dot"></div>
+                            </div>
+                            <div>
+                                <div class="text-gold font-semibold text-sm">Aujourd'hui</div>
+                                <div class="font-semibold text-navy">SELARL Cabinet Hugel</div>
+                                <div class="text-graphite/50 text-sm">3 experts, référence régionale en droit immobilier</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-right">
+                    <div class="bg-navy rounded-2xl p-10 relative overflow-hidden">
+                        <div class="geo-shape w-40 h-40 -top-10 -right-10 rotate-45" style="border-color: rgba(201,168,76,0.15);"></div>
+                        <div class="relative z-10">
+                            <div class="text-gold font-display text-lg mb-6 gold-underline inline-block">Chiffres clés</div>
+                            <div class="space-y-6 mt-8">
+                                <div class="flex items-center gap-4">
+                                    <div class="font-display text-4xl text-gold">28</div>
+                                    <div class="text-white/60 text-sm">années de pratique au Barreau d'Angers</div>
+                                </div>
+                                <div class="gold-line"></div>
+                                <div class="flex items-center gap-4">
+                                    <div class="font-display text-4xl text-gold">3</div>
+                                    <div class="text-white/60 text-sm">experts dédiés au droit immobilier</div>
+                                </div>
+                                <div class="gold-line"></div>
+                                <div class="flex items-center gap-4">
+                                    <div class="font-display text-4xl text-gold">8</div>
+                                    <div class="text-white/60 text-sm">domaines d'expertise couverts</div>
+                                </div>
+                                <div class="gold-line"></div>
+                                <div class="flex items-center gap-4">
+                                    <div class="font-display text-4xl text-gold">BNI</div>
+                                    <div class="text-white/60 text-sm">Membre Anjou Business</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="equipe" class="py-24 bg-cream">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center gap-3 mb-3 fade-up">
+                <div class="h-px w-12 bg-gold"></div>
+                <span class="text-gold text-sm font-semibold uppercase tracking-widest">Équipe</span>
+            </div>
+            <h2 class="font-display text-4xl text-navy mb-16 fade-up">Trois experts <span class="text-gold italic">à votre service</span></h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="team-card bg-white rounded-xl overflow-hidden border border-gold/10 fade-up">
+                    <div class="h-48 bg-gradient-to-br from-navy to-navy-light relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="font-display text-6xl text-gold/30">PH</span>
+                        </div>
+                        <div class="team-overlay absolute inset-0 bg-navy/80 flex items-center justify-center">
+                            <span class="text-white text-sm font-medium">Fondateur</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl text-navy">Maître Patrice Hugel</h3>
+                        <div class="text-gold text-sm font-medium mt-1">Avocat fondateur</div>
+                        <p class="text-graphite/50 text-sm mt-3 leading-relaxed">Avocat depuis 1998, spécialiste certifié en droit immobilier. DEA en actes juridiques, formateur référent en baux commerciaux.</p>
+                    </div>
+                </div>
+                <div class="team-card bg-white rounded-xl overflow-hidden border border-gold/10 fade-up" style="transition-delay:0.1s">
+                    <div class="h-48 bg-gradient-to-br from-navy-light to-navy relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="font-display text-6xl text-gold/30">ME</span>
+                        </div>
+                        <div class="team-overlay absolute inset-0 bg-navy/80 flex items-center justify-center">
+                            <span class="text-white text-sm font-medium">Juriste</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl text-navy">Marc Estavil</h3>
+                        <div class="text-gold text-sm font-medium mt-1">Juriste</div>
+                        <p class="text-graphite/50 text-sm mt-3 leading-relaxed">Spécialisé dans la recherche juridique et la préparation des dossiers immobiliers complexes.</p>
+                    </div>
+                </div>
+                <div class="team-card bg-white rounded-xl overflow-hidden border border-gold/10 fade-up" style="transition-delay:0.2s">
+                    <div class="h-48 bg-gradient-to-br from-navy to-navy-dark relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="font-display text-6xl text-gold/30">EL</span>
+                        </div>
+                        <div class="team-overlay absolute inset-0 bg-navy/80 flex items-center justify-center">
+                            <span class="text-white text-sm font-medium">Juriste</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl text-navy">Édouard Lechevestrier</h3>
+                        <div class="text-gold text-sm font-medium mt-1">Juriste</div>
+                        <p class="text-graphite/50 text-sm mt-3 leading-relaxed">Expert en contentieux locatif et copropriété, il assure le suivi des procédures et la veille juridique.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="temoignages" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center gap-3 mb-3 fade-up">
+                <div class="h-px w-12 bg-gold"></div>
+                <span class="text-gold text-sm font-semibold uppercase tracking-widest">Témoignages</span>
+            </div>
+            <h2 class="font-display text-4xl text-navy mb-16 fade-up">Ils nous font <span class="text-gold italic">confiance</span></h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="border border-cream-dark rounded-xl p-8 fade-up">
+                    <div class="flex gap-1 mb-4">
+                        <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-graphite/70 italic leading-relaxed mb-6">&laquo; Maître Hugel a géré le renouvellement de notre bail commercial avec une maîtrise impressionnante. Le déplafonnement du loyer a été évité grâce à sa connaissance approfondie de la matière. &raquo;</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-navy/5 rounded-full flex items-center justify-center"><span class="text-navy font-semibold text-sm">FL</span></div>
+                        <div><div class="font-semibold text-sm">Frédéric L.</div><div class="text-xs text-graphite/40">Commerçant, Angers centre</div></div>
+                    </div>
+                </div>
+                <div class="border border-cream-dark rounded-xl p-8 fade-up" style="transition-delay:0.1s">
+                    <div class="flex gap-1 mb-4">
+                        <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-graphite/70 italic leading-relaxed mb-6">&laquo; Un problème de copropriété qui traînait depuis des mois a été résolu efficacement. L'équipe du cabinet connaît parfaitement les rouages du droit immobilier. Très professionnel. &raquo;</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-navy/5 rounded-full flex items-center justify-center"><span class="text-navy font-semibold text-sm">CB</span></div>
+                        <div><div class="font-semibold text-sm">Catherine B.</div><div class="text-xs text-graphite/40">Copropiétaire, Angers Sud</div></div>
+                    </div>
+                </div>
+                <div class="border border-cream-dark rounded-xl p-8 fade-up" style="transition-delay:0.2s">
+                    <div class="flex gap-1 mb-4">
+                        <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-graphite/70 italic leading-relaxed mb-6">&laquo; Investisseur immobilier depuis 15 ans, je confie tous mes dossiers au cabinet Hugel. Baux, urbanisme, contentieux : leur réactivité et leur rigueur sont exemplaires. &raquo;</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-navy/5 rounded-full flex items-center justify-center"><span class="text-navy font-semibold text-sm">MR</span></div>
+                        <div><div class="font-semibold text-sm">Marc R.</div><div class="text-xs text-graphite/40">Investisseur, Maine-et-Loire</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-24 bg-cream">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-16 fade-up">
+                <span class="text-gold text-sm font-semibold uppercase tracking-widest">FAQ</span>
+                <h2 class="font-display text-4xl text-navy mt-3">Questions <span class="text-gold italic">fréquentes</span></h2>
+            </div>
+            <div class="space-y-4 fade-up">
+                <div class="bg-white rounded-lg border border-gold/10 overflow-hidden">
+                    <button class="w-full text-left px-6 py-5 flex items-center justify-between" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-navy pr-4">Qu'est-ce qu'un avocat spécialiste en droit immobilier ?</span>
+                        <svg class="faq-chevron w-5 h-5 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-content px-6 pb-5">
+                        <p class="text-graphite/60 text-sm leading-relaxed">Un avocat spécialiste a obtenu une certification officielle délivrée par le Conseil National des Barreaux (CNB) après examen. Cette mention garantit une expertise approfondie et une pratique régulière dans le domaine. Maître Hugel est certifié depuis 2007.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg border border-gold/10 overflow-hidden">
+                    <button class="w-full text-left px-6 py-5 flex items-center justify-between" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-navy pr-4">Quels sont vos honoraires ?</span>
+                        <svg class="faq-chevron w-5 h-5 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-content px-6 pb-5">
+                        <p class="text-graphite/60 text-sm leading-relaxed">Notre taux horaire est de 270 EUR HT. Selon la nature du dossier, nous proposons également des forfaits. Une convention d'honoraires détaillée vous est remise avant toute intervention.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg border border-gold/10 overflow-hidden">
+                    <button class="w-full text-left px-6 py-5 flex items-center justify-between" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-navy pr-4">Intervenez-vous en dehors d'Angers ?</span>
+                        <svg class="faq-chevron w-5 h-5 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-content px-6 pb-5">
+                        <p class="text-graphite/60 text-sm leading-relaxed">Oui, nous intervenons devant toutes les juridictions du Grand Ouest (Nantes, Tours, Le Mans, Rennes) et devant les juridictions parisiennes si nécessaire. Des consultations en visioconférence sont possibles.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg border border-gold/10 overflow-hidden">
+                    <button class="w-full text-left px-6 py-5 flex items-center justify-between" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-navy pr-4">Mon propriétaire veut augmenter mon loyer commercial, que faire ?</span>
+                        <svg class="faq-chevron w-5 h-5 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-content px-6 pb-5">
+                        <p class="text-graphite/60 text-sm leading-relaxed">Le déplafonnement du loyer commercial est strictement encadré par la loi. Contactez-nous rapidement : nous analyserons la légalité de la demande et défendrons vos intérêts, en négociation ou devant le juge des loyers commerciaux.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg border border-gold/10 overflow-hidden">
+                    <button class="w-full text-left px-6 py-5 flex items-center justify-between" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-navy pr-4">Comment prendre rendez-vous ?</span>
+                        <svg class="faq-chevron w-5 h-5 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-content px-6 pb-5">
+                        <p class="text-graphite/60 text-sm leading-relaxed">Vous pouvez nous contacter par téléphone au 02 41 17 02 02 ou par email à p.hugel@patricehugel.com. Nous vous proposons un rendez-vous dans les meilleurs délais, au cabinet situé 12 allée François Mitterrand à Angers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-24 bg-navy relative overflow-hidden">
+        <div class="geo-shape w-72 h-72 -top-10 -right-10 rotate-45"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div class="fade-left">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="h-px w-12 bg-gold"></div>
+                        <span class="text-gold text-sm font-semibold uppercase tracking-widest">Contact</span>
+                    </div>
+                    <h2 class="font-display text-4xl text-white mb-6">Prenons <span class="text-gold italic">rendez-vous</span></h2>
+                    <p class="text-white/50 leading-relaxed mb-10">Une question sur votre patrimoine immobilier ? Contactez notre cabinet pour une consultation personnalisée.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-white/5 border border-gold/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-white">Adresse</div>
+                                <div class="text-white/50 text-sm">12 allée François Mitterrand<br>49100 Angers</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-white/5 border border-gold/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-white">Téléphone</div>
+                                <div class="text-white/50 text-sm">02 41 17 02 02</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-white/5 border border-gold/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-white">Email</div>
+                                <div class="text-white/50 text-sm">p.hugel@patricehugel.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-right">
+                    <div class="bg-white/5 backdrop-blur border border-white/10 rounded-xl p-8">
+                        <h3 class="font-display text-2xl text-white mb-6">Demande de consultation</h3>
+                        <form class="space-y-5" onsubmit="event.preventDefault(); alert('Merci. Le cabinet Hugel vous recontactera rapidement.');">
+                            <div class="grid sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-sm font-medium text-white/70 mb-1.5">Nom</label>
+                                    <input type="text" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-gold/50 focus:ring-1 focus:ring-gold/20 outline-none" placeholder="Votre nom">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-white/70 mb-1.5">Téléphone</label>
+                                    <input type="tel" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-gold/50 focus:ring-1 focus:ring-gold/20 outline-none" placeholder="02 00 00 00 00">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-white/70 mb-1.5">Email</label>
+                                <input type="email" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-gold/50 focus:ring-1 focus:ring-gold/20 outline-none" placeholder="votre@email.com">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-white/70 mb-1.5">Sujet</label>
+                                <select class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white/70 focus:border-gold/50 outline-none">
+                                    <option>Bail commercial</option>
+                                    <option>Bail d'habitation</option>
+                                    <option>Copropriété</option>
+                                    <option>Urbanisme</option>
+                                    <option>Droit de propriété</option>
+                                    <option>Recouvrement</option>
+                                    <option>Autre</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-white/70 mb-1.5">Message</label>
+                                <textarea rows="4" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-gold/50 focus:ring-1 focus:ring-gold/20 outline-none resize-none" placeholder="Décrivez votre situation..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-gold text-navy-dark py-3.5 rounded-lg font-semibold hover:bg-gold-light transition-colors">Envoyer ma demande</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-10">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 bg-gold/10 rounded flex items-center justify-center"><span class="text-gold font-display">H</span></div>
+                        <span class="font-display text-lg">Cabinet Hugel</span>
+                    </div>
+                    <p class="text-white/40 text-sm leading-relaxed">SELARL Cabinet Patrice Hugel, avocat spécialiste en droit immobilier, inscrit au Barreau d'Angers.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gold/80 text-sm uppercase tracking-wider mb-4">Expertises</h4>
+                    <ul class="space-y-2 text-white/40 text-sm">
+                        <li>Baux commerciaux</li>
+                        <li>Copropriété</li>
+                        <li>Urbanisme</li>
+                        <li>Droit de propriété</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gold/80 text-sm uppercase tracking-wider mb-4">Coordonnées</h4>
+                    <ul class="space-y-2 text-white/40 text-sm">
+                        <li>12 allée François Mitterrand, 49100 Angers</li>
+                        <li>02 41 17 02 02</li>
+                        <li>p.hugel@patricehugel.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-white/25 text-sm">&copy; 2025 Cabinet Hugel Avocat. Tous droits réservés.</p>
+                <p class="text-white/20 text-xs">Démonstration créée par AEGIS Agency.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(el => observer.observe(el));
+
+        function toggleFaq(btn) {
+            const content = btn.nextElementSibling;
+            const chevron = btn.querySelector('.faq-chevron');
+            const isOpen = content.classList.contains('open');
+            document.querySelectorAll('.faq-content').forEach(c => c.classList.remove('open'));
+            document.querySelectorAll('.faq-chevron').forEach(c => c.classList.remove('rotate'));
+            if (!isOpen) { content.classList.add('open'); chevron.classList.add('rotate'); }
+        }
+
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) nav.classList.add('shadow-lg');
+            else nav.classList.remove('shadow-lg');
+        });
+
+        document.querySelectorAll('#mob-menu a').forEach(l => l.addEventListener('click', () => document.getElementById('mob-menu').classList.add('hidden')));
+    </script>
+</body>
+</html>
