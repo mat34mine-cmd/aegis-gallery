@@ -1,1 +1,378 @@
-{"id":"/demo-haikel-avocat/index.html","path":"/demo-haikel-avocat/index.html","sha":"07c4fa5773d26c1ee8dcfd53306467d8d1e794a6","mime_type":"text/html","size":38306,"site_id":"4c3dbfa6-f3d7-495d-8a15-3db158b88252","deploy_id":"69af858c2e4a894555af51ff"}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me Youssef Haikel | Avocat Fiscaliste - Nice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --slate: #1e293b; --bordeaux: #7c2d36; --bordeaux-light: #fdf2f4; --charcoal: #334155; --pearl: #f8fafc; }
+        body { font-family: 'Outfit', sans-serif; color: var(--charcoal); }
+        .font-serif { font-family: 'EB Garamond', serif; }
+        .bg-slate-dark { background-color: var(--slate); }
+        .bg-bordeaux { background-color: var(--bordeaux); }
+        .bg-bordeaux-light { background-color: var(--bordeaux-light); }
+        .bg-pearl { background-color: var(--pearl); }
+        .text-bordeaux { color: var(--bordeaux); }
+        .text-slate-dark { color: var(--slate); }
+        .border-bordeaux { border-color: var(--bordeaux); }
+        .btn-bordeaux { background-color: var(--bordeaux); color: white; transition: all 0.3s; }
+        .btn-bordeaux:hover { background-color: #6b2530; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(124,45,54,0.3); }
+        .btn-outline-bordeaux { border: 2px solid var(--bordeaux); color: var(--bordeaux); transition: all 0.3s; }
+        .btn-outline-bordeaux:hover { background-color: var(--bordeaux); color: white; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .faq-answer.open { max-height: 500px; }
+        .credential-badge { background: linear-gradient(135deg, rgba(124,45,54,0.1), rgba(124,45,54,0.05)); border: 1px solid rgba(124,45,54,0.15); }
+        .service-card { transition: all 0.3s; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
+    </style>
+</head>
+<body class="bg-pearl">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-slate-dark/95 backdrop-blur-md shadow-lg">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-serif text-2xl font-bold text-white">Me <span class="text-bordeaux" style="color:#c4727a">Haikel</span></a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#expertise" class="text-white/80 hover:text-white transition">Expertise</a>
+                <a href="#parcours" class="text-white/80 hover:text-white transition">Parcours</a>
+                <a href="#temoignages" class="text-white/80 hover:text-white transition">Temoignages</a>
+                <a href="#faq" class="text-white/80 hover:text-white transition">FAQ</a>
+                <a href="#contact" class="btn-bordeaux px-5 py-2 rounded-lg text-sm font-semibold">Consultation</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="bg-slate-dark min-h-screen flex items-center relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-bordeaux/10 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-6 py-32 relative z-10">
+            <div class="grid md:grid-cols-5 gap-12 items-center">
+                <div class="md:col-span-3">
+                    <div class="credential-badge inline-flex items-center gap-3 rounded-full px-5 py-2 mb-8">
+                        <svg class="w-4 h-4 text-bordeaux" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                        <span class="text-bordeaux text-sm font-medium">Ancien inspecteur des impots</span>
+                    </div>
+                    <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
+                        L'expertise fiscale<br>vue de <span class="italic" style="color:#c4727a">l'interieur</span>
+                    </h1>
+                    <p class="text-white/60 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl">
+                        Ancien inspecteur des impots devenu avocat fiscaliste. Une double expertise unique pour anticiper, defendre et optimiser votre situation fiscale a Nice et sur toute la Cote d'Azur.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="btn-bordeaux px-8 py-4 rounded-lg text-lg font-semibold text-center">Consultation gratuite</a>
+                        <a href="tel:0620880085" class="btn-outline-bordeaux px-8 py-4 rounded-lg text-lg font-semibold text-center">06 20 88 00 85</a>
+                    </div>
+                </div>
+                <div class="md:col-span-2 hidden md:block">
+                    <div class="space-y-4">
+                        <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+                            <p class="text-3xl font-bold" style="color:#c4727a">20+</p>
+                            <p class="text-white/50 text-sm mt-1">Annees d'experience fiscale</p>
+                            <p class="text-white/30 text-xs mt-1">Administration + Barreau</p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white/5 border border-white/10 rounded-2xl p-5 text-center">
+                                <p class="text-2xl font-bold" style="color:#c4727a">800+</p>
+                                <p class="text-white/50 text-xs mt-1">Dossiers traites</p>
+                            </div>
+                            <div class="bg-white/5 border border-white/10 rounded-2xl p-5 text-center">
+                                <p class="text-2xl font-bold" style="color:#c4727a">94%</p>
+                                <p class="text-white/50 text-xs mt-1">Taux de succes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avantage ancien inspecteur -->
+    <section class="py-16 bg-bordeaux text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <svg class="w-8 h-8 mx-auto mb-3 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                    <p class="font-semibold">Vision interne</p>
+                    <p class="text-white/60 text-sm mt-1">Connaissance des methodes de controle de l'administration</p>
+                </div>
+                <div>
+                    <svg class="w-8 h-8 mx-auto mb-3 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    <p class="font-semibold">Defense strategique</p>
+                    <p class="text-white/60 text-sm mt-1">Anticipation des arguments de l'administration fiscale</p>
+                </div>
+                <div>
+                    <svg class="w-8 h-8 mx-auto mb-3 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+                    <p class="font-semibold">Negociation efficace</p>
+                    <p class="text-white/60 text-sm mt-1">Connaissance des marges de manoeuvre des verificateurs</p>
+                </div>
+                <div>
+                    <svg class="w-8 h-8 mx-auto mb-3 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    <p class="font-semibold">Reactivite</p>
+                    <p class="text-white/60 text-sm mt-1">Intervention rapide des les premiers signes de controle</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise -->
+    <section id="expertise" class="py-24 bg-pearl">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <p class="text-bordeaux font-semibold text-sm tracking-widest uppercase mb-3">Domaines d'intervention</p>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-slate-dark">Une maitrise complete<br>du droit fiscal</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
+                <div class="service-card bg-white rounded-xl p-8 border-t-4 border-bordeaux">
+                    <h3 class="font-serif text-xl font-bold text-slate-dark mb-3">Controle fiscal</h3>
+                    <p class="text-gray-600 leading-relaxed">Assistance et representation lors des verifications de comptabilite, ESFP et controles sur pieces. Preparation, accompagnement et contestation des redressements.</p>
+                </div>
+                <div class="service-card bg-white rounded-xl p-8 border-t-4 border-bordeaux">
+                    <h3 class="font-serif text-xl font-bold text-slate-dark mb-3">Contentieux fiscal</h3>
+                    <p class="text-gray-600 leading-relaxed">Reclamations contentieuses, recours hierarchiques, saisine du tribunal administratif, cour administrative d'appel et Conseil d'Etat. Defense penale fiscale.</p>
+                </div>
+                <div class="service-card bg-white rounded-xl p-8 border-t-4 border-bordeaux">
+                    <h3 class="font-serif text-xl font-bold text-slate-dark mb-3">Regularisation fiscale</h3>
+                    <p class="text-gray-600 leading-relaxed">Accompagnement dans les procedures de regularisation spontanee : comptes etrangers non declares, revenus omis, erreurs declaratives. Negociation des penalites.</p>
+                </div>
+                <div class="service-card bg-white rounded-xl p-8 border-t-4 border-bordeaux">
+                    <h3 class="font-serif text-xl font-bold text-slate-dark mb-3">Fiscalite immobiliere</h3>
+                    <p class="text-gray-600 leading-relaxed">Plus-values immobilieres, SCI, LMNP/LMP, deficits fonciers, IFI. Structuration fiscale des investissements immobiliers sur la Cote d'Azur et au-dela.</p>
+                </div>
+                <div class="service-card bg-white rounded-xl p-8 border-t-4 border-bordeaux">
+                    <h3 class="font-serif text-xl font-bold text-slate-dark mb-3">Fiscalite des entreprises</h3>
+                    <p class="text-gray-600 leading-relaxed">IS, TVA, CET, credits d'impot, restructurations. Accompagnement des TPE/PME dans leur strategie fiscale et leurs relations avec l'administration.</p>
+                </div>
+                <div class="service-card bg-white rounded-xl p-8 border-t-4 border-bordeaux">
+                    <h3 class="font-serif text-xl font-bold text-slate-dark mb-3">Fiscalite internationale</h3>
+                    <p class="text-gray-600 leading-relaxed">Conventions fiscales, residence fiscale, impatriation/expatriation, revenus de source etrangere. Expertise adaptee a la clientele internationale de Nice.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parcours -->
+    <section id="parcours" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <p class="text-bordeaux font-semibold text-sm tracking-widest uppercase mb-3">Parcours</p>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-slate-dark mb-8">De l'administration<br>au <span class="text-bordeaux italic">Barreau</span></h2>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                        Me Youssef Haikel a debute sa carriere comme inspecteur des impots au sein de la Direction Generale des Finances Publiques. Pendant plus de 10 ans, il a conduit des verifications de comptabilite et des controles fiscaux personnels, acquierant une connaissance intime des rouages de l'administration.
+                    </p>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-8">
+                        Fort de cette experience unique, il a prete serment comme avocat au Barreau de Nice pour mettre cette expertise au service des contribuables. Cette double casquette lui confere un avantage decisif dans la defense de ses clients.
+                    </p>
+                    <div class="flex gap-4">
+                        <div class="credential-badge rounded-xl p-4 flex-1 text-center">
+                            <p class="text-bordeaux font-bold text-lg">DGFiP</p>
+                            <p class="text-gray-500 text-sm">10+ ans inspecteur</p>
+                        </div>
+                        <div class="credential-badge rounded-xl p-4 flex-1 text-center">
+                            <p class="text-bordeaux font-bold text-lg">Barreau</p>
+                            <p class="text-gray-500 text-sm">Nice</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <div class="bg-slate-dark rounded-2xl p-8 text-white">
+                        <h3 class="font-serif text-2xl font-bold mb-8" style="color:#c4727a">Pourquoi un ancien inspecteur ?</h3>
+                        <div class="space-y-6">
+                            <div class="flex gap-4">
+                                <div class="w-2 h-2 rounded-full mt-2.5 flex-shrink-0" style="background:#c4727a"></div>
+                                <p class="text-white/70"><span class="text-white font-semibold">Connaissance des procedures :</span> je sais exactement comment l'administration prepare et conduit un controle fiscal</p>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-2 h-2 rounded-full mt-2.5 flex-shrink-0" style="background:#c4727a"></div>
+                                <p class="text-white/70"><span class="text-white font-semibold">Anticipation des risques :</span> j'identifie les points de fragilite avant que l'administration ne les exploite</p>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-2 h-2 rounded-full mt-2.5 flex-shrink-0" style="background:#c4727a"></div>
+                                <p class="text-white/70"><span class="text-white font-semibold">Negociation calibree :</span> je connais les marges de negociation reelles des verificateurs et de la hierarchie</p>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-2 h-2 rounded-full mt-2.5 flex-shrink-0" style="background:#c4727a"></div>
+                                <p class="text-white/70"><span class="text-white font-semibold">Defense penale :</span> experience des dossiers a enjeu penal et des procedures de perquisition fiscale</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Temoignages -->
+    <section id="temoignages" class="py-24 bg-slate-dark text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <p style="color:#c4727a" class="font-semibold text-sm tracking-widest uppercase mb-3">Temoignages</p>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold">La parole a nos clients</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 reveal">
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8">
+                    <div class="flex mb-4" style="color:#c4727a"><span>&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+                    <p class="text-white/70 italic leading-relaxed mb-6">"Confronte a un controle fiscal de 3 ans sur ma societe, Me Haikel a fait tomber 80% des redressements proposes. Sa connaissance de l'administration de l'interieur fait une difference enorme. Il savait exactement quels arguments porteraient."</p>
+                    <div class="border-t border-white/10 pt-4"><p class="font-semibold">Marc T.</p><p class="text-sm text-white/40">Restaurateur, Nice</p></div>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8">
+                    <div class="flex mb-4" style="color:#c4727a"><span>&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+                    <p class="text-white/70 italic leading-relaxed mb-6">"J'avais un probleme de residence fiscale apres mon retour de Suisse. Me Haikel a regularise ma situation avec un professionnalisme remarquable, en negociant des penalites tres inferieures a ce que je craignais. Je recommande vivement."</p>
+                    <div class="border-t border-white/10 pt-4"><p class="font-semibold">Sophie V.</p><p class="text-sm text-white/40">Cadre expatriee, Cannes</p></div>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8">
+                    <div class="flex mb-4" style="color:#c4727a"><span>&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+                    <p class="text-white/70 italic leading-relaxed mb-6">"Me Haikel m'a aide a structurer mes investissements immobiliers sur la Cote d'Azur de facon optimale. Ses conseils en amont m'evitent des erreurs couteuses. Un vrai partenaire de confiance pour la gestion de mon patrimoine."</p>
+                    <div class="border-t border-white/10 pt-4"><p class="font-semibold">Antoine G.</p><p class="text-sm text-white/40">Investisseur, Monaco</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-24 bg-pearl">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <p class="text-bordeaux font-semibold text-sm tracking-widest uppercase mb-3">FAQ</p>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-slate-dark">Questions frequentes</h2>
+            </div>
+            <div class="space-y-4 reveal">
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-slate-dark">En quoi un ancien inspecteur est-il un meilleur defenseur ?</span>
+                        <svg class="w-5 h-5 text-bordeaux transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-6"><p class="pb-5 text-gray-600 leading-relaxed">Avoir exerce comme inspecteur des impots me donne une connaissance precise des methodes de controle, des criteres de selection des dossiers et des marges de negociation internes. Je peux anticiper la strategie de l'administration et construire une defense adaptee a chaque etape de la procedure.</p></div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-slate-dark">Que faire si je recois un avis de verification ?</span>
+                        <svg class="w-5 h-5 text-bordeaux transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-6"><p class="pb-5 text-gray-600 leading-relaxed">Contactez-moi immediatement, avant le premier rendez-vous avec le verificateur. Ce delai est crucial pour preparer votre defense, organiser vos documents et definir la strategie. Ne communiquez aucun document et ne faites aucune declaration spontanee avant d'avoir consulte un avocat fiscaliste.</p></div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-slate-dark">Puis-je regulariser ma situation spontanement ?</span>
+                        <svg class="w-5 h-5 text-bordeaux transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-6"><p class="pb-5 text-gray-600 leading-relaxed">Oui, la regularisation spontanee avant tout controle permet generalement d'obtenir des penalites reduites. Je vous accompagne dans cette demarche en preparant un dossier complet, en calculant les montants dus et en negociant les conditions les plus favorables avec l'administration.</p></div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-slate-dark">Quels sont vos tarifs ?</span>
+                        <svg class="w-5 h-5 text-bordeaux transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-6"><p class="pb-5 text-gray-600 leading-relaxed">La premiere consultation est gratuite et sans engagement. Pour les missions de defense ou de conseil, les honoraires sont convenus a l'avance et formalises dans une convention. Je propose des forfaits pour les missions de conseil et une tarification horaire pour le contentieux, toujours avec un devis prealable.</p></div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-slate-dark">Intervenez-vous en dehors de Nice ?</span>
+                        <svg class="w-5 h-5 text-bordeaux transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-6"><p class="pb-5 text-gray-600 leading-relaxed">Oui, j'interviens sur toute la Cote d'Azur (Cannes, Antibes, Monaco, Menton) et sur l'ensemble du territoire national. Les consultations peuvent avoir lieu en presentiel a Nice ou en visioconference. Je me deplace pour les audiences devant toutes les juridictions francaises.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16">
+                <div class="reveal">
+                    <p class="text-bordeaux font-semibold text-sm tracking-widest uppercase mb-3">Contact</p>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-slate-dark mb-8">Premiere consultation<br><span class="text-bordeaux">gratuite</span></h2>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-10">Controle fiscal en cours, question de regularisation ou besoin de conseil en optimisation ? Prenez rendez-vous pour une premiere analyse gratuite et confidentielle de votre situation.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-bordeaux-light rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-bordeaux" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-slate-dark">Cabinet</p>
+                                <p class="text-gray-600">47 Avenue Jean Medecin<br>06000 Nice</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-bordeaux-light rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-bordeaux" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-slate-dark">Telephone</p>
+                                <a href="tel:0620880085" class="text-bordeaux hover:underline">06 20 88 00 85</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-bordeaux-light rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-bordeaux" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-slate-dark">Site web</p>
+                                <a href="https://avocatfiscaliste-haikel.com" target="_blank" class="text-bordeaux hover:underline">avocatfiscaliste-haikel.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <form class="bg-bordeaux-light rounded-2xl p-8">
+                        <div class="space-y-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <input type="text" placeholder="Nom" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-bordeaux focus:ring-2 focus:ring-bordeaux/20 outline-none transition bg-white">
+                                <input type="text" placeholder="Prenom" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-bordeaux focus:ring-2 focus:ring-bordeaux/20 outline-none transition bg-white">
+                            </div>
+                            <input type="email" placeholder="Email" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-bordeaux focus:ring-2 focus:ring-bordeaux/20 outline-none transition bg-white">
+                            <input type="tel" placeholder="Telephone" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-bordeaux focus:ring-2 focus:ring-bordeaux/20 outline-none transition bg-white">
+                            <select class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-bordeaux focus:ring-2 focus:ring-bordeaux/20 outline-none transition bg-white text-gray-500">
+                                <option>Votre situation</option>
+                                <option>Controle fiscal en cours</option>
+                                <option>Regularisation spontanee</option>
+                                <option>Contentieux fiscal</option>
+                                <option>Optimisation patrimoniale</option>
+                                <option>Fiscalite immobiliere</option>
+                                <option>Autre</option>
+                            </select>
+                            <textarea rows="4" placeholder="Decrivez votre situation en quelques mots..." class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-bordeaux focus:ring-2 focus:ring-bordeaux/20 outline-none transition resize-none bg-white"></textarea>
+                            <button type="submit" class="w-full btn-bordeaux py-4 rounded-lg font-semibold text-lg">Consultation gratuite</button>
+                            <p class="text-center text-gray-400 text-xs">Consultation initiale gratuite et sans engagement</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div>
+                    <p class="font-serif text-xl font-bold">Me Youssef <span style="color:#c4727a">Haikel</span></p>
+                    <p class="text-white/50 text-sm mt-1">Avocat fiscaliste - Barreau de Nice</p>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-white/40 text-xs">Demo realisee par AEGIS Agency</p>
+                    <p class="text-white/30 text-xs mt-1">aegis-agency.fr</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(btn) {
+            const answer = btn.nextElementSibling;
+            const icon = btn.querySelector('svg');
+            const isOpen = answer.classList.contains('open');
+            document.querySelectorAll('.faq-answer').forEach(a => { a.classList.remove('open'); });
+            document.querySelectorAll('.faq-answer').forEach(a => { a.previousElementSibling.querySelector('svg').style.transform = ''; });
+            if (!isOpen) { answer.classList.add('open'); icon.style.transform = 'rotate(180deg)'; }
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
