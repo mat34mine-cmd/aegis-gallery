@@ -1,1 +1,550 @@
-{"id":"/demo-catoire-avocat/index.html","path":"/demo-catoire-avocat/index.html","sha":"c12ff653ec8248a0c6aee1310db34198c7414ba7","mime_type":"text/html","size":35935,"site_id":"4c3dbfa6-f3d7-495d-8a15-3db158b88252","deploy_id":"69af858c2e4a894555af51ff"}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabinet Catoire Avocat | Droit des Affaires &amp; Sociétés à Lille</title>
+    <meta name="description" content="Maître Éléonore Catoire, avocate en droit des affaires et des sociétés à Lille. Accompagnement dirigeants, création entreprise, conflits d'associés. Note Google 5/5.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracotta: '#A94730',
+                        'terracotta-dark': '#8B3526',
+                        'terracotta-light': '#C4614B',
+                        peach: '#FFF0E3',
+                        'peach-soft': 'rgba(255,240,227,0.33)',
+                        charcoal: '#333333',
+                        warm: '#FAF6F1',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        display: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .fade-left { opacity: 0; transform: translateX(-30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-left.visible { opacity: 1; transform: translateX(0); }
+        .fade-right { opacity: 0; transform: translateX(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-right.visible { opacity: 1; transform: translateX(0); }
+        html { scroll-behavior: smooth; }
+        .hero-gradient { background: linear-gradient(135deg, #A94730 0%, #8B3526 40%, #6B2318 100%); }
+        .service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(169,71,48,0.15); }
+        .service-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+        .faq-content.open { max-height: 500px; }
+        .faq-icon { transition: transform 0.3s ease; }
+        .faq-icon.rotate { transform: rotate(45deg); }
+        .testimonial-card { background: linear-gradient(145deg, #FFFFFF 0%, #FFF8F3 100%); }
+        .blob-1 { position: absolute; width: 400px; height: 400px; background: radial-gradient(circle, rgba(169,71,48,0.08) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); }
+        .underline-terracotta { position: relative; display: inline-block; }
+        .underline-terracotta::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 100%; height: 3px; background: #A94730; transform: scaleX(0); transition: transform 0.4s ease; transform-origin: left; }
+        .underline-terracotta:hover::after { transform: scaleX(1); }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .float-anim { animation: float 6s ease-in-out infinite; }
+    </style>
+</head>
+<body class="font-sans text-charcoal bg-white">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-peach/50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <img src="https://www.catoire-avocat.com/wp-content/uploads/2024/05/cropped-navbar-300x82.webp" alt="Cabinet Catoire" class="h-10">
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#services" class="text-sm font-medium text-charcoal/70 hover:text-terracotta transition-colors underline-terracotta">Services</a>
+                <a href="#about" class="text-sm font-medium text-charcoal/70 hover:text-terracotta transition-colors underline-terracotta">À propos</a>
+                <a href="#temoignages" class="text-sm font-medium text-charcoal/70 hover:text-terracotta transition-colors underline-terracotta">Témoignages</a>
+                <a href="#faq" class="text-sm font-medium text-charcoal/70 hover:text-terracotta transition-colors underline-terracotta">FAQ</a>
+                <a href="#contact" class="bg-terracotta text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-terracotta-dark transition-colors">Prendre RDV</a>
+            </div>
+            <button class="md:hidden text-charcoal" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-peach px-6 py-4">
+            <a href="#services" class="block py-2 text-charcoal/70 hover:text-terracotta">Services</a>
+            <a href="#about" class="block py-2 text-charcoal/70 hover:text-terracotta">À propos</a>
+            <a href="#temoignages" class="block py-2 text-charcoal/70 hover:text-terracotta">Témoignages</a>
+            <a href="#faq" class="block py-2 text-charcoal/70 hover:text-terracotta">FAQ</a>
+            <a href="#contact" class="block mt-3 bg-terracotta text-white px-6 py-2.5 rounded-full text-sm font-semibold text-center">Prendre RDV</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center overflow-hidden">
+        <div class="blob-1 top-20 -left-20 float-anim"></div>
+        <div class="blob-1 bottom-10 right-10" style="animation: float 8s ease-in-out infinite; animation-delay: 2s;"></div>
+        <div class="max-w-7xl mx-auto px-6 pt-28 pb-16 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="fade-up">
+                <div class="inline-flex items-center gap-2 bg-peach px-4 py-1.5 rounded-full mb-6">
+                    <span class="w-2 h-2 bg-terracotta rounded-full"></span>
+                    <span class="text-xs font-semibold text-terracotta uppercase tracking-wider">Barreau de Lille</span>
+                </div>
+                <h1 class="font-display text-5xl lg:text-6xl xl:text-7xl text-charcoal leading-tight mb-6">
+                    Votre entreprise mérite une
+                    <span class="text-terracotta italic">avocate dédiée</span>
+                </h1>
+                <p class="text-lg text-charcoal/60 leading-relaxed mb-8 max-w-lg">
+                    Droit des affaires et des sociétés. J'accompagne dirigeants et associés de la création d'entreprise au règlement des litiges, avec exigence et proximité.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="bg-terracotta text-white px-8 py-3.5 rounded-full font-semibold hover:bg-terracotta-dark transition-all hover:shadow-lg hover:shadow-terracotta/25">Consultation gratuite</a>
+                    <a href="#services" class="border-2 border-terracotta/30 text-terracotta px-8 py-3.5 rounded-full font-semibold hover:bg-peach transition-all">Découvrir mes services</a>
+                </div>
+                <div class="flex items-center gap-8 mt-10">
+                    <div class="flex items-center gap-2">
+                        <div class="flex">
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <span class="text-sm font-semibold text-charcoal">5/5 Google</span>
+                    </div>
+                    <div class="h-8 w-px bg-charcoal/10"></div>
+                    <span class="text-sm text-charcoal/50">Droit des affaires &amp; sociétés</span>
+                </div>
+            </div>
+            <div class="fade-right relative">
+                <div class="relative">
+                    <div class="absolute -top-6 -left-6 w-full h-full bg-terracotta/10 rounded-3xl"></div>
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-peach rounded-full"></div>
+                    <img src="https://www.catoire-avocat.com/wp-content/uploads/2025/04/Design-sans-titre-13-e1756120791286-768x845.png" alt="Maître Éléonore Catoire" class="relative rounded-3xl shadow-2xl w-full max-w-md mx-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-warm relative overflow-hidden">
+        <div class="blob-1 top-0 right-0 opacity-50"></div>
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 fade-up">
+                <span class="text-terracotta font-semibold text-sm uppercase tracking-widest">Expertises</span>
+                <h2 class="font-display text-4xl lg:text-5xl text-charcoal mt-3 mb-4">Des solutions juridiques <span class="text-terracotta italic">sur mesure</span></h2>
+                <p class="text-charcoal/60 max-w-2xl mx-auto">Chaque situation d'entreprise est unique. Je vous propose un accompagnement personnalisé, de la création à la résolution des conflits.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-card bg-white rounded-2xl p-8 border border-peach/50 fade-up">
+                    <div class="w-14 h-14 bg-peach rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-7 h-7 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                    </div>
+                    <h3 class="font-display text-xl text-charcoal mb-3">Création d'entreprise</h3>
+                    <p class="text-charcoal/60 text-sm leading-relaxed">Choix de la forme juridique, rédaction des statuts sur mesure, accomplissement des formalités. Un démarrage solide pour votre projet entrepreneurial.</p>
+                </div>
+                <div class="service-card bg-white rounded-2xl p-8 border border-peach/50 fade-up" style="transition-delay:0.1s">
+                    <div class="w-14 h-14 bg-peach rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-7 h-7 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <h3 class="font-display text-xl text-charcoal mb-3">Conflits d'associés</h3>
+                    <p class="text-charcoal/60 text-sm leading-relaxed">Médiation, négociation ou contentieux. Je vous aide à dénouer les tensions entre associés et à protéger vos intérêts dans la société.</p>
+                </div>
+                <div class="service-card bg-white rounded-2xl p-8 border border-peach/50 fade-up" style="transition-delay:0.2s">
+                    <div class="w-14 h-14 bg-peach rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-7 h-7 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
+                    <h3 class="font-display text-xl text-charcoal mb-3">Cession de parts sociales</h3>
+                    <p class="text-charcoal/60 text-sm leading-relaxed">Rédaction des actes de cession, négociation des conditions, garanties d'actif et de passif. Sécurisez chaque étape de la transaction.</p>
+                </div>
+                <div class="service-card bg-white rounded-2xl p-8 border border-peach/50 fade-up">
+                    <div class="w-14 h-14 bg-peach rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-7 h-7 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+                    </div>
+                    <h3 class="font-display text-xl text-charcoal mb-3">Contentieux commercial</h3>
+                    <p class="text-charcoal/60 text-sm leading-relaxed">Défense devant les tribunaux judiciaires et de commerce. Recouvrement de créances, litiges contractuels, procédures d'urgence.</p>
+                </div>
+                <div class="service-card bg-white rounded-2xl p-8 border border-peach/50 fade-up" style="transition-delay:0.1s">
+                    <div class="w-14 h-14 bg-peach rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-7 h-7 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                    </div>
+                    <h3 class="font-display text-xl text-charcoal mb-3">Gestion de SCI</h3>
+                    <p class="text-charcoal/60 text-sm leading-relaxed">Création, administration et contentieux des sociétés civiles immobilières. Assemblées générales, pactes d'associés, mises en conformité.</p>
+                </div>
+                <div class="service-card bg-white rounded-2xl p-8 border border-peach/50 fade-up" style="transition-delay:0.2s">
+                    <div class="w-14 h-14 bg-peach rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-7 h-7 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="font-display text-xl text-charcoal mb-3">Recouvrement de créances</h3>
+                    <p class="text-charcoal/60 text-sm leading-relaxed">Mise en demeure, procédure d'injonction de payer, saisies. Récupérez vos factures impayées avec efficacité et détermination.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packs Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 fade-up">
+                <span class="text-terracotta font-semibold text-sm uppercase tracking-widest">Offres packagées</span>
+                <h2 class="font-display text-4xl lg:text-5xl text-charcoal mt-3">Des packs <span class="text-terracotta italic">clés en main</span></h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 fade-up">
+                <div class="bg-gradient-to-br from-peach to-white rounded-2xl p-8 border border-terracotta/10 hover:border-terracotta/30 transition-all">
+                    <div class="text-terracotta font-display text-2xl mb-3">01</div>
+                    <h3 class="font-semibold text-lg mb-2">Pack Création Stratégique</h3>
+                    <p class="text-charcoal/60 text-sm">Les fondations solides pour votre création d'entreprise : choix de la forme, statuts, formalités.</p>
+                </div>
+                <div class="bg-gradient-to-br from-peach to-white rounded-2xl p-8 border border-terracotta/10 hover:border-terracotta/30 transition-all">
+                    <div class="text-terracotta font-display text-2xl mb-3">02</div>
+                    <h3 class="font-semibold text-lg mb-2">Regards croisés Travail + Sociétés</h3>
+                    <p class="text-charcoal/60 text-sm">Une approche transversale pour les problématiques mêlant droit du travail et droit des sociétés.</p>
+                </div>
+                <div class="bg-gradient-to-br from-peach to-white rounded-2xl p-8 border border-terracotta/10 hover:border-terracotta/30 transition-all">
+                    <div class="text-terracotta font-display text-2xl mb-3">03</div>
+                    <h3 class="font-semibold text-lg mb-2">Déminer un conflit d'associés</h3>
+                    <p class="text-charcoal/60 text-sm">Audit de la situation, stratégie de sortie de crise, négociation ou contentieux maîtrisé.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-peach-soft">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div class="fade-left">
+                <div class="relative">
+                    <div class="bg-terracotta/10 rounded-3xl p-8">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="bg-white rounded-2xl p-6 text-center">
+                                <div class="font-display text-4xl text-terracotta">100%</div>
+                                <div class="text-sm text-charcoal/60 mt-1">Droit des affaires</div>
+                            </div>
+                            <div class="bg-white rounded-2xl p-6 text-center">
+                                <div class="font-display text-4xl text-terracotta">5/5</div>
+                                <div class="text-sm text-charcoal/60 mt-1">Note Google</div>
+                            </div>
+                            <div class="bg-white rounded-2xl p-6 text-center">
+                                <div class="font-display text-4xl text-terracotta">Lille</div>
+                                <div class="text-sm text-charcoal/60 mt-1">Nord-Pas-de-Calais</div>
+                            </div>
+                            <div class="bg-white rounded-2xl p-6 text-center">
+                                <div class="font-display text-4xl text-terracotta">2 voies</div>
+                                <div class="text-sm text-charcoal/60 mt-1">Amiable &amp; Contentieux</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fade-right">
+                <span class="text-terracotta font-semibold text-sm uppercase tracking-widest">À propos</span>
+                <h2 class="font-display text-4xl text-charcoal mt-3 mb-6">Une avocate <span class="text-terracotta italic">engagée</span> à vos côtés</h2>
+                <p class="text-charcoal/70 leading-relaxed mb-4">
+                    J'interviens principalement en droit des Affaires et des Sociétés pour accompagner les dirigeants et les associés de sociétés civiles ou commerciales tout au long de leurs activités.
+                </p>
+                <p class="text-charcoal/70 leading-relaxed mb-4">
+                    Mon activité s'exerce principalement dans la région lilloise et le Nord-Pas-de-Calais. J'ai à coeur de recevoir mes clients au cabinet pour instaurer un climat de confiance, indispensable pour les missions qui me seront confiées.
+                </p>
+                <p class="text-charcoal/70 leading-relaxed mb-6">
+                    Que ce soit en phase amiable -- négociation, conciliation, médiation -- ou en phase contentieuse devant les juridictions compétentes, je m'engage à défendre vos intérêts avec rigueur et détermination.
+                </p>
+                <a href="#contact" class="inline-flex items-center gap-2 text-terracotta font-semibold hover:gap-3 transition-all">
+                    Me contacter
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="temoignages" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 fade-up">
+                <span class="text-terracotta font-semibold text-sm uppercase tracking-widest">Témoignages</span>
+                <h2 class="font-display text-4xl lg:text-5xl text-charcoal mt-3">La confiance de <span class="text-terracotta italic">mes clients</span></h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card rounded-2xl p-8 border border-peach/50 fade-up">
+                    <div class="flex gap-1 mb-4">
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-charcoal/70 italic leading-relaxed mb-6">&laquo; Maître Catoire a su dénouer un conflit d'associés qui durait depuis deux ans. Son approche méthodique et son sens de la négociation ont permis d'aboutir à un accord satisfaisant pour tous. Je recommande vivement. &raquo;</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-terracotta/10 rounded-full flex items-center justify-center">
+                            <span class="text-terracotta font-semibold text-sm">PD</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-sm">Philippe D.</div>
+                            <div class="text-xs text-charcoal/50">Gérant de SAS, Lille</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card rounded-2xl p-8 border border-peach/50 fade-up" style="transition-delay:0.1s">
+                    <div class="flex gap-1 mb-4">
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-charcoal/70 italic leading-relaxed mb-6">&laquo; Lors de la création de ma SARL, Maître Catoire m'a guidée avec une clarté remarquable. Des statuts aux formalités, tout a été géré avec professionnalisme. Un vrai soulagement de se sentir aussi bien accompagnée. &raquo;</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-terracotta/10 rounded-full flex items-center justify-center">
+                            <span class="text-terracotta font-semibold text-sm">SM</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-sm">Sophie M.</div>
+                            <div class="text-xs text-charcoal/50">Fondatrice, Roubaix</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card rounded-2xl p-8 border border-peach/50 fade-up" style="transition-delay:0.2s">
+                    <div class="flex gap-1 mb-4">
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-charcoal/70 italic leading-relaxed mb-6">&laquo; Suite à un litige avec un fournisseur, Maître Catoire a obtenu le recouvrement intégral de notre créance en un temps record. Son efficacité et sa réactivité sont exceptionnelles. &raquo;</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-terracotta/10 rounded-full flex items-center justify-center">
+                            <span class="text-terracotta font-semibold text-sm">JL</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-sm">Jean-Luc B.</div>
+                            <div class="text-xs text-charcoal/50">Directeur général, Tourcoing</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-warm">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-16 fade-up">
+                <span class="text-terracotta font-semibold text-sm uppercase tracking-widest">FAQ</span>
+                <h2 class="font-display text-4xl text-charcoal mt-3">Questions <span class="text-terracotta italic">fréquentes</span></h2>
+            </div>
+            <div class="space-y-4 fade-up">
+                <div class="bg-white rounded-xl border border-peach/50 overflow-hidden">
+                    <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-charcoal">Quels types d'entreprises accompagnez-vous ?</span>
+                        <span class="faq-icon text-terracotta text-2xl font-light">+</span>
+                    </button>
+                    <div class="faq-content px-6 pb-5">
+                        <p class="text-charcoal/60 text-sm leading-relaxed">J'accompagne tous types de sociétés : SAS, SARL, EURL, SCI, SA, ainsi que les auto-entrepreneurs confronts à des problématiques de droit des affaires. Mon expertise couvre aussi bien les TPE que les PME de la région lilloise.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl border border-peach/50 overflow-hidden">
+                    <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-charcoal">Comment se déroule une première consultation ?</span>
+                        <span class="faq-icon text-terracotta text-2xl font-light">+</span>
+                    </button>
+                    <div class="faq-content px-6 pb-5">
+                        <p class="text-charcoal/60 text-sm leading-relaxed">La première consultation a lieu au cabinet, dans un cadre confidentiel. Nous analysons ensemble votre situation, vos objectifs, et je vous propose une stratégie adaptée. Ce premier rendez-vous permet d'établir un climat de confiance essentiel à notre collaboration.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl border border-peach/50 overflow-hidden">
+                    <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-charcoal">Privilégiez-vous la négociation ou le contentieux ?</span>
+                        <span class="faq-icon text-terracotta text-2xl font-light">+</span>
+                    </button>
+                    <div class="faq-content px-6 pb-5">
+                        <p class="text-charcoal/60 text-sm leading-relaxed">Je privilégie toujours la phase amiable quand elle est possible : négociation, conciliation, médiation. Elle est souvent plus rapide et moins coûteuse. Cependant, quand le dialogue échoue, je n'hésite pas à engager la voie contentieuse pour défendre fermement vos intérêts.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl border border-peach/50 overflow-hidden">
+                    <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-charcoal">Quels sont vos honoraires ?</span>
+                        <span class="faq-icon text-terracotta text-2xl font-light">+</span>
+                    </button>
+                    <div class="faq-content px-6 pb-5">
+                        <p class="text-charcoal/60 text-sm leading-relaxed">Mes honoraires sont transparents et définis en amont de chaque mission. Selon la nature du dossier, je propose un taux horaire, un forfait ou un abonnement mensuel. Une convention d'honoraires détaillée vous est systématiquement remise avant le début de la mission.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl border border-peach/50 overflow-hidden">
+                    <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between" onclick="toggleFaq(this)">
+                        <span class="font-semibold text-charcoal">Intervenez-vous en dehors de la région lilloise ?</span>
+                        <span class="faq-icon text-terracotta text-2xl font-light">+</span>
+                    </button>
+                    <div class="faq-content px-6 pb-5">
+                        <p class="text-charcoal/60 text-sm leading-relaxed">Mon activité est centrée sur Lille et le Nord-Pas-de-Calais, mais j'interviens devant l'ensemble des juridictions françaises. Pour les dossiers hors région, des consultations en visioconférence sont possibles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white relative overflow-hidden">
+        <div class="blob-1 -bottom-20 -right-20 opacity-30"></div>
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div class="fade-left">
+                    <span class="text-terracotta font-semibold text-sm uppercase tracking-widest">Contact</span>
+                    <h2 class="font-display text-4xl text-charcoal mt-3 mb-6">Parlons de <span class="text-terracotta italic">votre projet</span></h2>
+                    <p class="text-charcoal/60 leading-relaxed mb-8">Vous avez une question ou souhaitez prendre rendez-vous ? N'hésitez pas à me contacter. Je vous réponds sous 24h.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-peach rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-charcoal">Cabinet</div>
+                                <div class="text-charcoal/60 text-sm">Région lilloise, Nord-Pas-de-Calais</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-peach rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-charcoal">Site web</div>
+                                <div class="text-charcoal/60 text-sm">catoire-avocat.com</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-peach rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-charcoal">Barreau</div>
+                                <div class="text-charcoal/60 text-sm">Inscrite au Barreau de Lille</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-right">
+                    <div class="bg-warm rounded-2xl p-8 border border-peach/50">
+                        <h3 class="font-display text-2xl text-charcoal mb-6">Demande de rendez-vous</h3>
+                        <form class="space-y-5" onsubmit="event.preventDefault(); alert('Merci pour votre message. Ma\u00eetre Catoire vous recontactera dans les plus brefs d\u00e9lais.');">
+                            <div class="grid sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-sm font-medium text-charcoal mb-1.5">Nom</label>
+                                    <input type="text" class="w-full px-4 py-3 rounded-xl border border-peach focus:border-terracotta focus:ring-2 focus:ring-terracotta/10 outline-none transition-all bg-white" placeholder="Votre nom">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-charcoal mb-1.5">Téléphone</label>
+                                    <input type="tel" class="w-full px-4 py-3 rounded-xl border border-peach focus:border-terracotta focus:ring-2 focus:ring-terracotta/10 outline-none transition-all bg-white" placeholder="06 00 00 00 00">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-charcoal mb-1.5">Email</label>
+                                <input type="email" class="w-full px-4 py-3 rounded-xl border border-peach focus:border-terracotta focus:ring-2 focus:ring-terracotta/10 outline-none transition-all bg-white" placeholder="votre@email.com">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-charcoal mb-1.5">Objet</label>
+                                <select class="w-full px-4 py-3 rounded-xl border border-peach focus:border-terracotta focus:ring-2 focus:ring-terracotta/10 outline-none transition-all bg-white text-charcoal/70">
+                                    <option>Création d'entreprise</option>
+                                    <option>Conflit d'associés</option>
+                                    <option>Cession de parts</option>
+                                    <option>Contentieux commercial</option>
+                                    <option>Gestion de SCI</option>
+                                    <option>Recouvrement</option>
+                                    <option>Autre demande</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-charcoal mb-1.5">Message</label>
+                                <textarea rows="4" class="w-full px-4 py-3 rounded-xl border border-peach focus:border-terracotta focus:ring-2 focus:ring-terracotta/10 outline-none transition-all bg-white resize-none" placeholder="Décrivez brièvement votre situation..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-terracotta text-white py-3.5 rounded-xl font-semibold hover:bg-terracotta-dark transition-colors">Envoyer ma demande</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <img src="https://www.catoire-avocat.com/wp-content/uploads/2024/05/cropped-navbar-300x82.webp" alt="Cabinet Catoire" class="h-8 brightness-0 invert mb-4">
+                    <p class="text-white/50 text-sm leading-relaxed">Avocate en droit des affaires et des sociétés, inscrite au Barreau de Lille. Accompagnement des dirigeants et associés.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Expertises</h4>
+                    <ul class="space-y-2 text-white/50 text-sm">
+                        <li>Création d'entreprise</li>
+                        <li>Conflits d'associés</li>
+                        <li>Cession de parts sociales</li>
+                        <li>Contentieux commercial</li>
+                        <li>Gestion de SCI</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Informations</h4>
+                    <ul class="space-y-2 text-white/50 text-sm">
+                        <li>Barreau de Lille</li>
+                        <li>Région lilloise &amp; Nord-Pas-de-Calais</li>
+                        <li>catoire-avocat.com</li>
+                        <li>Note Google : 5/5</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-white/30 text-sm">&copy; 2025 Cabinet Catoire Avocat. Tous droits réservés.</p>
+                <p class="text-white/30 text-xs">Ce site est une démonstration créée par AEGIS Agency.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(el => observer.observe(el));
+
+        // FAQ accordion
+        function toggleFaq(btn) {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('.faq-icon');
+            const isOpen = content.classList.contains('open');
+            
+            // Close all
+            document.querySelectorAll('.faq-content').forEach(c => c.classList.remove('open'));
+            document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate'));
+            
+            if (!isOpen) {
+                content.classList.add('open');
+                icon.classList.add('rotate');
+            }
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg', 'shadow-terracotta/5');
+            } else {
+                navbar.classList.remove('shadow-lg', 'shadow-terracotta/5');
+            }
+        });
+
+        // Smooth scroll for mobile menu
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
