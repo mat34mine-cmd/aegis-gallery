@@ -1,1 +1,1185 @@
-{"id":"/demo-sempere-avocat/index.html","path":"/demo-sempere-avocat/index.html","sha":"9b888543c2605ea121fa2771f79c7c5804aa7dca","mime_type":"text/html","size":28606,"site_id":"4c3dbfa6-f3d7-495d-8a15-3db158b88252","deploy_id":"69af858c2e4a894555af51ff"}
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me Florian Sempere | Avocat Fiscaliste & Droit des Affaires a Nice</title>
+    <meta name="description" content="Maitre Florian Sempere, avocat a Nice specialise en droit fiscal et droit des affaires. Accompagnement entreprises et particuliers sur la Cote d'Azur et Monaco.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;1,6..12,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'parchment': '#FAF9F6',
+                        'ink': '#1A1A2E',
+                        'terra': '#C4A882',
+                        'brick': '#B91C1C',
+                        'warm-gray': '#E8E4DF',
+                        'soft-ink': '#2D2D44',
+                        'light-terra': '#D4C4A8',
+                        'faded-brick': '#D4453E',
+                    },
+                    fontFamily: {
+                        'serif': ['Cormorant Garamond', 'Georgia', 'serif'],
+                        'sans': ['Nunito Sans', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-up': 'fadeUp 0.8s ease-out forwards',
+                        'fade-in': 'fadeIn 0.6s ease-out forwards',
+                        'scale-in': 'scaleIn 0.7s ease-out forwards',
+                        'slide-right': 'slideRight 0.8s ease-out forwards',
+                        'slide-left': 'slideLeft 0.8s ease-out forwards',
+                        'bento-pop': 'bentoPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
+                    },
+                    keyframes: {
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.92)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        },
+                        slideRight: {
+                            '0%': { opacity: '0', transform: 'translateX(-50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        bentoPop: {
+                            '0%': { opacity: '0', transform: 'scale(0.85) translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'scale(1) translateY(0)' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* === ZEN BENTO CUSTOM STYLES === */
+        
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Selection color */
+        ::selection {
+            background-color: #C4A882;
+            color: #1A1A2E;
+        }
+
+        /* Hidden state for reveal animations */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .reveal-element.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Bento card stagger delays */
+        .bento-card {
+            opacity: 0;
+            transform: scale(0.88) translateY(24px);
+            transition: opacity 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        box-shadow 0.35s ease;
+        }
+        .bento-card.revealed {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+        .bento-card:nth-child(1) { transition-delay: 0ms; }
+        .bento-card:nth-child(2) { transition-delay: 80ms; }
+        .bento-card:nth-child(3) { transition-delay: 160ms; }
+        .bento-card:nth-child(4) { transition-delay: 240ms; }
+        .bento-card:nth-child(5) { transition-delay: 320ms; }
+        .bento-card:nth-child(6) { transition-delay: 400ms; }
+
+        /* Bento hover lift */
+        .bento-card:hover {
+            box-shadow: 0 20px 60px -12px rgba(26, 26, 46, 0.15),
+                        0 8px 24px -8px rgba(196, 168, 130, 0.2);
+            transform: scale(1) translateY(-6px) !important;
+        }
+
+        /* Zen line decoration */
+        .zen-line {
+            width: 0;
+            transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .zen-line.revealed {
+            width: 80px;
+        }
+
+        /* Japanese-inspired dot pattern background */
+        .dot-pattern {
+            background-image: radial-gradient(circle, #C4A882 0.8px, transparent 0.8px);
+            background-size: 28px 28px;
+            opacity: 0.08;
+        }
+
+        /* Subtle noise texture overlay */
+        .noise-overlay::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* FAQ accordion animation */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        padding 0.4s ease;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding-top: 1rem;
+            padding-bottom: 0.5rem;
+        }
+        .faq-icon {
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* Testimonial card inner glow on hover */
+        .testimonial-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .testimonial-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(196, 168, 130, 0.06), transparent);
+            transition: left 0.6s ease;
+        }
+        .testimonial-card:hover::after {
+            left: 100%;
+        }
+
+        /* Vertical kanji-inspired decorative text */
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            letter-spacing: 0.3em;
+        }
+
+        /* Input focus ring */
+        .form-input:focus {
+            outline: none;
+            border-color: #C4A882;
+            box-shadow: 0 0 0 3px rgba(196, 168, 130, 0.15);
+        }
+
+        /* CTA button shimmer effect */
+        .cta-btn {
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+            transition: left 0.5s ease;
+        }
+        .cta-btn:hover::after {
+            left: 100%;
+        }
+
+        /* Scroll indicator pulse */
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 0.4; transform: translateY(0); }
+            50% { opacity: 1; transform: translateY(8px); }
+        }
+        .scroll-indicator {
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+
+        /* Number counter reveal */
+        .counter-num {
+            display: inline-block;
+            transition: transform 0.4s ease;
+        }
+        .counter-num:hover {
+            transform: scale(1.08);
+            color: #B91C1C;
+        }
+
+        /* Smooth scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAF9F6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C4A882;
+            border-radius: 999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1A1A2E;
+        }
+    </style>
+</head>
+<body class="bg-parchment text-ink font-sans antialiased">
+
+    <!-- ============================== -->
+    <!-- NAVIGATION - Minimal zen bar   -->
+    <!-- ============================== -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-parchment/90 backdrop-blur-md border-b border-terra/10" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <!-- Logo / Name -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-9 h-9 rounded-sm bg-ink flex items-center justify-center">
+                        <span class="text-parchment font-serif text-lg font-semibold">S</span>
+                    </div>
+                    <div class="hidden sm:block">
+                        <span class="font-serif text-lg lg:text-xl font-semibold text-ink tracking-wide">Sempere</span>
+                        <span class="text-terra text-xs block -mt-1 font-sans tracking-widest uppercase">Avocat</span>
+                    </div>
+                </a>
+                <!-- Nav Links -->
+                <div class="hidden md:flex items-center gap-8 lg:gap-10">
+                    <a href="#expertises" class="text-sm text-soft-ink hover:text-brick transition-colors duration-300 tracking-wide">Expertises</a>
+                    <a href="#cabinet" class="text-sm text-soft-ink hover:text-brick transition-colors duration-300 tracking-wide">Le cabinet</a>
+                    <a href="#temoignages" class="text-sm text-soft-ink hover:text-brick transition-colors duration-300 tracking-wide">Avis clients</a>
+                    <a href="#faq" class="text-sm text-soft-ink hover:text-brick transition-colors duration-300 tracking-wide">FAQ</a>
+                </div>
+                <!-- CTA + Mobile menu -->
+                <div class="flex items-center gap-4">
+                    <a href="tel:0620051617" class="hidden lg:flex items-center gap-2 text-sm text-terra hover:text-brick transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        06 20 05 16 17
+                    </a>
+                    <a href="#contact" class="cta-btn bg-ink text-parchment px-5 py-2.5 rounded-sm text-sm font-medium hover:bg-soft-ink transition-colors duration-300">
+                        Prendre rendez-vous
+                    </a>
+                    <!-- Mobile burger -->
+                    <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5" aria-label="Menu">
+                        <span class="w-6 h-0.5 bg-ink transition-all duration-300" id="burger-top"></span>
+                        <span class="w-6 h-0.5 bg-ink transition-all duration-300" id="burger-mid"></span>
+                        <span class="w-4 h-0.5 bg-ink transition-all duration-300 ml-auto" id="burger-bot"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-parchment border-t border-terra/10 px-6 py-6">
+            <div class="flex flex-col gap-4">
+                <a href="#expertises" class="text-soft-ink hover:text-brick transition-colors py-2 border-b border-warm-gray/50">Expertises</a>
+                <a href="#cabinet" class="text-soft-ink hover:text-brick transition-colors py-2 border-b border-warm-gray/50">Le cabinet</a>
+                <a href="#temoignages" class="text-soft-ink hover:text-brick transition-colors py-2 border-b border-warm-gray/50">Avis clients</a>
+                <a href="#faq" class="text-soft-ink hover:text-brick transition-colors py-2 border-b border-warm-gray/50">FAQ</a>
+                <a href="tel:0620051617" class="flex items-center gap-2 text-terra py-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    06 20 05 16 17
+                </a>
+                <a href="#contact" class="cta-btn bg-ink text-parchment px-5 py-3 rounded-sm text-sm font-medium text-center hover:bg-soft-ink transition-colors">Prendre rendez-vous</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================== -->
+    <!-- HERO - Minimal zen typography  -->
+    <!-- ============================== -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden noise-overlay">
+        <!-- Dot pattern background -->
+        <div class="absolute inset-0 dot-pattern pointer-events-none"></div>
+        
+        <!-- Vertical decorative text -->
+        <div class="absolute right-6 lg:right-12 top-1/2 -translate-y-1/2 hidden lg:block">
+            <span class="vertical-text text-terra/15 font-serif text-sm tracking-[0.5em] uppercase select-none">Droit &middot; Fiscal &middot; Affaires</span>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full">
+            <div class="max-w-4xl">
+                <!-- Small badge -->
+                <div class="reveal-element mb-8">
+                    <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-terra/10 rounded-sm text-terra text-xs font-medium tracking-widest uppercase">
+                        <span class="w-1.5 h-1.5 bg-brick rounded-full"></span>
+                        Barreau de Nice
+                    </span>
+                </div>
+
+                <!-- Main headline -->
+                <h1 class="reveal-element font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-semibold text-ink leading-[0.95] mb-6">
+                    Ma&icirc;tre Florian<br>
+                    <span class="text-terra">Sempere</span>
+                </h1>
+
+                <!-- Zen divider line -->
+                <div class="zen-line h-px bg-terra mb-8"></div>
+
+                <!-- Subtitle -->
+                <p class="reveal-element font-sans text-lg sm:text-xl text-soft-ink/80 max-w-xl leading-relaxed mb-10">
+                    Avocat fiscaliste et conseil en droit des affaires. 
+                    Une approche <em class="font-serif text-ink not-italic">rigoureuse</em> et <em class="font-serif text-ink not-italic">strat&eacute;gique</em> 
+                    pour prot&eacute;ger vos int&eacute;r&ecirc;ts sur la C&ocirc;te d'Azur et Monaco.
+                </p>
+
+                <!-- Dual CTA -->
+                <div class="reveal-element flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="cta-btn bg-brick text-white px-8 py-4 rounded-sm text-sm font-semibold tracking-wide hover:bg-red-800 transition-colors duration-300 text-center">
+                        Consultation sur rendez-vous
+                    </a>
+                    <a href="tel:0620051617" class="group flex items-center justify-center gap-3 px-8 py-4 rounded-sm border border-terra/30 text-ink text-sm font-medium hover:border-terra hover:bg-terra/5 transition-all duration-300">
+                        <svg class="w-4 h-4 text-terra group-hover:text-brick transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        06 20 05 16 17
+                    </a>
+                </div>
+
+                <!-- Trust signals -->
+                <div class="reveal-element mt-14 flex flex-wrap items-center gap-6 text-xs text-soft-ink/60 uppercase tracking-widest">
+                    <span class="flex items-center gap-2">
+                        <svg class="w-3.5 h-3.5 text-terra" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Master 2 Droit fiscal
+                    </span>
+                    <span class="w-px h-3 bg-terra/20"></span>
+                    <span class="flex items-center gap-2">
+                        <svg class="w-3.5 h-3.5 text-terra" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Conf&eacute;rence du Barreau
+                    </span>
+                    <span class="w-px h-3 bg-terra/20"></span>
+                    <span class="flex items-center gap-2">
+                        <svg class="w-3.5 h-3.5 text-terra" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Nice &amp; Monaco
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2">
+            <div class="scroll-indicator flex flex-col items-center gap-2 text-terra/40">
+                <span class="text-[10px] uppercase tracking-[0.3em]">D&eacute;couvrir</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- EXPERTISES - Bento Grid        -->
+    <!-- ============================== -->
+    <section id="expertises" class="relative py-20 lg:py-28 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <!-- Section header -->
+            <div class="reveal-element mb-16 lg:mb-20">
+                <span class="text-terra text-xs font-medium tracking-[0.3em] uppercase">Domaines d'intervention</span>
+                <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold text-ink mt-3 leading-tight">Expertises</h2>
+                <div class="zen-line h-px bg-terra mt-5"></div>
+            </div>
+
+            <!-- Bento Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+
+                <!-- Card 1: Droit Fiscal - LARGE (spans 2 cols on lg) -->
+                <div class="bento-card lg:col-span-2 bg-ink text-parchment rounded-2xl p-8 lg:p-10 cursor-default group">
+                    <div class="flex flex-col h-full min-h-[280px] lg:min-h-[320px] justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="w-12 h-12 rounded-xl bg-terra/20 flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-terra" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                                </div>
+                                <span class="text-terra/60 text-xs tracking-widest uppercase">Sp&eacute;cialit&eacute; principale</span>
+                            </div>
+                            <h3 class="font-serif text-3xl lg:text-4xl font-semibold mb-4 group-hover:text-terra transition-colors duration-300">Droit Fiscal</h3>
+                            <p class="text-parchment/70 leading-relaxed max-w-lg">
+                                Contr&ocirc;les fiscaux, v&eacute;rifications de comptabilit&eacute;, proc&eacute;dures de rectification, 
+                                optimisation fiscale, projets immobiliers, d&eacute;clarations. Un accompagnement 
+                                strat&eacute;gique pour entreprises et particuliers face &agrave; l'Administration.
+                            </p>
+                        </div>
+                        <div class="mt-6 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-parchment/10 rounded-full text-xs text-parchment/70">Contr&ocirc;le fiscal</span>
+                            <span class="px-3 py-1 bg-parchment/10 rounded-full text-xs text-parchment/70">Rectification</span>
+                            <span class="px-3 py-1 bg-parchment/10 rounded-full text-xs text-parchment/70">Optimisation</span>
+                            <span class="px-3 py-1 bg-parchment/10 rounded-full text-xs text-parchment/70">Immobilier</span>
+                            <span class="px-3 py-1 bg-parchment/10 rounded-full text-xs text-parchment/70">Comptabilit&eacute;</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Chiffre cle - SMALL -->
+                <div class="bento-card bg-terra/10 rounded-2xl p-8 flex flex-col items-center justify-center text-center cursor-default min-h-[280px] lg:min-h-[320px] group">
+                    <span class="counter-num font-serif text-6xl lg:text-7xl font-bold text-ink">M2</span>
+                    <span class="text-terra text-sm mt-3 tracking-wide">Droit &amp; Proc&eacute;dures Fiscales</span>
+                    <span class="text-soft-ink/50 text-xs mt-1">de l'entreprise</span>
+                    <div class="w-10 h-px bg-terra/30 mt-5"></div>
+                    <span class="text-soft-ink/40 text-[10px] mt-3 uppercase tracking-widest">Formation d'excellence</span>
+                </div>
+
+                <!-- Card 3: Droit des affaires - MEDIUM -->
+                <div class="bento-card bg-white rounded-2xl p-8 lg:p-10 border border-warm-gray/60 cursor-default min-h-[260px] group">
+                    <div class="flex flex-col h-full justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-brick/10 flex items-center justify-center mb-6">
+                                <svg class="w-6 h-6 text-brick" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                            </div>
+                            <h3 class="font-serif text-2xl lg:text-3xl font-semibold mb-3 group-hover:text-brick transition-colors duration-300">Droit des Affaires</h3>
+                            <p class="text-soft-ink/70 leading-relaxed text-sm">
+                                Cr&eacute;ation d'entreprise, choix de structure juridique, 
+                                gestion quotidienne et op&eacute;rations strat&eacute;giques.
+                            </p>
+                        </div>
+                        <div class="mt-5 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-warm-gray/50 rounded-full text-xs text-soft-ink/70">Cr&eacute;ation</span>
+                            <span class="px-3 py-1 bg-warm-gray/50 rounded-full text-xs text-soft-ink/70">Conseil</span>
+                            <span class="px-3 py-1 bg-warm-gray/50 rounded-full text-xs text-soft-ink/70">Gestion</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Monaco - MEDIUM -->
+                <div class="bento-card bg-white rounded-2xl p-8 lg:p-10 border border-warm-gray/60 cursor-default min-h-[260px] group">
+                    <div class="flex flex-col h-full justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-terra/15 flex items-center justify-center mb-6">
+                                <svg class="w-6 h-6 text-terra" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                            <h3 class="font-serif text-2xl lg:text-3xl font-semibold mb-3 group-hover:text-terra transition-colors duration-300">Probl&eacute;matiques Mon&eacute;gasques</h3>
+                            <p class="text-soft-ink/70 leading-relaxed text-sm">
+                                Ma&icirc;trise des sp&eacute;cificit&eacute;s franco-mon&eacute;gasques. 
+                                Fiscalit&eacute; transfrontali&egrave;re, SCI, soci&eacute;t&eacute;s civiles.
+                            </p>
+                        </div>
+                        <div class="mt-5">
+                            <span class="inline-flex items-center gap-1.5 text-xs text-terra">
+                                <span class="w-1.5 h-1.5 bg-terra rounded-full"></span>
+                                Nice &amp; Principaut&eacute; de Monaco
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Eloquence badge - SMALL accent -->
+                <div class="bento-card lg:col-span-2 bg-gradient-to-br from-ink via-soft-ink to-ink rounded-2xl p-8 lg:p-10 text-parchment cursor-default group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-48 h-48 bg-terra/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                    <div class="relative z-10 flex flex-col sm:flex-row items-start sm:items-center gap-6 lg:gap-10">
+                        <div class="flex-shrink-0">
+                            <div class="w-20 h-20 rounded-2xl bg-terra/20 flex items-center justify-center">
+                                <svg class="w-10 h-10 text-terra" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="text-terra/60 text-xs tracking-widest uppercase">Distinction</span>
+                            <h3 class="font-serif text-2xl lg:text-3xl font-semibold mt-2 mb-2">2<sup class="text-terra text-lg">e</sup> Secr&eacute;taire de la Conf&eacute;rence</h3>
+                            <p class="text-parchment/60 text-sm leading-relaxed">Laur&eacute;at du concours d'&eacute;loquence du Barreau de Nice. L'art oratoire au service de la d&eacute;fense de vos droits.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- A PROPOS - Zen minimal         -->
+    <!-- ============================== -->
+    <section id="cabinet" class="relative py-20 lg:py-28 bg-white overflow-hidden">
+        <!-- Subtle background accent -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-terra/5 rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-72 h-72 bg-brick/3 rounded-full translate-y-1/2 -translate-x-1/3 blur-3xl"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+                <!-- Left visual block (2 cols) -->
+                <div class="lg:col-span-2 reveal-element">
+                    <div class="relative">
+                        <!-- Main image placeholder with zen styling -->
+                        <div class="aspect-[3/4] bg-gradient-to-b from-warm-gray to-terra/10 rounded-2xl overflow-hidden relative">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-center">
+                                    <div class="w-24 h-24 mx-auto rounded-full bg-ink/10 flex items-center justify-center mb-4">
+                                        <span class="font-serif text-4xl text-ink/30">FS</span>
+                                    </div>
+                                    <span class="text-soft-ink/30 text-xs tracking-widest uppercase">Ma&icirc;tre Sempere</span>
+                                </div>
+                            </div>
+                            <!-- Decorative corner accent -->
+                            <div class="absolute top-4 left-4 w-16 h-16 border-t-2 border-l-2 border-terra/30 rounded-tl-lg"></div>
+                            <div class="absolute bottom-4 right-4 w-16 h-16 border-b-2 border-r-2 border-terra/30 rounded-br-lg"></div>
+                        </div>
+                        <!-- Floating stat card -->
+                        <div class="absolute -bottom-6 -right-4 lg:-right-8 bg-ink text-parchment px-6 py-4 rounded-xl shadow-xl">
+                            <span class="font-serif text-2xl font-bold text-terra">Nice</span>
+                            <span class="block text-parchment/60 text-xs mt-0.5">C&ocirc;te d'Azur &amp; Monaco</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right content block (3 cols) -->
+                <div class="lg:col-span-3">
+                    <div class="reveal-element">
+                        <span class="text-terra text-xs font-medium tracking-[0.3em] uppercase">Le cabinet</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-ink mt-3 mb-6 leading-tight">
+                            Rigueur, strat&eacute;gie<br>
+                            <span class="text-terra">&amp; transparence</span>
+                        </h2>
+                        <div class="zen-line h-px bg-terra mb-8"></div>
+                    </div>
+
+                    <div class="reveal-element space-y-5 text-soft-ink/80 leading-relaxed">
+                        <p>
+                            Titulaire d'un <strong class="text-ink font-medium">Master 2 en Droit et proc&eacute;dures fiscales de l'entreprise</strong>, 
+                            Ma&icirc;tre Florian Sempere met son expertise au service des entreprises et des particuliers 
+                            de la C&ocirc;te d'Azur et de la Principaut&eacute; de Monaco.
+                        </p>
+                        <p>
+                            Distingu&eacute; par sa nomination en tant que <strong class="text-ink font-medium">2<sup>e</sup> secr&eacute;taire de la conf&eacute;rence</strong> 
+                            lors du concours d'&eacute;loquence du Barreau de Nice, il allie ma&icirc;trise technique du droit 
+                            fiscal et art oratoire au service de la d&eacute;fense de vos int&eacute;r&ecirc;ts.
+                        </p>
+                        <p>
+                            Son approche proactive repose sur une <strong class="text-ink font-medium">analyse minutieuse</strong> de chaque situation, 
+                            une strat&eacute;gie sur-mesure fond&eacute;e sur l'&eacute;valuation pr&eacute;cise des risques, et une transparence 
+                            totale &agrave; chaque &eacute;tape du processus.
+                        </p>
+                    </div>
+
+                    <!-- Key values in mini bento -->
+                    <div class="reveal-element grid grid-cols-3 gap-3 mt-10">
+                        <div class="bg-parchment rounded-xl p-4 text-center">
+                            <svg class="w-5 h-5 mx-auto text-terra mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                            <span class="text-xs text-soft-ink/60 tracking-wide">Rigueur</span>
+                        </div>
+                        <div class="bg-parchment rounded-xl p-4 text-center">
+                            <svg class="w-5 h-5 mx-auto text-terra mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            <span class="text-xs text-soft-ink/60 tracking-wide">R&eacute;activit&eacute;</span>
+                        </div>
+                        <div class="bg-parchment rounded-xl p-4 text-center">
+                            <svg class="w-5 h-5 mx-auto text-terra mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                            <span class="text-xs text-soft-ink/60 tracking-wide">Transparence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- TEMOIGNAGES - Elegant cards    -->
+    <!-- ============================== -->
+    <section id="temoignages" class="relative py-20 lg:py-28 bg-parchment overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <!-- Section header -->
+            <div class="reveal-element text-center mb-16 lg:mb-20">
+                <span class="text-terra text-xs font-medium tracking-[0.3em] uppercase">Ce que disent nos clients</span>
+                <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold text-ink mt-3">Avis clients</h2>
+                <div class="zen-line h-px bg-terra mt-5 mx-auto"></div>
+            </div>
+
+            <!-- Testimonials grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
+
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bento-card bg-white rounded-2xl p-7 lg:p-8 border border-warm-gray/40 cursor-default">
+                    <div class="flex flex-col h-full">
+                        <!-- Stars -->
+                        <div class="flex gap-0.5 mb-5">
+                            <svg class="w-4 h-4 text-terra" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 text-terra" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 text-terra" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 text-terra" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 text-terra" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <!-- Quote -->
+                        <blockquote class="text-soft-ink/80 leading-relaxed text-sm flex-grow">
+                            &laquo; Ma&icirc;tre Sempere nous a accompagn&eacute;s lors d'un contr&ocirc;le fiscal tr&egrave;s complexe.
+                            Sa ma&icirc;trise du dossier et son calme ont &eacute;t&eacute; d&eacute;terminants. Le redressement initialement 
+                            envisag&eacute; a &eacute;t&eacute; consid&eacute;rablement r&eacute;duit. &raquo;
+                        </blockquote>
+                        <!-- Author -->
+                        <div class="mt-6 pt-5 border-t border-warm-gray/40">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-full bg-ink/5 flex items-center justify-center">
+                                    <span class="font-serif text-sm text-ink/40">PD</span>
+                                </div>
+                                <div>
+                                    <span class="text-sm font-medium text-ink block">Philippe D.</span>
+                                    <span class="text-xs text-soft-ink/50">Dirigeant de PME, Nice</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bento-card bg-ink text-parchment rounded-2xl p-7 lg:p-8 cursor-default">
+                    <div class="flex flex-col h-full">
+                        <!-- Stars -->
+                        <div class="flex gap-0.5 mb-5">
+                            <svg class="w-4 h-4 text-terra" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 text-terra" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 text-terra" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 text-terra" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 text-terra" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <!-- Quote -->
+                        <blockquote class="text-parchment/80 leading-relaxed text-sm flex-grow">
+                            &laquo; Suite &agrave; un litige fiscal li&eacute; &agrave; mon activit&eacute; entre la France et Monaco, j'ai fait appel 
+                            &agrave; Ma&icirc;tre Sempere. Sa connaissance approfondie des sp&eacute;cificit&eacute;s transfrontali&egrave;res 
+                            a &eacute;t&eacute; un atout majeur. Probl&egrave;me r&eacute;solu en quelques semaines. &raquo;
+                        </blockquote>
+                        <!-- Author -->
+                        <div class="mt-6 pt-5 border-t border-parchment/10">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-full bg-parchment/10 flex items-center justify-center">
+                                    <span class="font-serif text-sm text-parchment/40">SL</span>
+                                </div>
+                                <div>
+                                    <span class="text-sm font-medium text-parchment block">Sophie L.</span>
+                                    <span class="text-xs text-parchment/50">Entrepreneuse, Monaco</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bento-card bg-white rounded-2xl p-7 lg:p-8 border border-warm-gray/40 cursor-default">
+                    <div class="flex flex-col h-full">
+                        <!-- Stars -->
+                        <div class="flex gap-0.5 mb-5">
+                            <svg class="w-4 h-4 text-terra" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 text-terra" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 text-terra" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 text-terra" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 text-terra" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <!-- Quote -->
+                        <blockquote class="text-soft-ink/80 leading-relaxed text-sm flex-grow">
+                            &laquo; Lors de la cr&eacute;ation de ma soci&eacute;t&eacute;, Ma&icirc;tre Sempere m'a guid&eacute; dans le choix 
+                            de la structure la plus adapt&eacute;e d'un point de vue fiscal et juridique. 
+                            Ses conseils m'ont permis de d&eacute;marrer sereinement. Je le recommande sans h&eacute;sitation. &raquo;
+                        </blockquote>
+                        <!-- Author -->
+                        <div class="mt-6 pt-5 border-t border-warm-gray/40">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-full bg-ink/5 flex items-center justify-center">
+                                    <span class="font-serif text-sm text-ink/40">MR</span>
+                                </div>
+                                <div>
+                                    <span class="text-sm font-medium text-ink block">Marc R.</span>
+                                    <span class="text-xs text-soft-ink/50">Cr&eacute;ateur d'entreprise, Antibes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- FAQ - Zen accordion            -->
+    <!-- ============================== -->
+    <section id="faq" class="relative py-20 lg:py-28 bg-white overflow-hidden">
+        <div class="max-w-3xl mx-auto px-6 lg:px-10">
+            <!-- Section header -->
+            <div class="reveal-element text-center mb-14 lg:mb-18">
+                <span class="text-terra text-xs font-medium tracking-[0.3em] uppercase">R&eacute;ponses &agrave; vos questions</span>
+                <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-ink mt-3">Foire aux questions</h2>
+                <div class="zen-line h-px bg-terra mt-5 mx-auto"></div>
+            </div>
+
+            <!-- FAQ items -->
+            <div class="space-y-3" id="faq-container">
+
+                <!-- FAQ 1 -->
+                <div class="faq-item reveal-element bg-parchment rounded-xl border border-warm-gray/30 overflow-hidden">
+                    <button class="faq-trigger w-full flex items-center justify-between p-5 lg:p-6 text-left" aria-expanded="false">
+                        <span class="font-serif text-lg lg:text-xl font-medium text-ink pr-4">Quels types de contr&ocirc;les fiscaux traitez-vous ?</span>
+                        <span class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-terra/10 flex items-center justify-center text-terra">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer px-5 lg:px-6">
+                        <p class="text-soft-ink/70 leading-relaxed text-sm pb-2">
+                            J'interviens sur l'ensemble des proc&eacute;dures de contr&ocirc;le fiscal : v&eacute;rifications de comptabilit&eacute;, 
+                            examens contradictoires de situation fiscale personnelle (ESFP), contr&ocirc;les sur pi&egrave;ces, 
+                            demandes d'&eacute;claircissement et proc&eacute;dures de rectification. Mon accompagnement couvre tant 
+                            la phase amiable que le contentieux devant les juridictions administratives.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item reveal-element bg-parchment rounded-xl border border-warm-gray/30 overflow-hidden">
+                    <button class="faq-trigger w-full flex items-center justify-between p-5 lg:p-6 text-left" aria-expanded="false">
+                        <span class="font-serif text-lg lg:text-xl font-medium text-ink pr-4">Intervenez-vous aussi pour les particuliers ?</span>
+                        <span class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-terra/10 flex items-center justify-center text-terra">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer px-5 lg:px-6">
+                        <p class="text-soft-ink/70 leading-relaxed text-sm pb-2">
+                            Absolument. Mon cabinet accompagne aussi bien les entreprises (TPE, PME, soci&eacute;t&eacute;s) 
+                            que les particuliers : d&eacute;clarations fiscales complexes, litiges avec l'Administration, 
+                            projets immobiliers avec enjeux fiscaux, ou optimisation patrimoniale.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item reveal-element bg-parchment rounded-xl border border-warm-gray/30 overflow-hidden">
+                    <button class="faq-trigger w-full flex items-center justify-between p-5 lg:p-6 text-left" aria-expanded="false">
+                        <span class="font-serif text-lg lg:text-xl font-medium text-ink pr-4">Traitez-vous les dossiers franco-mon&eacute;gasques ?</span>
+                        <span class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-terra/10 flex items-center justify-center text-terra">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer px-5 lg:px-6">
+                        <p class="text-soft-ink/70 leading-relaxed text-sm pb-2">
+                            Oui, c'est l'une de mes sp&eacute;cialit&eacute;s. Situ&eacute; &agrave; Nice, &agrave; proximit&eacute; imm&eacute;diate de la 
+                            Principaut&eacute;, je ma&icirc;trise les sp&eacute;cificit&eacute;s fiscales franco-mon&eacute;gasques : conventions 
+                            bilat&eacute;rales, SCI transfrontali&egrave;res, soci&eacute;t&eacute;s civiles mon&eacute;gasques et r&eacute;sidence fiscale.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item reveal-element bg-parchment rounded-xl border border-warm-gray/30 overflow-hidden">
+                    <button class="faq-trigger w-full flex items-center justify-between p-5 lg:p-6 text-left" aria-expanded="false">
+                        <span class="font-serif text-lg lg:text-xl font-medium text-ink pr-4">Comment se d&eacute;roule un premier rendez-vous ?</span>
+                        <span class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-terra/10 flex items-center justify-center text-terra">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer px-5 lg:px-6">
+                        <p class="text-soft-ink/70 leading-relaxed text-sm pb-2">
+                            Lors du premier rendez-vous, nous analysons ensemble votre situation : pi&egrave;ces du dossier, 
+                            enjeux, d&eacute;lais. Je vous pr&eacute;sente ensuite une strat&eacute;gie claire avec une estimation 
+                            des risques et un calendrier pr&eacute;visionnel. Transparence et p&eacute;dagogie sont mes ma&icirc;tres-mots.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item reveal-element bg-parchment rounded-xl border border-warm-gray/30 overflow-hidden">
+                    <button class="faq-trigger w-full flex items-center justify-between p-5 lg:p-6 text-left" aria-expanded="false">
+                        <span class="font-serif text-lg lg:text-xl font-medium text-ink pr-4">Quelle est votre zone g&eacute;ographique d'intervention ?</span>
+                        <span class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-terra/10 flex items-center justify-center text-terra">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer px-5 lg:px-6">
+                        <p class="text-soft-ink/70 leading-relaxed text-sm pb-2">
+                            Mon cabinet est situ&eacute; au 9 rue Alfred Mortier &agrave; Nice, mais j'interviens sur l'ensemble 
+                            des Alpes-Maritimes, la C&ocirc;te d'Azur et la Principaut&eacute; de Monaco. Pour les proc&eacute;dures 
+                            devant les juridictions, je peux &eacute;galement intervenir au niveau national.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- CONTACT - Clean form           -->
+    <!-- ============================== -->
+    <section id="contact" class="relative py-20 lg:py-28 bg-parchment overflow-hidden">
+        <!-- Background accent -->
+        <div class="absolute bottom-0 right-0 w-80 h-80 bg-terra/5 rounded-full translate-y-1/2 translate-x-1/3 blur-3xl"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+
+                <!-- Left: Info -->
+                <div class="reveal-element">
+                    <span class="text-terra text-xs font-medium tracking-[0.3em] uppercase">Prenez contact</span>
+                    <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-ink mt-3 mb-6 leading-tight">
+                        &Eacute;changeons sur<br>
+                        <span class="text-terra">votre situation</span>
+                    </h2>
+                    <div class="zen-line h-px bg-terra mb-8"></div>
+                    <p class="text-soft-ink/70 leading-relaxed mb-10">
+                        Chaque dossier est unique. Contactez le cabinet pour un premier &eacute;change 
+                        confidentiel et sans engagement. Nous d&eacute;finirons ensemble la meilleure 
+                        strat&eacute;gie pour prot&eacute;ger vos int&eacute;r&ecirc;ts.
+                    </p>
+
+                    <!-- Contact cards -->
+                    <div class="space-y-4">
+                        <!-- Address -->
+                        <div class="flex items-start gap-4 p-4 bg-white rounded-xl border border-warm-gray/30">
+                            <div class="w-10 h-10 rounded-lg bg-terra/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg class="w-5 h-5 text-terra" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            </div>
+                            <div>
+                                <span class="text-sm font-medium text-ink block">Adresse du cabinet</span>
+                                <span class="text-sm text-soft-ink/60 mt-0.5 block">9 rue Alfred Mortier, 06000 Nice</span>
+                            </div>
+                        </div>
+                        <!-- Phone -->
+                        <a href="tel:0620051617" class="flex items-start gap-4 p-4 bg-white rounded-xl border border-warm-gray/30 hover:border-terra/40 transition-colors group">
+                            <div class="w-10 h-10 rounded-lg bg-terra/10 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-terra/20 transition-colors">
+                                <svg class="w-5 h-5 text-terra" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            </div>
+                            <div>
+                                <span class="text-sm font-medium text-ink block">T&eacute;l&eacute;phone</span>
+                                <span class="text-sm text-terra mt-0.5 block group-hover:text-brick transition-colors">06 20 05 16 17</span>
+                            </div>
+                        </a>
+                        <!-- Email -->
+                        <a href="mailto:f.sempere@cphb-avocats.com" class="flex items-start gap-4 p-4 bg-white rounded-xl border border-warm-gray/30 hover:border-terra/40 transition-colors group">
+                            <div class="w-10 h-10 rounded-lg bg-terra/10 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-terra/20 transition-colors">
+                                <svg class="w-5 h-5 text-terra" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            </div>
+                            <div>
+                                <span class="text-sm font-medium text-ink block">Email</span>
+                                <span class="text-sm text-terra mt-0.5 block group-hover:text-brick transition-colors">f.sempere@cphb-avocats.com</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="reveal-element">
+                    <form class="bg-white rounded-2xl p-8 lg:p-10 border border-warm-gray/30 shadow-sm">
+                        <h3 class="font-serif text-2xl font-semibold text-ink mb-6">Demande de rendez-vous</h3>
+                        
+                        <div class="space-y-5">
+                            <!-- Name -->
+                            <div>
+                                <label class="block text-xs text-soft-ink/60 uppercase tracking-widest mb-2" for="name">Nom complet</label>
+                                <input type="text" id="name" name="name" placeholder="Votre nom et pr&eacute;nom"
+                                    class="form-input w-full px-4 py-3 bg-parchment border border-warm-gray/40 rounded-lg text-sm text-ink placeholder:text-soft-ink/30 transition-all duration-300">
+                            </div>
+                            <!-- Email -->
+                            <div>
+                                <label class="block text-xs text-soft-ink/60 uppercase tracking-widest mb-2" for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="votre@email.com"
+                                    class="form-input w-full px-4 py-3 bg-parchment border border-warm-gray/40 rounded-lg text-sm text-ink placeholder:text-soft-ink/30 transition-all duration-300">
+                            </div>
+                            <!-- Phone -->
+                            <div>
+                                <label class="block text-xs text-soft-ink/60 uppercase tracking-widest mb-2" for="phone">T&eacute;l&eacute;phone</label>
+                                <input type="tel" id="phone" name="phone" placeholder="06 XX XX XX XX"
+                                    class="form-input w-full px-4 py-3 bg-parchment border border-warm-gray/40 rounded-lg text-sm text-ink placeholder:text-soft-ink/30 transition-all duration-300">
+                            </div>
+                            <!-- Subject -->
+                            <div>
+                                <label class="block text-xs text-soft-ink/60 uppercase tracking-widest mb-2" for="subject">Objet de votre demande</label>
+                                <select id="subject" name="subject"
+                                    class="form-input w-full px-4 py-3 bg-parchment border border-warm-gray/40 rounded-lg text-sm text-ink transition-all duration-300">
+                                    <option value="" disabled selected>S&eacute;lectionnez un domaine</option>
+                                    <option value="fiscal">Droit fiscal / Contr&ocirc;le fiscal</option>
+                                    <option value="affaires">Droit des affaires / Cr&eacute;ation soci&eacute;t&eacute;</option>
+                                    <option value="monaco">Probl&eacute;matique franco-mon&eacute;gasque</option>
+                                    <option value="autre">Autre demande</option>
+                                </select>
+                            </div>
+                            <!-- Message -->
+                            <div>
+                                <label class="block text-xs text-soft-ink/60 uppercase tracking-widest mb-2" for="message">Message</label>
+                                <textarea id="message" name="message" rows="4" placeholder="D&eacute;crivez bri&egrave;vement votre situation..."
+                                    class="form-input w-full px-4 py-3 bg-parchment border border-warm-gray/40 rounded-lg text-sm text-ink placeholder:text-soft-ink/30 transition-all duration-300 resize-none"></textarea>
+                            </div>
+                            <!-- Submit -->
+                            <button type="submit" class="cta-btn w-full bg-brick text-white py-4 rounded-lg text-sm font-semibold tracking-wide hover:bg-red-800 transition-colors duration-300">
+                                Envoyer ma demande
+                            </button>
+                            <p class="text-[11px] text-soft-ink/40 text-center">
+                                En soumettant ce formulaire, vous acceptez que vos donn&eacute;es soient trait&eacute;es 
+                                conform&eacute;ment au RGPD dans le cadre de votre demande de contact.
+                            </p>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- FOOTER - Clean minimal         -->
+    <!-- ============================== -->
+    <footer class="bg-ink text-parchment">
+        <!-- Top CTA band -->
+        <div class="border-b border-parchment/10">
+            <div class="max-w-7xl mx-auto px-6 lg:px-10 py-12 lg:py-16">
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+                    <div class="text-center lg:text-left">
+                        <h3 class="font-serif text-2xl lg:text-3xl font-semibold mb-2">Prot&eacute;gez vos int&eacute;r&ecirc;ts d&egrave;s maintenant</h3>
+                        <p class="text-parchment/50 text-sm">Contactez Ma&icirc;tre Sempere pour un premier &eacute;change confidentiel.</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="tel:0620051617" class="flex items-center justify-center gap-2 px-6 py-3 border border-terra/40 rounded-sm text-terra text-sm hover:bg-terra/10 transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            06 20 05 16 17
+                        </a>
+                        <a href="#contact" class="cta-btn bg-brick text-white px-6 py-3 rounded-sm text-sm font-medium hover:bg-red-800 transition-colors text-center">
+                            Prendre rendez-vous
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer content -->
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-10 lg:py-14">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Col 1: Brand -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-sm bg-terra/20 flex items-center justify-center">
+                            <span class="text-terra font-serif text-base font-semibold">S</span>
+                        </div>
+                        <div>
+                            <span class="font-serif text-base font-semibold">Me Florian Sempere</span>
+                            <span class="text-parchment/40 text-xs block">Avocat au Barreau de Nice</span>
+                        </div>
+                    </div>
+                    <p class="text-parchment/40 text-xs leading-relaxed">
+                        Droit fiscal &amp; droit des affaires. Accompagnement 
+                        d'entreprises et de particuliers sur la C&ocirc;te d'Azur et Monaco.
+                    </p>
+                </div>
+
+                <!-- Col 2: Links -->
+                <div>
+                    <h4 class="text-xs uppercase tracking-widest text-parchment/50 mb-4">Navigation</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="#expertises" class="text-sm text-parchment/60 hover:text-terra transition-colors">Expertises</a></li>
+                        <li><a href="#cabinet" class="text-sm text-parchment/60 hover:text-terra transition-colors">Le cabinet</a></li>
+                        <li><a href="#temoignages" class="text-sm text-parchment/60 hover:text-terra transition-colors">Avis clients</a></li>
+                        <li><a href="#faq" class="text-sm text-parchment/60 hover:text-terra transition-colors">FAQ</a></li>
+                        <li><a href="#contact" class="text-sm text-parchment/60 hover:text-terra transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Contact -->
+                <div>
+                    <h4 class="text-xs uppercase tracking-widest text-parchment/50 mb-4">Coordonn&eacute;es</h4>
+                    <ul class="space-y-2.5 text-sm text-parchment/60">
+                        <li>9 rue Alfred Mortier</li>
+                        <li>06000 Nice</li>
+                        <li><a href="tel:0620051617" class="hover:text-terra transition-colors">06 20 05 16 17</a></li>
+                        <li><a href="mailto:f.sempere@cphb-avocats.com" class="hover:text-terra transition-colors">f.sempere@cphb-avocats.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="border-t border-parchment/5">
+            <div class="max-w-7xl mx-auto px-6 lg:px-10 py-5">
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+                    <p class="text-[11px] text-parchment/25">
+                        &copy; 2025 Cabinet Sempere. Tous droits r&eacute;serv&eacute;s.
+                    </p>
+                    <p class="text-[11px] text-parchment/25">
+                        Site con&ccedil;u par <a href="https://aegis-agency.com" target="_blank" rel="noopener" class="text-terra/40 hover:text-terra transition-colors">AEGIS Agency</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================== -->
+    <!-- JAVASCRIPT                     -->
+    <!-- ============================== -->
+    <script>
+    (function() {
+        'use strict';
+
+        // =====================
+        // Scroll Reveal System
+        // =====================
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    // Don't unobserve to allow re-reveal if needed
+                }
+            });
+        }, {
+            threshold: 0.12,
+            rootMargin: '0px 0px -60px 0px'
+        });
+
+        // Observe all reveal elements
+        document.querySelectorAll('.reveal-element, .bento-card, .zen-line').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // =====================
+        // FAQ Accordion
+        // =====================
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const trigger = item.querySelector('.faq-trigger');
+            trigger.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all others
+                faqItems.forEach(other => {
+                    if (other !== item) {
+                        other.classList.remove('active');
+                        other.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                // Toggle current
+                if (isActive) {
+                    item.classList.remove('active');
+                    trigger.setAttribute('aria-expanded', 'false');
+                } else {
+                    item.classList.add('active');
+                    trigger.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // =====================
+        // Mobile Menu
+        // =====================
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const burgerTop = document.getElementById('burger-top');
+        const burgerMid = document.getElementById('burger-mid');
+        const burgerBot = document.getElementById('burger-bot');
+        let menuOpen = false;
+
+        menuBtn.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            mobileMenu.classList.toggle('hidden');
+            
+            if (menuOpen) {
+                burgerTop.style.transform = 'rotate(45deg) translate(4px, 4px)';
+                burgerMid.style.opacity = '0';
+                burgerBot.style.transform = 'rotate(-45deg) translate(4px, -4px)';
+                burgerBot.style.width = '1.5rem';
+            } else {
+                burgerTop.style.transform = '';
+                burgerMid.style.opacity = '1';
+                burgerBot.style.transform = '';
+                burgerBot.style.width = '1rem';
+            }
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuOpen = false;
+                mobileMenu.classList.add('hidden');
+                burgerTop.style.transform = '';
+                burgerMid.style.opacity = '1';
+                burgerBot.style.transform = '';
+                burgerBot.style.width = '1rem';
+            });
+        });
+
+        // =====================
+        // Navbar Background on Scroll
+        // =====================
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                navbar.style.boxShadow = '0 1px 20px rgba(26, 26, 46, 0.06)';
+            } else {
+                navbar.style.boxShadow = 'none';
+            }
+
+            lastScroll = currentScroll;
+        }, { passive: true });
+
+        // =====================
+        // Smooth scroll for anchor links
+        // =====================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    const navHeight = navbar.offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // =====================
+        // Form submission prevention (demo)
+        // =====================
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const btn = form.querySelector('button[type="submit"]');
+                const originalText = btn.textContent;
+                btn.textContent = 'Message envoy\u00e9 !';
+                btn.style.backgroundColor = '#2d6a4f';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.backgroundColor = '';
+                    form.reset();
+                }, 2500);
+            });
+        }
+
+        // =====================
+        // Hide scroll indicator on scroll
+        // =====================
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        if (scrollIndicator) {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 200) {
+                    scrollIndicator.style.opacity = '0';
+                    scrollIndicator.style.transition = 'opacity 0.5s ease';
+                } else {
+                    scrollIndicator.style.opacity = '1';
+                }
+            }, { passive: true });
+        }
+
+    })();
+    </script>
+
+</body>
+</html>
