@@ -1,1 +1,904 @@
-{"id":"/demo-piasecki-avocat/index.html","path":"/demo-piasecki-avocat/index.html","sha":"82f374b88be9bbcd14f2b731a4bc9909e3178cde","mime_type":"text/html","size":69049,"site_id":"4c3dbfa6-f3d7-495d-8a15-3db158b88252","deploy_id":"69af858c2e4a894555af51ff"}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabinet Piasecki — Avocat Urbanisme & Droit Public | Toulon, Var</title>
+    <meta name="description" content="Maitre Julien Piasecki, avocat et docteur en droit public au barreau de Toulon. Urbanisme, immobilier, commande publique, droit des affaires et droit equin dans le Var et toute la region PACA.">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Cabinet Piasecki — Avocat Urbanisme & Droit Public | Toulon">
+    <meta property="og:description" content="Docteur en droit, formateur QUALIOPI. Urbanisme, droit public, immobilier, commande publique en PACA.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Schema.org LegalService -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LegalService",
+        "name": "Cabinet d'Avocat Piasecki Julien",
+        "description": "Avocat et docteur en droit public au barreau de Toulon, specialise en urbanisme, immobilier, commande publique, droit des affaires et droit equin.",
+        "url": "https://www.cabinetpiasecki.fr/",
+        "telephone": "+33430220356",
+        "email": "contact@cabinet-piasecki.fr",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "865 avenue de Bruxelles",
+            "addressLocality": "La Seyne-sur-Mer",
+            "postalCode": "83500",
+            "addressCountry": "FR"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "43.0857",
+            "longitude": "5.8773"
+        },
+        "areaServed": [
+            {"@type": "State", "name": "Provence-Alpes-Cote d'Azur"},
+            {"@type": "City", "name": "Toulon"},
+            {"@type": "City", "name": "La Seyne-sur-Mer"}
+        ],
+        "priceRange": "$$",
+        "openingHours": "Mo-Fr 09:00-18:00",
+        "hasCredential": [
+            {"@type": "EducationalOccupationalCredential", "credentialCategory": "Doctorat en droit public"},
+            {"@type": "EducationalOccupationalCredential", "credentialCategory": "Certification QUALIOPI"}
+        ]
+    }
+    </script>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        garrigue: {
+                            50: '#f4f7f2',
+                            100: '#e5ece1',
+                            200: '#cddac5',
+                            300: '#a8bf9b',
+                            400: '#7da06d',
+                            500: '#5a8249',
+                            600: '#466838',
+                            700: '#38532e',
+                            800: '#2e4327',
+                            900: '#273822',
+                            950: '#121e0f'
+                        },
+                        calcaire: {
+                            50: '#fdfbf7',
+                            100: '#f9f3e8',
+                            200: '#f2e4cc',
+                            300: '#e8cfa6',
+                            400: '#ddb47d',
+                            500: '#d49d5e',
+                            600: '#c6854a',
+                            700: '#a56a3e',
+                            800: '#855538',
+                            900: '#6c4730',
+                            950: '#3a2318'
+                        },
+                        pierre: {
+                            50: '#faf9f7',
+                            100: '#f0ede8',
+                            200: '#e0dad0',
+                            300: '#ccc3b3',
+                            400: '#b5a894',
+                            500: '#a5957d',
+                            600: '#988571',
+                            700: '#7f6e5f',
+                            800: '#685b50',
+                            900: '#564c43',
+                            950: '#2d2722'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['DM Serif Display', 'serif'],
+                        body: ['Source Sans 3', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        * { font-family: 'Source Sans 3', sans-serif; }
+        h1, h2, h3, h4, .font-heading { font-family: 'DM Serif Display', serif; }
+
+        /* Scroll smooth */
+        html { scroll-behavior: smooth; }
+
+        /* Hero diagonal clip */
+        .hero-clip {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        @media (max-width: 768px) {
+            .hero-clip {
+                clip-path: polygon(0 0, 100% 0, 100% 93%, 0 100%);
+            }
+        }
+
+        /* Fade-in animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .fade-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .fade-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .fade-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .fade-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Garrigue texture overlay */
+        .garrigue-texture {
+            background-image:
+                radial-gradient(ellipse at 20% 50%, rgba(90, 130, 73, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(212, 157, 94, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(90, 130, 73, 0.05) 0%, transparent 50%);
+        }
+
+        /* Hover lift cards */
+        .card-lift {
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+        .card-lift:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(39, 56, 34, 0.12);
+        }
+
+        /* Bento grid expertise */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: auto;
+            gap: 1rem;
+        }
+        .bento-1 { grid-column: span 7; }
+        .bento-2 { grid-column: span 5; }
+        .bento-3 { grid-column: span 5; }
+        .bento-4 { grid-column: span 7; }
+        .bento-5 { grid-column: span 4; }
+        .bento-6 { grid-column: span 4; }
+        .bento-7 { grid-column: span 4; }
+
+        @media (max-width: 768px) {
+            .bento-grid { grid-template-columns: 1fr; }
+            .bento-1, .bento-2, .bento-3, .bento-4,
+            .bento-5, .bento-6, .bento-7 { grid-column: span 1; }
+        }
+
+        /* Testimonial glassmorphism */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* FAQ accordion */
+        details summary {
+            cursor: pointer;
+            list-style: none;
+        }
+        details summary::-webkit-details-marker { display: none; }
+        details[open] summary .faq-chevron {
+            transform: rotate(180deg);
+        }
+        .faq-chevron {
+            transition: transform 0.3s ease;
+        }
+
+        /* Nav scroll */
+        .nav-scrolled {
+            background: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(39, 56, 34, 0.08);
+        }
+
+        /* CTA pulse */
+        @keyframes gentle-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(90, 130, 73, 0.4); }
+            50% { box-shadow: 0 0 0 8px rgba(90, 130, 73, 0); }
+        }
+        .cta-pulse:hover {
+            animation: gentle-pulse 2s infinite;
+        }
+
+        /* Topographic pattern */
+        .topo-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%235a8249' stroke-opacity='0.04' stroke-width='1'%3E%3Cpath d='M30 0c16.569 0 30 13.431 30 30 0 16.569-13.431 30-30 30C13.431 60 0 46.569 0 30 0 13.431 13.431 0 30 0zm0 10c11.046 0 20 8.954 20 20s-8.954 20-20 20S10 41.046 10 30s8.954-20 20-20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-calcaire-50 text-pierre-950 antialiased">
+
+    <!-- ============ NAVIGATION ============ -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3">
+                    <img src="https://www.cabinetpiasecki.fr/templates/cabinetpiasecki/img/interface/logo.png" alt="Logo Cabinet Piasecki" class="h-10 md:h-12 w-auto">
+                </a>
+                <!-- Desktop nav -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#expertises" class="text-sm font-medium text-pierre-700 hover:text-garrigue-600 transition-colors">Expertises</a>
+                    <a href="#apropos" class="text-sm font-medium text-pierre-700 hover:text-garrigue-600 transition-colors">Le Cabinet</a>
+                    <a href="#temoignages" class="text-sm font-medium text-pierre-700 hover:text-garrigue-600 transition-colors">Avis</a>
+                    <a href="#faq" class="text-sm font-medium text-pierre-700 hover:text-garrigue-600 transition-colors">FAQ</a>
+                    <a href="#contact" class="inline-flex items-center gap-2 bg-garrigue-600 hover:bg-garrigue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-all cta-pulse">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        Prendre rendez-vous
+                    </a>
+                </div>
+                <!-- Mobile hamburger -->
+                <button id="mobile-toggle" class="md:hidden p-2 rounded-lg hover:bg-calcaire-100 transition-colors">
+                    <svg class="w-6 h-6 text-pierre-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path id="hamburger-icon" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-calcaire-50/95 backdrop-blur-lg border-t border-calcaire-200">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#expertises" class="block py-2 text-pierre-700 font-medium">Expertises</a>
+                <a href="#apropos" class="block py-2 text-pierre-700 font-medium">Le Cabinet</a>
+                <a href="#temoignages" class="block py-2 text-pierre-700 font-medium">Avis</a>
+                <a href="#faq" class="block py-2 text-pierre-700 font-medium">FAQ</a>
+                <a href="#contact" class="block w-full text-center bg-garrigue-600 text-white font-semibold py-3 rounded-lg">Prendre rendez-vous</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero-clip relative bg-garrigue-900 min-h-[90vh] md:min-h-[95vh] flex items-center overflow-hidden">
+        <!-- Background layers -->
+        <div class="absolute inset-0 topo-pattern opacity-30"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-garrigue-950/90 via-garrigue-900/80 to-garrigue-800/70"></div>
+        <!-- Decorative calcaire accent -->
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-calcaire-500/10 to-transparent"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-0">
+            <div class="grid md:grid-cols-5 gap-8 md:gap-12 items-center">
+                <!-- Text col -->
+                <div class="md:col-span-3 space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-calcaire-500/15 border border-calcaire-400/25 rounded-full px-4 py-1.5">
+                        <span class="w-2 h-2 rounded-full bg-calcaire-400 animate-pulse"></span>
+                        <span class="text-calcaire-200 text-sm font-medium tracking-wide">Barreau de Toulon &mdash; Depuis 2011</span>
+                    </div>
+                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl text-white leading-tight">
+                        Urbanisme, Droit Public<br>
+                        <span class="text-calcaire-300">&amp; Immobilier</span>
+                        <span class="block text-2xl sm:text-3xl lg:text-4xl mt-3 text-calcaire-200/80 font-heading italic">dans le Var et en PACA</span>
+                    </h1>
+                    <p class="text-lg text-calcaire-100/80 max-w-xl leading-relaxed">
+                        Docteur en droit public et formateur certifie QUALIOPI, Maitre Julien Piasecki vous accompagne avec rigueur et proximite sur vos problematiques d'urbanisme, de commande publique, d'immobilier et de droit des affaires.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                        <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-calcaire-500 hover:bg-calcaire-600 text-white font-semibold px-8 py-3.5 rounded-lg text-lg transition-all cta-pulse shadow-lg shadow-calcaire-500/25">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            Consultation gratuite
+                        </a>
+                        <a href="#expertises" class="inline-flex items-center justify-center gap-2 border-2 border-calcaire-300/30 hover:border-calcaire-300/60 text-calcaire-100 font-medium px-8 py-3.5 rounded-lg text-lg transition-all">
+                            Decouvrir nos expertises
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+                        </a>
+                    </div>
+                    <!-- Trust badges -->
+                    <div class="flex flex-wrap items-center gap-6 pt-6 border-t border-calcaire-300/15">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-calcaire-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0z"/></svg>
+                            <span class="text-sm text-calcaire-200/70">Docteur en droit</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-calcaire-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            <span class="text-sm text-calcaire-200/70">Certifie QUALIOPI</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-calcaire-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+                            <span class="text-sm text-calcaire-200/70">Var &amp; toute PACA</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-calcaire-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+                            <span class="text-sm text-calcaire-200/70">15 ans d'experience</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Photo col -->
+                <div class="md:col-span-2 flex justify-center md:justify-end">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-gradient-to-br from-calcaire-400/20 to-garrigue-400/20 rounded-3xl blur-2xl"></div>
+                        <img src="https://www.cabinetpiasecki.fr/public/img/big/IMG3592jpg_64a3cedd781027.27717339.jpg" alt="Maitre Julien Piasecki, avocat en droit de l'urbanisme a Toulon" class="relative w-64 md:w-80 lg:w-96 rounded-2xl shadow-2xl shadow-garrigue-950/40 object-cover aspect-[3/4] border-2 border-calcaire-300/15">
+                        <!-- Floating badge -->
+                        <div class="absolute -bottom-4 -left-4 bg-calcaire-50 rounded-xl px-4 py-3 shadow-lg border border-calcaire-200">
+                            <div class="text-xs text-pierre-500 font-medium uppercase tracking-wider">Specialiste</div>
+                            <div class="font-heading text-garrigue-700 text-lg">Urbanisme &amp; Public</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CHIFFRES BANDE ============ -->
+    <section class="relative -mt-12 md:-mt-16 z-20">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="bg-white rounded-2xl shadow-xl shadow-garrigue-900/8 border border-calcaire-200/50 grid grid-cols-2 md:grid-cols-4 divide-x divide-calcaire-200/50">
+                <div class="p-6 text-center fade-up">
+                    <div class="font-heading text-3xl md:text-4xl text-garrigue-700">15+</div>
+                    <div class="text-sm text-pierre-500 mt-1">Annees au barreau</div>
+                </div>
+                <div class="p-6 text-center fade-up" style="transition-delay: 0.1s">
+                    <div class="font-heading text-3xl md:text-4xl text-garrigue-700">6</div>
+                    <div class="text-sm text-pierre-500 mt-1">Departements PACA</div>
+                </div>
+                <div class="p-6 text-center fade-up" style="transition-delay: 0.2s">
+                    <div class="font-heading text-3xl md:text-4xl text-calcaire-600">Dr.</div>
+                    <div class="text-sm text-pierre-500 mt-1">Docteur en droit</div>
+                </div>
+                <div class="p-6 text-center fade-up" style="transition-delay: 0.3s">
+                    <div class="font-heading text-3xl md:text-4xl text-calcaire-600">
+                        <svg class="w-9 h-9 mx-auto text-calcaire-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    </div>
+                    <div class="text-sm text-pierre-500 mt-1">Certifie QUALIOPI</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ EXPERTISES BENTO ============ -->
+    <section id="expertises" class="py-20 md:py-28 garrigue-texture">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14 fade-up">
+                <span class="inline-block text-garrigue-600 text-sm font-semibold uppercase tracking-widest mb-3">Domaines d'intervention</span>
+                <h2 class="font-heading text-3xl md:text-5xl text-pierre-900">Une expertise pluridisciplinaire<br><span class="text-calcaire-600">ancree dans le territoire</span></h2>
+                <p class="mt-4 text-pierre-500 text-lg max-w-2xl mx-auto">Du permis de construire au contentieux administratif, en passant par la commande publique et le droit equin, Maitre Piasecki couvre un spectre unique d'expertises juridiques.</p>
+            </div>
+
+            <div class="bento-grid">
+                <!-- Urbanisme - large -->
+                <div class="bento-1 card-lift bg-white rounded-2xl p-8 border border-calcaire-200/60 fade-left">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-14 h-14 bg-garrigue-50 rounded-xl flex items-center justify-center">
+                            <svg class="w-7 h-7 text-garrigue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path d="M2 22h20M6 18V7l-2 2M18 18V7l2 2M10 18V4h4v14M8 7h8M8 11h8M8 15h8"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-heading text-xl text-pierre-900">Urbanisme</h3>
+                            <p class="mt-2 text-pierre-500 leading-relaxed">Autorisations d'urbanisme (permis de construire, declarations prealables), contentieux des PLU, recours contre les refus, regularisation de constructions irregulieres. Accompagnement des promoteurs, particuliers et collectivites sur tout le Var et la region PACA.</p>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="text-xs bg-garrigue-50 text-garrigue-700 px-3 py-1 rounded-full font-medium">Permis de construire</span>
+                                <span class="text-xs bg-garrigue-50 text-garrigue-700 px-3 py-1 rounded-full font-medium">PLU / SCOT</span>
+                                <span class="text-xs bg-garrigue-50 text-garrigue-700 px-3 py-1 rounded-full font-medium">Recours</span>
+                                <span class="text-xs bg-garrigue-50 text-garrigue-700 px-3 py-1 rounded-full font-medium">Regularisation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Droit Public -->
+                <div class="bento-2 card-lift bg-garrigue-700 rounded-2xl p-8 text-white fade-right">
+                    <div class="w-12 h-12 bg-white/15 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-calcaire-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 6l9-4 9 4M3 6v12l9 4M3 6l9 4m9-4v12l-9 4m9-16l-9 4m0 0v12"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-heading text-xl">Droit Public</h3>
+                    <p class="mt-2 text-calcaire-100/80 leading-relaxed">Contentieux administratif, responsabilite de la puissance publique, conseil aux collectivites locales, pouvoir de police du maire.</p>
+                </div>
+
+                <!-- Commande publique -->
+                <div class="bento-3 card-lift bg-white rounded-2xl p-8 border border-calcaire-200/60 fade-left" style="transition-delay: 0.15s">
+                    <div class="w-12 h-12 bg-calcaire-100 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-calcaire-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-heading text-xl text-pierre-900">Commande Publique</h3>
+                    <p class="mt-2 text-pierre-500 leading-relaxed">Elaboration et passation des marches publics, execution, litiges avec les administrations. Formation certifiee QUALIOPI.</p>
+                </div>
+
+                <!-- Immobilier - large -->
+                <div class="bento-4 card-lift bg-gradient-to-br from-calcaire-100 to-calcaire-50 rounded-2xl p-8 border border-calcaire-200/60 fade-right" style="transition-delay: 0.15s">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-sm">
+                            <svg class="w-7 h-7 text-calcaire-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-heading text-xl text-pierre-900">Immobilier &amp; Construction</h3>
+                            <p class="mt-2 text-pierre-600 leading-relaxed">Litiges locatifs (habitation et commercial), ventes immobilieres, droit de la copropriete, contestation d'assemblees generales, vices de construction. Assistance amiable et contentieuse.</p>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="text-xs bg-white text-calcaire-700 px-3 py-1 rounded-full font-medium shadow-sm">Copropriete</span>
+                                <span class="text-xs bg-white text-calcaire-700 px-3 py-1 rounded-full font-medium shadow-sm">Bail commercial</span>
+                                <span class="text-xs bg-white text-calcaire-700 px-3 py-1 rounded-full font-medium shadow-sm">Construction</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Droit des affaires -->
+                <div class="bento-5 card-lift bg-white rounded-2xl p-6 border border-calcaire-200/60 fade-up" style="transition-delay: 0.2s">
+                    <div class="w-11 h-11 bg-garrigue-50 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-5 h-5 text-garrigue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-heading text-lg text-pierre-900">Droit des Affaires</h3>
+                    <p class="mt-2 text-pierre-500 text-sm leading-relaxed">Creation de SCI/SARL, cession de parts, litiges commerciaux.</p>
+                </div>
+
+                <!-- Formation -->
+                <div class="bento-6 card-lift bg-garrigue-50 rounded-2xl p-6 border border-garrigue-200/40 fade-up" style="transition-delay: 0.25s">
+                    <div class="w-11 h-11 bg-garrigue-100 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-5 h-5 text-garrigue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-heading text-lg text-pierre-900">Formation QUALIOPI</h3>
+                    <p class="mt-2 text-pierre-500 text-sm leading-relaxed">Sessions pour entreprises et collectivites, de la decouverte a l'expertise.</p>
+                </div>
+
+                <!-- Droit equin -->
+                <div class="bento-7 card-lift bg-white rounded-2xl p-6 border border-calcaire-200/60 fade-up" style="transition-delay: 0.3s">
+                    <div class="w-11 h-11 bg-calcaire-100 rounded-lg flex items-center justify-center mb-3">
+                        <svg class="w-5 h-5 text-calcaire-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-heading text-lg text-pierre-900">Droit Equin</h3>
+                    <p class="mt-2 text-pierre-500 text-sm leading-relaxed">Vente/achat de chevaux, litiges pensions, responsabilite cavaliers et clubs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ A PROPOS ============ -->
+    <section id="apropos" class="py-20 md:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <!-- Photo side -->
+                <div class="fade-left">
+                    <div class="relative">
+                        <div class="absolute -inset-6 bg-gradient-to-tr from-garrigue-100 to-calcaire-100 rounded-3xl"></div>
+                        <img src="https://www.cabinetpiasecki.fr/public/img/big/IMG3592jpg_64a3cedd781027.27717339.jpg" alt="Maitre Julien Piasecki dans son cabinet" class="relative rounded-2xl shadow-lg w-full object-cover aspect-[4/5]">
+                        <!-- Quote overlay -->
+                        <div class="absolute -bottom-6 -right-6 bg-garrigue-700 text-white rounded-xl p-5 shadow-xl max-w-xs">
+                            <svg class="w-8 h-8 text-calcaire-300/40 mb-2" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11H10v10H0z"/></svg>
+                            <p class="text-sm leading-relaxed text-calcaire-100/90 italic">"L'efficience juridique passe par un suivi constant des evolutions legislatives et une strategie taillée sur mesure."</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Text side -->
+                <div class="fade-right">
+                    <span class="inline-block text-garrigue-600 text-sm font-semibold uppercase tracking-widest mb-3">Votre avocat</span>
+                    <h2 class="font-heading text-3xl md:text-4xl text-pierre-900 mb-6">Maitre Julien Piasecki,<br><span class="text-calcaire-600">Docteur en droit public</span></h2>
+                    <div class="space-y-4 text-pierre-600 leading-relaxed">
+                        <p>Inscrit au barreau de Toulon depuis 2011, Maitre Julien Piasecki est un avocat et docteur en droit public dont l'expertise couvre un spectre unique : de l'urbanisme au droit equin, en passant par la commande publique et l'immobilier.</p>
+                        <p>Son approche allie rigueur academique et pragmatisme de terrain. Formateur certifie QUALIOPI, il intervient aupres des collectivites, entreprises et particuliers dans tout le Var et la region PACA (Bouches-du-Rhone, Alpes-Maritimes, Vaucluse, Hautes-Alpes, Alpes-de-Haute-Provence).</p>
+                        <p>Soucieux de transparence, le cabinet propose une strategie adaptee a chaque dossier : opportunite du recours, probabilite de succes, modes alternatifs de reglement (mediation, conciliation, arbitrage) lorsqu'ils sont pertinents.</p>
+                    </div>
+                    <div class="mt-8 grid grid-cols-2 gap-4">
+                        <div class="bg-calcaire-50 rounded-xl p-4 border border-calcaire-200/40">
+                            <div class="text-xs text-pierre-500 uppercase tracking-wider font-medium">Approche</div>
+                            <div class="font-heading text-lg text-garrigue-700 mt-1">Conseil &amp; Contentieux</div>
+                        </div>
+                        <div class="bg-calcaire-50 rounded-xl p-4 border border-calcaire-200/40">
+                            <div class="text-xs text-pierre-500 uppercase tracking-wider font-medium">Couverture</div>
+                            <div class="font-heading text-lg text-garrigue-700 mt-1">Var &amp; PACA</div>
+                        </div>
+                        <div class="bg-calcaire-50 rounded-xl p-4 border border-calcaire-200/40">
+                            <div class="text-xs text-pierre-500 uppercase tracking-wider font-medium">Formation</div>
+                            <div class="font-heading text-lg text-garrigue-700 mt-1">Certifie QUALIOPI</div>
+                        </div>
+                        <div class="bg-calcaire-50 rounded-xl p-4 border border-calcaire-200/40">
+                            <div class="text-xs text-pierre-500 uppercase tracking-wider font-medium">Veille</div>
+                            <div class="font-heading text-lg text-garrigue-700 mt-1">Blog actif</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ TEMOIGNAGES ============ -->
+    <section id="temoignages" class="py-20 md:py-28 bg-garrigue-800 topo-pattern relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-garrigue-900/50 to-garrigue-800/80"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14 fade-up">
+                <span class="inline-block text-calcaire-300 text-sm font-semibold uppercase tracking-widest mb-3">Ce qu'ils en disent</span>
+                <h2 class="font-heading text-3xl md:text-5xl text-white">La confiance de nos clients</h2>
+                <p class="mt-3 text-calcaire-200/60 text-sm">[Exemple illustratif - Non contractuel]</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Temoignage 1 -->
+                <div class="glass-card rounded-2xl p-7 fade-up">
+                    <div class="flex gap-1 mb-4">
+                        <svg class="w-5 h-5 text-calcaire-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-calcaire-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-calcaire-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-calcaire-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-calcaire-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-pierre-700 leading-relaxed">"Suite a un refus de permis de construire, Maitre Piasecki a su identifier immediatement les vices de la decision. En trois mois, nous avions notre autorisation. Un professionnel rigoureux et reactif."</p>
+                    <div class="mt-5 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-garrigue-100 rounded-full flex items-center justify-center text-garrigue-700 font-semibold text-sm">PL</div>
+                        <div>
+                            <div class="text-sm font-medium text-pierre-800">P. Laurent</div>
+                            <div class="text-xs text-pierre-400">Promoteur immobilier, Toulon</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Temoignage 2 -->
+                <div class="glass-card rounded-2xl p-7 fade-up" style="transition-delay: 0.1s">
+                    <div class="flex gap-1 mb-4">
+                        <svg class="w-5 h-5 text-calcaire-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-calcaire-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-calcaire-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-calcaire-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-calcaire-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-pierre-700 leading-relaxed">"Maitre Piasecki nous a accompagnes sur un marche public complexe. Sa double casquette avocat-formateur apporte une clarte rare dans les explications. Nos equipes ont gagne en autonomie grace a ses formations."</p>
+                    <div class="mt-5 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-calcaire-100 rounded-full flex items-center justify-center text-calcaire-700 font-semibold text-sm">SM</div>
+                        <div>
+                            <div class="text-sm font-medium text-pierre-800">S. Martin</div>
+                            <div class="text-xs text-pierre-400">DGS, commune du littoral varois</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Temoignage 3 -->
+                <div class="glass-card rounded-2xl p-7 fade-up" style="transition-delay: 0.2s">
+                    <div class="flex gap-1 mb-4">
+                        <svg class="w-5 h-5 text-calcaire-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-calcaire-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-calcaire-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-calcaire-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-pierre-300" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-pierre-700 leading-relaxed">"En tant que proprietaire d'un centre equestre, trouver un avocat qui comprend les specificites de notre milieu etait essentiel. Maitre Piasecki connait parfaitement le droit equin et a regle notre litige avec professionnalisme."</p>
+                    <div class="mt-5 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-garrigue-100 rounded-full flex items-center justify-center text-garrigue-700 font-semibold text-sm">CB</div>
+                        <div>
+                            <div class="text-sm font-medium text-pierre-800">C. Beaumont</div>
+                            <div class="text-xs text-pierre-400">Gerante centre equestre, Le Pradet</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section id="faq" class="py-20 md:py-28 garrigue-texture">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14 fade-up">
+                <span class="inline-block text-garrigue-600 text-sm font-semibold uppercase tracking-widest mb-3">Questions frequentes</span>
+                <h2 class="font-heading text-3xl md:text-4xl text-pierre-900">Vos questions, nos reponses</h2>
+                <p class="mt-3 text-pierre-400 text-sm">[Generee automatiquement]</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <details class="group bg-white rounded-xl border border-calcaire-200/60 overflow-hidden fade-up">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer">
+                        <h3 class="font-heading text-lg text-pierre-800 pr-4">Mon permis de construire a ete refuse. Quels sont mes recours ?</h3>
+                        <svg class="w-5 h-5 text-garrigue-600 flex-shrink-0 faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+                    </summary>
+                    <div class="px-6 pb-6 text-pierre-600 leading-relaxed">
+                        <p>Vous disposez de plusieurs voies de recours : le recours gracieux aupres de la mairie (dans les 2 mois), le recours hierarchique aupres du prefet, ou le recours contentieux devant le tribunal administratif. Maitre Piasecki analyse la legalite du refus, identifie les vices eventuels (defaut de motivation, erreur de droit, erreur manifeste d'appreciation) et vous oriente vers la strategie la plus adaptee a votre situation.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ 2 -->
+                <details class="group bg-white rounded-xl border border-calcaire-200/60 overflow-hidden fade-up" style="transition-delay: 0.05s">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer">
+                        <h3 class="font-heading text-lg text-pierre-800 pr-4">Quelle est la difference entre un recours gracieux et un recours contentieux en urbanisme ?</h3>
+                        <svg class="w-5 h-5 text-garrigue-600 flex-shrink-0 faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+                    </summary>
+                    <div class="px-6 pb-6 text-pierre-600 leading-relaxed">
+                        <p>Le recours gracieux est une demande amiable adressee directement a l'autorite qui a pris la decision (generalement le maire). Il est gratuit et rapide. Le recours contentieux est une saisine du tribunal administratif, plus formaliste mais contraignante pour l'administration. Les deux recours peuvent etre exerces en parallele, mais attention aux delais : 2 mois a compter de la notification du refus pour le contentieux.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ 3 -->
+                <details class="group bg-white rounded-xl border border-calcaire-200/60 overflow-hidden fade-up" style="transition-delay: 0.1s">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer">
+                        <h3 class="font-heading text-lg text-pierre-800 pr-4">Mon voisin a construit sans permis. Que puis-je faire ?</h3>
+                        <svg class="w-5 h-5 text-garrigue-600 flex-shrink-0 faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+                    </summary>
+                    <div class="px-6 pb-6 text-pierre-600 leading-relaxed">
+                        <p>Vous pouvez signaler l'infraction a la mairie qui dispose d'un pouvoir de police en matiere d'urbanisme. Si la mairie reste inactive, un recours devant le tribunal administratif est possible. En parallele, devant le juge judiciaire, vous pouvez obtenir des dommages-interets si la construction irreguliere cause un prejudice direct (perte de vue, d'ensoleillement, etc.).</p>
+                    </div>
+                </details>
+
+                <!-- FAQ 4 -->
+                <details class="group bg-white rounded-xl border border-calcaire-200/60 overflow-hidden fade-up" style="transition-delay: 0.15s">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer">
+                        <h3 class="font-heading text-lg text-pierre-800 pr-4">Comment contester un marche public en tant qu'entreprise evincee ?</h3>
+                        <svg class="w-5 h-5 text-garrigue-600 flex-shrink-0 faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+                    </summary>
+                    <div class="px-6 pb-6 text-pierre-600 leading-relaxed">
+                        <p>Si vous estimez que l'attribution d'un marche public est irreguliere, vous pouvez exercer un refere precontractuel (avant la signature) ou un refere contractuel (dans les 31 jours suivant la publication de l'avis d'attribution). Le cabinet vous accompagne dans l'analyse des pieces du marche, l'identification des irregularites et la constitution du dossier contentieux.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ 5 -->
+                <details class="group bg-white rounded-xl border border-calcaire-200/60 overflow-hidden fade-up" style="transition-delay: 0.2s">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer">
+                        <h3 class="font-heading text-lg text-pierre-800 pr-4">Intervenez-vous en dehors du Var ?</h3>
+                        <svg class="w-5 h-5 text-garrigue-600 flex-shrink-0 faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+                    </summary>
+                    <div class="px-6 pb-6 text-pierre-600 leading-relaxed">
+                        <p>Oui, Maitre Piasecki intervient dans toute la region PACA (departements 04, 05, 06, 13, 83 et 84), soit l'ensemble du ressort de la Cour d'Appel d'Aix-en-Provence. Des interventions dans le reste de la France sont egalement possibles selon les dossiers. Les consultations peuvent se faire en cabinet ou en visioconference.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ 6 -->
+                <details class="group bg-white rounded-xl border border-calcaire-200/60 overflow-hidden fade-up" style="transition-delay: 0.25s">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer">
+                        <h3 class="font-heading text-lg text-pierre-800 pr-4">Qu'est-ce que la certification QUALIOPI et en quoi cela concerne mon entreprise ?</h3>
+                        <svg class="w-5 h-5 text-garrigue-600 flex-shrink-0 faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+                    </summary>
+                    <div class="px-6 pb-6 text-pierre-600 leading-relaxed">
+                        <p>QUALIOPI est une certification nationale attestant de la qualite des formations dispensees. En tant que formateur certifie, Maitre Piasecki propose des sessions de formation financeables par les OPCO et les fonds publics. Cela permet a votre entreprise ou collectivite de beneficier de formations juridiques (urbanisme, commande publique, etc.) prises en charge financierement.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ 7 -->
+                <details class="group bg-white rounded-xl border border-calcaire-200/60 overflow-hidden fade-up" style="transition-delay: 0.3s">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer">
+                        <h3 class="font-heading text-lg text-pierre-800 pr-4">J'ai un litige de copropriete. Le cabinet peut-il m'assister ?</h3>
+                        <svg class="w-5 h-5 text-garrigue-600 flex-shrink-0 faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+                    </summary>
+                    <div class="px-6 pb-6 text-pierre-600 leading-relaxed">
+                        <p>Absolument. Maitre Piasecki intervient en droit de la copropriete pour les coproprietaires comme pour les syndicats. Contestation de decisions d'assemblee generale, litiges de charges, travaux non autorises, troubles de voisinage au sein de la copropriete : le cabinet vous assiste tant en phase amiable (mise en demeure, mediation) que contentieuse.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CONTACT / CTA ============ -->
+    <section id="contact" class="py-20 md:py-28 bg-white relative overflow-hidden">
+        <!-- Decorative background -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-garrigue-50 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-calcaire-100 rounded-full blur-3xl opacity-40 translate-y-1/2 -translate-x-1/2"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 lg:gap-20">
+                <!-- Info col -->
+                <div class="fade-left">
+                    <span class="inline-block text-garrigue-600 text-sm font-semibold uppercase tracking-widest mb-3">Prenez contact</span>
+                    <h2 class="font-heading text-3xl md:text-4xl text-pierre-900 mb-6">Echangeons sur<br><span class="text-calcaire-600">votre situation</span></h2>
+                    <p class="text-pierre-600 leading-relaxed mb-8">Un premier entretien permet de cerner vos besoins, d'evaluer l'opportunite d'un recours et de definir ensemble la strategie la plus adaptee. N'hesitez pas a nous contacter par telephone ou par email.</p>
+
+                    <div class="space-y-6">
+                        <!-- Adresse -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-garrigue-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-garrigue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold text-pierre-800">Adresse</div>
+                                <div class="text-pierre-600">865 avenue de Bruxelles<br>83500 La Seyne-sur-Mer</div>
+                            </div>
+                        </div>
+
+                        <!-- Telephone -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-calcaire-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-calcaire-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold text-pierre-800">Telephone</div>
+                                <a href="tel:+33430220356" class="text-garrigue-600 hover:text-garrigue-700 font-medium transition-colors">04 30 22 03 56</a>
+                                <span class="text-pierre-400 mx-2">|</span>
+                                <a href="tel:+33673385970" class="text-garrigue-600 hover:text-garrigue-700 font-medium transition-colors">06 73 38 59 70</a>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-garrigue-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-garrigue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold text-pierre-800">Email</div>
+                                <a href="mailto:contact@cabinet-piasecki.fr" class="text-garrigue-600 hover:text-garrigue-700 font-medium transition-colors">contact@cabinet-piasecki.fr</a>
+                            </div>
+                        </div>
+
+                        <!-- Horaires -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-calcaire-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-calcaire-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold text-pierre-800">Disponibilite</div>
+                                <div class="text-pierre-600">Du lundi au vendredi, 9h - 18h</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Card -->
+                <div class="fade-right">
+                    <div class="bg-gradient-to-br from-garrigue-700 to-garrigue-900 rounded-3xl p-8 md:p-10 text-white shadow-2xl shadow-garrigue-900/20">
+                        <h3 class="font-heading text-2xl md:text-3xl mb-4">Besoin d'un conseil<br>en urbanisme ?</h3>
+                        <p class="text-calcaire-200/80 leading-relaxed mb-8">Votre premier entretien permet de faire le point sur votre situation et d'evaluer les options disponibles. Maitre Piasecki repond personnellement a chaque demande.</p>
+
+                        <div class="space-y-4">
+                            <a href="tel:+33430220356" class="flex items-center justify-center gap-3 w-full bg-calcaire-500 hover:bg-calcaire-400 text-white font-semibold py-4 rounded-xl text-lg transition-all cta-pulse">
+                                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                                Appeler le 04 30 22 03 56
+                            </a>
+                            <a href="mailto:contact@cabinet-piasecki.fr" class="flex items-center justify-center gap-3 w-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold py-4 rounded-xl text-lg transition-all">
+                                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                Envoyer un email
+                            </a>
+                        </div>
+
+                        <div class="mt-8 pt-6 border-t border-white/10">
+                            <div class="flex items-center gap-3 text-sm text-calcaire-200/70">
+                                <svg class="w-5 h-5 text-calcaire-300" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+                                <span>Interventions dans tout le Var et la region PACA<br>(04 - 05 - 06 - 13 - 83 - 84)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="bg-garrigue-950 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Col 1: Logo + info -->
+                <div>
+                    <img src="https://www.cabinetpiasecki.fr/templates/cabinetpiasecki/img/interface/logo.png" alt="Logo Cabinet Piasecki" class="h-12 w-auto mb-4 brightness-0 invert opacity-80">
+                    <p class="text-calcaire-200/60 text-sm leading-relaxed">Cabinet d'avocat specialise en urbanisme, droit public, immobilier et droit des affaires. Docteur en droit, formateur certifie QUALIOPI.</p>
+                    <div class="mt-4 text-calcaire-200/40 text-xs">
+                        Barreau de Toulon &mdash; Serment : 05/01/2011
+                    </div>
+                </div>
+                <!-- Col 2: Expertises -->
+                <div>
+                    <h4 class="font-heading text-lg mb-4 text-calcaire-200">Expertises</h4>
+                    <ul class="space-y-2 text-sm text-calcaire-200/60">
+                        <li><a href="#expertises" class="hover:text-calcaire-300 transition-colors">Urbanisme</a></li>
+                        <li><a href="#expertises" class="hover:text-calcaire-300 transition-colors">Droit public</a></li>
+                        <li><a href="#expertises" class="hover:text-calcaire-300 transition-colors">Commande publique</a></li>
+                        <li><a href="#expertises" class="hover:text-calcaire-300 transition-colors">Immobilier &amp; Construction</a></li>
+                        <li><a href="#expertises" class="hover:text-calcaire-300 transition-colors">Droit des affaires</a></li>
+                        <li><a href="#expertises" class="hover:text-calcaire-300 transition-colors">Droit equin</a></li>
+                        <li><a href="#expertises" class="hover:text-calcaire-300 transition-colors">Formation QUALIOPI</a></li>
+                    </ul>
+                </div>
+                <!-- Col 3: Contact -->
+                <div>
+                    <h4 class="font-heading text-lg mb-4 text-calcaire-200">Contact</h4>
+                    <div class="space-y-3 text-sm text-calcaire-200/60">
+                        <p>865 avenue de Bruxelles<br>83500 La Seyne-sur-Mer</p>
+                        <p>
+                            <a href="tel:+33430220356" class="hover:text-calcaire-300 transition-colors">04 30 22 03 56</a><br>
+                            <a href="tel:+33673385970" class="hover:text-calcaire-300 transition-colors">06 73 38 59 70</a>
+                        </p>
+                        <p><a href="mailto:contact@cabinet-piasecki.fr" class="hover:text-calcaire-300 transition-colors">contact@cabinet-piasecki.fr</a></p>
+                        <p><a href="https://www.cabinetpiasecki.fr/" target="_blank" rel="noopener" class="hover:text-calcaire-300 transition-colors">www.cabinetpiasecki.fr</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Disclaimer AEGIS -->
+        <div class="border-t border-white/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-xs text-calcaire-200/40 text-center md:text-left">Site de demonstration cree par AEGIS Agency &mdash; Non contractuel</p>
+                <p class="text-xs text-calcaire-200/30">&copy; 2026 Demonstration AEGIS Agency. Tous droits reserves.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
