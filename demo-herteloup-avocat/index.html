@@ -1,1 +1,361 @@
-{"id":"/demo-herteloup-avocat/index.html","path":"/demo-herteloup-avocat/index.html","sha":"5f9372ca7b4042563fbd86d3fd82eb2cd43990b1","mime_type":"text/html","size":33705,"site_id":"4c3dbfa6-f3d7-495d-8a15-3db158b88252","deploy_id":"69af858c2e4a894555af51ff"}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me Hugo Herteloup | Avocat Fiscaliste - Marseille</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --forest: #1a3c34; --gold: #c8a951; --gold-light: #f5ecd7; --slate: #2d3436; --cream: #faf8f4; }
+        body { font-family: 'Source Sans 3', sans-serif; color: var(--slate); }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .bg-forest { background-color: var(--forest); }
+        .bg-gold-light { background-color: var(--gold-light); }
+        .bg-cream { background-color: var(--cream); }
+        .text-gold { color: var(--gold); }
+        .text-forest { color: var(--forest); }
+        .border-gold { border-color: var(--gold); }
+        .btn-gold { background-color: var(--gold); color: white; transition: all 0.3s; }
+        .btn-gold:hover { background-color: #b8993f; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(200,169,81,0.3); }
+        .btn-outline-gold { border: 2px solid var(--gold); color: var(--gold); transition: all 0.3s; }
+        .btn-outline-gold:hover { background-color: var(--gold); color: white; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .faq-answer.open { max-height: 500px; }
+        .stat-card { backdrop-filter: blur(10px); background: rgba(255,255,255,0.08); border: 1px solid rgba(200,169,81,0.2); }
+        .service-card { transition: all 0.3s; border-left: 4px solid transparent; }
+        .service-card:hover { border-left-color: var(--gold); transform: translateX(5px); box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
+    </style>
+</head>
+<body class="bg-cream">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-forest/95 backdrop-blur-md shadow-lg">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-serif text-2xl font-bold text-white">Me <span class="text-gold">Herteloup</span></a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#expertise" class="text-white/80 hover:text-gold transition">Expertise</a>
+                <a href="#parcours" class="text-white/80 hover:text-gold transition">Parcours</a>
+                <a href="#temoignages" class="text-white/80 hover:text-gold transition">Temoignages</a>
+                <a href="#faq" class="text-white/80 hover:text-gold transition">FAQ</a>
+                <a href="#contact" class="btn-gold px-5 py-2 rounded-lg text-sm font-semibold">Consultation</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="bg-forest min-h-screen flex items-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-20 right-20 w-96 h-96 border border-gold/20 rounded-full"></div>
+            <div class="absolute bottom-20 left-10 w-64 h-64 border border-gold/10 rounded-full"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 py-32 grid md:grid-cols-2 gap-16 items-center relative z-10">
+            <div>
+                <div class="inline-block bg-gold/10 border border-gold/30 rounded-full px-4 py-1 mb-6">
+                    <span class="text-gold text-sm font-semibold tracking-wide">Avocat fiscaliste a Marseille</span>
+                </div>
+                <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
+                    Maitriser votre <span class="text-gold italic">fiscalite</span>,<br>proteger votre patrimoine
+                </h1>
+                <p class="text-white/70 text-lg md:text-xl leading-relaxed mb-10 max-w-lg">
+                    Controle fiscal, contentieux, optimisation patrimoniale. Une expertise pointue au service des particuliers et des entreprises.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="btn-gold px-8 py-4 rounded-lg text-lg font-semibold text-center">Prendre rendez-vous</a>
+                    <a href="tel:0761094244" class="btn-outline-gold px-8 py-4 rounded-lg text-lg font-semibold text-center">07 61 09 42 44</a>
+                </div>
+            </div>
+            <div class="hidden md:grid grid-cols-2 gap-4">
+                <div class="stat-card rounded-2xl p-6 text-center">
+                    <p class="text-gold font-serif text-4xl font-bold">15+</p>
+                    <p class="text-white/60 text-sm mt-2">Annees d'experience</p>
+                </div>
+                <div class="stat-card rounded-2xl p-6 text-center mt-8">
+                    <p class="text-gold font-serif text-4xl font-bold">500+</p>
+                    <p class="text-white/60 text-sm mt-2">Dossiers fiscaux traites</p>
+                </div>
+                <div class="stat-card rounded-2xl p-6 text-center">
+                    <p class="text-gold font-serif text-4xl font-bold">92%</p>
+                    <p class="text-white/60 text-sm mt-2">Taux de succes contentieux</p>
+                </div>
+                <div class="stat-card rounded-2xl p-6 text-center mt-8">
+                    <p class="text-gold font-serif text-4xl font-bold">24h</p>
+                    <p class="text-white/60 text-sm mt-2">Delai de reponse</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise -->
+    <section id="expertise" class="py-24 bg-cream">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <p class="text-gold font-semibold text-sm tracking-widest uppercase mb-3">Domaines d'expertise</p>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-forest">Une expertise fiscale<br>sur mesure</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 reveal">
+                <div class="service-card bg-white rounded-xl p-8">
+                    <div class="w-12 h-12 bg-gold-light rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-forest mb-3">Controle et verification fiscale</h3>
+                    <p class="text-gray-600 leading-relaxed">Assistance complete lors des controles fiscaux : preparation, representation devant l'administration, negociation des redressements et recours contentieux.</p>
+                </div>
+                <div class="service-card bg-white rounded-xl p-8">
+                    <div class="w-12 h-12 bg-gold-light rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-forest mb-3">Optimisation patrimoniale</h3>
+                    <p class="text-gray-600 leading-relaxed">Structuration fiscale de votre patrimoine, transmission, holding, SCI. Strategies legales pour optimiser votre imposition dans le respect de la legislation.</p>
+                </div>
+                <div class="service-card bg-white rounded-xl p-8">
+                    <div class="w-12 h-12 bg-gold-light rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-forest mb-3">Fiscalite des entreprises</h3>
+                    <p class="text-gray-600 leading-relaxed">Conseil en fiscalite d'entreprise : IS, TVA, CET, restructurations, fusions-acquisitions, fiscalite internationale et prix de transfert.</p>
+                </div>
+                <div class="service-card bg-white rounded-xl p-8">
+                    <div class="w-12 h-12 bg-gold-light rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-forest mb-3">Contentieux fiscal</h3>
+                    <p class="text-gray-600 leading-relaxed">Defense devant les juridictions administratives et judiciaires. Reclamations, recours hierarchiques, saisine du tribunal administratif et de la cour d'appel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parcours -->
+    <section id="parcours" class="py-24 bg-forest text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <p class="text-gold font-semibold text-sm tracking-widest uppercase mb-3">Parcours</p>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold mb-8">Un fiscaliste<br><span class="text-gold italic">d'experience</span></h2>
+                    <p class="text-white/70 text-lg leading-relaxed mb-6">
+                        Diplome en droit fiscal et en droit des affaires, Me Hugo Herteloup exerce comme avocat fiscaliste a Marseille depuis plus de 15 ans. Son expertise couvre l'ensemble du spectre fiscal, du conseil en optimisation au contentieux devant les juridictions.
+                    </p>
+                    <p class="text-white/70 text-lg leading-relaxed mb-8">
+                        Inscrit au Barreau de Marseille, il intervient aupres d'une clientele variee : chefs d'entreprise, professions liberales, cadres dirigeants et particuliers confrontes a des enjeux fiscaux complexes.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white/5 border border-gold/20 rounded-lg p-4">
+                            <p class="text-gold font-bold">Barreau</p>
+                            <p class="text-white/60 text-sm">Marseille</p>
+                        </div>
+                        <div class="bg-white/5 border border-gold/20 rounded-lg p-4">
+                            <p class="text-gold font-bold">Specialisation</p>
+                            <p class="text-white/60 text-sm">Droit fiscal</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <div class="bg-white/5 border border-gold/20 rounded-2xl p-8">
+                        <h3 class="font-serif text-2xl font-bold mb-6 text-gold">Approche</h3>
+                        <div class="space-y-6">
+                            <div class="flex gap-4">
+                                <div class="w-8 h-8 bg-gold/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-gold font-bold text-sm">1</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-white">Analyse approfondie</p>
+                                    <p class="text-white/60 text-sm">Etude complete de votre situation fiscale et identification des enjeux</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-8 h-8 bg-gold/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-gold font-bold text-sm">2</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-white">Strategie sur mesure</p>
+                                    <p class="text-white/60 text-sm">Elaboration d'une strategie adaptee a vos objectifs et contraintes</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-8 h-8 bg-gold/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-gold font-bold text-sm">3</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-white">Execution rigoureuse</p>
+                                    <p class="text-white/60 text-sm">Mise en oeuvre et suivi avec une transparence totale</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Temoignages -->
+    <section id="temoignages" class="py-24 bg-gold-light">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <p class="text-gold font-semibold text-sm tracking-widest uppercase mb-3">Temoignages</p>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-forest">La confiance de nos clients</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 reveal">
+                <div class="bg-white rounded-2xl p-8 shadow-sm">
+                    <div class="flex text-gold mb-4"><span>&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+                    <p class="text-gray-600 italic leading-relaxed mb-6">"Suite a un controle fiscal de mon entreprise, Me Herteloup a su negocier une reduction significative du redressement. Son expertise technique et sa connaissance des procedures m'ont rassure tout au long du processus."</p>
+                    <div class="border-t pt-4"><p class="font-semibold text-forest">Philippe M.</p><p class="text-sm text-gray-500">Dirigeant de PME</p></div>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-sm">
+                    <div class="flex text-gold mb-4"><span>&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+                    <p class="text-gray-600 italic leading-relaxed mb-6">"Me Herteloup m'a accompagne dans la structuration patrimoniale de mes investissements immobiliers. Ses recommandations claires et pragmatiques m'ont permis de realiser des economies fiscales substantielles."</p>
+                    <div class="border-t pt-4"><p class="font-semibold text-forest">Caroline D.</p><p class="text-sm text-gray-500">Investisseur immobilier</p></div>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-sm">
+                    <div class="flex text-gold mb-4"><span>&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+                    <p class="text-gray-600 italic leading-relaxed mb-6">"Excellent avocat fiscaliste. J'avais un litige avec l'administration concernant l'IFI et il a obtenu un degrevement total. Tres professionnel, reactif et pedagogue dans ses explications."</p>
+                    <div class="border-t pt-4"><p class="font-semibold text-forest">Laurent B.</p><p class="text-sm text-gray-500">Medecin specialiste</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-24 bg-cream">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <p class="text-gold font-semibold text-sm tracking-widest uppercase mb-3">FAQ</p>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-forest">Questions frequentes</h2>
+            </div>
+            <div class="space-y-4 reveal">
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-forest">Que faire en cas de controle fiscal ?</span>
+                        <svg class="w-5 h-5 text-gold transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-6"><p class="pb-5 text-gray-600 leading-relaxed">Des la reception d'un avis de verification, contactez immediatement un avocat fiscaliste. Ne repondez pas seul a l'administration. Je vous accompagne a chaque etape : preparation des documents, assistance lors des entretiens et negociation des conclusions.</p></div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-forest">Quels sont vos honoraires ?</span>
+                        <svg class="w-5 h-5 text-gold transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-6"><p class="pb-5 text-gray-600 leading-relaxed">Les honoraires sont fixes en toute transparence des le premier rendez-vous, en fonction de la complexite du dossier. Je propose des forfaits pour les missions de conseil et une tarification au temps passe pour le contentieux, avec un devis prealable detaille.</p></div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-forest">Intervenez-vous sur toute la France ?</span>
+                        <svg class="w-5 h-5 text-gold transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-6"><p class="pb-5 text-gray-600 leading-relaxed">Oui, bien que mon cabinet soit situe a Marseille, j'interviens sur l'ensemble du territoire national. Les consultations peuvent se faire en visioconference et je me deplace pour les audiences devant toutes les juridictions francaises.</p></div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-forest">Quelle est la difference entre optimisation et evasion fiscale ?</span>
+                        <svg class="w-5 h-5 text-gold transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-6"><p class="pb-5 text-gray-600 leading-relaxed">L'optimisation fiscale consiste a utiliser les dispositifs legaux existants pour reduire votre charge fiscale. C'est parfaitement legal. L'evasion fiscale, en revanche, implique la dissimulation de revenus ou l'utilisation de montages artificiels, ce qui constitue une fraude. Mon role est de vous conseiller exclusivement dans le cadre legal.</p></div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="font-semibold text-forest">Comment se deroule une premiere consultation ?</span>
+                        <svg class="w-5 h-5 text-gold transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-6"><p class="pb-5 text-gray-600 leading-relaxed">La premiere consultation dure environ une heure. Nous analysons ensemble votre situation fiscale, identifions les risques et opportunites, et definissons une strategie d'action. Apportez vos derniers avis d'imposition, declarations et toute correspondance avec l'administration fiscale.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16">
+                <div class="reveal">
+                    <p class="text-gold font-semibold text-sm tracking-widest uppercase mb-3">Contact</p>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-forest mb-8">Prenons<br>rendez-vous</h2>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-10">Une question fiscale ? Un controle en cours ? N'attendez pas pour agir. Contactez le cabinet pour une premiere analyse de votre situation.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-gold-light rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-forest">Adresse</p>
+                                <p class="text-gray-600">6 Cours Pierre Puget<br>13006 Marseille</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-gold-light rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-forest">Telephone</p>
+                                <a href="tel:0761094244" class="text-gold hover:underline">07 61 09 42 44</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-gold-light rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-forest">Site web</p>
+                                <a href="https://herteloup-avocat.fr" target="_blank" class="text-gold hover:underline">herteloup-avocat.fr</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <form class="bg-cream rounded-2xl p-8">
+                        <div class="space-y-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <input type="text" placeholder="Nom" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none transition">
+                                <input type="text" placeholder="Prenom" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none transition">
+                            </div>
+                            <input type="email" placeholder="Email" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none transition">
+                            <input type="tel" placeholder="Telephone" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none transition">
+                            <select class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none transition text-gray-500">
+                                <option>Type de dossier</option>
+                                <option>Controle fiscal</option>
+                                <option>Optimisation patrimoniale</option>
+                                <option>Fiscalite entreprise</option>
+                                <option>Contentieux fiscal</option>
+                                <option>Autre</option>
+                            </select>
+                            <textarea rows="4" placeholder="Decrivez brievement votre situation..." class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none transition resize-none"></textarea>
+                            <button type="submit" class="w-full btn-gold py-4 rounded-lg font-semibold text-lg">Demander une consultation</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-forest text-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div>
+                    <p class="font-serif text-xl font-bold">Me Hugo <span class="text-gold">Herteloup</span></p>
+                    <p class="text-white/50 text-sm mt-1">Avocat fiscaliste - Barreau de Marseille</p>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-white/40 text-xs">Demo realisee par AEGIS Agency</p>
+                    <p class="text-white/30 text-xs mt-1">aegis-agency.fr</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(btn) {
+            const answer = btn.nextElementSibling;
+            const icon = btn.querySelector('svg');
+            const isOpen = answer.classList.contains('open');
+            document.querySelectorAll('.faq-answer').forEach(a => { a.classList.remove('open'); });
+            document.querySelectorAll('.faq-answer').forEach(a => { a.previousElementSibling.querySelector('svg').style.transform = ''; });
+            if (!isOpen) { answer.classList.add('open'); icon.style.transform = 'rotate(180deg)'; }
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
