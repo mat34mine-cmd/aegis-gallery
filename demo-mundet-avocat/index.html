@@ -1,1 +1,1093 @@
-{"id":"/demo-mundet-avocat/index.html","path":"/demo-mundet-avocat/index.html","sha":"2e6c282c1d5c12ca7b4569daf14c1658d2ba8d46","mime_type":"text/html","size":32973,"site_id":"4c3dbfa6-f3d7-495d-8a15-3db158b88252","deploy_id":"69af858c2e4a894555af51ff"}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabinet Emmanuel Mundet | Avocat Fiscaliste a Nice</title>
+    <meta name="description" content="Maitre Emmanuel Mundet, avocat fiscaliste a Nice depuis plus de 20 ans. Conseil fiscal, contentieux, controle fiscal, fiscalite internationale. Barreau de Nice.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'nuit': '#0F172A',
+                        'nuit-light': '#1E293B',
+                        'champagne': '#D4A574',
+                        'champagne-light': '#E8C9A0',
+                        'creme': '#FFFBF5',
+                        'creme-warm': '#FFF8EE',
+                        'cuivre': '#B87333',
+                        'cuivre-dark': '#8B5A2B',
+                        'gris-editorial': '#64748B',
+                        'gris-pale': '#F1F5F9',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'Georgia', 'serif'],
+                        'sans': ['Source Sans 3', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* === SCROLL PROGRESS BAR === */
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #B87333, #D4A574, #B87333);
+            z-index: 9999;
+            transition: width 0.1s linear;
+        }
+
+        /* === EDITORIAL TYPOGRAPHY === */
+        .editorial-drop-cap::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            float: left;
+            line-height: 0.75;
+            margin-right: 0.6rem;
+            margin-top: 0.15rem;
+            color: #B87333;
+            font-weight: 700;
+        }
+
+        .editorial-rule {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #B87333, #D4A574);
+        }
+
+        .editorial-rule-long {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #D4A574 20%, #D4A574 80%, transparent);
+        }
+
+        /* === ASYMMETRIC GRID LINES === */
+        .grid-line-vertical {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(180deg, transparent, rgba(212,165,116,0.15) 20%, rgba(212,165,116,0.15) 80%, transparent);
+        }
+
+        /* === REVEAL ANIMATIONS === */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.92);
+            transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-scale.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* === STAGGER DELAYS === */
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-300 { transition-delay: 0.3s; }
+        .delay-400 { transition-delay: 0.4s; }
+        .delay-500 { transition-delay: 0.5s; }
+
+        /* === QUOTE DECORATION === */
+        .quote-mark {
+            font-family: 'Playfair Display', serif;
+            font-size: 8rem;
+            line-height: 1;
+            color: #B87333;
+            opacity: 0.25;
+            position: absolute;
+            top: -1.5rem;
+            left: -0.5rem;
+        }
+
+        /* === FAQ TOGGLE === */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1), padding 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .faq-answer.open {
+            max-height: 400px;
+        }
+        .faq-icon {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .faq-icon.rotated {
+            transform: rotate(45deg);
+        }
+
+        /* === HOVER EFFECTS === */
+        .expertise-card {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+        }
+        .expertise-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(15,23,42,0.12);
+        }
+        .expertise-card .card-line {
+            width: 0;
+            transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .expertise-card:hover .card-line {
+            width: 100%;
+        }
+
+        /* === SUBTLE BG TEXTURE === */
+        .bg-grain {
+            position: relative;
+        }
+        .bg-grain::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* === MARQUEE SECTION === */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-track {
+            animation: marquee 30s linear infinite;
+        }
+
+        /* === NAV SHRINK === */
+        .nav-scrolled {
+            background: rgba(15,23,42,0.97) !important;
+            backdrop-filter: blur(12px);
+            padding-top: 0.75rem !important;
+            padding-bottom: 0.75rem !important;
+        }
+
+        /* === CTA PULSE === */
+        @keyframes pulse-cuivre {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(184,115,51,0.4); }
+            50% { box-shadow: 0 0 0 12px rgba(184,115,51,0); }
+        }
+        .cta-pulse {
+            animation: pulse-cuivre 2.5s infinite;
+        }
+
+        /* === SMOOTH SCROLL === */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* === SELECTION COLOR === */
+        ::selection {
+            background: rgba(184,115,51,0.25);
+            color: #0F172A;
+        }
+    </style>
+</head>
+<body class="bg-creme text-nuit font-sans antialiased">
+
+    <!-- SCROLL PROGRESS -->
+    <div id="scroll-progress"></div>
+
+    <!-- ============================================ -->
+    <!-- NAVIGATION - Editorial thin bar             -->
+    <!-- ============================================ -->
+    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-8 h-8 border-2 border-champagne flex items-center justify-center">
+                    <span class="font-serif text-champagne text-sm font-bold">M</span>
+                </div>
+                <div class="hidden sm:block">
+                    <span class="font-serif text-white text-lg tracking-wide">Mundet</span>
+                    <span class="text-champagne text-[10px] uppercase tracking-[0.25em] block -mt-1">Avocat Fiscaliste</span>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#expertises" class="text-white/70 hover:text-champagne text-sm tracking-wide transition-colors">Expertises</a>
+                <a href="#a-propos" class="text-white/70 hover:text-champagne text-sm tracking-wide transition-colors">Le Cabinet</a>
+                <a href="#temoignages" class="text-white/70 hover:text-champagne text-sm tracking-wide transition-colors">Temoignages</a>
+                <a href="#faq" class="text-white/70 hover:text-champagne text-sm tracking-wide transition-colors">FAQ</a>
+                <a href="#contact" class="border border-champagne text-champagne hover:bg-champagne hover:text-nuit px-5 py-2 text-sm tracking-wide transition-all duration-300">Contact</a>
+            </div>
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white" aria-label="Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-nuit/98 backdrop-blur-md border-t border-white/10 mt-4">
+            <div class="px-6 py-6 flex flex-col gap-4">
+                <a href="#expertises" class="text-white/80 hover:text-champagne text-base transition-colors mobile-link">Expertises</a>
+                <a href="#a-propos" class="text-white/80 hover:text-champagne text-base transition-colors mobile-link">Le Cabinet</a>
+                <a href="#temoignages" class="text-white/80 hover:text-champagne text-base transition-colors mobile-link">Temoignages</a>
+                <a href="#faq" class="text-white/80 hover:text-champagne text-base transition-colors mobile-link">FAQ</a>
+                <a href="#contact" class="border border-champagne text-champagne text-center py-3 hover:bg-champagne hover:text-nuit transition-all mobile-link">Prendre rendez-vous</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================ -->
+    <!-- HERO - Editorial Magazine grand format       -->
+    <!-- Full-bleed dark, asymmetric 40/60            -->
+    <!-- ============================================ -->
+    <header class="relative min-h-screen bg-nuit overflow-hidden flex items-end bg-grain">
+        <!-- Decorative grid lines -->
+        <div class="grid-line-vertical" style="left: 40%;"></div>
+        <div class="grid-line-vertical" style="left: 8%;"></div>
+        <div class="grid-line-vertical" style="right: 8%;"></div>
+
+        <!-- Background image with overlay -->
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&q=80&auto=format" alt="" class="w-full h-full object-cover opacity-[0.07]" loading="eager">
+        </div>
+
+        <!-- Large decorative year -->
+        <div class="absolute top-32 right-8 lg:right-16">
+            <span class="font-serif text-[8rem] lg:text-[14rem] font-bold text-white/[0.03] leading-none select-none">2004</span>
+        </div>
+
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 pb-16 lg:pb-24 pt-32">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-end">
+                <!-- LEFT COLUMN 40% - Issue label + Title -->
+                <div class="lg:col-span-5">
+                    <!-- Magazine issue label -->
+                    <div class="reveal mb-8">
+                        <span class="text-champagne text-[11px] uppercase tracking-[0.35em] font-sans font-600">Barreau de Nice &mdash; Depuis 2004</span>
+                        <div class="editorial-rule mt-3"></div>
+                    </div>
+                    <!-- Main Title -->
+                    <h1 class="reveal delay-100">
+                        <span class="font-serif text-white text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.9] block">
+                            Droit
+                        </span>
+                        <span class="font-serif text-champagne text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold italic leading-[0.9] block mt-1">
+                            Fiscal
+                        </span>
+                    </h1>
+                    <!-- Subtitle line -->
+                    <p class="reveal delay-200 text-white/50 font-sans text-lg sm:text-xl mt-6 leading-relaxed max-w-md">
+                        Cabinet Emmanuel Mundet<br>
+                        Avocat fiscaliste a Nice
+                    </p>
+                </div>
+
+                <!-- RIGHT COLUMN 60% - Editorial lead text -->
+                <div class="lg:col-span-7 lg:pl-12 lg:border-l lg:border-white/10">
+                    <div class="reveal delay-200">
+                        <p class="text-white/80 font-sans text-lg sm:text-xl leading-relaxed max-w-xl">
+                            Avec plus de <strong class="text-champagne font-semibold">20 ans d'experience</strong> en droit fiscal, 
+                            Maitre Emmanuel Mundet defend les interets des particuliers et des entreprises face aux 
+                            complexites de la fiscalite francaise et internationale.
+                        </p>
+                        <p class="text-white/50 font-sans text-base mt-4 max-w-xl leading-relaxed">
+                            Conseil, contentieux, controle fiscal, declarations, regularisation, fiscalite internationale 
+                            &mdash; un accompagnement complet et sur-mesure depuis Nice.
+                        </p>
+                    </div>
+
+                    <!-- CTAs -->
+                    <div class="reveal delay-300 flex flex-col sm:flex-row gap-4 mt-10">
+                        <a href="#contact" class="cta-pulse inline-flex items-center justify-center bg-cuivre hover:bg-cuivre-dark text-white px-8 py-4 font-sans font-600 text-sm uppercase tracking-[0.15em] transition-all duration-300">
+                            Prendre rendez-vous
+                        </a>
+                        <a href="tel:0493620578" class="inline-flex items-center justify-center border border-white/30 hover:border-champagne text-white/80 hover:text-champagne px-8 py-4 font-sans text-sm tracking-wide transition-all duration-300">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            04 93 62 05 78
+                        </a>
+                    </div>
+
+                    <!-- Key figures - inline editorial style -->
+                    <div class="reveal delay-400 flex gap-10 mt-12 pt-8 border-t border-white/10">
+                        <div>
+                            <span class="font-serif text-champagne text-3xl lg:text-4xl font-bold">20+</span>
+                            <span class="block text-white/40 text-xs uppercase tracking-[0.2em] mt-1">Annees</span>
+                        </div>
+                        <div>
+                            <span class="font-serif text-champagne text-3xl lg:text-4xl font-bold">6</span>
+                            <span class="block text-white/40 text-xs uppercase tracking-[0.2em] mt-1">Expertises</span>
+                        </div>
+                        <div>
+                            <span class="font-serif text-champagne text-3xl lg:text-4xl font-bold">PACA</span>
+                            <span class="block text-white/40 text-xs uppercase tracking-[0.2em] mt-1">& France</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+            <span class="text-white/30 text-[10px] uppercase tracking-[0.3em]">Decouvrir</span>
+            <div class="w-px h-8 bg-gradient-to-b from-champagne/50 to-transparent"></div>
+        </div>
+    </header>
+
+    <!-- ============================================ -->
+    <!-- MARQUEE - Expertise keywords                -->
+    <!-- ============================================ -->
+    <div class="bg-nuit-light py-4 overflow-hidden border-y border-white/5">
+        <div class="flex whitespace-nowrap marquee-track">
+            <span class="text-white/20 font-serif text-xl italic mx-8">Conseil Fiscal</span>
+            <span class="text-champagne/30 mx-4">&bull;</span>
+            <span class="text-white/20 font-serif text-xl italic mx-8">Contentieux Fiscal</span>
+            <span class="text-champagne/30 mx-4">&bull;</span>
+            <span class="text-white/20 font-serif text-xl italic mx-8">Controle Fiscal</span>
+            <span class="text-champagne/30 mx-4">&bull;</span>
+            <span class="text-white/20 font-serif text-xl italic mx-8">Declarations Fiscales</span>
+            <span class="text-champagne/30 mx-4">&bull;</span>
+            <span class="text-white/20 font-serif text-xl italic mx-8">Avoirs Etrangers</span>
+            <span class="text-champagne/30 mx-4">&bull;</span>
+            <span class="text-white/20 font-serif text-xl italic mx-8">Fiscalite Internationale</span>
+            <span class="text-champagne/30 mx-4">&bull;</span>
+            <!-- Duplicate for seamless loop -->
+            <span class="text-white/20 font-serif text-xl italic mx-8">Conseil Fiscal</span>
+            <span class="text-champagne/30 mx-4">&bull;</span>
+            <span class="text-white/20 font-serif text-xl italic mx-8">Contentieux Fiscal</span>
+            <span class="text-champagne/30 mx-4">&bull;</span>
+            <span class="text-white/20 font-serif text-xl italic mx-8">Controle Fiscal</span>
+            <span class="text-champagne/30 mx-4">&bull;</span>
+            <span class="text-white/20 font-serif text-xl italic mx-8">Declarations Fiscales</span>
+            <span class="text-champagne/30 mx-4">&bull;</span>
+            <span class="text-white/20 font-serif text-xl italic mx-8">Avoirs Etrangers</span>
+            <span class="text-champagne/30 mx-4">&bull;</span>
+            <span class="text-white/20 font-serif text-xl italic mx-8">Fiscalite Internationale</span>
+            <span class="text-champagne/30 mx-4">&bull;</span>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- EXPERTISES - Colonnes decalees editorial     -->
+    <!-- Asymmetric staggered cards                   -->
+    <!-- ============================================ -->
+    <section id="expertises" class="relative py-20 lg:py-32 bg-creme bg-grain overflow-hidden">
+        <!-- Section label -->
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4">
+                <!-- LEFT 40% - Section intro -->
+                <div class="lg:col-span-5 reveal-left">
+                    <span class="text-cuivre text-[11px] uppercase tracking-[0.35em] font-sans font-600">Nos domaines d'intervention</span>
+                    <div class="editorial-rule mt-3 mb-6"></div>
+                    <h2 class="font-serif text-nuit text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.05]">
+                        Six expertises<br>
+                        <span class="text-cuivre italic">fiscales</span>
+                    </h2>
+                    <p class="text-gris-editorial text-lg mt-6 leading-relaxed max-w-md">
+                        Le Cabinet Mundet couvre l'ensemble du spectre fiscal, du conseil strategique 
+                        a la defense contentieuse, pour les particuliers comme pour les entreprises.
+                    </p>
+                </div>
+
+                <!-- RIGHT 60% - Staggered expertise cards -->
+                <div class="lg:col-span-7 lg:pl-8">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Card 1 - Conseil Fiscal -->
+                        <div class="expertise-card reveal delay-100 bg-white border border-gray-100 p-8 relative group">
+                            <div class="card-line h-[2px] bg-gradient-to-r from-cuivre to-champagne absolute top-0 left-0"></div>
+                            <div class="w-12 h-12 border border-champagne/40 flex items-center justify-center mb-5">
+                                <svg class="w-5 h-5 text-cuivre" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                            </div>
+                            <h3 class="font-serif text-nuit text-xl font-semibold mb-3">Conseil Fiscal</h3>
+                            <p class="text-gris-editorial text-sm leading-relaxed">Analyse de votre situation, strategies d'optimisation et solutions sur mesure pour la gestion fiscale de votre entreprise ou patrimoine personnel.</p>
+                        </div>
+
+                        <!-- Card 2 - Contentieux Fiscal (decale vers le bas) -->
+                        <div class="expertise-card reveal delay-200 bg-white border border-gray-100 p-8 relative group sm:mt-12">
+                            <div class="card-line h-[2px] bg-gradient-to-r from-cuivre to-champagne absolute top-0 left-0"></div>
+                            <div class="w-12 h-12 border border-champagne/40 flex items-center justify-center mb-5">
+                                <svg class="w-5 h-5 text-cuivre" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+                            </div>
+                            <h3 class="font-serif text-nuit text-xl font-semibold mb-3">Contentieux Fiscal</h3>
+                            <p class="text-gris-editorial text-sm leading-relaxed">Defense de vos droits face a l'administration fiscale. Strategie adaptee au fond et a la procedure pour proteger vos interets.</p>
+                        </div>
+
+                        <!-- Card 3 - Controle Fiscal -->
+                        <div class="expertise-card reveal delay-300 bg-white border border-gray-100 p-8 relative group">
+                            <div class="card-line h-[2px] bg-gradient-to-r from-cuivre to-champagne absolute top-0 left-0"></div>
+                            <div class="w-12 h-12 border border-champagne/40 flex items-center justify-center mb-5">
+                                <svg class="w-5 h-5 text-cuivre" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                            </div>
+                            <h3 class="font-serif text-nuit text-xl font-semibold mb-3">Controle Fiscal</h3>
+                            <p class="text-gris-editorial text-sm leading-relaxed">Accompagnement complet lors des verifications fiscales. Preparation, assistance et suivi a chaque etape du processus de controle.</p>
+                        </div>
+
+                        <!-- Card 4 - Declarations (decale) -->
+                        <div class="expertise-card reveal delay-400 bg-white border border-gray-100 p-8 relative group sm:mt-12">
+                            <div class="card-line h-[2px] bg-gradient-to-r from-cuivre to-champagne absolute top-0 left-0"></div>
+                            <div class="w-12 h-12 border border-champagne/40 flex items-center justify-center mb-5">
+                                <svg class="w-5 h-5 text-cuivre" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            </div>
+                            <h3 class="font-serif text-nuit text-xl font-semibold mb-3">Declarations Fiscales</h3>
+                            <p class="text-gris-editorial text-sm leading-relaxed">Assistance dans la preparation et la soumission de vos declarations, en veillant a leur conformite et a l'optimisation de votre situation.</p>
+                        </div>
+
+                        <!-- Card 5 - Regularisation -->
+                        <div class="expertise-card reveal delay-300 bg-white border border-gray-100 p-8 relative group">
+                            <div class="card-line h-[2px] bg-gradient-to-r from-cuivre to-champagne absolute top-0 left-0"></div>
+                            <div class="w-12 h-12 border border-champagne/40 flex items-center justify-center mb-5">
+                                <svg class="w-5 h-5 text-cuivre" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                            <h3 class="font-serif text-nuit text-xl font-semibold mb-3">Avoirs Etrangers</h3>
+                            <p class="text-gris-editorial text-sm leading-relaxed">Regularisation de comptes et avoirs detenus a l'etranger. Conseils precis et strategie adaptee pour une mise en conformite optimale.</p>
+                        </div>
+
+                        <!-- Card 6 - Fiscalite Internationale (decale) -->
+                        <div class="expertise-card reveal delay-400 bg-white border border-gray-100 p-8 relative group sm:mt-12">
+                            <div class="card-line h-[2px] bg-gradient-to-r from-cuivre to-champagne absolute top-0 left-0"></div>
+                            <div class="w-12 h-12 border border-champagne/40 flex items-center justify-center mb-5">
+                                <svg class="w-5 h-5 text-cuivre" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+                            </div>
+                            <h3 class="font-serif text-nuit text-xl font-semibold mb-3">Fiscalite Internationale</h3>
+                            <p class="text-gris-editorial text-sm leading-relaxed">Accompagnement des residents francais avec activites a l'etranger et des residents etrangers souhaitant s'implanter en France.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- A PROPOS - Narratif editorial, drop cap      -->
+    <!-- Asymmetric 60/40 reversed                    -->
+    <!-- ============================================ -->
+    <section id="a-propos" class="relative py-20 lg:py-32 bg-nuit overflow-hidden bg-grain">
+        <!-- Grid lines -->
+        <div class="grid-line-vertical" style="left: 60%;"></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-4 items-center">
+                <!-- LEFT 60% - Narrative text -->
+                <div class="lg:col-span-7 lg:pr-16">
+                    <div class="reveal-left">
+                        <span class="text-champagne text-[11px] uppercase tracking-[0.35em] font-sans font-600">Le Cabinet</span>
+                        <div class="editorial-rule mt-3 mb-8"></div>
+                    </div>
+
+                    <h2 class="reveal-left delay-100 font-serif text-white text-3xl lg:text-4xl xl:text-5xl font-bold leading-[1.1] mb-8">
+                        Une expertise forgee par <span class="text-champagne italic">deux decennies</span> de pratique fiscale
+                    </h2>
+
+                    <div class="reveal delay-200 editorial-drop-cap text-white/80 font-sans text-lg leading-[1.85] mb-6">
+                        Installe au coeur de Nice, sur le prestigieux Boulevard Victor Hugo, le cabinet de Maitre Emmanuel Mundet est une reference en matiere de droit fiscal sur la Cote d'Azur. Inscrit au Barreau de Nice, il met son expertise au service d'une clientele exigeante de particuliers et de professionnels depuis plus de vingt ans.
+                    </div>
+
+                    <p class="reveal delay-300 text-white/60 font-sans text-base leading-relaxed mb-6">
+                        Le droit fiscal est une branche essentielle du droit des affaires et du droit patrimonial. Pour le chef d'entreprise, il constitue une preoccupation majeure pour le developpement de son activite. Pour le particulier, il represente une problematique tout aussi complexe, tant au niveau de la transmission de son patrimoine que de la regularite de ses obligations fiscales.
+                    </p>
+
+                    <p class="reveal delay-400 text-white/60 font-sans text-base leading-relaxed">
+                        Maitre Mundet assure une communication claire et reguliere, vous tenant informe de toutes les diligences entreprises et des resultats obtenus. Grace a son soutien, vous pouvez aborder chaque echeance fiscale en toute tranquillite.
+                    </p>
+
+                    <!-- Signature line -->
+                    <div class="reveal delay-500 mt-10 pt-8 border-t border-white/10 flex items-center gap-6">
+                        <div>
+                            <span class="font-serif text-champagne text-xl italic">Emmanuel Mundet</span>
+                            <span class="block text-white/40 text-sm mt-1">Avocat au Barreau de Nice</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT 40% - Info cards stacked -->
+                <div class="lg:col-span-5">
+                    <div class="space-y-6">
+                        <!-- Info card 1 -->
+                        <div class="reveal-right delay-100 bg-nuit-light border border-white/5 p-8">
+                            <span class="text-champagne/60 text-[10px] uppercase tracking-[0.3em]">Adresse</span>
+                            <p class="text-white/90 font-sans text-base mt-3 leading-relaxed">
+                                8 Boulevard Victor Hugo<br>
+                                Residence &laquo; Le Metropole &raquo; &mdash; Entree B<br>
+                                06000 Nice
+                            </p>
+                            <div class="mt-4 pt-4 border-t border-white/5">
+                                <span class="text-white/40 text-sm">Tramway L2 &mdash; Arret Jean Medecin</span>
+                            </div>
+                        </div>
+
+                        <!-- Info card 2 -->
+                        <div class="reveal-right delay-200 bg-nuit-light border border-white/5 p-8">
+                            <span class="text-champagne/60 text-[10px] uppercase tracking-[0.3em]">Rayonnement</span>
+                            <p class="text-white/90 font-sans text-base mt-3 leading-relaxed">
+                                Nice &bull; Cote d'Azur &bull; Region PACA
+                            </p>
+                            <p class="text-white/50 text-sm mt-2">
+                                Interventions sur l'ensemble du territoire francais pour les dossiers de fiscalite complexes.
+                            </p>
+                        </div>
+
+                        <!-- Info card 3 -->
+                        <div class="reveal-right delay-300 bg-nuit-light border border-white/5 p-8">
+                            <span class="text-champagne/60 text-[10px] uppercase tracking-[0.3em]">Reseau</span>
+                            <p class="text-white/90 font-sans text-base mt-3 leading-relaxed">
+                                Experts-comptables, notaires, huissiers de justice, avocats specialises &mdash; un reseau de referents dans les domaines connexes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- TEMOIGNAGES - Citations pleine largeur       -->
+    <!-- Editorial magazine full-bleed quotes          -->
+    <!-- ============================================ -->
+    <section id="temoignages" class="relative py-20 lg:py-32 bg-creme-warm overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Section header -->
+            <div class="text-center mb-16 reveal">
+                <span class="text-cuivre text-[11px] uppercase tracking-[0.35em] font-sans font-600">Ils nous font confiance</span>
+                <div class="editorial-rule mx-auto mt-3 mb-6"></div>
+                <h2 class="font-serif text-nuit text-3xl lg:text-5xl font-bold">Paroles de <span class="text-cuivre italic">clients</span></h2>
+            </div>
+
+            <!-- Testimonial 1 - Full width editorial -->
+            <div class="reveal-scale delay-100 mb-20">
+                <div class="relative max-w-4xl mx-auto">
+                    <div class="editorial-rule-long w-full mb-10"></div>
+                    <div class="relative pl-4 lg:pl-0">
+                        <span class="quote-mark">&ldquo;</span>
+                        <blockquote class="font-serif text-nuit text-2xl lg:text-3xl xl:text-4xl leading-[1.35] font-medium pl-2 lg:pl-16 pt-8">
+                            Maitre Mundet a su gerer mon controle fiscal avec une precision et un sang-froid remarquables. Son expertise m'a permis d'obtenir un degrevement significatif. Je recommande sans aucune hesitation.
+                        </blockquote>
+                    </div>
+                    <div class="flex items-center gap-4 mt-8 pl-2 lg:pl-16">
+                        <div class="w-12 h-[1px] bg-cuivre"></div>
+                        <div>
+                            <span class="text-nuit font-sans font-semibold text-sm">Laurent M.</span>
+                            <span class="text-gris-editorial text-sm ml-2">&mdash; Chef d'entreprise, Nice</span>
+                        </div>
+                    </div>
+                    <div class="editorial-rule-long w-full mt-10"></div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 - Asymmetric layout -->
+            <div class="reveal-scale delay-200 mb-20">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-6xl mx-auto">
+                    <div class="lg:col-span-4 flex items-center">
+                        <div class="bg-nuit p-8 w-full">
+                            <span class="font-serif text-champagne text-5xl lg:text-6xl font-bold block">100%</span>
+                            <span class="text-white/50 text-sm uppercase tracking-[0.2em] block mt-2">Dedicace au<br>droit fiscal</span>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-8 flex items-center">
+                        <div class="relative">
+                            <span class="quote-mark">&ldquo;</span>
+                            <blockquote class="font-serif text-nuit text-xl lg:text-2xl leading-[1.45] font-medium pt-8 pl-2">
+                                Face a une regularisation complexe d'avoirs a l'etranger, Maitre Mundet a fait preuve d'une maitrise exceptionnelle du dossier. Sa connaissance approfondie de la fiscalite internationale a ete determinante dans l'issue favorable de mon affaire.
+                            </blockquote>
+                            <div class="flex items-center gap-4 mt-6 pl-2">
+                                <div class="w-12 h-[1px] bg-cuivre"></div>
+                                <div>
+                                    <span class="text-nuit font-sans font-semibold text-sm">Catherine D.</span>
+                                    <span class="text-gris-editorial text-sm ml-2">&mdash; Expatriee, Monaco</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 - Centered elegant -->
+            <div class="reveal-scale delay-300">
+                <div class="relative max-w-3xl mx-auto text-center">
+                    <div class="editorial-rule-long w-full mb-10"></div>
+                    <div class="relative">
+                        <span class="font-serif text-cuivre/20 text-[6rem] leading-none block">&ldquo;</span>
+                        <blockquote class="font-serif text-nuit text-xl lg:text-2xl leading-[1.45] font-medium -mt-12 px-4">
+                            Un accompagnement humain et rigoureux pour la gestion fiscale de notre societe. Maitre Mundet sait vulgariser les sujets complexes et nous permettre de prendre les bonnes decisions en toute connaissance de cause.
+                        </blockquote>
+                    </div>
+                    <div class="flex items-center justify-center gap-4 mt-8">
+                        <div class="w-12 h-[1px] bg-cuivre"></div>
+                        <div>
+                            <span class="text-nuit font-sans font-semibold text-sm">Stephane & Anne R.</span>
+                            <span class="text-gris-editorial text-sm ml-2">&mdash; Dirigeants PME, Cannes</span>
+                        </div>
+                        <div class="w-12 h-[1px] bg-cuivre"></div>
+                    </div>
+                    <div class="editorial-rule-long w-full mt-10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CHIFFRE CLE - Full-width break               -->
+    <!-- ============================================ -->
+    <div class="bg-nuit py-16 lg:py-20 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0" style="background: repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(212,165,116,0.3) 80px, rgba(212,165,116,0.3) 81px);"></div>
+        </div>
+        <div class="relative max-w-5xl mx-auto px-6 text-center reveal">
+            <p class="font-serif text-white text-2xl lg:text-3xl leading-relaxed">
+                <span class="text-champagne italic">Besoin d'etre rassure</span> sur vos enjeux fiscaux ?<br class="hidden lg:block">
+                Nous sommes a votre ecoute pour peser l'ensemble des enjeux<br class="hidden lg:block">
+                et vous apporter la <span class="text-champagne">reponse la plus appropriee</span>.
+            </p>
+            <a href="#contact" class="inline-flex items-center gap-2 mt-8 text-champagne hover:text-white text-sm uppercase tracking-[0.2em] font-sans transition-colors">
+                Nous contacter
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- FAQ - Editorial toggle 5 questions           -->
+    <!-- ============================================ -->
+    <section id="faq" class="relative py-20 lg:py-32 bg-creme overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-4">
+                <!-- LEFT 40% - Intro -->
+                <div class="lg:col-span-5 reveal-left">
+                    <span class="text-cuivre text-[11px] uppercase tracking-[0.35em] font-sans font-600">Questions frequentes</span>
+                    <div class="editorial-rule mt-3 mb-6"></div>
+                    <h2 class="font-serif text-nuit text-3xl lg:text-4xl xl:text-5xl font-bold leading-[1.1]">
+                        Vos questions,<br>
+                        <span class="text-cuivre italic">nos reponses</span>
+                    </h2>
+                    <p class="text-gris-editorial text-base mt-6 leading-relaxed max-w-sm">
+                        Les interrogations les plus courantes de nos clients sur le droit fiscal et notre accompagnement.
+                    </p>
+                </div>
+
+                <!-- RIGHT 60% - FAQ items -->
+                <div class="lg:col-span-7 lg:pl-8">
+                    <div class="space-y-0">
+                        <!-- FAQ 1 -->
+                        <div class="reveal delay-100 border-b border-gray-200">
+                            <button class="faq-toggle w-full text-left py-6 flex items-start justify-between gap-4 group" aria-expanded="false">
+                                <span class="font-serif text-nuit text-lg lg:text-xl font-semibold group-hover:text-cuivre transition-colors pr-4">
+                                    Quand faut-il faire appel a un avocat fiscaliste ?
+                                </span>
+                                <span class="faq-icon text-cuivre text-2xl font-light flex-shrink-0 mt-0.5">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="pb-6 pr-12">
+                                    <p class="text-gris-editorial text-base leading-relaxed">
+                                        Il est recommande de consulter un avocat fiscaliste des la reception d'un avis de controle fiscal, lors de la preparation de declarations complexes (ISF/IFI, plus-values, successions), pour toute question de fiscalite internationale ou lorsque vous souhaitez optimiser la gestion fiscale de votre entreprise ou patrimoine. Une intervention preventive est toujours preferable.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="reveal delay-200 border-b border-gray-200">
+                            <button class="faq-toggle w-full text-left py-6 flex items-start justify-between gap-4 group" aria-expanded="false">
+                                <span class="font-serif text-nuit text-lg lg:text-xl font-semibold group-hover:text-cuivre transition-colors pr-4">
+                                    Comment se deroule un controle fiscal ?
+                                </span>
+                                <span class="faq-icon text-cuivre text-2xl font-light flex-shrink-0 mt-0.5">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="pb-6 pr-12">
+                                    <p class="text-gris-editorial text-base leading-relaxed">
+                                        Un controle fiscal debute par l'envoi d'un avis de verification. S'ensuit une phase de verification sur place ou sur pieces, puis une proposition de rectification le cas echeant. Vous disposez de delais pour repondre et contester. Maitre Mundet vous accompagne a chaque etape, de la preparation des documents a la negociation avec l'administration, en passant par la redaction des observations et recours.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="reveal delay-300 border-b border-gray-200">
+                            <button class="faq-toggle w-full text-left py-6 flex items-start justify-between gap-4 group" aria-expanded="false">
+                                <span class="font-serif text-nuit text-lg lg:text-xl font-semibold group-hover:text-cuivre transition-colors pr-4">
+                                    Intervenez-vous en dehors de Nice ?
+                                </span>
+                                <span class="faq-icon text-cuivre text-2xl font-light flex-shrink-0 mt-0.5">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="pb-6 pr-12">
+                                    <p class="text-gris-editorial text-base leading-relaxed">
+                                        Absolument. Bien que notre cabinet soit base a Nice, nous intervenons sur l'ensemble de la region PACA (Cannes, Antibes, Monaco, Aix-en-Provence, Marseille) et sur tout le territoire francais pour les dossiers le necessitant. Notre expertise en fiscalite internationale nous amene egalement a traiter des dossiers a dimension transfrontaliere.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div class="reveal delay-400 border-b border-gray-200">
+                            <button class="faq-toggle w-full text-left py-6 flex items-start justify-between gap-4 group" aria-expanded="false">
+                                <span class="font-serif text-nuit text-lg lg:text-xl font-semibold group-hover:text-cuivre transition-colors pr-4">
+                                    Est-il encore possible de regulariser des avoirs a l'etranger ?
+                                </span>
+                                <span class="faq-icon text-cuivre text-2xl font-light flex-shrink-0 mt-0.5">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="pb-6 pr-12">
+                                    <p class="text-gris-editorial text-base leading-relaxed">
+                                        Meme apres la fermeture du STDR (Service de Traitement des Declarations Rectificatives), il reste possible de regulariser sa situation fiscale. Les modalites ont evolue, mais Maitre Mundet, fort de son experience dans ce domaine, continue d'assister ses clients pour ce type de dossier complexe avec des conseils precis et une strategie adaptee.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 5 -->
+                        <div class="reveal delay-500 border-b border-gray-200">
+                            <button class="faq-toggle w-full text-left py-6 flex items-start justify-between gap-4 group" aria-expanded="false">
+                                <span class="font-serif text-nuit text-lg lg:text-xl font-semibold group-hover:text-cuivre transition-colors pr-4">
+                                    Comment se passe la premiere consultation ?
+                                </span>
+                                <span class="faq-icon text-cuivre text-2xl font-light flex-shrink-0 mt-0.5">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="pb-6 pr-12">
+                                    <p class="text-gris-editorial text-base leading-relaxed">
+                                        Lors de la premiere consultation, Maitre Mundet prend le temps d'analyser votre situation fiscale en detail, d'identifier les enjeux et de vous proposer une strategie adaptee. Vous pouvez prendre rendez-vous par telephone au 04 93 62 05 78 ou via le formulaire de contact. Les consultations se deroulent au cabinet ou par visioconference selon vos preferences.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CONTACT - Formulaire editorial               -->
+    <!-- Asymmetric 40/60 dark                        -->
+    <!-- ============================================ -->
+    <section id="contact" class="relative py-20 lg:py-32 bg-nuit overflow-hidden bg-grain">
+        <!-- Grid lines -->
+        <div class="grid-line-vertical" style="left: 40%;"></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-4">
+                <!-- LEFT 40% - Contact info -->
+                <div class="lg:col-span-5">
+                    <div class="reveal-left">
+                        <span class="text-champagne text-[11px] uppercase tracking-[0.35em] font-sans font-600">Prenez contact</span>
+                        <div class="editorial-rule mt-3 mb-6"></div>
+                        <h2 class="font-serif text-white text-3xl lg:text-4xl xl:text-5xl font-bold leading-[1.1] mb-6">
+                            Parlons de votre<br>
+                            <span class="text-champagne italic">situation fiscale</span>
+                        </h2>
+                        <p class="text-white/60 font-sans text-base leading-relaxed mb-10 max-w-md">
+                            Maitre Mundet et son cabinet sont a votre disposition pour etudier votre dossier et vous proposer la strategie la plus adaptee a vos enjeux.
+                        </p>
+                    </div>
+
+                    <!-- Coordonnees -->
+                    <div class="space-y-6 reveal-left delay-200">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 border border-champagne/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg class="w-4 h-4 text-champagne" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            </div>
+                            <div>
+                                <span class="text-white/90 font-sans text-sm font-semibold">Adresse</span>
+                                <p class="text-white/50 text-sm mt-1 leading-relaxed">8 Boulevard Victor Hugo<br>Res. Le Metropole, Entree B<br>06000 Nice</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 border border-champagne/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg class="w-4 h-4 text-champagne" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            </div>
+                            <div>
+                                <span class="text-white/90 font-sans text-sm font-semibold">Telephone</span>
+                                <a href="tel:0493620578" class="block text-champagne hover:text-champagne-light text-sm mt-1 transition-colors">04 93 62 05 78</a>
+                                <span class="text-white/30 text-xs mt-0.5 block">Fax : 04 93 13 93 66</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 border border-champagne/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg class="w-4 h-4 text-champagne" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            </div>
+                            <div>
+                                <span class="text-white/90 font-sans text-sm font-semibold">Email</span>
+                                <a href="mailto:contact@cabinet-e-mundet.com" class="block text-champagne hover:text-champagne-light text-sm mt-1 transition-colors">contact@cabinet-e-mundet.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 border border-champagne/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg class="w-4 h-4 text-champagne" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                            <div>
+                                <span class="text-white/90 font-sans text-sm font-semibold">Acces</span>
+                                <p class="text-white/50 text-sm mt-1">Tramway Ligne 2 &mdash; Arret Jean Medecin</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT 60% - Form -->
+                <div class="lg:col-span-7 lg:pl-12">
+                    <div class="reveal-right delay-100 bg-nuit-light border border-white/5 p-8 lg:p-12">
+                        <h3 class="font-serif text-white text-2xl font-semibold mb-2">Demander un rendez-vous</h3>
+                        <p class="text-white/40 text-sm mb-8">Nous vous recontactons sous 24 heures ouvrees</p>
+                        
+                        <form class="space-y-6" onsubmit="event.preventDefault(); this.querySelector('.form-success').classList.remove('hidden'); this.querySelector('.form-fields').classList.add('hidden');">
+                            <div class="form-fields space-y-6">
+                                <!-- Row 1: Nom + Prenom -->
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="text-white/50 text-xs uppercase tracking-[0.15em] block mb-2">Nom</label>
+                                        <input type="text" required class="w-full bg-transparent border-b border-white/20 focus:border-champagne text-white py-3 text-sm font-sans outline-none transition-colors placeholder:text-white/20" placeholder="Votre nom">
+                                    </div>
+                                    <div>
+                                        <label class="text-white/50 text-xs uppercase tracking-[0.15em] block mb-2">Prenom</label>
+                                        <input type="text" required class="w-full bg-transparent border-b border-white/20 focus:border-champagne text-white py-3 text-sm font-sans outline-none transition-colors placeholder:text-white/20" placeholder="Votre prenom">
+                                    </div>
+                                </div>
+
+                                <!-- Row 2: Email + Tel -->
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="text-white/50 text-xs uppercase tracking-[0.15em] block mb-2">Email</label>
+                                        <input type="email" required class="w-full bg-transparent border-b border-white/20 focus:border-champagne text-white py-3 text-sm font-sans outline-none transition-colors placeholder:text-white/20" placeholder="votre@email.com">
+                                    </div>
+                                    <div>
+                                        <label class="text-white/50 text-xs uppercase tracking-[0.15em] block mb-2">Telephone</label>
+                                        <input type="tel" class="w-full bg-transparent border-b border-white/20 focus:border-champagne text-white py-3 text-sm font-sans outline-none transition-colors placeholder:text-white/20" placeholder="06 XX XX XX XX">
+                                    </div>
+                                </div>
+
+                                <!-- Row 3: Sujet -->
+                                <div>
+                                    <label class="text-white/50 text-xs uppercase tracking-[0.15em] block mb-2">Objet de votre demande</label>
+                                    <select class="w-full bg-transparent border-b border-white/20 focus:border-champagne text-white/70 py-3 text-sm font-sans outline-none transition-colors appearance-none cursor-pointer">
+                                        <option value="" class="bg-nuit">Selectionnez un domaine</option>
+                                        <option value="conseil" class="bg-nuit">Conseil fiscal</option>
+                                        <option value="contentieux" class="bg-nuit">Contentieux fiscal</option>
+                                        <option value="controle" class="bg-nuit">Controle fiscal</option>
+                                        <option value="declarations" class="bg-nuit">Declarations fiscales</option>
+                                        <option value="regularisation" class="bg-nuit">Regularisation avoirs etrangers</option>
+                                        <option value="international" class="bg-nuit">Fiscalite internationale</option>
+                                        <option value="autre" class="bg-nuit">Autre</option>
+                                    </select>
+                                </div>
+
+                                <!-- Row 4: Message -->
+                                <div>
+                                    <label class="text-white/50 text-xs uppercase tracking-[0.15em] block mb-2">Message</label>
+                                    <textarea rows="4" class="w-full bg-transparent border-b border-white/20 focus:border-champagne text-white py-3 text-sm font-sans outline-none transition-colors resize-none placeholder:text-white/20" placeholder="Decrivez brievement votre situation..."></textarea>
+                                </div>
+
+                                <!-- Submit -->
+                                <div class="pt-2">
+                                    <button type="submit" class="w-full sm:w-auto bg-cuivre hover:bg-cuivre-dark text-white px-10 py-4 font-sans font-600 text-sm uppercase tracking-[0.15em] transition-all duration-300">
+                                        Envoyer ma demande
+                                    </button>
+                                    <p class="text-white/30 text-xs mt-4">Vos donnees sont traitees conformement au RGPD et utilisees uniquement pour repondre a votre demande.</p>
+                                </div>
+                            </div>
+
+                            <!-- Success message -->
+                            <div class="form-success hidden text-center py-12">
+                                <div class="w-16 h-16 border-2 border-champagne rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <svg class="w-8 h-8 text-champagne" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"/></svg>
+                                </div>
+                                <h4 class="font-serif text-white text-2xl font-semibold mb-2">Demande envoyee</h4>
+                                <p class="text-white/60 text-base">Maitre Mundet vous recontactera dans les plus brefs delais.</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FOOTER                                       -->
+    <!-- ============================================ -->
+    <footer class="bg-nuit border-t border-white/5">
+        <!-- Top footer -->
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12 lg:py-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Col 1 - Brand -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 border-2 border-champagne flex items-center justify-center">
+                            <span class="font-serif text-champagne text-sm font-bold">M</span>
+                        </div>
+                        <div>
+                            <span class="font-serif text-white text-lg">Cabinet Mundet</span>
+                        </div>
+                    </div>
+                    <p class="text-white/40 text-sm leading-relaxed">
+                        Avocat fiscaliste inscrit au Barreau de Nice.<br>
+                        Plus de 20 ans d'experience en droit fiscal.
+                    </p>
+                </div>
+
+                <!-- Col 2 - Expertises -->
+                <div>
+                    <h4 class="text-champagne text-[10px] uppercase tracking-[0.3em] mb-4">Expertises</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#expertises" class="text-white/40 hover:text-white/70 text-sm transition-colors">Conseil fiscal</a></li>
+                        <li><a href="#expertises" class="text-white/40 hover:text-white/70 text-sm transition-colors">Contentieux fiscal</a></li>
+                        <li><a href="#expertises" class="text-white/40 hover:text-white/70 text-sm transition-colors">Controle fiscal</a></li>
+                        <li><a href="#expertises" class="text-white/40 hover:text-white/70 text-sm transition-colors">Declarations fiscales</a></li>
+                        <li><a href="#expertises" class="text-white/40 hover:text-white/70 text-sm transition-colors">Fiscalite internationale</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 - Contact -->
+                <div>
+                    <h4 class="text-champagne text-[10px] uppercase tracking-[0.3em] mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="text-white/40 text-sm">8 Bd Victor Hugo, 06000 Nice</li>
+                        <li><a href="tel:0493620578" class="text-white/40 hover:text-champagne text-sm transition-colors">04 93 62 05 78</a></li>
+                        <li><a href="mailto:contact@cabinet-e-mundet.com" class="text-white/40 hover:text-champagne text-sm transition-colors">contact@cabinet-e-mundet.com</a></li>
+                        <li><a href="https://www.cabinet-e-mundet.com" target="_blank" rel="noopener" class="text-white/40 hover:text-champagne text-sm transition-colors">cabinet-e-mundet.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom footer -->
+        <div class="border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-white/25 text-xs">
+                    &copy; 2024 Cabinet Emmanuel Mundet &mdash; Avocat au Barreau de Nice &mdash; Mentions legales
+                </p>
+                <p class="text-white/20 text-xs">
+                    Conception : <a href="https://aegis-agency.com" target="_blank" rel="noopener" class="text-champagne/40 hover:text-champagne/70 transition-colors">AEGIS Agency</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- JAVASCRIPT                                   -->
+    <!-- Scroll reveal, FAQ accordion, progress bar   -->
+    <!-- ============================================ -->
+    <script>
+    (function() {
+        'use strict';
+
+        // === SCROLL PROGRESS BAR ===
+        const progressBar = document.getElementById('scroll-progress');
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+
+        // === NAV SCROLL EFFECT ===
+        const nav = document.getElementById('main-nav');
+        function updateNav() {
+            if (window.scrollY > 80) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
+        }
+
+        // === SCROLL REVEAL (IntersectionObserver) ===
+        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+        const revealObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.12,
+            rootMargin: '0px 0px -40px 0px'
+        });
+        revealElements.forEach(function(el) {
+            revealObserver.observe(el);
+        });
+
+        // === FAQ ACCORDION ===
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+        faqToggles.forEach(function(toggle) {
+            toggle.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const icon = this.querySelector('.faq-icon');
+                const isOpen = answer.classList.contains('open');
+
+                // Close all others
+                document.querySelectorAll('.faq-answer').forEach(function(a) {
+                    a.classList.remove('open');
+                });
+                document.querySelectorAll('.faq-icon').forEach(function(i) {
+                    i.classList.remove('rotated');
+                });
+                document.querySelectorAll('.faq-toggle').forEach(function(t) {
+                    t.setAttribute('aria-expanded', 'false');
+                });
+
+                // Toggle current
+                if (!isOpen) {
+                    answer.classList.add('open');
+                    icon.classList.add('rotated');
+                    this.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // === MOBILE MENU ===
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-link').forEach(function(link) {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // === SCROLL EVENTS (throttled) ===
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    updateProgress();
+                    updateNav();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // Init
+        updateProgress();
+        updateNav();
+    })();
+    </script>
+
+</body>
+</html>
