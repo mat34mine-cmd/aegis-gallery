@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>AEGIS Agency — Galerie Demos Avocats</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .fade-in { animation: fadeIn 0.6s ease-out forwards; opacity: 0; }
+    @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(20px); } }
+    .info-panel { max-height: 0; opacity: 0; }
+    .info-panel.open { max-height: 600px; opacity: 1; }
+  </style>
+</head>
+<body class="bg-[#0f172a] min-h-screen">
+  <!-- Header -->
+  <header class="border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-6 py-8">
+      <div class="flex items-center gap-4 mb-2">
+        <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+          <span class="text-white font-bold text-lg">A</span>
+        </div>
+        <h1 class="text-3xl font-extrabold text-white tracking-tight">AEGIS Agency</h1>
+      </div>
+      <p class="text-slate-400 text-lg mt-2">Galerie des landing pages demo — 24 cabinets d'avocats</p>
+      <p class="text-slate-500 text-sm mt-1">Nice (7), Marseille (3), Grenoble (2), Angers (1), Caen (1), Clermont-Ferrand (1), Geneve (1), Lille (1), Metz (1), Reims (1), Rennes (1), Rouen (1), Strasbourg (1), Toulon (1), Tours (1)</p>
+    </div>
+  </header>
+
+  <!-- Grid -->
+  <main class="max-w-7xl mx-auto px-6 py-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+
+        <!-- AG AVOCAT — Caen — 10/03/2026 -->
+        <div class="group bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="flex items-start justify-between mb-4">
+            <span class="bg-violet-500/20 text-violet-300 text-xs font-semibold px-3 py-1 rounded-full">Caen (14)</span>
+            <span class="text-slate-500 text-xs">10/03/2026</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">AG Avocat</h3>
+          <p class="text-slate-400 text-sm mb-2">Maitre Alexandrine Guillaume</p>
+          <p class="text-slate-500 text-xs mb-6">Droit commercial / Affaires / Societes</p>
+          <div class="flex gap-3">
+            <a class='flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-colors' href='https://aegis-gallery.netlify.app/demo-guillaume-avocat/'>Voir la demo</a>
+            <a class='flex-1 text-center bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-medium py-2.5 px-4 rounded-xl transition-colors' download href='https://aegis-gallery.netlify.app/demo-guillaume-avocat/'>Telecharger</a>
+          </div>
+          <!-- Infos Prospect Button -->
+          <button onclick="togglePanel('panel-guillaume')" class="w-full mt-3 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-slate-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+            Infos prospect
+          </button>
+          <!-- Info Panel -->
+          <div id="panel-guillaume" class="info-panel overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <div class="mt-3 p-4 bg-slate-900/60 border border-slate-700/50 rounded-xl space-y-3">
+              <!-- Score SEO -->
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Score SEO</span>
+                <span class="bg-emerald-500/20 text-emerald-300 border-emerald-500/30 text-lg font-bold px-3 py-0.5 rounded-lg border">7.75/10</span>
+              </div>
+              <!-- Site web -->
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400 text-xs">Site web</span>
+                <a href="https://alexandrine-guillaume-avocat.com" target="_blank" class="text-blue-400 hover:text-blue-300 text-xs underline">alexandrine-guillaume-avocat.com</a>
+              </div>
+              <!-- Failles SEO -->
+              <div>
+                <p class="text-slate-400 text-xs mb-1">Failles SEO principales :</p>
+                <ul class="text-slate-300 text-xs space-y-1 list-disc list-inside">
+                  <li>Aucune fiche Google Business Profile (invisible sur Google Maps)</li>
+                  <li>0 avis Google en ligne</li>
+                  <li>NAP incoherent (Herouville-Saint-Clair vs Caen sur differentes sources)</li>
+                </ul>
+              </div>
+              <!-- Message LinkedIn -->
+              <div>
+                <p class="text-slate-400 text-xs mb-1">Message LinkedIn (Ares) :</p>
+                <div class="max-h-32 overflow-y-auto bg-slate-800/80 rounded-lg p-3 text-xs text-slate-300 leading-relaxed">
+                  Maitre,<br><br>
+                  Votre site obtient un score technique de 98/100 sur PageSpeed -- c'est dans le top 5% des sites de cabinets d'avocats que nous analysons en France.<br><br>
+                  J'ai cependant constate que votre cabinet n'apparait pas sur Google Maps quand on cherche &laquo;avocat affaires Caen&raquo; ou &laquo;avocat droit commercial Herouville&raquo;. Pas de fiche Google Business, pas d'avis en ligne.<br><br>
+                  C'est d'autant plus dommage que votre profil -- docteure en droit, enseignante, laureate du Barreau -- est un atout differenciant rare.<br><br>
+                  Nous accompagnons des cabinets independants dans cette mise en visibilite locale. Seriez-vous ouverte a un echange de 15 minutes sur le sujet ?<br><br>
+                  Bien confraternellement,<br>Mathias -- AEGIS Agency
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CABINET PERSEE — Reims — 10/03/2026 -->
+        <div class="group bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="flex items-start justify-between mb-4">
+            <span class="bg-violet-500/20 text-violet-300 text-xs font-semibold px-3 py-1 rounded-full">Reims (51)</span>
+            <span class="text-slate-500 text-xs">10/03/2026</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">Cabinet Persee</h3>
+          <p class="text-slate-400 text-sm mb-2">Maitre Matthieu Ciutti</p>
+          <p class="text-slate-500 text-xs mb-6">Droit commercial / Numerique / PI</p>
+          <div class="flex gap-3">
+            <a class='flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-colors' href='https://aegis-gallery.netlify.app/demo-cabinet-persee/'>Voir la demo</a>
+            <a class='flex-1 text-center bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-medium py-2.5 px-4 rounded-xl transition-colors' download href='https://aegis-gallery.netlify.app/demo-cabinet-persee/'>Telecharger</a>
+          </div>
+          <!-- Infos Prospect Button -->
+          <button onclick="togglePanel('panel-persee')" class="w-full mt-3 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-slate-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+            Infos prospect
+          </button>
+          <!-- Info Panel -->
+          <div id="panel-persee" class="info-panel overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <div class="mt-3 p-4 bg-slate-900/60 border border-slate-700/50 rounded-xl space-y-3">
+              <!-- Score SEO -->
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400 text-xs">Score SEO</span>
+                <span class="inline-block px-2 py-0.5 rounded text-xs font-bold bg-orange-100 text-orange-700">5.8/10</span>
+              </div>
+              <!-- Site web -->
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400 text-xs">Site web</span>
+                <a href="https://cabinetpersee.com" target="_blank" class="text-blue-400 hover:text-blue-300 text-xs underline">cabinetpersee.com</a>
+              </div>
+              <!-- Failles SEO -->
+              <div>
+                <p class="text-slate-400 text-xs mb-1">Failles SEO principales :</p>
+                <ul class="text-slate-300 text-xs space-y-1 list-disc list-inside">
+                  <li>LCP critique a 10.2s (seuil Google : 2.5s)</li>
+                  <li>reCAPTCHA casse en page d'accueil — formulaire contact inaccessible</li>
+                  <li>0 avis Google Maps + NAP incoherent (3 adresses differentes)</li>
+                </ul>
+              </div>
+              <!-- Message LinkedIn -->
+              <div>
+                <p class="text-slate-400 text-xs mb-1">Message LinkedIn (Ares) :</p>
+                <div class="max-h-32 overflow-y-auto bg-slate-800/80 rounded-lg p-3 text-xs text-slate-300 leading-relaxed">
+                  Bonjour Maitre Ciutti,<br><br>
+                  En consultant cabinetpersee.com, j'ai releve un point qui m'a interpelle au regard de votre expertise en droit du numerique : votre page d'accueil affiche un temps de chargement de 10,2 secondes, soit quatre fois le seuil recommande par Google. Un formulaire reCAPTCHA inactif bloque egalement la prise de contact en ligne.<br><br>
+                  Ce sont des elements techniques que Google prend en compte pour le classement des recherches locales, notamment sur des requetes comme &laquo;avocat droit des affaires Reims&raquo;.<br><br>
+                  Nous accompagnons des cabinets independants sur ces ajustements techniques, avec des resultats documentes avant et apres intervention.<br><br>
+                  Seriez-vous ouvert a un echange sur ce sujet ?<br><br>
+                  Cordialement,<br>AEGIS Agency
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- CATOIRE — Lille — 10/03/2026 -->
+        <div class="group bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="flex items-start justify-between mb-4">
+            <span class="bg-violet-500/20 text-violet-300 text-xs font-semibold px-3 py-1 rounded-full">Lille (59)</span>
+            <span class="text-slate-500 text-xs">10/03/2026</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">Catoire Avocat</h3>
+          <p class="text-slate-400 text-sm mb-2">Maitre Eleonore Catoire</p>
+          <p class="text-slate-500 text-xs mb-6">Droit des affaires / Societes</p>
+          <div class="flex gap-3">
+            <a class='flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-colors' href='https://aegis-gallery.netlify.app/demo-catoire-avocat/'>Voir la demo</a>
+            <a class='flex-1 text-center bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-medium py-2.5 px-4 rounded-xl transition-colors' download href='https://aegis-gallery.netlify.app/demo-catoire-avocat/'>Telecharger</a>
+          </div>
+
+          <!-- Infos Prospect Button -->
+          <button onclick="togglePanel('panel-catoire')" class="w-full mt-3 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-slate-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+            Infos prospect
+          </button>
+          <!-- Info Panel -->
+          <div id="panel-catoire" class="info-panel overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <div class="mt-3 p-4 bg-slate-900/60 border border-slate-700/50 rounded-xl space-y-3">
+              <!-- Score SEO -->
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Score SEO</span>
+                <span class="bg-emerald-500/20 text-emerald-300 border-emerald-500/30 text-lg font-bold px-3 py-0.5 rounded-lg border">8.0/10</span>
+              </div>
+              <!-- Site web -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Site web</span>
+                <a href="https://www.catoire-avocat.com/" target="_blank" rel="noopener" class="block text-blue-400 hover:text-blue-300 text-sm mt-0.5 truncate">https://www.catoire-avocat.com/</a>
+              </div>
+              <!-- Failles SEO -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Failles SEO</span>
+                <ul class="mt-1 space-y-1 list-disc list-inside">
+                  <li class="text-slate-400 text-sm">SEO local sous-exploite : moins de 10 avis Google Maps, pas de page geo dediee "avocat affaires Lille"</li>
+                  <li class="text-slate-400 text-sm">NAP inconsistant : 2 adresses differentes (La Madeleine / Lille), confusion pour Google</li>
+                  <li class="text-slate-400 text-sm">Core Web Vitals CrUX echoues : LCP 2.5s au seuil orange malgre PSI mobile 95/100</li>
+                </ul>
+              </div>
+              <!-- Message LinkedIn -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Message LinkedIn</span>
+                <div class="mt-1 max-h-32 overflow-y-auto text-slate-400 text-sm bg-slate-800/50 rounded-lg p-3 leading-relaxed">
+                  Maitre,<br><br>
+                  Je decouvre votre approche sur catoire-avocat.com — les packs "regards croises" en droit des societes sont un vrai differenciant que je vois rarement chez les independants.<br><br>
+                  En revanche, en cherchant "avocat droit des affaires Lille" sur Google, votre cabinet n'apparait pas dans les premiers resultats Maps. Votre fiche Google compte moins de 10 avis, la ou certains confreres lillois en affichent 40 ou plus.<br><br>
+                  C'est un levier que nous travaillons specifiquement pour les cabinets independants : rendre visible sur Google local un cabinet qui a deja un excellent site.<br><br>
+                  Seriez-vous ouverte a un echange de 15 minutes sur ce sujet ?<br><br>
+                  Bien cordialement,<br>
+                  Mathias — AEGIS Agency
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+
+        <!-- CATOIRE — Lille — 10/03/2026 -->
+        <div class="group bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="flex items-start justify-between mb-4">
+            <span class="bg-sky-500/20 text-sky-300 text-xs font-semibold px-3 py-1 rounded-full">Lille (59)</span>
+            <span class="text-slate-500 text-xs">10/03/2026</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">Catoire Avocat</h3>
+          <p class="text-slate-400 text-sm mb-2">Maitre Eleonore Catoire</p>
+          <p class="text-slate-500 text-xs mb-6">Droit des affaires / Societes</p>
+          <div class="flex gap-3">
+            <a href="demo-catoire-avocat/index.html" class="flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Voir la demo</a>
+            <a href="demo-catoire-avocat/index.html" download class="flex-1 text-center bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Telecharger</a>
+          </div>
+
+          <!-- Infos Prospect Button -->
+          <button onclick="togglePanel('panel-catoire')" class="w-full mt-3 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-slate-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+            Infos prospect
+          </button>
+          <!-- Info Panel -->
+          <div id="panel-catoire" class="info-panel overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <div class="mt-3 p-4 bg-slate-900/60 border border-slate-700/50 rounded-xl space-y-3">
+              <!-- Score SEO -->
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Score SEO</span>
+                <span class="bg-green-500/20 text-green-300 border-green-500/30 text-lg font-bold px-3 py-0.5 rounded-lg border">8.0/10</span>
+              </div>
+              <!-- Site web -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Site web</span>
+                <a href="https://www.catoire-avocat.com/" target="_blank" rel="noopener" class="block text-blue-400 hover:text-blue-300 text-sm mt-0.5 truncate">https://www.catoire-avocat.com/</a>
+              </div>
+              <!-- Failles SEO -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Failles SEO</span>
+                <ul class="mt-1 space-y-1 list-disc list-inside">
+                  <li class="text-slate-400 text-sm">SEO local sous-exploite : moins de 10 avis Google Maps, pas de page dediee geo-ciblee</li>
+                  <li class="text-slate-400 text-sm">Core Web Vitals FAILED : LCP orange (2.8s), render-blocking requests ~900ms</li>
+                  <li class="text-slate-400 text-sm">Schema.org LegalService absent malgre un site WordPress de qualite</li>
+                </ul>
+              </div>
+              <!-- Message LinkedIn -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Message LinkedIn</span>
+                <div class="mt-1 max-h-32 overflow-y-auto bg-slate-800/80 rounded-lg p-3">
+                  <p class="text-slate-300 text-sm leading-relaxed">Maitre,<br><br>Je decouvre votre approche sur catoire-avocat.com — les packs "regards croises" en droit des societes sont un vrai differenciant que je vois rarement chez les independants.<br><br>En revanche, en cherchant "avocat droit des affaires Lille" sur Google, votre cabinet n'apparait pas dans les premiers resultats Maps. Votre fiche Google compte moins de 10 avis, la ou certains confreres lillois en affichent 40 ou plus.<br><br>C'est un levier que nous travaillons specifiquement pour les cabinets independants : rendre visible sur Google local un cabinet qui a deja un excellent site.<br><br>Seriez-vous ouverte a un echange de 15 minutes sur ce sujet ?<br><br>Bien cordialement,<br>Mathias — AEGIS Agency</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PIASECKI — Toulon — 10/03/2026 -->
+        <div class="group bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="flex items-start justify-between mb-4">
+            <span class="bg-sky-500/20 text-sky-300 text-xs font-semibold px-3 py-1 rounded-full">Toulon (83)</span>
+            <span class="text-slate-500 text-xs">10/03/2026</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">Cabinet Piasecki</h3>
+          <p class="text-slate-400 text-sm mb-2">Maitre Julien Piasecki</p>
+          <p class="text-slate-500 text-xs mb-6">Urbanisme / Droit public</p>
+          <div class="flex gap-3">
+            <a href="demo-piasecki-avocat/index.html" class="flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Voir la demo</a>
+            <a href="demo-piasecki-avocat/index.html" download class="flex-1 text-center bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Telecharger</a>
+          </div>
+
+          <!-- Infos Prospect Button -->
+          <button onclick="togglePanel('panel-piasecki')" class="w-full mt-3 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-slate-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+            Infos prospect
+          </button>
+          <!-- Info Panel -->
+          <div id="panel-piasecki" class="info-panel overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <div class="mt-3 p-4 bg-slate-900/60 border border-slate-700/50 rounded-xl space-y-3">
+              <!-- Score SEO -->
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Score SEO</span>
+                <span class="bg-amber-500/20 text-amber-300 border-amber-500/30 text-lg font-bold px-3 py-0.5 rounded-lg border">5.60/10</span>
+              </div>
+              <!-- Site web -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Site web</span>
+                <a href="https://www.cabinetpiasecki.fr/" target="_blank" rel="noopener" class="block text-blue-400 hover:text-blue-300 text-sm mt-0.5 truncate">https://www.cabinetpiasecki.fr/</a>
+              </div>
+              <!-- Failles SEO -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Failles SEO</span>
+                <ul class="mt-1 space-y-1 list-disc list-inside">
+                  <li class="text-slate-400 text-sm">PSI mobile 45/100, LCP 11.2s (site custom tres lent)</li>
+                  <li class="text-slate-400 text-sm">Schema.org LegalService absent</li>
+                  <li class="text-slate-400 text-sm">Seulement 6 avis Google (3/5 etoiles), GBP non optimise</li>
+                </ul>
+              </div>
+              <!-- Message LinkedIn -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Message LinkedIn</span>
+                <div class="mt-1 max-h-32 overflow-y-auto text-slate-400 text-sm bg-slate-800/50 rounded-lg p-3 leading-relaxed">
+                  Bonjour Maitre Piasecki,<br><br>
+                  En parcourant cabinetpiasecki.fr, j'ai ete frappe par la qualite de votre contenu : articles de fond en urbanisme, pages dediees a plusieurs villes de PACA, blog regulierement mis a jour. C'est un travail de reference rare chez les cabinets independants.<br><br>
+                  En revanche, votre site obtient un score de performance mobile de 45/100 et met plus de 11 secondes a s'afficher. Ce decalage entre un contenu de qualite et une performance technique en retrait limite la portee de vos efforts dans Google.<br><br>
+                  Nous accompagnons des cabinets sur ces sujets d'optimisation technique, de facon documentee.<br><br>
+                  Serait-il pertinent d'en echanger brievement ?<br><br>
+                  Cordialement,<br>
+                  Mathias — AEGIS Agency
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="group bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="flex items-start justify-between mb-4">
+            <span class="bg-emerald-500/20 text-emerald-300 text-xs font-semibold px-3 py-1 rounded-full">Angers</span>
+            <span class="text-slate-500 text-xs">09/03/2026</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">Cabinet Hugel</h3>
+          <p class="text-slate-400 text-sm mb-2">Maitre Patrice Hugel</p>
+          <p class="text-slate-500 text-xs mb-6">Droit Immobilier</p>
+          <div class="flex gap-3">
+            <a href="demo-hugel-avocat/index.html" class="flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Voir la demo</a>
+            <a href="demo-hugel-avocat/index.html" download class="flex-1 text-center bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Telecharger</a>
+          </div>
+
+          <!-- Infos Prospect Button -->
+          <button onclick="togglePanel('panel-hugel')" class="w-full mt-3 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-slate-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+            Infos prospect
+          </button>
+          <!-- Info Panel -->
+          <div id="panel-hugel" class="info-panel overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <div class="mt-3 p-4 bg-slate-900/60 border border-slate-700/50 rounded-xl space-y-3">
+              <!-- Score SEO -->
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Score SEO</span>
+                <span class="bg-amber-500/20 text-amber-300 border-amber-500/30 text-lg font-bold px-3 py-0.5 rounded-lg border">6.55/10</span>
+              </div>
+              <!-- Site web -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Site web</span>
+                <a href="https://www.patricehugel.com/" target="_blank" rel="noopener" class="block text-blue-400 hover:text-blue-300 text-sm mt-0.5 truncate">https://www.patricehugel.com/</a>
+              </div>
+              <!-- Failles SEO -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Failles SEO</span>
+                <ul class="mt-1 space-y-1 list-disc list-inside">
+                  <li class="text-slate-400 text-sm">LCP 11.1s sur mobile (images non optimisées)</li>
+<li class="text-slate-400 text-sm">Schema.org LegalService absent</li>
+<li class="text-slate-400 text-sm">33 avis Google non valorisés en rich snippets</li>
+
+                </ul>
+              </div>
+              <!-- Message LinkedIn -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Message LinkedIn</span>
+                <pre class="mt-1 p-3 bg-slate-800/80 border border-slate-700/50 rounded-lg text-slate-300 text-xs leading-relaxed whitespace-pre-wrap max-h-[200px] overflow-y-auto">Bonjour Maître Hugel,
+
+En consultant patricehugel.com, j&#x27;ai relevé deux points techniques concernant votre visibilité locale en droit immobilier à Angers.
+
+Votre site ne dispose pas du balisage Schema.org LegalService : votre certification de spécialiste en droit immobilier et vos 33 avis Google n&#x27;apparaissent donc pas sous forme de résultats enrichis dans les recherches.
+
+Par ailleurs, le temps de chargement de votre page principale atteint 11,1 secondes sur mobile (indicateur LCP), un élément pris en compte par Google dans son classement.
+
+Nous accompagnons des cabinets indépendants sur ces aspects techniques, de manière concrète et documentée.
+
+Seriez-vous disponible pour un échange de 20 minutes sur ce sujet ?
+
+Cordialement,
+AEGIS Agency</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="group bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="flex items-start justify-between mb-4">
+            <span class="bg-orange-500/20 text-orange-300 text-xs font-semibold px-3 py-1 rounded-full">Clermont-Ferrand</span>
+            <span class="text-slate-500 text-xs">09/03/2026</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">Cabinet Taborda</h3>
+          <p class="text-slate-400 text-sm mb-2">Maitre Taborda</p>
+          <p class="text-slate-500 text-xs mb-6">Droit du Travail &amp; Social</p>
+          <div class="flex gap-3">
+            <a href="demo-taborda-avocat/index.html" class="flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Voir la demo</a>
+            <a href="demo-taborda-avocat/index.html" download class="flex-1 text-center bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Telecharger</a>
+          </div>
+
+          <!-- Infos Prospect Button -->
+          <button onclick="togglePanel('panel-taborda')" class="w-full mt-3 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-slate-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+            Infos prospect
+          </button>
+          <!-- Info Panel -->
+          <div id="panel-taborda" class="info-panel overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <div class="mt-3 p-4 bg-slate-900/60 border border-slate-700/50 rounded-xl space-y-3">
+              <!-- Score SEO -->
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Score SEO</span>
+                <span class="bg-amber-500/20 text-amber-300 border-amber-500/30 text-lg font-bold px-3 py-0.5 rounded-lg border">6.75/10</span>
+              </div>
+              <!-- Site web -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Site web</span>
+                <a href="https://taborda-avocat.fr/" target="_blank" rel="noopener" class="block text-blue-400 hover:text-blue-300 text-sm mt-0.5 truncate">https://taborda-avocat.fr/</a>
+              </div>
+              <!-- Failles SEO -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Failles SEO</span>
+                <ul class="mt-1 space-y-1 list-disc list-inside">
+                  <li class="text-slate-400 text-sm">Images hébergées sur serveur staging (preview-domain.com)</li>
+<li class="text-slate-400 text-sm">Schema.org absent</li>
+<li class="text-slate-400 text-sm">Seulement 6 avis Google</li>
+
+                </ul>
+              </div>
+              <!-- Message LinkedIn -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Message LinkedIn</span>
+                <pre class="mt-1 p-3 bg-slate-800/80 border border-slate-700/50 rounded-lg text-slate-300 text-xs leading-relaxed whitespace-pre-wrap max-h-[200px] overflow-y-auto">Bonjour Maître Taborda,
+
+En consultant votre site taborda-avocat.fr, j&#x27;ai relevé deux points techniques qui méritent votre attention.
+
+Premièrement, plusieurs images de votre site sont encore hébergées sur un serveur de pré-production (preview-domain.com), ce qui alourdit le temps de chargement et peut poser un risque de rupture si ce serveur est désactivé.
+
+Deuxièmement, votre fiche Google affiche 6 avis — tous excellents — mais l&#x27;absence de balisage technique sur votre site empêche Google d&#x27;afficher vos informations de manière enrichie dans les résultats de recherche.
+
+Nous accompagnons des cabinets indépendants sur ces ajustements techniques, de manière concrète et documentée.
+
+Seriez-vous disponible pour un échange de 20 minutes sur le sujet ?
+
+Cordialement,
+AEGIS Agency</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="group bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="flex items-start justify-between mb-4">
+            <span class="bg-red-500/20 text-red-300 text-xs font-semibold px-3 py-1 rounded-full">Geneve</span>
+            <span class="text-slate-500 text-xs">09/03/2026</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">JordanLex</h3>
+          <p class="text-slate-400 text-sm mb-2">Etude d&#x27;Avocats</p>
+          <p class="text-slate-500 text-xs mb-6">Droit Specialise</p>
+          <div class="flex gap-3">
+            <a href="demo-jordanlex/index.html" class="flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Voir la demo</a>
+            <a href="demo-jordanlex/index.html" download class="flex-1 text-center bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Telecharger</a>
+          </div>
+
+          <!-- Infos Prospect Button -->
+          <button onclick="togglePanel('panel-jordanlex')" class="w-full mt-3 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-slate-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+            Infos prospect
+          </button>
+          <!-- Info Panel -->
+          <div id="panel-jordanlex" class="info-panel overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <div class="mt-3 p-4 bg-slate-900/60 border border-slate-700/50 rounded-xl space-y-3">
+              <!-- Score SEO -->
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Score SEO</span>
+                <span class="bg-red-500/20 text-red-300 border-red-500/30 text-lg font-bold px-3 py-0.5 rounded-lg border">4.55/10</span>
+              </div>
+              <!-- Site web -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Site web</span>
+                <a href="https://jordanlex.ch" target="_blank" rel="noopener" class="block text-blue-400 hover:text-blue-300 text-sm mt-0.5 truncate">https://jordanlex.ch</a>
+              </div>
+              <!-- Failles SEO -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Failles SEO</span>
+                <ul class="mt-1 space-y-1 list-disc list-inside">
+                  <li class="text-slate-400 text-sm">Schema.org absent</li>
+<li class="text-slate-400 text-sm">Seulement 6 avis Google (4.3/5)</li>
+<li class="text-slate-400 text-sm">Téléphone non visible sur homepage</li>
+
+                </ul>
+              </div>
+              <!-- Message LinkedIn -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Message LinkedIn</span>
+                <pre class="mt-1 p-3 bg-slate-800/80 border border-slate-700/50 rounded-lg text-slate-300 text-xs leading-relaxed whitespace-pre-wrap max-h-[200px] overflow-y-auto">Bonjour Maître Jordan,
+
+En consultant votre site jordanlex.ch, j&#x27;ai constaté que votre Étude dispose de bases solides : un site Webflow performant, des classements Le Temps/Bilanz, une fiche Google Business active, et 6 avis clients avec une note de 4.3 sur 5.
+
+Deux leviers restent inexploités : le balisage Schema.org est absent — vos classements et votre certification FSA ne sont donc pas structurés pour Google — et avec seulement 6 avis, un concurrent en collectant davantage pourrait vous devancer en visibilité locale.
+
+Votre Étude a les fondations ; l&#x27;enjeu est maintenant d&#x27;amplifier cette présence.
+
+Nous accompagnons des Études d&#x27;avocats sur ces optimisations. Serait-il pertinent d&#x27;en échanger ?
+
+Cordialement,
+AEGIS Agency</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="group bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="flex items-start justify-between mb-4">
+            <span class="bg-violet-500/20 text-violet-300 text-xs font-semibold px-3 py-1 rounded-full">Metz</span>
+            <span class="text-slate-500 text-xs">09/03/2026</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">TS Avocats</h3>
+          <p class="text-slate-400 text-sm mb-2">Cabinet TS</p>
+          <p class="text-slate-500 text-xs mb-6">Fiscalite &amp; Crypto-actifs</p>
+          <div class="flex gap-3">
+            <a href="demo-ts-avocats/index.html" class="flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Voir la demo</a>
+            <a href="demo-ts-avocats/index.html" download class="flex-1 text-center bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Telecharger</a>
+          </div>
+
+          <!-- Infos Prospect Button -->
+          <button onclick="togglePanel('panel-ts-avocats')" class="w-full mt-3 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-slate-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+            Infos prospect
+          </button>
+          <!-- Info Panel -->
+          <div id="panel-ts-avocats" class="info-panel overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <div class="mt-3 p-4 bg-slate-900/60 border border-slate-700/50 rounded-xl space-y-3">
+              <!-- Score SEO -->
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Score SEO</span>
+                <span class="bg-red-500/20 text-red-300 border-red-500/30 text-lg font-bold px-3 py-0.5 rounded-lg border">4.90/10</span>
+              </div>
+              <!-- Site web -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Site web</span>
+                <a href="https://www.ts-avocats.fr" target="_blank" rel="noopener" class="block text-blue-400 hover:text-blue-300 text-sm mt-0.5 truncate">https://www.ts-avocats.fr</a>
+              </div>
+              <!-- Failles SEO -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Failles SEO</span>
+                <ul class="mt-1 space-y-1 list-disc list-inside">
+                  <li class="text-slate-400 text-sm">Pas de Google Business Profile optimisé</li>
+<li class="text-slate-400 text-sm">Schema.org LegalService absent</li>
+<li class="text-slate-400 text-sm">Zéro avis Google</li>
+
+                </ul>
+              </div>
+              <!-- Message LinkedIn -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Message LinkedIn</span>
+                <pre class="mt-1 p-3 bg-slate-800/80 border border-slate-700/50 rounded-lg text-slate-300 text-xs leading-relaxed whitespace-pre-wrap max-h-[200px] overflow-y-auto">Bonjour Maître Schauber,
+
+En consultant votre site ts-avocats.fr, j&#x27;ai relevé un positionnement rare à Metz : la fiscalité des crypto-actifs, en complément de votre pratique fiscale classique. Votre parcours — DJCE, ancien CMS Francis Lefebvre — confirme une expertise solide et différenciante.
+
+Pourtant, en recherchant « avocat fiscal Metz » sur Google, votre cabinet n&#x27;apparaît pas dans les résultats locaux. L&#x27;audit technique révèle l&#x27;absence de fiche Google Business Profile optimisée et de balisage Schema.org LegalService — deux éléments qui conditionnent directement la visibilité dans le pack local Google.
+
+Nous accompagnons des cabinets indépendants sur ces optimisations de présence locale, de manière concrète et documentée.
+
+Serait-il pertinent d&#x27;échanger brièvement sur ce point ?
+
+Cordialement,
+AEGIS Agency</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="group bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="flex items-start justify-between mb-4">
+            <span class="bg-indigo-500/20 text-indigo-300 text-xs font-semibold px-3 py-1 rounded-full">Strasbourg</span>
+            <span class="text-slate-500 text-xs">09/03/2026</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">Cabinet Pierrot Avocat</h3>
+          <p class="text-slate-400 text-sm mb-2">Maitre Pierrot</p>
+          <p class="text-slate-500 text-xs mb-6">Droit Specialise</p>
+          <div class="flex gap-3">
+            <a href="demo-pierrot-avocat/index.html" class="flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Voir la demo</a>
+            <a href="demo-pierrot-avocat/index.html" download class="flex-1 text-center bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Telecharger</a>
+          </div>
+
+          <!-- Infos Prospect Button -->
+          <button onclick="togglePanel('panel-pierrot')" class="w-full mt-3 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-slate-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+            Infos prospect
+          </button>
+          <!-- Info Panel -->
+          <div id="panel-pierrot" class="info-panel overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <div class="mt-3 p-4 bg-slate-900/60 border border-slate-700/50 rounded-xl space-y-3">
+              <!-- Score SEO -->
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Score SEO</span>
+                <span class="bg-amber-500/20 text-amber-300 border-amber-500/30 text-lg font-bold px-3 py-0.5 rounded-lg border">5.65/10</span>
+              </div>
+              <!-- Site web -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Site web</span>
+                <a href="https://pierrot-avocat.fr/" target="_blank" rel="noopener" class="block text-blue-400 hover:text-blue-300 text-sm mt-0.5 truncate">https://pierrot-avocat.fr/</a>
+              </div>
+              <!-- Failles SEO -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Failles SEO</span>
+                <ul class="mt-1 space-y-1 list-disc list-inside">
+                  <li class="text-slate-400 text-sm">Render blocking 3.27s (FCP 3.5s sur mobile)</li>
+<li class="text-slate-400 text-sm">WordPress sous-optimisé (9 long tasks, APIs deprecated)</li>
+<li class="text-slate-400 text-sm">Schema.org LegalService absent</li>
+
+                </ul>
+              </div>
+              <!-- Message LinkedIn -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Message LinkedIn</span>
+                <pre class="mt-1 p-3 bg-slate-800/80 border border-slate-700/50 rounded-lg text-slate-300 text-xs leading-relaxed whitespace-pre-wrap max-h-[200px] overflow-y-auto">Bonjour Maître Pierrot,
+
+Vos 18 avis Google, tous à cinq étoiles, témoignent d&#x27;une réputation solide en droit du travail à Strasbourg. C&#x27;est un atout que peu de cabinets de votre ancienneté peuvent afficher.
+
+En consultant pierrot-avocat.fr, j&#x27;ai cependant noté que le site met environ trois secondes et demie à s&#x27;afficher sur mobile, en raison de ressources bloquantes qui retardent le chargement.
+
+Avec vos 2 700 abonnés LinkedIn susceptibles de visiter votre site, ce délai peut freiner les prises de contact.
+
+Nous accompagnons des cabinets indépendants dans l&#x27;optimisation technique de leur site et la mise en valeur de leurs avis clients.
+
+Est-ce un sujet qui vous intéresse ?
+
+Cordialement,
+AEGIS Agency</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="group bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="flex items-start justify-between mb-4">
+            <span class="bg-lime-500/20 text-lime-300 text-xs font-semibold px-3 py-1 rounded-full">Tours</span>
+            <span class="text-slate-500 text-xs">09/03/2026</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">Cabinet AJL Avocat</h3>
+          <p class="text-slate-400 text-sm mb-2">Maitre Jagot-Lacoussiere</p>
+          <p class="text-slate-500 text-xs mb-6">Droit des Societes &amp; Affaires</p>
+          <div class="flex gap-3">
+            <a href="demo-ajl-avocat/index.html" class="flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Voir la demo</a>
+            <a href="demo-ajl-avocat/index.html" download class="flex-1 text-center bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Telecharger</a>
+          </div>
+
+          <!-- Infos Prospect Button -->
+          <button onclick="togglePanel('panel-ajl')" class="w-full mt-3 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-slate-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+            Infos prospect
+          </button>
+          <!-- Info Panel -->
+          <div id="panel-ajl" class="info-panel overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <div class="mt-3 p-4 bg-slate-900/60 border border-slate-700/50 rounded-xl space-y-3">
+              <!-- Score SEO -->
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Score SEO</span>
+                <span class="bg-amber-500/20 text-amber-300 border-amber-500/30 text-lg font-bold px-3 py-0.5 rounded-lg border">6.50/10</span>
+              </div>
+              <!-- Site web -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Site web</span>
+                <a href="https://ajl-avocat.com/" target="_blank" rel="noopener" class="block text-blue-400 hover:text-blue-300 text-sm mt-0.5 truncate">https://ajl-avocat.com/</a>
+              </div>
+              <!-- Failles SEO -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Failles SEO</span>
+                <ul class="mt-1 space-y-1 list-disc list-inside">
+                  <li class="text-slate-400 text-sm">Meta description absente</li>
+<li class="text-slate-400 text-sm">Schema.org LegalService absent</li>
+<li class="text-slate-400 text-sm">Vidéo de fond pénalise le LCP mobile (estimation PSI 40-55/100)</li>
+
+                </ul>
+              </div>
+              <!-- Message LinkedIn -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Message LinkedIn</span>
+                <pre class="mt-1 p-3 bg-slate-800/80 border border-slate-700/50 rounded-lg text-slate-300 text-xs leading-relaxed whitespace-pre-wrap max-h-[200px] overflow-y-auto">Bonjour Maître Jagot-Lacoussière,
+
+En analysant votre présence en ligne, un élément m&#x27;a frappé : vous avez 52 avis Google avec une note de 4,8 sur 5. C&#x27;est la meilleure e-réputation que j&#x27;aie relevée parmi les cabinets d&#x27;avocats tourangeaux.
+
+Votre tunnel de conversion — formulaire en page d&#x27;accueil, réponse sous 48 heures, premier rendez-vous offert — est également exemplaire.
+
+Pourtant, votre site n&#x27;a pas de meta description : Google génère un extrait aléatoire à votre place. Et le balisage technique Schema.org est absent, ce qui empêche vos étoiles d&#x27;apparaître directement dans les résultats de recherche.
+
+Ce sont deux corrections rapides à fort impact.
+
+Seriez-vous ouvert à un échange sur ces points ?
+
+Cordialement,
+AEGIS Agency</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="group bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="flex items-start justify-between mb-4">
+            <span class="bg-cyan-500/20 text-cyan-300 text-xs font-semibold px-3 py-1 rounded-full">Grenoble</span>
+            <span class="text-slate-500 text-xs">08/03/2026</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">Cabinet Fournier Avocats</h3>
+          <p class="text-slate-400 text-sm mb-2">Maitre Fournier</p>
+          <p class="text-slate-500 text-xs mb-6">Defense des Salaries &amp; Victimes</p>
+          <div class="flex gap-3">
+            <a href="demo-fournier-avocat/index.html" class="flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Voir la demo</a>
+            <a href="demo-fournier-avocat/index.html" download class="flex-1 text-center bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Telecharger</a>
+          </div>
+
+          <!-- Infos Prospect Button -->
+          <button onclick="togglePanel('panel-fournier')" class="w-full mt-3 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-slate-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+            Infos prospect
+          </button>
+          <!-- Info Panel -->
+          <div id="panel-fournier" class="info-panel overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <div class="mt-3 p-4 bg-slate-900/60 border border-slate-700/50 rounded-xl space-y-3">
+              <!-- Score SEO -->
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Score SEO</span>
+                <span class="bg-emerald-500/20 text-emerald-300 border-emerald-500/30 text-lg font-bold px-3 py-0.5 rounded-lg border">7.50/10</span>
+              </div>
+              <!-- Site web -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Site web</span>
+                <a href="https://www.virginiefournieravocat.fr/" target="_blank" rel="noopener" class="block text-blue-400 hover:text-blue-300 text-sm mt-0.5 truncate">https://www.virginiefournieravocat.fr/</a>
+              </div>
+              <!-- Failles SEO -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Failles SEO</span>
+                <ul class="mt-1 space-y-1 list-disc list-inside">
+                  <li class="text-slate-400 text-sm">Schema.org FAQ absent (pas de rich snippets)</li>
+<li class="text-slate-400 text-sm">Vitesse de chargement mobile à optimiser</li>
+<li class="text-slate-400 text-sm">0 avis Google pour 80% des cabinets du batch (seule Fournier avec 85 avis)</li>
+
+                </ul>
+              </div>
+              <!-- Message LinkedIn -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Message LinkedIn</span>
+                <pre class="mt-1 p-3 bg-slate-800/80 border border-slate-700/50 rounded-lg text-slate-300 text-xs leading-relaxed whitespace-pre-wrap max-h-[200px] overflow-y-auto">Maître Fournier,
+
+Quatre-vingt-cinq avis à 4,8 étoiles, une prise de rendez-vous en ligne, des parcours segmentés « salarié » et « victime » : votre site est l&#x27;un des mieux structurés que nous ayons analysés dans le secteur juridique à Grenoble.
+
+Deux leviers techniques pourraient renforcer cette avance : l&#x27;ajout de données structurées sur vos pages FAQ pour obtenir les extraits enrichis Google, et une optimisation de la vitesse de chargement mobile pour améliorer l&#x27;expérience de vos visiteurs.
+
+Nous accompagnons des cabinets performants sur ces points d&#x27;optimisation.
+
+Seriez-vous ouverte à un échange de quelques minutes ?
+
+Bien cordialement</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="group bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="flex items-start justify-between mb-4">
+            <span class="bg-cyan-500/20 text-cyan-300 text-xs font-semibold px-3 py-1 rounded-full">Grenoble</span>
+            <span class="text-slate-500 text-xs">08/03/2026</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">Cabinet Lacroix</h3>
+          <p class="text-slate-400 text-sm mb-2">Maitre Pierre Lacroix</p>
+          <p class="text-slate-500 text-xs mb-6">Droit du Travail &amp; Penal</p>
+          <div class="flex gap-3">
+            <a href="demo-lacroix-avocat/index.html" class="flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Voir la demo</a>
+            <a href="demo-lacroix-avocat/index.html" download class="flex-1 text-center bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Telecharger</a>
+          </div>
+
+          <!-- Infos Prospect Button -->
+          <button onclick="togglePanel('panel-lacroix')" class="w-full mt-3 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-slate-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+            Infos prospect
+          </button>
+          <!-- Info Panel -->
+          <div id="panel-lacroix" class="info-panel overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <div class="mt-3 p-4 bg-slate-900/60 border border-slate-700/50 rounded-xl space-y-3">
+              <!-- Score SEO -->
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Score SEO</span>
+                <span class="bg-emerald-500/20 text-emerald-300 border-emerald-500/30 text-lg font-bold px-3 py-0.5 rounded-lg border">7.10/10</span>
+              </div>
+              <!-- Site web -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Site web</span>
+                <a href="https://lacroix-avocat-grenoble.fr/" target="_blank" rel="noopener" class="block text-blue-400 hover:text-blue-300 text-sm mt-0.5 truncate">https://lacroix-avocat-grenoble.fr/</a>
+              </div>
+              <!-- Failles SEO -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Failles SEO</span>
+                <ul class="mt-1 space-y-1 list-disc list-inside">
+                  <li class="text-slate-400 text-sm">Schema.org absent</li>
+<li class="text-slate-400 text-sm">Pas de système de RDV en ligne</li>
+<li class="text-slate-400 text-sm">Email @gmail au lieu de @domaine</li>
+
+                </ul>
+              </div>
+              <!-- Message LinkedIn -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Message LinkedIn</span>
+                <pre class="mt-1 p-3 bg-slate-800/80 border border-slate-700/50 rounded-lg text-slate-300 text-xs leading-relaxed whitespace-pre-wrap max-h-[200px] overflow-y-auto">Maître Lacroix,
+
+Vingt avis à cinq étoiles, un blog actif de vingt-huit articles juridiques et plus de trois mille abonnés sur LinkedIn : vous avez construit une présence en ligne que peu d&#x27;avocats en droit du travail à Grenoble peuvent égaler.
+
+En examinant votre site, j&#x27;ai identifié quelques leviers techniques qui pourraient renforcer cette dynamique : l&#x27;ajout de données structurées pour enrichir votre fiche Google, et la mise en place d&#x27;un système de prise de rendez-vous en ligne pour capter les sollicitations urgentes.
+
+Nous travaillons avec des cabinets indépendants sur ce type d&#x27;optimisation.
+
+Seriez-vous ouvert à un échange de quelques minutes ?
+
+Bien cordialement</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="group bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="flex items-start justify-between mb-4">
+            <span class="bg-amber-500/20 text-amber-300 text-xs font-semibold px-3 py-1 rounded-full">Marseille</span>
+            <span class="text-slate-500 text-xs">08/03/2026</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">Cabinet Diouf</h3>
+          <p class="text-slate-400 text-sm mb-2">Maitre Marie Diouf</p>
+          <p class="text-slate-500 text-xs mb-6">Divorce &amp; Famille</p>
+          <div class="flex gap-3">
+            <a href="demo-diouf-avocat/index.html" class="flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Voir la demo</a>
+            <a href="demo-diouf-avocat/index.html" download class="flex-1 text-center bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Telecharger</a>
+          </div>
+
+          <!-- Infos Prospect Button -->
+          <button onclick="togglePanel('panel-diouf')" class="w-full mt-3 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-slate-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+            Infos prospect
+          </button>
+          <!-- Info Panel -->
+          <div id="panel-diouf" class="info-panel overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <div class="mt-3 p-4 bg-slate-900/60 border border-slate-700/50 rounded-xl space-y-3">
+              <!-- Score SEO -->
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Score SEO</span>
+                <span class="bg-emerald-500/20 text-emerald-300 border-emerald-500/30 text-lg font-bold px-3 py-0.5 rounded-lg border">7.15/10</span>
+              </div>
+              <!-- Site web -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Site web</span>
+                <a href="https://avocat-divorce-famille-marie-diouf.fr/" target="_blank" rel="noopener" class="block text-blue-400 hover:text-blue-300 text-sm mt-0.5 truncate">https://avocat-divorce-famille-marie-diouf.fr/</a>
+              </div>
+              <!-- Failles SEO -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Failles SEO</span>
+                <ul class="mt-1 space-y-1 list-disc list-inside">
+                  <li class="text-slate-400 text-sm">NAP incohérent (2 adresses différentes : Francis Davso 13001 vs Fauchier 13002)</li>
+<li class="text-slate-400 text-sm">Vitesse non optimisée (WordPress + scripts tiers GA4/TrustIndex/CookieYes)</li>
+<li class="text-slate-400 text-sm">Téléphone non visible en header</li>
+
+                </ul>
+              </div>
+              <!-- Message LinkedIn -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Message LinkedIn</span>
+                <pre class="mt-1 p-3 bg-slate-800/80 border border-slate-700/50 rounded-lg text-slate-300 text-xs leading-relaxed whitespace-pre-wrap max-h-[200px] overflow-y-auto">Maître Diouf,
+
+Votre site est l&#x27;un des plus complets que j&#x27;ai analysés pour un cabinet en droit de la famille à Marseille : 20 avis cinq étoiles, des exemples d&#x27;affaires concrets, une FAQ structurée par problématique et un nom de domaine parfaitement ciblé.
+
+Un point mérite toutefois votre attention : deux adresses différentes apparaissent sur votre site — rue Francis Davso en pied de page et rue Fauchier dans votre politique de confidentialité. Cette incohérence est un signal négatif pour Google.
+
+Nous accompagnons des cabinets sur ces optimisations techniques.
+
+Seriez-vous ouverte à un bref échange ?
+
+Bien cordialement</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="group bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="flex items-start justify-between mb-4">
+            <span class="bg-amber-500/20 text-amber-300 text-xs font-semibold px-3 py-1 rounded-full">Marseille</span>
+            <span class="text-slate-500 text-xs">08/03/2026</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">Cabinet Fouque-Augier</h3>
+          <p class="text-slate-400 text-sm mb-2">Maitre Nathalie Fouque-Augier</p>
+          <p class="text-slate-500 text-xs mb-6">Droit du Travail</p>
+          <div class="flex gap-3">
+            <a href="demo-fouque-augier-avocat/index.html" class="flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Voir la demo</a>
+            <a href="demo-fouque-augier-avocat/index.html" download class="flex-1 text-center bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Telecharger</a>
+          </div>
+
+          <!-- Infos Prospect Button -->
+          <button onclick="togglePanel('panel-fouque-augier')" class="w-full mt-3 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-slate-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+            Infos prospect
+          </button>
+          <!-- Info Panel -->
+          <div id="panel-fouque-augier" class="info-panel overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <div class="mt-3 p-4 bg-slate-900/60 border border-slate-700/50 rounded-xl space-y-3">
+              <!-- Score SEO -->
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Score SEO</span>
+                <span class="bg-emerald-500/20 text-emerald-300 border-emerald-500/30 text-lg font-bold px-3 py-0.5 rounded-lg border">7.10/10</span>
+              </div>
+              <!-- Site web -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Site web</span>
+                <a href="https://fouque-augier-avocat.com/" target="_blank" rel="noopener" class="block text-blue-400 hover:text-blue-300 text-sm mt-0.5 truncate">https://fouque-augier-avocat.com/</a>
+              </div>
+              <!-- Failles SEO -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Failles SEO</span>
+                <ul class="mt-1 space-y-1 list-disc list-inside">
+                  <li class="text-slate-400 text-sm">Schema.org LocalBusiness absent</li>
+<li class="text-slate-400 text-sm">Fiche Google Business Profile non identifiable</li>
+<li class="text-slate-400 text-sm">Pas de RDV en ligne automatisé</li>
+
+                </ul>
+              </div>
+              <!-- Message LinkedIn -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Message LinkedIn</span>
+                <pre class="mt-1 p-3 bg-slate-800/80 border border-slate-700/50 rounded-lg text-slate-300 text-xs leading-relaxed whitespace-pre-wrap max-h-[200px] overflow-y-auto">Maître Fouque-Augier,
+
+Votre site est l&#x27;un des mieux structurés que j&#x27;ai pu analyser pour un cabinet en droit du travail à Marseille : double parcours salarié et employeur, blog actif avec des articles publiés en 2026, et un formulaire de contact qualifiant.
+
+J&#x27;ai toutefois noté l&#x27;absence de balisage Schema.org et de fiche Google Business identifiable. Ce sont deux éléments techniques qui empêchent Google d&#x27;afficher vos informations enrichies dans les résultats de recherche locale.
+
+Nous intervenons sur ces aspects techniques pour les cabinets indépendants.
+
+Auriez-vous vingt minutes pour en discuter ?
+
+Bien cordialement</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="group bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="flex items-start justify-between mb-4">
+            <span class="bg-amber-500/20 text-amber-300 text-xs font-semibold px-3 py-1 rounded-full">Marseille</span>
+            <span class="text-slate-500 text-xs">08/03/2026</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">Cabinet Herteloup</h3>
+          <p class="text-slate-400 text-sm mb-2">Hugo Herteloup</p>
+          <p class="text-slate-500 text-xs mb-6">Droit Fiscal</p>
+          <div class="flex gap-3">
+            <a href="demo-herteloup-avocat/index.html" class="flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Voir la demo</a>
+            <a href="demo-herteloup-avocat/index.html" download class="flex-1 text-center bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Telecharger</a>
+          </div>
+
+          <!-- Infos Prospect Button -->
+          <button onclick="togglePanel('panel-herteloup')" class="w-full mt-3 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-slate-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+            Infos prospect
+          </button>
+          <!-- Info Panel -->
+          <div id="panel-herteloup" class="info-panel overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <div class="mt-3 p-4 bg-slate-900/60 border border-slate-700/50 rounded-xl space-y-3">
+              <!-- Score SEO -->
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Score SEO</span>
+                <span class="bg-emerald-500/20 text-emerald-300 border-emerald-500/30 text-lg font-bold px-3 py-0.5 rounded-lg border">7.15/10</span>
+              </div>
+              <!-- Site web -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Site web</span>
+                <a href="https://herteloup-avocat.fr/" target="_blank" rel="noopener" class="block text-blue-400 hover:text-blue-300 text-sm mt-0.5 truncate">https://herteloup-avocat.fr/</a>
+              </div>
+              <!-- Failles SEO -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Failles SEO</span>
+                <ul class="mt-1 space-y-1 list-disc list-inside">
+                  <li class="text-slate-400 text-sm">Zéro blog/contenu éditorial (9 domaines d&#x27;expertise sans articles)</li>
+<li class="text-slate-400 text-sm">Schema.org absent</li>
+<li class="text-slate-400 text-sm">Dépendance LinkedIn forte (6613 followers mais pas de trafic SEO organique)</li>
+
+                </ul>
+              </div>
+              <!-- Message LinkedIn -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Message LinkedIn</span>
+                <pre class="mt-1 p-3 bg-slate-800/80 border border-slate-700/50 rounded-lg text-slate-300 text-xs leading-relaxed whitespace-pre-wrap max-h-[200px] overflow-y-auto">Maître Herteloup,
+
+Votre cabinet affiche 17 avis cinq étoiles en deux ans d&#x27;existence et une communauté LinkedIn de plus de 6 600 abonnés — des résultats remarquables pour un lancement récent.
+
+En analysant votre site herteloup-avocat.fr, j&#x27;ai noté que vos neuf domaines d&#x27;expertise fiscale n&#x27;ont aucun contenu éditorial associé : pas de blog, pas d&#x27;articles. C&#x27;est un levier de trafic organique inexploité, notamment sur des recherches comme « optimisation IFI Marseille » ou « contrôle fiscal avocat ».
+
+Nous accompagnons des cabinets indépendants sur ce type de stratégie de contenu.
+
+Seriez-vous ouvert à un échange ?
+
+Bien cordialement</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="group bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="flex items-start justify-between mb-4">
+            <span class="bg-blue-500/20 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full">Nice</span>
+            <span class="text-slate-500 text-xs">08/03/2026</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">Cabinet De La Torre</h3>
+          <p class="text-slate-400 text-sm mb-2">Maitre Rebecca De La Torre</p>
+          <p class="text-slate-500 text-xs mb-6">Droit du Travail</p>
+          <div class="flex gap-3">
+            <a href="demo-delatorre-avocat/index.html" class="flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Voir la demo</a>
+            <a href="demo-delatorre-avocat/index.html" download class="flex-1 text-center bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Telecharger</a>
+          </div>
+
+          <!-- Infos Prospect Button -->
+          <button onclick="togglePanel('panel-delatorre')" class="w-full mt-3 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-slate-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+            Infos prospect
+          </button>
+          <!-- Info Panel -->
+          <div id="panel-delatorre" class="info-panel overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <div class="mt-3 p-4 bg-slate-900/60 border border-slate-700/50 rounded-xl space-y-3">
+              <!-- Score SEO -->
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Score SEO</span>
+                <span class="bg-amber-500/20 text-amber-300 border-amber-500/30 text-lg font-bold px-3 py-0.5 rounded-lg border">6.75/10</span>
+              </div>
+              <!-- Site web -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Site web</span>
+                <a href="https://delatorre-avocat.fr/" target="_blank" rel="noopener" class="block text-blue-400 hover:text-blue-300 text-sm mt-0.5 truncate">https://delatorre-avocat.fr/</a>
+              </div>
+              <!-- Failles SEO -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Failles SEO</span>
+                <ul class="mt-1 space-y-1 list-disc list-inside">
+                  <li class="text-slate-400 text-sm">Schema.org LegalService absent malgré contenu riche</li>
+<li class="text-slate-400 text-sm">Rich snippets non activés sur les SERP</li>
+<li class="text-slate-400 text-sm">Core Web Vitals à optimiser (site techniquement bien structuré mais pas de balisage)</li>
+
+                </ul>
+              </div>
+              <!-- Message LinkedIn -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Message LinkedIn</span>
+                <pre class="mt-1 p-3 bg-slate-800/80 border border-slate-700/50 rounded-lg text-slate-300 text-xs leading-relaxed whitespace-pre-wrap max-h-[200px] overflow-y-auto">Bonjour Maître De La Torre,
+
+En consultant votre site, j&#x27;ai été frappé par la qualité de votre contenu éditorial : articles de blog détaillés sur la rupture conventionnelle, honoraires affichés, système de prise de rendez-vous structuré — c&#x27;est rare parmi les cabinets niçois en droit social.
+
+Un point technique limite pourtant votre visibilité : l&#x27;absence de balisage schema.org LegalService empêche Google d&#x27;afficher votre cabinet en position prioritaire sur les requêtes « avocat droit travail Nice ».
+
+Ce balisage s&#x27;ajoute en quelques heures sur un site existant, sans modifier votre contenu.
+
+Serait-il pertinent d&#x27;échanger brièvement sur ce point ?
+
+Cordialement,
+AEGIS Agency</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="group bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="flex items-start justify-between mb-4">
+            <span class="bg-blue-500/20 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full">Nice</span>
+            <span class="text-slate-500 text-xs">08/03/2026</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">Cabinet Mascolo</h3>
+          <p class="text-slate-400 text-sm mb-2">Maitre Eleonora Mascolo</p>
+          <p class="text-slate-500 text-xs mb-6">Penal / Immobilier / Affaires</p>
+          <div class="flex gap-3">
+            <a href="demo-mascolo-avocat/index.html" class="flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Voir la demo</a>
+            <a href="demo-mascolo-avocat/index.html" download class="flex-1 text-center bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Telecharger</a>
+          </div>
+
+          <!-- Infos Prospect Button -->
+          <button onclick="togglePanel('panel-mascolo')" class="w-full mt-3 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-slate-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+            Infos prospect
+          </button>
+          <!-- Info Panel -->
+          <div id="panel-mascolo" class="info-panel overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <div class="mt-3 p-4 bg-slate-900/60 border border-slate-700/50 rounded-xl space-y-3">
+              <!-- Score SEO -->
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Score SEO</span>
+                <span class="bg-amber-500/20 text-amber-300 border-amber-500/30 text-lg font-bold px-3 py-0.5 rounded-lg border">5.90/10</span>
+              </div>
+              <!-- Site web -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Site web</span>
+                <a href="https://www.avocat-mascolo.com/" target="_blank" rel="noopener" class="block text-blue-400 hover:text-blue-300 text-sm mt-0.5 truncate">https://www.avocat-mascolo.com/</a>
+              </div>
+              <!-- Failles SEO -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Failles SEO</span>
+                <ul class="mt-1 space-y-1 list-disc list-inside">
+                  <li class="text-slate-400 text-sm">Schema.org absent (78 avis non affichés en rich snippets)</li>
+<li class="text-slate-400 text-sm">Positionnement bilingue franco-italien non exploité en SEO (H1/meta title)</li>
+<li class="text-slate-400 text-sm">Rich snippets Google non activés malgré 78 avis</li>
+
+                </ul>
+              </div>
+              <!-- Message LinkedIn -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Message LinkedIn</span>
+                <pre class="mt-1 p-3 bg-slate-800/80 border border-slate-700/50 rounded-lg text-slate-300 text-xs leading-relaxed whitespace-pre-wrap max-h-[200px] overflow-y-auto">Bonjour Maître Mascolo,
+
+En consultant votre profil, j&#x27;ai noté un élément distinctif : 78 avis Google à 4,5/5 — un score exceptionnel pour un cabinet indépendant à Nice, qui vous place parmi les avocats les mieux évalués de la ville.
+
+Ce score n&#x27;apparaît pourtant pas dans les résultats Google, car le balisage schema.org est absent de votre site. Sans ce balisage, Google ne peut pas afficher votre note en tant que rich snippet dans la page de résultats.
+
+L&#x27;ajout de ce balisage est une intervention technique ciblée, sans modification de votre site existant.
+
+Serait-il pertinent d&#x27;échanger brièvement sur ce point ?
+
+Cordialement,
+AEGIS Agency</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="group bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="flex items-start justify-between mb-4">
+            <span class="bg-teal-500/20 text-teal-300 text-xs font-semibold px-3 py-1 rounded-full">Rennes</span>
+            <span class="text-slate-500 text-xs">08/03/2026</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">Cabinet Guinard</h3>
+          <p class="text-slate-400 text-sm mb-2">Maitre Timothee Guinard</p>
+          <p class="text-slate-500 text-xs mb-6">Droit Fiscal</p>
+          <div class="flex gap-3">
+            <a href="demo-guinard-avocat/index.html" class="flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Voir la demo</a>
+            <a href="demo-guinard-avocat/index.html" download class="flex-1 text-center bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Telecharger</a>
+          </div>
+
+          <!-- Infos Prospect Button -->
+          <button onclick="togglePanel('panel-guinard')" class="w-full mt-3 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-slate-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+            Infos prospect
+          </button>
+          <!-- Info Panel -->
+          <div id="panel-guinard" class="info-panel overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <div class="mt-3 p-4 bg-slate-900/60 border border-slate-700/50 rounded-xl space-y-3">
+              <!-- Score SEO -->
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Score SEO</span>
+                <span class="bg-amber-500/20 text-amber-300 border-amber-500/30 text-lg font-bold px-3 py-0.5 rounded-lg border">6.50/10</span>
+              </div>
+              <!-- Site web -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Site web</span>
+                <a href="https://www.avocat-fiscaliste-rennes.fr/" target="_blank" rel="noopener" class="block text-blue-400 hover:text-blue-300 text-sm mt-0.5 truncate">https://www.avocat-fiscaliste-rennes.fr/</a>
+              </div>
+              <!-- Failles SEO -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Failles SEO</span>
+                <ul class="mt-1 space-y-1 list-disc list-inside">
+                  <li class="text-slate-400 text-sm">Schema.org Attorney/LocalBusiness absent</li>
+<li class="text-slate-400 text-sm">Zéro fiche Google Business Profile (invisible sur Google Maps)</li>
+<li class="text-slate-400 text-sm">LCP 4.0s (au-dessus du seuil Google de 2.5s)</li>
+
+                </ul>
+              </div>
+              <!-- Message LinkedIn -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Message LinkedIn</span>
+                <pre class="mt-1 p-3 bg-slate-800/80 border border-slate-700/50 rounded-lg text-slate-300 text-xs leading-relaxed whitespace-pre-wrap max-h-[200px] overflow-y-auto">Maître Guinard,
+
+Votre positionnement sur le droit fiscal à Rennes est remarquable — votre nom de domaine avocat-fiscaliste-rennes.fr constitue un atout SEO rare dans la profession.
+
+En analysant votre site, j&#x27;ai constaté qu&#x27;il manque certains éléments techniques (données structurées, fiche Google Business optimisée) qui permettraient de renforcer votre visibilité locale auprès des dirigeants et particuliers recherchant un fiscaliste à Rennes.
+
+Nous accompagnons des cabinets indépendants en province sur ces sujets.
+
+Seriez-vous ouvert à un échange de quelques minutes pour en discuter ?
+
+Bien cordialement</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="group bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="flex items-start justify-between mb-4">
+            <span class="bg-pink-500/20 text-pink-300 text-xs font-semibold px-3 py-1 rounded-full">Rouen</span>
+            <span class="text-slate-500 text-xs">08/03/2026</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">Cabinet Yonan-Mercadier</h3>
+          <p class="text-slate-400 text-sm mb-2">Maitre Yonan-Mercadier</p>
+          <p class="text-slate-500 text-xs mb-6">Droit Fiscal &amp; Affaires</p>
+          <div class="flex gap-3">
+            <a href="demo-yonan-mercadier-avocat/index.html" class="flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Voir la demo</a>
+            <a href="demo-yonan-mercadier-avocat/index.html" download class="flex-1 text-center bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Telecharger</a>
+          </div>
+
+          <!-- Infos Prospect Button -->
+          <button onclick="togglePanel('panel-yonan-mercadier')" class="w-full mt-3 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-slate-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+            Infos prospect
+          </button>
+          <!-- Info Panel -->
+          <div id="panel-yonan-mercadier" class="info-panel overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <div class="mt-3 p-4 bg-slate-900/60 border border-slate-700/50 rounded-xl space-y-3">
+              <!-- Score SEO -->
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Score SEO</span>
+                <span class="bg-amber-500/20 text-amber-300 border-amber-500/30 text-lg font-bold px-3 py-0.5 rounded-lg border">6.65/10</span>
+              </div>
+              <!-- Site web -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Site web</span>
+                <a href="https://yonan-mercadier-avocat.fr/" target="_blank" rel="noopener" class="block text-blue-400 hover:text-blue-300 text-sm mt-0.5 truncate">https://yonan-mercadier-avocat.fr/</a>
+              </div>
+              <!-- Failles SEO -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Failles SEO</span>
+                <ul class="mt-1 space-y-1 list-disc list-inside">
+                  <li class="text-slate-400 text-sm">Schema.org LegalService absent</li>
+<li class="text-slate-400 text-sm">H1 générique sans mot-clé géo (ni &#x27;avocat&#x27; ni &#x27;Rouen&#x27;)</li>
+<li class="text-slate-400 text-sm">NAP incomplet sur homepage (adresse et tel non visibles en clair)</li>
+
+                </ul>
+              </div>
+              <!-- Message LinkedIn -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Message LinkedIn</span>
+                <pre class="mt-1 p-3 bg-slate-800/80 border border-slate-700/50 rounded-lg text-slate-300 text-xs leading-relaxed whitespace-pre-wrap max-h-[200px] overflow-y-auto">Bonjour Maître Yonan-Mercadier,
+
+En consultant votre site, j&#x27;ai été frappé par la qualité du contenu proposé : FAQ détaillée, simulateurs pour dirigeants, articles réguliers sur la fiscalité. C&#x27;est l&#x27;un des sites de cabinet les plus complets que nous ayons analysés à Rouen.
+
+Cependant, un point technique freine votre visibilité locale : le balisage Schema.org LegalService est absent. Concrètement, Google ne peut pas afficher vos horaires, votre spécialité ni vos coordonnées directement dans les résultats enrichis.
+
+Votre H1 actuel ne mentionne ni « avocat » ni « Rouen ».
+
+Nous accompagnons des cabinets indépendants sur ces ajustements techniques ciblés.
+
+Seriez-vous disponible pour un échange de 20 minutes sur ce sujet ?
+
+Cordialement,
+AEGIS Agency</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="group bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="flex items-start justify-between mb-4">
+            <span class="bg-blue-500/20 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full">Nice</span>
+            <span class="text-slate-500 text-xs">07/03/2026</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">Cabinet E. Mundet</h3>
+          <p class="text-slate-400 text-sm mb-2">Maitre Mundet</p>
+          <p class="text-slate-500 text-xs mb-6">Droit Fiscal</p>
+          <div class="flex gap-3">
+            <a href="demo-mundet-avocat/index.html" class="flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Voir la demo</a>
+            <a href="demo-mundet-avocat/index.html" download class="flex-1 text-center bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Telecharger</a>
+          </div>
+
+          <!-- Infos Prospect Button -->
+          <button onclick="togglePanel('panel-mundet')" class="w-full mt-3 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-slate-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+            Infos prospect
+          </button>
+          <!-- Info Panel -->
+          <div id="panel-mundet" class="info-panel overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <div class="mt-3 p-4 bg-slate-900/60 border border-slate-700/50 rounded-xl space-y-3">
+              <!-- Score SEO -->
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Score SEO</span>
+                <span class="bg-amber-500/20 text-amber-300 border-amber-500/30 text-lg font-bold px-3 py-0.5 rounded-lg border">5.25/10</span>
+              </div>
+              <!-- Site web -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Site web</span>
+                <a href="https://www.cabinet-e-mundet.com/" target="_blank" rel="noopener" class="block text-blue-400 hover:text-blue-300 text-sm mt-0.5 truncate">https://www.cabinet-e-mundet.com/</a>
+              </div>
+              <!-- Failles SEO -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Failles SEO</span>
+                <ul class="mt-1 space-y-1 list-disc list-inside">
+                  <li class="text-slate-400 text-sm">Schema.org LegalService absent</li>
+<li class="text-slate-400 text-sm">Pas de page dédiée clientèle internationale (fiscalité franco-monégasque)</li>
+<li class="text-slate-400 text-sm">Pas de système de RDV en ligne automatisé (CTA présent mais non optimisé)</li>
+
+                </ul>
+              </div>
+              <!-- Message LinkedIn -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Message LinkedIn</span>
+                <pre class="mt-1 p-3 bg-slate-800/80 border border-slate-700/50 rounded-lg text-slate-300 text-xs leading-relaxed whitespace-pre-wrap max-h-[200px] overflow-y-auto">Bonjour Maître Mundet,
+
+En consultant cabinet-e-mundet.com, j&#x27;ai noté deux points sur votre présence numérique locale : l&#x27;absence de balisage schema.org LegalService — qui limite votre apparition sur « avocat fiscaliste Nice » dans Google — et l&#x27;absence de page dédiée à la clientèle internationale, alors que votre expertise en fiscalité franco-monégasque et en régularisation d&#x27;avoirs étrangers y répond directement.
+
+Ces deux ajustements sont techniques et ciblés, sans refonte de votre site existant.
+
+Nous accompagnons des cabinets indépendants sur ce type d&#x27;optimisation de présence numérique.
+
+Serait-il pertinent d&#x27;échanger brièvement sur ce point ?
+
+Cordialement,
+AEGIS Agency</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="group bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="flex items-start justify-between mb-4">
+            <span class="bg-blue-500/20 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full">Nice</span>
+            <span class="text-slate-500 text-xs">07/03/2026</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">Cabinet Haikel</h3>
+          <p class="text-slate-400 text-sm mb-2">Maitre David Haikel</p>
+          <p class="text-slate-500 text-xs mb-6">Droit Fiscal</p>
+          <div class="flex gap-3">
+            <a href="demo-haikel-avocat/index.html" class="flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Voir la demo</a>
+            <a href="demo-haikel-avocat/index.html" download class="flex-1 text-center bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Telecharger</a>
+          </div>
+
+          <!-- Infos Prospect Button -->
+          <button onclick="togglePanel('panel-haikel')" class="w-full mt-3 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-slate-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+            Infos prospect
+          </button>
+          <!-- Info Panel -->
+          <div id="panel-haikel" class="info-panel overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <div class="mt-3 p-4 bg-slate-900/60 border border-slate-700/50 rounded-xl space-y-3">
+              <!-- Score SEO -->
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Score SEO</span>
+                <span class="bg-red-500/20 text-red-300 border-red-500/30 text-lg font-bold px-3 py-0.5 rounded-lg border">4.35/10</span>
+              </div>
+              <!-- Site web -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Site web</span>
+                <a href="https://www.avocatfiscaliste-haikel.com/" target="_blank" rel="noopener" class="block text-blue-400 hover:text-blue-300 text-sm mt-0.5 truncate">https://www.avocatfiscaliste-haikel.com/</a>
+              </div>
+              <!-- Failles SEO -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Failles SEO</span>
+                <ul class="mt-1 space-y-1 list-disc list-inside">
+                  <li class="text-slate-400 text-sm">Site Jalis (prestataire low-cost limitant les performances)</li>
+<li class="text-slate-400 text-sm">Schema.org absent</li>
+<li class="text-slate-400 text-sm">Balises H1/H2 non optimisées pour mots-clés locaux</li>
+
+                </ul>
+              </div>
+              <!-- Message LinkedIn -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Message LinkedIn</span>
+                <pre class="mt-1 p-3 bg-slate-800/80 border border-slate-700/50 rounded-lg text-slate-300 text-xs leading-relaxed whitespace-pre-wrap max-h-[200px] overflow-y-auto">Bonjour Maître Haikel,
+
+En consultant avocatfiscaliste-haikel.com, j&#x27;ai relevé que votre site est hébergé et maintenu par Jalis — un prestataire généraliste dont les sites présentent structurellement des performances techniques limitées : code non optimisé, schema.org absent, balises H1 non adaptées aux requêtes locales comme « avocat fiscaliste Nice avenue Jean Médecin ».
+
+Pour un cabinet avec votre positionnement différenciant — ancien inspecteur des finances publiques, expertise contrôle fiscal — ce cadre technique sous-exploite votre capital de crédibilité en ligne.
+
+Nous accompagnons des cabinets indépendants vers une présence numérique à la hauteur de leur expertise.
+
+Serait-il pertinent d&#x27;échanger brièvement sur ce point ?
+
+Cordialement,
+AEGIS Agency</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="group bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="flex items-start justify-between mb-4">
+            <span class="bg-blue-500/20 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full">Nice</span>
+            <span class="text-slate-500 text-xs">07/03/2026</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">Cabinet Miller</h3>
+          <p class="text-slate-400 text-sm mb-2">Maitre Alexandre Miller</p>
+          <p class="text-slate-500 text-xs mb-6">Droit Fiscal &amp; Affaires</p>
+          <div class="flex gap-3">
+            <a href="demo-miller-avocat/index.html" class="flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Voir la demo</a>
+            <a href="demo-miller-avocat/index.html" download class="flex-1 text-center bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Telecharger</a>
+          </div>
+
+          <!-- Infos Prospect Button -->
+          <button onclick="togglePanel('panel-miller')" class="w-full mt-3 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-slate-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+            Infos prospect
+          </button>
+          <!-- Info Panel -->
+          <div id="panel-miller" class="info-panel overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <div class="mt-3 p-4 bg-slate-900/60 border border-slate-700/50 rounded-xl space-y-3">
+              <!-- Score SEO -->
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Score SEO</span>
+                <span class="bg-red-500/20 text-red-300 border-red-500/30 text-lg font-bold px-3 py-0.5 rounded-lg border">4.00/10</span>
+              </div>
+              <!-- Site web -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Site web</span>
+                <a href="https://avocat-miller-nice.fr/" target="_blank" rel="noopener" class="block text-blue-400 hover:text-blue-300 text-sm mt-0.5 truncate">https://avocat-miller-nice.fr/</a>
+              </div>
+              <!-- Failles SEO -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Failles SEO</span>
+                <ul class="mt-1 space-y-1 list-disc list-inside">
+                  <li class="text-slate-400 text-sm">Google Business Profile non optimisé (0 avis visibles)</li>
+<li class="text-slate-400 text-sm">Schema.org LegalService absent</li>
+<li class="text-slate-400 text-sm">Aucune page dédiée clientèle Côte d&#x27;Azur/Monaco en fiscalité internationale</li>
+
+                </ul>
+              </div>
+              <!-- Message LinkedIn -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Message LinkedIn</span>
+                <pre class="mt-1 p-3 bg-slate-800/80 border border-slate-700/50 rounded-lg text-slate-300 text-xs leading-relaxed whitespace-pre-wrap max-h-[200px] overflow-y-auto">Bonjour Maître Miller,
+
+En consultant avocat-miller-nice.fr, j&#x27;ai noté que votre cabinet ne dispose pas encore de fiche Google Business optimisée — aucun avis visible, aucun balisage schema.org LegalService, et pas de page dédiée à la clientèle Côte d&#x27;Azur et Monaco en fiscalité internationale.
+
+Pour un cabinet en phase de développement initial, la présence numérique locale est le levier le plus direct pour gagner en visibilité sur les requêtes « avocat fiscal Nice » et « avocat affaires Nice 06 ».
+
+Nous accompagnons des cabinets indépendants sur la mise en place de cette présence de façon structurée.
+
+Serait-il pertinent d&#x27;échanger brièvement sur ce point ?
+
+Cordialement,
+AEGIS Agency</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="group bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="flex items-start justify-between mb-4">
+            <span class="bg-blue-500/20 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full">Nice</span>
+            <span class="text-slate-500 text-xs">07/03/2026</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">Cabinet Sempere</h3>
+          <p class="text-slate-400 text-sm mb-2">Maitre Florian Sempere</p>
+          <p class="text-slate-500 text-xs mb-6">Droit Fiscal &amp; Affaires</p>
+          <div class="flex gap-3">
+            <a href="demo-sempere-avocat/index.html" class="flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Voir la demo</a>
+            <a href="demo-sempere-avocat/index.html" download class="flex-1 text-center bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Telecharger</a>
+          </div>
+
+          <!-- Infos Prospect Button -->
+          <button onclick="togglePanel('panel-sempere')" class="w-full mt-3 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-slate-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+            Infos prospect
+          </button>
+          <!-- Info Panel -->
+          <div id="panel-sempere" class="info-panel overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <div class="mt-3 p-4 bg-slate-900/60 border border-slate-700/50 rounded-xl space-y-3">
+              <!-- Score SEO -->
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Score SEO</span>
+                <span class="bg-red-500/20 text-red-300 border-red-500/30 text-lg font-bold px-3 py-0.5 rounded-lg border">3.80/10</span>
+              </div>
+              <!-- Site web -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Site web</span>
+                <a href="https://avocat-sempere-nice.fr/" target="_blank" rel="noopener" class="block text-blue-400 hover:text-blue-300 text-sm mt-0.5 truncate">https://avocat-sempere-nice.fr/</a>
+              </div>
+              <!-- Failles SEO -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Failles SEO</span>
+                <ul class="mt-1 space-y-1 list-disc list-inside">
+                  <li class="text-slate-400 text-sm">Téléphone non cliquable en page d&#x27;accueil (conversion mobile)</li>
+<li class="text-slate-400 text-sm">Schema.org LegalService absent</li>
+<li class="text-slate-400 text-sm">CTA unique = formulaire basique, aucun bouton click-to-call</li>
+
+                </ul>
+              </div>
+              <!-- Message LinkedIn -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Message LinkedIn</span>
+                <pre class="mt-1 p-3 bg-slate-800/80 border border-slate-700/50 rounded-lg text-slate-300 text-xs leading-relaxed whitespace-pre-wrap max-h-[200px] overflow-y-auto">Bonjour Maître Sempere,
+
+En consultant avocat-sempere-nice.fr, j&#x27;ai identifié deux points qui limitent actuellement votre conversion : l&#x27;absence de numéro de téléphone cliquable en page d&#x27;accueil — le premier réflexe d&#x27;un prospect sur mobile — et l&#x27;absence de balisage schema.org LegalService, qui empêche votre cabinet d&#x27;apparaître sur les recherches locales « avocat fiscal Nice » dans Google.
+
+Ces deux corrections sont ciblées et peuvent être mises en place sans refonte de votre site existant.
+
+Nous accompagnons des cabinets indépendants sur ce type d&#x27;optimisation de présence numérique.
+
+Serait-il pertinent d&#x27;échanger brièvement sur ce point ?
+
+Cordialement,
+AEGIS Agency</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="group bg-slate-800/60 backdrop-blur border border-slate-700/50 rounded-2xl p-6 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="flex items-start justify-between mb-4">
+            <span class="bg-blue-500/20 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full">Nice</span>
+            <span class="text-slate-500 text-xs">07/03/2026</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">Cabinet Zekri</h3>
+          <p class="text-slate-400 text-sm mb-2">Maitre Celine Zekri</p>
+          <p class="text-slate-500 text-xs mb-6">Immobilier &amp; Famille</p>
+          <div class="flex gap-3">
+            <a href="demo-zekri-avocat/index.html" class="flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Voir la demo</a>
+            <a href="demo-zekri-avocat/index.html" download class="flex-1 text-center bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-medium py-2.5 px-4 rounded-xl transition-colors">Telecharger</a>
+          </div>
+
+          <!-- Infos Prospect Button -->
+          <button onclick="togglePanel('panel-zekri')" class="w-full mt-3 flex items-center justify-center gap-2 border border-slate-600 text-slate-300 text-sm font-medium py-2.5 px-4 rounded-xl hover:bg-slate-700 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+            Infos prospect
+          </button>
+          <!-- Info Panel -->
+          <div id="panel-zekri" class="info-panel overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <div class="mt-3 p-4 bg-slate-900/60 border border-slate-700/50 rounded-xl space-y-3">
+              <!-- Score SEO -->
+              <div class="flex items-center gap-3">
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Score SEO</span>
+                <span class="bg-red-500/20 text-red-300 border-red-500/30 text-lg font-bold px-3 py-0.5 rounded-lg border">4.70/10</span>
+              </div>
+              <!-- Site web -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Site web</span>
+                <a href="https://celine-zekri-avocat.fr/" target="_blank" rel="noopener" class="block text-blue-400 hover:text-blue-300 text-sm mt-0.5 truncate">https://celine-zekri-avocat.fr/</a>
+              </div>
+              <!-- Failles SEO -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Failles SEO</span>
+                <ul class="mt-1 space-y-1 list-disc list-inside">
+                  <li class="text-slate-400 text-sm">Schema.org absent</li>
+<li class="text-slate-400 text-sm">Téléphone non cliquable sur mobile</li>
+<li class="text-slate-400 text-sm">Blog inactif depuis 2024 (activité éditoriale ralentie)</li>
+
+                </ul>
+              </div>
+              <!-- Message LinkedIn -->
+              <div>
+                <span class="text-slate-400 text-xs font-medium uppercase tracking-wider">Message LinkedIn</span>
+                <pre class="mt-1 p-3 bg-slate-800/80 border border-slate-700/50 rounded-lg text-slate-300 text-xs leading-relaxed whitespace-pre-wrap max-h-[200px] overflow-y-auto">Bonjour Maître Zekri,
+
+En analysant votre site celine-zekri-avocat.fr, j&#x27;ai identifié deux points techniques qui limitent actuellement votre visibilité locale : le balisage schema.org est absent — ce qui réduit votre apparition sur les requêtes « avocat immobilier Nice » et « avocat famille Nice » — et votre numéro de téléphone n&#x27;est pas cliquable sur mobile, ce qui génère des pertes de contact sur le canal majoritaire des recherches juridiques locales.
+
+Ces deux corrections sont ciblées et ne nécessitent pas de refonte de votre site.
+
+Nous accompagnons des cabinets indépendants sur ce type d&#x27;optimisation.
+
+Auriez-vous 20 minutes pour qu&#x27;on vous présente notre approche ?
+
+Cordialement,
+AEGIS Agency</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 mt-16">
+    <div class="max-w-7xl mx-auto px-6 py-8 text-center">
+      <p class="text-slate-500 text-sm">AEGIS Agency &copy; 2026 — Demos internes, ne pas diffuser</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.group').forEach((el, i) => {
+      el.style.animationDelay = (i * 60) + 'ms';
+      el.classList.add('fade-in');
+    });
+    function togglePanel(id) {
+      const panel = document.getElementById(id);
+      if (panel) {
+        panel.classList.toggle('open');
+      }
+    }
+  </script>
+</body>
+</html>
