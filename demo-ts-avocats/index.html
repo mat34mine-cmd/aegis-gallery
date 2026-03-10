@@ -1,1 +1,1310 @@
-{"id":"/demo-ts-avocats/index.html","path":"/demo-ts-avocats/index.html","sha":"6c4567dfdd65ccb1097a90004bf13df405b108cc","mime_type":"text/html","size":31136,"site_id":"4c3dbfa6-f3d7-495d-8a15-3db158b88252","deploy_id":"69af858c2e4a894555af51ff"}
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TS Avocats — Thomas Schauber | Avocat Fiscaliste Metz | Crypto & Blockchain</title>
+    <meta name="description" content="TS Avocats — Cabinet d'avocat fiscaliste a Metz. Expertise en fiscalite des crypto-actifs, blockchain, conseil PME et contentieux. Maitre Thomas Schauber, DJCE.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0a0a0f',
+                        'dark-card': '#12121a',
+                        'dark-border': '#1e1e2e',
+                        neon: {
+                            violet: '#8b5cf6',
+                            cyan: '#06b6d4',
+                            green: '#10b981',
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['"JetBrains Mono"', '"Fira Code"', 'monospace'],
+                        sans: ['"Inter"', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ========== BASE ========== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #0a0a0f;
+            color: #e2e8f0;
+            font-family: 'Inter', system-ui, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* ========== SCROLLBAR ========== */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0a0a0f; }
+        ::-webkit-scrollbar-thumb { background: #8b5cf6; border-radius: 3px; }
+
+        /* ========== PARTICLE GRID BACKGROUND ========== */
+        .particle-grid {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            background-image:
+                radial-gradient(circle, rgba(139,92,246,0.08) 1px, transparent 1px),
+                radial-gradient(circle, rgba(6,182,212,0.05) 1px, transparent 1px);
+            background-size: 60px 60px, 90px 90px;
+            background-position: 0 0, 30px 30px;
+        }
+        .particle-grid::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(ellipse at 20% 50%, rgba(139,92,246,0.06) 0%, transparent 60%),
+                        radial-gradient(ellipse at 80% 20%, rgba(6,182,212,0.04) 0%, transparent 60%),
+                        radial-gradient(ellipse at 50% 80%, rgba(16,185,129,0.03) 0%, transparent 60%);
+        }
+        .particle-grid::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image:
+                linear-gradient(rgba(139,92,246,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(139,92,246,0.03) 1px, transparent 1px);
+            background-size: 120px 120px;
+        }
+
+        /* ========== GLASSMORPHISM NAV ========== */
+        .nav-glass {
+            background: rgba(10, 10, 15, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+            transition: all 0.4s ease;
+        }
+        .nav-glass.scrolled {
+            background: rgba(10, 10, 15, 0.9);
+            border-bottom-color: rgba(139, 92, 246, 0.3);
+            box-shadow: 0 4px 30px rgba(139, 92, 246, 0.1);
+        }
+
+        /* ========== TYPING EFFECT ========== */
+        .typing-text {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid #8b5cf6;
+            animation: typing 3.5s steps(35, end) forwards, blink-caret 0.75s step-end infinite;
+            width: 0;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #8b5cf6; }
+        }
+
+        /* ========== NEON GLOW CARDS ========== */
+        .neon-card {
+            background: linear-gradient(135deg, #12121a 0%, #1a1a2e 100%);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .neon-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(139,92,246,0.05), rgba(6,182,212,0.05));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .neon-card:hover {
+            border-color: rgba(139, 92, 246, 0.5);
+            transform: translateY(-4px);
+            box-shadow:
+                0 0 20px rgba(139, 92, 246, 0.15),
+                0 0 60px rgba(139, 92, 246, 0.05),
+                inset 0 0 60px rgba(139, 92, 246, 0.03);
+        }
+        .neon-card:hover::before { opacity: 1; }
+
+        /* ========== NEON BORDER GRADIENT ========== */
+        .neon-border {
+            position: relative;
+            background: #12121a;
+            border-radius: 16px;
+        }
+        .neon-border::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 17px;
+            background: linear-gradient(135deg, #8b5cf6, #06b6d4, #10b981);
+            z-index: -1;
+            opacity: 0.3;
+            transition: opacity 0.4s ease;
+        }
+        .neon-border:hover::before { opacity: 0.8; }
+
+        /* ========== TICKER SCROLL ========== */
+        .ticker-wrap {
+            overflow: hidden;
+            width: 100%;
+            background: linear-gradient(90deg, rgba(139,92,246,0.08), rgba(6,182,212,0.08), rgba(16,185,129,0.08));
+            border-top: 1px solid rgba(139, 92, 246, 0.15);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+        }
+        .ticker {
+            display: flex;
+            animation: ticker-scroll 30s linear infinite;
+            width: max-content;
+        }
+        @keyframes ticker-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .ticker-item {
+            flex-shrink: 0;
+            padding: 1rem 3rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: #8b5cf6;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        .ticker-item .sep {
+            color: #06b6d4;
+            margin-left: 3rem;
+        }
+
+        /* ========== STATS COUNTER ========== */
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            border-radius: 16px;
+            background: linear-gradient(180deg, rgba(18,18,26,0.8), rgba(10,10,15,0.9));
+            position: relative;
+            overflow: hidden;
+        }
+        .stat-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #8b5cf6, #06b6d4, transparent);
+        }
+        .stat-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ========== TIMELINE ========== */
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, #8b5cf6, #06b6d4, #10b981);
+            opacity: 0.3;
+        }
+        .timeline-dot {
+            width: 16px; height: 16px;
+            border-radius: 50%;
+            background: #8b5cf6;
+            border: 3px solid #0a0a0f;
+            box-shadow: 0 0 15px rgba(139,92,246,0.5), 0 0 30px rgba(139,92,246,0.2);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        /* ========== FAQ ACCORDION ========== */
+        .faq-item { border-bottom: 1px solid rgba(139, 92, 246, 0.1); }
+        .faq-question {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .faq-question:hover { color: #8b5cf6; }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;
+            padding: 0;
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding-bottom: 1.5rem;
+        }
+        .faq-icon {
+            transition: transform 0.3s ease;
+            color: #8b5cf6;
+        }
+        .faq-item.active .faq-icon { transform: rotate(45deg); }
+
+        /* ========== SCROLL ANIMATIONS ========== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ========== CTA BUTTON ========== */
+        .btn-neon {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            color: #fff;
+            background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            text-decoration: none;
+        }
+        .btn-neon:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(139,92,246,0.4), 0 0 60px rgba(6,182,212,0.2);
+        }
+        .btn-neon::after {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: linear-gradient(transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+        .btn-neon:hover::after { opacity: 1; transform: rotate(45deg) translateY(-50%); }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            color: #8b5cf6;
+            background: transparent;
+            border: 1px solid rgba(139, 92, 246, 0.4);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+        }
+        .btn-outline:hover {
+            background: rgba(139, 92, 246, 0.1);
+            border-color: #8b5cf6;
+            box-shadow: 0 0 20px rgba(139,92,246,0.2);
+        }
+
+        /* ========== FORM ========== */
+        .form-input {
+            width: 100%;
+            padding: 0.875rem 1.25rem;
+            background: rgba(18, 18, 26, 0.8);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            border-radius: 10px;
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+        .form-input:focus {
+            border-color: #8b5cf6;
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.15);
+        }
+        .form-input::placeholder { color: #4a5568; }
+
+        /* ========== STARS ========== */
+        .star { color: #8b5cf6; }
+
+        /* ========== SECTION LABEL ========== */
+        .section-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #06b6d4;
+            margin-bottom: 0.75rem;
+        }
+
+        /* ========== MOBILE MENU ========== */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100vh;
+            background: rgba(10, 10, 15, 0.97);
+            backdrop-filter: blur(20px);
+            z-index: 90;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+        .mobile-menu.active { display: flex; }
+        .mobile-menu a {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.25rem;
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .mobile-menu a:hover { color: #8b5cf6; }
+
+        /* ========== GLOW PULSE ========== */
+        @keyframes glow-pulse {
+            0%, 100% { box-shadow: 0 0 15px rgba(139,92,246,0.3); }
+            50% { box-shadow: 0 0 30px rgba(139,92,246,0.6), 0 0 60px rgba(6,182,212,0.2); }
+        }
+        .glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
+
+        /* ========== APPROACH STEP NUMBER ========== */
+        .step-number {
+            width: 56px; height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(6,182,212,0.2));
+            border: 2px solid rgba(139, 92, 246, 0.4);
+            color: #8b5cf6;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body class="bg-dark min-h-screen">
+
+    <!-- ========== PARTICLE GRID BG ========== -->
+    <div class="particle-grid"></div>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav id="navbar" class="nav-glass fixed top-0 left-0 w-full z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#hero" class="flex items-center gap-3 text-decoration-none">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-neon-violet to-neon-cyan flex items-center justify-center font-mono font-bold text-white text-lg">
+                    TS
+                </div>
+                <span class="font-mono font-semibold text-white text-lg hidden sm:inline">TS Avocats</span>
+            </a>
+            <!-- Desktop Links -->
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="#expertises" class="text-sm text-gray-400 hover:text-neon-violet transition-colors font-medium">Expertises</a>
+                <a href="#parcours" class="text-sm text-gray-400 hover:text-neon-violet transition-colors font-medium">Parcours</a>
+                <a href="#approche" class="text-sm text-gray-400 hover:text-neon-violet transition-colors font-medium">Approche</a>
+                <a href="#temoignages" class="text-sm text-gray-400 hover:text-neon-violet transition-colors font-medium">Avis</a>
+                <a href="#faq" class="text-sm text-gray-400 hover:text-neon-violet transition-colors font-medium">FAQ</a>
+                <a href="#contact" class="btn-neon !py-2.5 !px-5 !text-xs">Consultation</a>
+            </div>
+            <!-- Burger -->
+            <button id="burger" class="lg:hidden flex flex-col gap-1.5 p-2 z-[100]" aria-label="Menu">
+                <span class="block w-6 h-0.5 bg-white transition-all duration-300" id="burger-1"></span>
+                <span class="block w-6 h-0.5 bg-white transition-all duration-300" id="burger-2"></span>
+                <span class="block w-4 h-0.5 bg-white transition-all duration-300 ml-auto" id="burger-3"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+        <a href="#expertises" class="mobile-link">Expertises</a>
+        <a href="#parcours" class="mobile-link">Parcours</a>
+        <a href="#approche" class="mobile-link">Approche</a>
+        <a href="#temoignages" class="mobile-link">Avis</a>
+        <a href="#faq" class="mobile-link">FAQ</a>
+        <a href="#contact" class="btn-neon mt-4">Consultation</a>
+    </div>
+
+    <!-- ========== HERO ========== -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center px-6 pt-20">
+        <div class="relative z-10 text-center max-w-4xl mx-auto">
+            <!-- Tag -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neon-violet/20 bg-neon-violet/5 mb-8 reveal">
+                <span class="w-2 h-2 rounded-full bg-neon-green animate-pulse"></span>
+                <span class="font-mono text-xs text-neon-green tracking-wider uppercase">Cabinet operationnel — Metz, France</span>
+            </div>
+            <!-- Title -->
+            <h1 class="font-mono font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight">
+                <span class="typing-text">FISCALITE. INNOVATION. PRECISION.</span>
+            </h1>
+            <!-- Subtitle -->
+            <p class="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed reveal" style="transition-delay:0.3s">
+                Maitre Thomas Schauber, avocat fiscaliste a Metz. Expertise reconnue en
+                <span class="text-neon-violet font-semibold">fiscalite des crypto-actifs</span>,
+                conseil aux entreprises et contentieux fiscal.
+            </p>
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center reveal" style="transition-delay:0.5s">
+                <a href="#contact" class="btn-neon">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                    Prendre rendez-vous
+                </a>
+                <a href="#expertises" class="btn-outline">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                    Decouvrir
+                </a>
+            </div>
+            <!-- Scroll indicator -->
+            <div class="mt-16 reveal" style="transition-delay:0.8s">
+                <div class="w-6 h-10 border-2 border-neon-violet/30 rounded-full mx-auto flex justify-center">
+                    <div class="w-1.5 h-3 bg-neon-violet rounded-full mt-2 animate-bounce"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TICKER ========== -->
+    <section class="ticker-wrap py-0 relative z-10">
+        <div class="ticker">
+            <span class="ticker-item">Droit Fiscal <span class="sep">//</span></span>
+            <span class="ticker-item">Crypto-Actifs <span class="sep">//</span></span>
+            <span class="ticker-item">Blockchain & DeFi <span class="sep">//</span></span>
+            <span class="ticker-item">Conseil PME <span class="sep">//</span></span>
+            <span class="ticker-item">Contentieux Commercial <span class="sep">//</span></span>
+            <span class="ticker-item">Optimisation Fiscale <span class="sep">//</span></span>
+            <span class="ticker-item">NFT & Tokenisation <span class="sep">//</span></span>
+            <span class="ticker-item">Controle DGFIP <span class="sep">//</span></span>
+            <span class="ticker-item">Droit des Societes <span class="sep">//</span></span>
+            <span class="ticker-item">Due Diligence <span class="sep">//</span></span>
+            <!-- Duplicate for seamless loop -->
+            <span class="ticker-item">Droit Fiscal <span class="sep">//</span></span>
+            <span class="ticker-item">Crypto-Actifs <span class="sep">//</span></span>
+            <span class="ticker-item">Blockchain & DeFi <span class="sep">//</span></span>
+            <span class="ticker-item">Conseil PME <span class="sep">//</span></span>
+            <span class="ticker-item">Contentieux Commercial <span class="sep">//</span></span>
+            <span class="ticker-item">Optimisation Fiscale <span class="sep">//</span></span>
+            <span class="ticker-item">NFT & Tokenisation <span class="sep">//</span></span>
+            <span class="ticker-item">Controle DGFIP <span class="sep">//</span></span>
+            <span class="ticker-item">Droit des Societes <span class="sep">//</span></span>
+            <span class="ticker-item">Due Diligence <span class="sep">//</span></span>
+        </div>
+    </section>
+
+    <!-- ========== STATS ========== -->
+    <section id="stats" class="relative z-10 py-20 px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+            <!-- Stat 1 -->
+            <div class="stat-card reveal">
+                <div class="stat-number" data-target="15">0</div>
+                <div class="text-xs font-mono text-neon-cyan tracking-wider uppercase mt-2">+</div>
+                <div class="text-gray-400 text-sm mt-1">Annees d'experience</div>
+            </div>
+            <!-- Stat 2 -->
+            <div class="stat-card reveal" style="transition-delay:0.1s">
+                <div class="stat-number" data-target="500">0</div>
+                <div class="text-xs font-mono text-neon-cyan tracking-wider uppercase mt-2">+</div>
+                <div class="text-gray-400 text-sm mt-1">Clients accompagnes</div>
+            </div>
+            <!-- Stat 3 -->
+            <div class="stat-card reveal" style="transition-delay:0.2s">
+                <div class="stat-number" data-target="1200">0</div>
+                <div class="text-xs font-mono text-neon-cyan tracking-wider uppercase mt-2">+</div>
+                <div class="text-gray-400 text-sm mt-1">Dossiers traites</div>
+            </div>
+            <!-- Stat 4 -->
+            <div class="stat-card reveal" style="transition-delay:0.3s">
+                <div class="stat-number" data-target="98">0</div>
+                <div class="text-xs font-mono text-neon-cyan tracking-wider uppercase mt-2">%</div>
+                <div class="text-gray-400 text-sm mt-1">Taux satisfaction</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== EXPERTISES ========== -->
+    <section id="expertises" class="relative z-10 py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <div class="section-label reveal">// Domaines</div>
+                <h2 class="font-mono font-bold text-3xl sm:text-4xl text-white reveal">Nos Expertises</h2>
+                <p class="text-gray-400 mt-4 max-w-xl mx-auto reveal">Des competences pointues au service de votre patrimoine et de vos projets d'innovation.</p>
+            </div>
+            <!-- Cards Grid -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Card 1: Fiscal -->
+                <div class="neon-card reveal">
+                    <div class="w-14 h-14 rounded-xl bg-neon-violet/10 flex items-center justify-center mb-5">
+                        <svg class="w-7 h-7 text-neon-violet" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-mono font-semibold text-xl text-white mb-3">Droit Fiscal</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">Optimisation fiscale des particuliers et entreprises, contentieux devant les juridictions administratives, assistance lors des controles fiscaux DGFIP, redressements et negociations transactionnelles.</p>
+                    <div class="flex flex-wrap gap-2 mt-5">
+                        <span class="px-3 py-1 text-xs font-mono rounded-full bg-neon-violet/10 text-neon-violet border border-neon-violet/20">IR / IS</span>
+                        <span class="px-3 py-1 text-xs font-mono rounded-full bg-neon-violet/10 text-neon-violet border border-neon-violet/20">TVA</span>
+                        <span class="px-3 py-1 text-xs font-mono rounded-full bg-neon-violet/10 text-neon-violet border border-neon-violet/20">IFI</span>
+                        <span class="px-3 py-1 text-xs font-mono rounded-full bg-neon-violet/10 text-neon-violet border border-neon-violet/20">Controle DGFIP</span>
+                    </div>
+                </div>
+                <!-- Card 2: Crypto -->
+                <div class="neon-card reveal" style="transition-delay:0.1s">
+                    <div class="w-14 h-14 rounded-xl bg-neon-cyan/10 flex items-center justify-center mb-5">
+                        <svg class="w-7 h-7 text-neon-cyan" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-mono font-semibold text-xl text-white mb-3">Crypto-Actifs & Blockchain</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">Fiscalite des gains en crypto-monnaies (Bitcoin, Ethereum, stablecoins), declaration des comptes sur plateformes etrangeres, regime fiscal des NFT, staking, DeFi et tokenisation d'actifs.</p>
+                    <div class="flex flex-wrap gap-2 mt-5">
+                        <span class="px-3 py-1 text-xs font-mono rounded-full bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/20">Bitcoin</span>
+                        <span class="px-3 py-1 text-xs font-mono rounded-full bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/20">DeFi</span>
+                        <span class="px-3 py-1 text-xs font-mono rounded-full bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/20">NFT</span>
+                        <span class="px-3 py-1 text-xs font-mono rounded-full bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/20">PSAN</span>
+                    </div>
+                </div>
+                <!-- Card 3: Conseil PME -->
+                <div class="neon-card reveal" style="transition-delay:0.2s">
+                    <div class="w-14 h-14 rounded-xl bg-neon-green/10 flex items-center justify-center mb-5">
+                        <svg class="w-7 h-7 text-neon-green" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-mono font-semibold text-xl text-white mb-3">Conseil Entreprises & PME</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">Structuration juridique et fiscale des PME, choix du statut, optimisation de la remuneration du dirigeant, operations de croissance externe, cessions et transmissions d'entreprise.</p>
+                    <div class="flex flex-wrap gap-2 mt-5">
+                        <span class="px-3 py-1 text-xs font-mono rounded-full bg-neon-green/10 text-neon-green border border-neon-green/20">SAS / SARL</span>
+                        <span class="px-3 py-1 text-xs font-mono rounded-full bg-neon-green/10 text-neon-green border border-neon-green/20">M&A</span>
+                        <span class="px-3 py-1 text-xs font-mono rounded-full bg-neon-green/10 text-neon-green border border-neon-green/20">Holding</span>
+                        <span class="px-3 py-1 text-xs font-mono rounded-full bg-neon-green/10 text-neon-green border border-neon-green/20">Transmission</span>
+                    </div>
+                </div>
+                <!-- Card 4: Contentieux -->
+                <div class="neon-card reveal" style="transition-delay:0.3s">
+                    <div class="w-14 h-14 rounded-xl bg-neon-violet/10 flex items-center justify-center mb-5">
+                        <svg class="w-7 h-7 text-neon-violet" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-mono font-semibold text-xl text-white mb-3">Contentieux Civil & Commercial</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">Defense devant les tribunaux de commerce et civils, litiges entre associes, recouvrement de creances, rupture de relations commerciales, procedures collectives et negociations amiables.</p>
+                    <div class="flex flex-wrap gap-2 mt-5">
+                        <span class="px-3 py-1 text-xs font-mono rounded-full bg-neon-violet/10 text-neon-violet border border-neon-violet/20">Tribunal</span>
+                        <span class="px-3 py-1 text-xs font-mono rounded-full bg-neon-violet/10 text-neon-violet border border-neon-violet/20">Mediation</span>
+                        <span class="px-3 py-1 text-xs font-mono rounded-full bg-neon-violet/10 text-neon-violet border border-neon-violet/20">Associes</span>
+                        <span class="px-3 py-1 text-xs font-mono rounded-full bg-neon-violet/10 text-neon-violet border border-neon-violet/20">Creances</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PARCOURS / TIMELINE ========== -->
+    <section id="parcours" class="relative z-10 py-24 px-6">
+        <div class="max-w-4xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <div class="section-label reveal">// Parcours</div>
+                <h2 class="font-mono font-bold text-3xl sm:text-4xl text-white reveal">Une Trajectoire d'Excellence</h2>
+                <p class="text-gray-400 mt-4 max-w-xl mx-auto reveal">Du droit fiscal classique a l'avant-garde de la fiscalite numerique.</p>
+            </div>
+            <!-- Timeline -->
+            <div class="relative">
+                <div class="timeline-line hidden md:block"></div>
+
+                <!-- Item 1 -->
+                <div class="relative flex flex-col md:flex-row items-center mb-16 reveal-left">
+                    <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+                        <span class="font-mono text-xs text-neon-cyan tracking-wider">Formation</span>
+                        <h3 class="font-mono font-semibold text-lg text-white mt-1">DJCE & CES Droit Fiscal</h3>
+                        <p class="text-gray-400 text-sm mt-2 leading-relaxed">Diplome de Juriste Conseil d'Entreprise, formation d'elite en droit des affaires. Certificat d'Etudes Superieures en droit fiscal — specialisation approfondie en fiscalite des entreprises et du patrimoine.</p>
+                    </div>
+                    <div class="timeline-dot hidden md:block"></div>
+                    <div class="md:w-1/2 md:pl-12">
+                        <div class="w-16 h-16 rounded-xl bg-neon-violet/10 border border-neon-violet/20 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-neon-violet" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="relative flex flex-col md:flex-row-reverse items-center mb-16 reveal-right">
+                    <div class="md:w-1/2 md:pl-12 mb-4 md:mb-0">
+                        <span class="font-mono text-xs text-neon-green tracking-wider">Experience</span>
+                        <h3 class="font-mono font-semibold text-lg text-white mt-1">CMS Francis Lefebvre Avocats</h3>
+                        <p class="text-gray-400 text-sm mt-2 leading-relaxed">Passage au sein de l'un des plus prestigieux cabinets d'avocats d'affaires internationaux. Pratique du droit fiscal des entreprises a haut niveau : restructurations, fiscalite internationale, operations complexes de M&A.</p>
+                    </div>
+                    <div class="timeline-dot hidden md:block" style="background: #06b6d4; box-shadow: 0 0 15px rgba(6,182,212,0.5), 0 0 30px rgba(6,182,212,0.2);"></div>
+                    <div class="md:w-1/2 md:pr-12 md:text-right">
+                        <div class="w-16 h-16 rounded-xl bg-neon-cyan/10 border border-neon-cyan/20 flex items-center justify-center md:ml-auto">
+                            <svg class="w-8 h-8 text-neon-cyan" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="relative flex flex-col md:flex-row items-center mb-16 reveal-left">
+                    <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+                        <span class="font-mono text-xs text-neon-violet tracking-wider">Fondation</span>
+                        <h3 class="font-mono font-semibold text-lg text-white mt-1">Creation de TS Avocats</h3>
+                        <p class="text-gray-400 text-sm mt-2 leading-relaxed">Fondation du cabinet TS Avocats a Metz, avec la vision d'offrir une expertise fiscale de premier plan accessible aux PME et entrepreneurs de la region Grand Est. Une approche moderne, reactive et sur-mesure.</p>
+                    </div>
+                    <div class="timeline-dot hidden md:block" style="background: #10b981; box-shadow: 0 0 15px rgba(16,185,129,0.5), 0 0 30px rgba(16,185,129,0.2);"></div>
+                    <div class="md:w-1/2 md:pl-12">
+                        <div class="w-16 h-16 rounded-xl bg-neon-green/10 border border-neon-green/20 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-neon-green" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="relative flex flex-col md:flex-row-reverse items-center reveal-right">
+                    <div class="md:w-1/2 md:pl-12 mb-4 md:mb-0">
+                        <span class="font-mono text-xs text-neon-cyan tracking-wider">Innovation</span>
+                        <h3 class="font-mono font-semibold text-lg text-white mt-1">Expertise Crypto & Blockchain</h3>
+                        <p class="text-gray-400 text-sm mt-2 leading-relaxed">Developpement d'une expertise pionniere en fiscalite des crypto-actifs et de la blockchain. Accompagnement des investisseurs, traders, projets DeFi et entreprises Web3 dans la conformite fiscale francaise et europeenne.</p>
+                    </div>
+                    <div class="timeline-dot hidden md:block" style="background: #8b5cf6; box-shadow: 0 0 15px rgba(139,92,246,0.5), 0 0 30px rgba(139,92,246,0.3);"></div>
+                    <div class="md:w-1/2 md:pr-12 md:text-right">
+                        <div class="w-16 h-16 rounded-xl bg-neon-violet/10 border border-neon-violet/20 flex items-center justify-center md:ml-auto glow-pulse">
+                            <svg class="w-8 h-8 text-neon-violet" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== APPROCHE ========== -->
+    <section id="approche" class="relative z-10 py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <div class="section-label reveal">// Methodologie</div>
+                <h2 class="font-mono font-bold text-3xl sm:text-4xl text-white reveal">Notre Approche</h2>
+                <p class="text-gray-400 mt-4 max-w-xl mx-auto reveal">Un processus structure, transparent et calibre pour chaque situation.</p>
+            </div>
+            <!-- Steps -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="neon-card text-center reveal">
+                    <div class="step-number mx-auto mb-6">01</div>
+                    <h3 class="font-mono font-semibold text-lg text-white mb-3">Diagnostic</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Analyse approfondie de votre situation fiscale, de vos actifs numeriques et de vos objectifs. Cartographie des risques et opportunites. Identification des leviers d'optimisation disponibles dans le cadre legal.</p>
+                    <div class="mt-5 pt-5 border-t border-neon-violet/10">
+                        <span class="font-mono text-xs text-neon-cyan tracking-wider uppercase">Consultation initiale gratuite</span>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="neon-card text-center reveal" style="transition-delay:0.15s">
+                    <div class="step-number mx-auto mb-6" style="border-color: rgba(6,182,212,0.4); color: #06b6d4;">02</div>
+                    <h3 class="font-mono font-semibold text-lg text-white mb-3">Strategie</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Elaboration d'une strategie sur-mesure avec scenarios chiffres et projections. Presentation claire des options, risques et avantages de chaque voie. Validation conjointe du plan d'action avant execution.</p>
+                    <div class="mt-5 pt-5 border-t border-neon-cyan/10">
+                        <span class="font-mono text-xs text-neon-cyan tracking-wider uppercase">Plan d'action detaille</span>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="neon-card text-center reveal" style="transition-delay:0.3s">
+                    <div class="step-number mx-auto mb-6" style="border-color: rgba(16,185,129,0.4); color: #10b981;">03</div>
+                    <h3 class="font-mono font-semibold text-lg text-white mb-3">Execution</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Mise en oeuvre rigoureuse de la strategie validee. Suivi en temps reel, reporting regulier, ajustements reactifs. Accompagnement continu et disponibilite totale via Telegram, email ou telephone.</p>
+                    <div class="mt-5 pt-5 border-t border-neon-green/10">
+                        <span class="font-mono text-xs text-neon-green tracking-wider uppercase">Suivi en temps reel</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TEMOIGNAGES ========== -->
+    <section id="temoignages" class="relative z-10 py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <div class="section-label reveal">// Temoignages</div>
+                <h2 class="font-mono font-bold text-3xl sm:text-4xl text-white reveal">Ce Que Disent Nos Clients</h2>
+                <p class="text-gray-400 mt-4 max-w-xl mx-auto reveal">La confiance de ceux qui nous ont choisi.</p>
+            </div>
+            <!-- Cards -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Temoignage 1 -->
+                <div class="neon-card reveal">
+                    <div class="flex gap-1 mb-4">
+                        <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed italic mb-6">"Maitre Schauber a su naviguer la complexite de mes declarations crypto avec une precision chirurgicale. Des gains Bitcoin aux staking rewards, tout a ete traite de facon exemplaire. Un avocat qui comprend vraiment l'ecosysteme blockchain."</p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-neon-violet/10">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-neon-violet to-neon-cyan flex items-center justify-center font-mono font-bold text-white text-sm">LP</div>
+                        <div>
+                            <div class="text-white text-sm font-medium">Laurent P.</div>
+                            <div class="text-gray-500 text-xs">Investisseur crypto — Metz</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Temoignage 2 -->
+                <div class="neon-card reveal" style="transition-delay:0.1s">
+                    <div class="flex gap-1 mb-4">
+                        <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed italic mb-6">"Lors de notre controle fiscal, Me Schauber a ete d'un calme et d'une efficacite remarquables. Il a identifie des failles dans la procedure de l'administration et obtenu un degrevement quasi-total. Resultat : 180 000 EUR economises."</p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-neon-violet/10">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-neon-cyan to-neon-green flex items-center justify-center font-mono font-bold text-white text-sm">SM</div>
+                        <div>
+                            <div class="text-white text-sm font-medium">Sophie M.</div>
+                            <div class="text-gray-500 text-xs">Dirigeante PME — Nancy</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Temoignage 3 -->
+                <div class="neon-card reveal" style="transition-delay:0.2s">
+                    <div class="flex gap-1 mb-4">
+                        <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed italic mb-6">"La restructuration fiscale de notre groupe a ete menee avec une maitrise impressionnante. Thomas a une capacite rare a rendre accessible des sujets techniques complexes. Ses recommandations nous ont permis d'economiser 15% d'IS annuel."</p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-neon-violet/10">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-neon-green to-neon-violet flex items-center justify-center font-mono font-bold text-white text-sm">JD</div>
+                        <div>
+                            <div class="text-white text-sm font-medium">Jean-Marc D.</div>
+                            <div class="text-gray-500 text-xs">CEO, groupe industriel — Strasbourg</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Temoignage 4 -->
+                <div class="neon-card reveal" style="transition-delay:0.3s">
+                    <div class="flex gap-1 mb-4">
+                        <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed italic mb-6">"J'ai cree ma SAS il y a 3 ans avec l'aide de TS Avocats. Le montage holding, le choix du regime fiscal, l'optimisation de ma remuneration — tout a ete anticipe. Reactivite exceptionnelle, disponible meme sur Telegram. Rare et appreciable."</p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-neon-violet/10">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-neon-violet to-neon-cyan flex items-center justify-center font-mono font-bold text-white text-sm">AC</div>
+                        <div>
+                            <div class="text-white text-sm font-medium">Alexis C.</div>
+                            <div class="text-gray-500 text-xs">Fondateur startup fintech — Luxembourg</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section id="faq" class="relative z-10 py-24 px-6">
+        <div class="max-w-3xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <div class="section-label reveal">// FAQ</div>
+                <h2 class="font-mono font-bold text-3xl sm:text-4xl text-white reveal">Questions Frequentes</h2>
+                <p class="text-gray-400 mt-4 max-w-xl mx-auto reveal">Les reponses aux questions que vous vous posez le plus souvent.</p>
+            </div>
+            <!-- Accordion -->
+            <div class="space-y-0 reveal">
+                <!-- Q1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="text-white font-medium">Quels types de problematiques fiscales traitez-vous ?</span>
+                        <svg class="faq-icon w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        Nous intervenons sur l'ensemble du spectre fiscal : impot sur le revenu, impot sur les societes, TVA, IFI, droits de succession et donation, fiscalite internationale, prix de transfert. Nous traitons egalement les contentieux fiscaux (reclamations, recours devant le TA et la CAA) et assistons nos clients lors des controles et verifications de l'administration fiscale.
+                    </div>
+                </div>
+                <!-- Q2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="text-white font-medium">Comment declareer mes gains en crypto-monnaies ?</span>
+                        <svg class="faq-icon w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        Les plus-values de cession d'actifs numeriques sont soumises au prelevement forfaitaire unique (PFU) de 30% pour les particuliers. Depuis 2024, l'option pour le bareme progressif est egalement possible. Chaque cession vers une monnaie fiduciaire (euro, dollar) constitue un fait generateur d'imposition. Nous vous aidons a reconstituer votre historique de transactions, calculer vos plus-values nettes, et remplir les formulaires 2086 et 3916-bis (comptes sur plateformes etrangeres).
+                    </div>
+                </div>
+                <!-- Q3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="text-white font-medium">Comment se deroule la premiere consultation ?</span>
+                        <svg class="faq-icon w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        La premiere consultation dure environ 45 minutes et peut se tenir au cabinet, par visioconference ou par telephone. Elle permet de comprendre votre situation, identifier les enjeux et vous proposer une premiere orientation. Cette consultation initiale est offerte et sans engagement. A l'issue, nous vous remettons une proposition d'intervention detaillee avec un devis clair.
+                    </div>
+                </div>
+                <!-- Q4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="text-white font-medium">Quels sont vos honoraires ?</span>
+                        <svg class="faq-icon w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        Nos honoraires sont adaptes a la nature et a la complexite de chaque dossier. Nous proposons plusieurs modes de facturation : honoraire horaire, forfait par mission, ou abonnement mensuel pour les entreprises. Une convention d'honoraires detaillee vous est systematiquement remise avant toute intervention. Transparence totale — pas de frais caches.
+                    </div>
+                </div>
+                <!-- Q5 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="text-white font-medium">Quelle est votre zone d'intervention geographique ?</span>
+                        <svg class="faq-icon w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        Le cabinet est base a Metz et intervient sur l'ensemble de la region Grand Est (Moselle, Meurthe-et-Moselle, Bas-Rhin, Haut-Rhin). Grace a la visioconference et nos outils de travail collaboratif, nous accompagnons egalement des clients partout en France et a l'international, notamment au Luxembourg, en Belgique et en Suisse — zones transfrontalieres naturelles.
+                    </div>
+                </div>
+                <!-- Q6 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="text-white font-medium">Quels sont les delais de traitement d'un dossier ?</span>
+                        <svg class="faq-icon w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        Les delais varient selon la nature du dossier. Une consultation simple ou une declaration crypto peut etre traitee sous 48 a 72 heures. Les missions de restructuration ou de contentieux fiscal s'etendent generalement sur 2 a 6 mois. En cas d'urgence (controle fiscal en cours, mise en demeure), nous proposons un traitement prioritaire sous 24 heures. Nous vous communiquons un calendrier previsionnel des la signature de la convention.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section id="contact" class="relative z-10 py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <div class="section-label reveal">// Contact</div>
+                <h2 class="font-mono font-bold text-3xl sm:text-4xl text-white reveal">Prenez Contact</h2>
+                <p class="text-gray-400 mt-4 max-w-xl mx-auto reveal">Premiere consultation offerte. Reponse sous 24h garantie.</p>
+            </div>
+            <!-- Grid -->
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Form -->
+                <div class="neon-card reveal">
+                    <h3 class="font-mono font-semibold text-lg text-white mb-6">Envoyez-nous un message</h3>
+                    <form id="contact-form" class="space-y-5">
+                        <div class="grid sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-xs font-mono text-gray-400 uppercase tracking-wider mb-2">Nom complet</label>
+                                <input type="text" name="name" placeholder="Votre nom" class="form-input" required>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-mono text-gray-400 uppercase tracking-wider mb-2">Email</label>
+                                <input type="email" name="email" placeholder="votre@email.com" class="form-input" required>
+                            </div>
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-xs font-mono text-gray-400 uppercase tracking-wider mb-2">Telephone</label>
+                                <input type="tel" name="phone" placeholder="+33 6 00 00 00 00" class="form-input">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-mono text-gray-400 uppercase tracking-wider mb-2">Sujet</label>
+                                <select name="subject" class="form-input">
+                                    <option value="" disabled selected>Choisir un sujet</option>
+                                    <option value="fiscal">Droit fiscal</option>
+                                    <option value="crypto">Crypto-actifs / Blockchain</option>
+                                    <option value="conseil">Conseil entreprise / PME</option>
+                                    <option value="contentieux">Contentieux</option>
+                                    <option value="autre">Autre demande</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-mono text-gray-400 uppercase tracking-wider mb-2">Message</label>
+                            <textarea name="message" rows="5" placeholder="Decrivez votre situation en quelques lignes..." class="form-input resize-none" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-neon w-full justify-center !py-4">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+                <!-- Coordonnees -->
+                <div class="space-y-6">
+                    <!-- Address Card -->
+                    <div class="neon-card reveal" style="transition-delay:0.1s">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-neon-violet/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-neon-violet" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-mono font-semibold text-white mb-1">Adresse</h4>
+                                <p class="text-gray-400 text-sm">9 B rue Poncelet<br>57000 Metz, France</p>
+                                <a href="https://maps.google.com/?q=9+B+rue+Poncelet+57000+Metz" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-neon-cyan text-xs font-mono mt-2 hover:text-neon-violet transition-colors">
+                                    Voir sur Google Maps
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Phone Card -->
+                    <div class="neon-card reveal" style="transition-delay:0.2s">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-neon-cyan/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-neon-cyan" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-mono font-semibold text-white mb-1">Telephone</h4>
+                                <a href="tel:+33387790553" class="text-gray-400 text-sm hover:text-neon-cyan transition-colors">+33 3 87 79 05 53</a>
+                                <p class="text-gray-500 text-xs mt-1">Du lundi au vendredi</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Email Card -->
+                    <div class="neon-card reveal" style="transition-delay:0.3s">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-neon-green/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-neon-green" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-mono font-semibold text-white mb-1">Email</h4>
+                                <a href="mailto:thomas.schauber@ts-avocats.fr" class="text-gray-400 text-sm hover:text-neon-green transition-colors">thomas.schauber@ts-avocats.fr</a>
+                                <p class="text-gray-500 text-xs mt-1">Reponse sous 24h</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Horaires Card -->
+                    <div class="neon-card reveal" style="transition-delay:0.4s">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-neon-violet/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-neon-violet" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-mono font-semibold text-white mb-2">Horaires</h4>
+                                <div class="space-y-1">
+                                    <div class="flex justify-between gap-8 text-sm">
+                                        <span class="text-gray-500">Lun - Ven</span>
+                                        <span class="text-gray-300 font-mono text-xs">09:00 — 19:00</span>
+                                    </div>
+                                    <div class="flex justify-between gap-8 text-sm">
+                                        <span class="text-gray-500">Samedi</span>
+                                        <span class="text-gray-300 font-mono text-xs">Sur rendez-vous</span>
+                                    </div>
+                                    <div class="flex justify-between gap-8 text-sm">
+                                        <span class="text-gray-500">Dimanche</span>
+                                        <span class="text-gray-500 font-mono text-xs">Ferme</span>
+                                    </div>
+                                </div>
+                                <div class="mt-3 pt-3 border-t border-neon-violet/10">
+                                    <span class="inline-flex items-center gap-2 text-xs font-mono text-neon-green">
+                                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
+                                        Egalement disponible sur Telegram
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="relative z-10 border-t border-neon-violet/10">
+        <!-- Top bar -->
+        <div class="max-w-6xl mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-neon-violet to-neon-cyan flex items-center justify-center font-mono font-bold text-white text-lg">TS</div>
+                        <span class="font-mono font-semibold text-white text-lg">TS Avocats</span>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed">Cabinet d'avocat fiscaliste a Metz. Expertise en droit fiscal, crypto-actifs, conseil PME et contentieux. Maitre Thomas Schauber, DJCE.</p>
+                </div>
+                <!-- Links -->
+                <div>
+                    <h4 class="font-mono font-semibold text-white text-sm mb-4 uppercase tracking-wider">Navigation</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#expertises" class="text-gray-500 text-sm hover:text-neon-violet transition-colors">Expertises</a></li>
+                        <li><a href="#parcours" class="text-gray-500 text-sm hover:text-neon-violet transition-colors">Parcours</a></li>
+                        <li><a href="#approche" class="text-gray-500 text-sm hover:text-neon-violet transition-colors">Approche</a></li>
+                        <li><a href="#temoignages" class="text-gray-500 text-sm hover:text-neon-violet transition-colors">Temoignages</a></li>
+                        <li><a href="#faq" class="text-gray-500 text-sm hover:text-neon-violet transition-colors">FAQ</a></li>
+                        <li><a href="#contact" class="text-gray-500 text-sm hover:text-neon-violet transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Legal -->
+                <div>
+                    <h4 class="font-mono font-semibold text-white text-sm mb-4 uppercase tracking-wider">Informations</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-500 text-sm">Barreau de Metz</li>
+                        <li class="text-gray-500 text-sm">DJCE — CES Droit Fiscal</li>
+                        <li class="text-gray-500 text-sm">Ex-CMS Francis Lefebvre</li>
+                        <li class="text-gray-500 text-sm">Toque n/a</li>
+                        <li class="text-gray-500 text-sm">CNIL / RGPD conforme</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom bar -->
+        <div class="border-t border-neon-violet/10">
+            <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-gray-600 text-xs text-center md:text-left">
+                    &copy; 2026 TS Avocats — Maitre Thomas Schauber. Tous droits reserves.
+                </p>
+                <div class="flex items-center gap-2 text-gray-600 text-xs">
+                    <span>Site concu par</span>
+                    <a href="https://aegis-gallery.netlify.app" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-neon-violet hover:text-neon-cyan transition-colors font-mono font-semibold">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z"/></svg>
+                        AEGIS Agency
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+    (function() {
+        'use strict';
+
+        // ===== NAVBAR SCROLL EFFECT =====
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+
+        function handleNavScroll() {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            lastScroll = currentScroll;
+        }
+        window.addEventListener('scroll', handleNavScroll, { passive: true });
+
+        // ===== MOBILE MENU TOGGLE =====
+        const burger = document.getElementById('burger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const burger1 = document.getElementById('burger-1');
+        const burger2 = document.getElementById('burger-2');
+        const burger3 = document.getElementById('burger-3');
+        let menuOpen = false;
+
+        function toggleMenu() {
+            menuOpen = !menuOpen;
+            if (menuOpen) {
+                mobileMenu.classList.add('active');
+                burger1.style.transform = 'rotate(45deg) translate(4px, 4px)';
+                burger2.style.opacity = '0';
+                burger3.style.transform = 'rotate(-45deg) translate(4px, -4px)';
+                burger3.style.width = '1.5rem';
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.classList.remove('active');
+                burger1.style.transform = 'none';
+                burger2.style.opacity = '1';
+                burger3.style.transform = 'none';
+                burger3.style.width = '1rem';
+                document.body.style.overflow = '';
+            }
+        }
+
+        burger.addEventListener('click', toggleMenu);
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-link').forEach(function(link) {
+            link.addEventListener('click', function() {
+                if (menuOpen) toggleMenu();
+            });
+        });
+
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    var offset = 80;
+                    var pos = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: pos, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // ===== SCROLL REVEAL ANIMATIONS =====
+        var revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+
+        var revealObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(function(el) {
+            revealObserver.observe(el);
+        });
+
+        // ===== COUNTER ANIMATION =====
+        var counters = document.querySelectorAll('.stat-number[data-target]');
+        var counterStarted = {};
+
+        function animateCounter(el) {
+            var target = parseInt(el.getAttribute('data-target'), 10);
+            var duration = 2000;
+            var startTime = null;
+
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                var progress = Math.min((timestamp - startTime) / duration, 1);
+                // Ease out cubic
+                var eased = 1 - Math.pow(1 - progress, 3);
+                var current = Math.floor(eased * target);
+                el.textContent = current.toLocaleString('fr-FR');
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    el.textContent = target.toLocaleString('fr-FR');
+                }
+            }
+            requestAnimationFrame(step);
+        }
+
+        var counterObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var el = entry.target;
+                    var id = el.getAttribute('data-target');
+                    if (!counterStarted[id]) {
+                        counterStarted[id] = true;
+                        animateCounter(el);
+                        counterObserver.unobserve(el);
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(function(counter) {
+            counterObserver.observe(counter);
+        });
+
+        // ===== FAQ ACCORDION =====
+        document.querySelectorAll('.faq-question').forEach(function(question) {
+            question.addEventListener('click', function() {
+                var item = this.parentElement;
+                var isActive = item.classList.contains('active');
+                // Close all
+                document.querySelectorAll('.faq-item.active').forEach(function(openItem) {
+                    openItem.classList.remove('active');
+                });
+                // Toggle current
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // ===== CONTACT FORM HANDLER =====
+        var form = document.getElementById('contact-form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                var btn = form.querySelector('button[type="submit"]');
+                var originalText = btn.innerHTML;
+                btn.innerHTML = '<svg class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" class="opacity-25"></circle><path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" class="opacity-75"></path></svg> Envoi en cours...';
+                btn.disabled = true;
+
+                setTimeout(function() {
+                    btn.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> Message envoye !';
+                    btn.style.background = 'linear-gradient(135deg, #10b981, #06b6d4)';
+                    setTimeout(function() {
+                        btn.innerHTML = originalText;
+                        btn.style.background = '';
+                        btn.disabled = false;
+                        form.reset();
+                    }, 3000);
+                }, 1500);
+            });
+        }
+
+        // ===== PARALLAX SUBTLE ON PARTICLE GRID =====
+        var particleGrid = document.querySelector('.particle-grid');
+        if (particleGrid && window.innerWidth > 768) {
+            window.addEventListener('scroll', function() {
+                var scrollY = window.pageYOffset;
+                particleGrid.style.transform = 'translateY(' + (scrollY * 0.15) + 'px)';
+            }, { passive: true });
+        }
+
+    })();
+    </script>
+
+</body>
+</html>
