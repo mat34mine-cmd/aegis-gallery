@@ -1,1 +1,969 @@
-{"id":"/demo-ajl-avocat/index.html","path":"/demo-ajl-avocat/index.html","sha":"6cb7b08c8e7997cd3977fd1ed3638b9d8d14eb55","mime_type":"text/html","size":63999,"site_id":"4c3dbfa6-f3d7-495d-8a15-3db158b88252","deploy_id":"69af858c2e4a894555af51ff"}
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJL Avocats | Droit des Affaires &amp; Entreprises — Tours</title>
+  <meta name="description" content="Cabinet AJL Avocats — Maître Jagot-Lacoussière, Docteur en droit. Droit des sociétés, droit commercial, procédures collectives et fiscalité à Tours (37).">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0C1425',
+            navy: '#162038',
+            slate_d: '#1E2D4A',
+            copper: '#C4884D',
+            copper_light: '#D4A373',
+            copper_bright: '#E8B88A',
+            parchment: '#F7F3ED',
+            ivory: '#FDFBF7',
+            ink: '#2C2C2C',
+            muted: '#8B8B8B',
+          },
+          fontFamily: {
+            editorial: ['Playfair Display', 'Georgia', 'serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    /* === EDITORIAL MAGAZINE BASELINE === */
+    ::selection { background: #C4884D; color: #fff; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #FDFBF7; color: #2C2C2C; overflow-x: hidden; }
+
+    /* === PROGRESS BAR === */
+    #progress-bar {
+      position: fixed; top: 0; left: 0; height: 3px; z-index: 9999;
+      background: linear-gradient(90deg, #C4884D 0%, #E8B88A 50%, #C4884D 100%);
+      background-size: 200% 100%;
+      animation: shimmer 2s ease-in-out infinite;
+      width: 0%; transition: width 0.15s ease;
+    }
+    @keyframes shimmer { 0%,100% { background-position: 0% 0; } 50% { background-position: 100% 0; } }
+
+    /* === CURTAIN REVEAL === */
+    .curtain-reveal {
+      clip-path: inset(0 100% 0 0);
+      transition: clip-path 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+    .curtain-reveal.revealed { clip-path: inset(0 0% 0 0); }
+
+    /* === FADE SLIDE UP === */
+    .fade-up {
+      opacity: 0; transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* === FADE SLIDE LEFT/RIGHT === */
+    .fade-left { opacity: 0; transform: translateX(-60px); transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.25,0.46,0.45,0.94); }
+    .fade-right { opacity: 0; transform: translateX(60px); transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.25,0.46,0.45,0.94); }
+    .fade-left.visible, .fade-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* === STAGGER CHILDREN === */
+    .stagger-children > * { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .stagger-children.visible > *:nth-child(1) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(2) { transition-delay: 0.25s; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(3) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(4) { transition-delay: 0.55s; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(5) { transition-delay: 0.7s; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(6) { transition-delay: 0.85s; opacity: 1; transform: translateY(0); }
+
+    /* === EDITORIAL DIVIDER === */
+    .editorial-line { width: 0; height: 1px; background: #C4884D; transition: width 1.4s cubic-bezier(0.77, 0, 0.175, 1); }
+    .editorial-line.visible { width: 100%; }
+
+    /* === HOVER LIFT === */
+    .hover-lift { transition: transform 0.4s ease, box-shadow 0.4s ease; }
+    .hover-lift:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(12,20,37,0.12); }
+
+    /* === QUOTE MARKS === */
+    .quote-mark {
+      font-family: 'Playfair Display', serif; font-size: 8rem; line-height: 0;
+      color: #C4884D; opacity: 0.2; position: absolute; top: 2rem; left: 1rem;
+    }
+
+    /* === SECTION LABEL === */
+    .section-label {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.7rem;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      color: #C4884D; border-left: 2px solid #C4884D;
+      padding-left: 0.75rem; display: inline-block;
+    }
+
+    /* === NAVY SECTION === */
+    .navy-section { background: linear-gradient(170deg, #0C1425 0%, #162038 60%, #1E2D4A 100%); }
+
+    /* === FORM INPUTS === */
+    .form-input {
+      background: transparent; border: none; border-bottom: 1px solid #D4A373;
+      padding: 0.75rem 0; font-family: 'Inter', sans-serif; font-size: 1rem;
+      color: #FDFBF7; outline: none; width: 100%;
+      transition: border-color 0.3s ease;
+    }
+    .form-input::placeholder { color: rgba(253,251,247,0.4); }
+    .form-input:focus { border-bottom-color: #E8B88A; }
+
+    /* === FAQ === */
+    .faq-item { border-bottom: 1px solid rgba(44,44,44,0.1); }
+    .faq-question { cursor: pointer; }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), padding 0.5s ease; padding-top: 0; padding-bottom: 0; }
+    .faq-item.open .faq-answer { max-height: 400px; padding-top: 1rem; padding-bottom: 1.5rem; }
+    .faq-toggle { transition: transform 0.4s ease; }
+    .faq-item.open .faq-toggle { transform: rotate(45deg); }
+
+    /* === TICKER LINE (subtle) === */
+    @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .ticker-track { animation: ticker-scroll 30s linear infinite; }
+
+    /* === MOBILE NAV === */
+    .mobile-menu { transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.77,0,0.175,1); }
+    .mobile-menu.open { transform: translateX(0); }
+  </style>
+</head>
+<body>
+
+<!-- PROGRESS BAR -->
+<div id="progress-bar"></div>
+
+<!-- ============================================ -->
+<!-- HEADER / NAV                                  -->
+<!-- ============================================ -->
+<header id="site-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-500" style="background: transparent;">
+  <div class="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between h-20">
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-3 group">
+      <div class="w-10 h-10 rounded-full border-2 border-copper flex items-center justify-center">
+        <span class="font-editorial font-bold text-lg text-copper">A</span>
+      </div>
+      <div class="leading-tight">
+        <span class="font-editorial font-bold text-xl tracking-wide text-midnight" id="logo-text">AJL</span>
+        <span class="block text-[0.6rem] font-mono tracking-[0.3em] uppercase text-muted">Avocats</span>
+      </div>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden lg:flex items-center gap-10">
+      <a href="#expertises" class="text-sm font-medium text-midnight/70 hover:text-copper transition-colors">Expertises</a>
+      <a href="#parcours" class="text-sm font-medium text-midnight/70 hover:text-copper transition-colors">Le Cabinet</a>
+      <a href="#temoignages" class="text-sm font-medium text-midnight/70 hover:text-copper transition-colors">Témoignages</a>
+      <a href="#faq" class="text-sm font-medium text-midnight/70 hover:text-copper transition-colors">FAQ</a>
+      <a href="#contact" class="ml-2 px-6 py-2.5 bg-midnight text-ivory text-sm font-medium rounded-full hover:bg-copper transition-colors duration-300">Consultation</a>
+    </nav>
+
+    <!-- Mobile Burger -->
+    <button id="burger" class="lg:hidden flex flex-col gap-1.5 p-2 z-50" aria-label="Menu">
+      <span class="block w-6 h-0.5 bg-midnight transition-all duration-300" id="b1"></span>
+      <span class="block w-6 h-0.5 bg-midnight transition-all duration-300" id="b2"></span>
+      <span class="block w-4 h-0.5 bg-midnight transition-all duration-300 ml-auto" id="b3"></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="mobile-menu fixed inset-0 z-40 bg-midnight flex flex-col items-center justify-center gap-8">
+  <a href="#expertises" class="text-2xl font-editorial text-ivory hover:text-copper transition-colors mobile-close">Expertises</a>
+  <a href="#parcours" class="text-2xl font-editorial text-ivory hover:text-copper transition-colors mobile-close">Le Cabinet</a>
+  <a href="#temoignages" class="text-2xl font-editorial text-ivory hover:text-copper transition-colors mobile-close">Témoignages</a>
+  <a href="#faq" class="text-2xl font-editorial text-ivory hover:text-copper transition-colors mobile-close">FAQ</a>
+  <a href="#contact" class="mt-4 px-8 py-3 border border-copper text-copper text-lg font-medium rounded-full hover:bg-copper hover:text-midnight transition-all mobile-close">Consultation</a>
+</div>
+
+<!-- ============================================ -->
+<!-- HERO — EDITORIAL GIANT TYPOGRAPHY              -->
+<!-- ============================================ -->
+<section class="min-h-screen flex flex-col justify-end relative overflow-hidden bg-ivory">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-[0.03]" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 79px, #0C1425 79px, #0C1425 80px), repeating-linear-gradient(90deg, transparent, transparent 79px, #0C1425 79px, #0C1425 80px);"></div>
+
+  <!-- Top Ticker -->
+  <div class="absolute top-24 left-0 w-full overflow-hidden py-3 border-b border-midnight/5">
+    <div class="ticker-track flex gap-16 whitespace-nowrap text-xs font-mono tracking-widest uppercase text-midnight/20">
+      <span>Droit des Sociétés</span><span>·</span>
+      <span>Contentieux Commercial</span><span>·</span>
+      <span>Procédures Collectives</span><span>·</span>
+      <span>Fiscalité</span><span>·</span>
+      <span>Cession d'Entreprise</span><span>·</span>
+      <span>Baux Commerciaux</span><span>·</span>
+      <span>Droit des Affaires</span><span>·</span>
+      <span>Restructuration</span><span>·</span>
+      <span>Droit des Sociétés</span><span>·</span>
+      <span>Contentieux Commercial</span><span>·</span>
+      <span>Procédures Collectives</span><span>·</span>
+      <span>Fiscalité</span><span>·</span>
+      <span>Cession d'Entreprise</span><span>·</span>
+      <span>Baux Commerciaux</span><span>·</span>
+      <span>Droit des Affaires</span><span>·</span>
+      <span>Restructuration</span>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-10 pb-16 md:pb-24 pt-40 md:pt-48 relative z-10">
+    <!-- Eyebrow -->
+    <div class="fade-up mb-8">
+      <span class="section-label">Barreau de Tours &mdash; Cour d'Appel d'Orléans</span>
+    </div>
+
+    <!-- Giant Headline -->
+    <div class="curtain-reveal">
+      <h1 class="font-editorial font-900 text-midnight leading-[0.9] tracking-tight">
+        <span class="block text-[3rem] sm:text-[4.5rem] md:text-[6rem] lg:text-[7.5rem] xl:text-[9rem]">L'avocat</span>
+        <span class="block text-[3rem] sm:text-[4.5rem] md:text-[6rem] lg:text-[7.5rem] xl:text-[9rem]">de votre</span>
+        <span class="block text-[3rem] sm:text-[4.5rem] md:text-[6rem] lg:text-[7.5rem] xl:text-[9rem] text-copper italic">entreprise.</span>
+      </h1>
+    </div>
+
+    <!-- Asymmetric Sub-content 40/60 -->
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-16 mt-12 md:mt-16">
+      <div class="md:col-span-2">
+        <div class="editorial-line mb-6"></div>
+        <p class="fade-up text-base md:text-lg text-ink/70 font-light leading-relaxed">
+          Docteur en droit, enseignant-chercheur et praticien du contentieux commercial. Maître Jagot-Lacoussière accompagne les dirigeants de Centre-Val de Loire depuis son cabinet au cœur de Tours.
+        </p>
+      </div>
+      <div class="md:col-span-3 flex flex-col sm:flex-row gap-4 items-start sm:items-end justify-end">
+        <a href="#contact" class="fade-up group flex items-center gap-3 px-8 py-4 bg-midnight text-ivory rounded-full text-sm font-medium hover:bg-copper transition-colors duration-300">
+          <span>Prendre rendez-vous</span>
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="tel:+33611383890" class="fade-up text-sm font-mono text-midnight/50 hover:text-copper transition-colors">
+          06 11 38 38 90
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 fade-up">
+    <span class="text-[0.6rem] font-mono tracking-[0.3em] uppercase text-muted">Défiler</span>
+    <div class="w-px h-8 bg-copper/40 relative overflow-hidden">
+      <div class="w-full h-3 bg-copper absolute top-0 animate-bounce"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- CHIFFRES — EDITORIAL STRIP                     -->
+<!-- ============================================ -->
+<section class="navy-section py-16 md:py-20 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-5" style="background: radial-gradient(circle at 20% 50%, #C4884D 0%, transparent 50%);"></div>
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 stagger-children">
+      <div class="text-center md:text-left md:border-r border-white/10 md:pr-8">
+        <span class="block font-editorial font-bold text-4xl md:text-5xl text-copper_bright">15+</span>
+        <span class="block mt-2 text-xs font-mono tracking-widest uppercase text-ivory/40">Années d'expérience</span>
+      </div>
+      <div class="text-center md:text-left md:border-r border-white/10 md:px-8">
+        <span class="block font-editorial font-bold text-4xl md:text-5xl text-copper_bright">500+</span>
+        <span class="block mt-2 text-xs font-mono tracking-widest uppercase text-ivory/40">Entreprises accompagnées</span>
+      </div>
+      <div class="text-center md:text-left md:border-r border-white/10 md:px-8">
+        <span class="block font-editorial font-bold text-4xl md:text-5xl text-copper_bright">48h</span>
+        <span class="block mt-2 text-xs font-mono tracking-widest uppercase text-ivory/40">Délai de réponse</span>
+      </div>
+      <div class="text-center md:text-left md:pl-8">
+        <span class="block font-editorial font-bold text-4xl md:text-5xl text-copper_bright">2</span>
+        <span class="block mt-2 text-xs font-mono tracking-widest uppercase text-ivory/40">Barreaux (37 &amp; 45)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- EXPERTISES — ASYMMETRIC EDITORIAL GRID        -->
+<!-- ============================================ -->
+<section id="expertises" class="py-20 md:py-32 bg-ivory relative">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <!-- Section Header -->
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-16 md:mb-24">
+      <div class="md:col-span-2">
+        <span class="section-label fade-up">01 &mdash; Domaines d'intervention</span>
+        <h2 class="font-editorial font-bold text-4xl md:text-6xl text-midnight mt-6 fade-up">
+          Nos<br><span class="text-copper italic">expertises</span>
+        </h2>
+      </div>
+      <div class="md:col-span-3 flex items-end">
+        <p class="fade-up text-ink/60 text-base md:text-lg leading-relaxed max-w-xl">
+          De la création de votre société jusqu'à la gestion des contentieux les plus complexes, le cabinet AJL couvre l'ensemble du cycle de vie de votre entreprise avec une approche pragmatique et résolument orientée résultats.
+        </p>
+      </div>
+    </div>
+
+    <!-- Expertise Cards — Magazine Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 stagger-children">
+      <!-- Large Card -->
+      <div class="md:col-span-7 group hover-lift bg-midnight rounded-2xl p-8 md:p-12 relative overflow-hidden min-h-[320px] flex flex-col justify-end">
+        <div class="absolute top-0 right-0 w-48 h-48 opacity-10" style="background: radial-gradient(circle, #C4884D, transparent 70%);"></div>
+        <span class="font-mono text-xs tracking-widest text-copper_light/60 uppercase">Pilier principal</span>
+        <h3 class="font-editorial font-bold text-3xl md:text-4xl text-ivory mt-3 leading-tight">Droit des<br>Sociétés</h3>
+        <p class="text-ivory/50 text-sm mt-4 max-w-md leading-relaxed">Création (SAS, SARL, SCI, SA, SELAS), rédaction de statuts, pactes d'actionnaires, secrétariat juridique annuel, opérations sur capital et restructurations.</p>
+        <div class="mt-6 flex items-center gap-2 text-copper_light text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <span>En savoir plus</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </div>
+      </div>
+
+      <!-- Stacked Right -->
+      <div class="md:col-span-5 flex flex-col gap-6">
+        <div class="hover-lift bg-parchment rounded-2xl p-8 border border-midnight/5 flex-1">
+          <span class="font-mono text-xs tracking-widest text-copper/60 uppercase">Contentieux</span>
+          <h3 class="font-editorial font-bold text-2xl text-midnight mt-3">Contentieux Commercial</h3>
+          <p class="text-ink/50 text-sm mt-3 leading-relaxed">Tribunal de Commerce, litiges entre associés, baux commerciaux, recouvrement d'impayés. Représentation et stratégie de défense.</p>
+        </div>
+        <div class="hover-lift bg-parchment rounded-2xl p-8 border border-midnight/5 flex-1">
+          <span class="font-mono text-xs tracking-widest text-copper/60 uppercase">Prévention</span>
+          <h3 class="font-editorial font-bold text-2xl text-midnight mt-3">Procédures Collectives</h3>
+          <p class="text-ink/50 text-sm mt-3 leading-relaxed">Prévention des difficultés, cessation de paiements, redressement judiciaire, déclaration de créances.</p>
+        </div>
+      </div>
+
+      <!-- Bottom Row -->
+      <div class="md:col-span-4 hover-lift bg-parchment rounded-2xl p-8 border border-midnight/5">
+        <span class="font-mono text-xs tracking-widest text-copper/60 uppercase">Transmission</span>
+        <h3 class="font-editorial font-bold text-2xl text-midnight mt-3">Cession &amp; Acquisition</h3>
+        <p class="text-ink/50 text-sm mt-3 leading-relaxed">Cession de fonds de commerce, acquisition de sociétés, transmission familiale, levée de fonds et opérations de haut de bilan.</p>
+      </div>
+      <div class="md:col-span-4 hover-lift bg-parchment rounded-2xl p-8 border border-midnight/5">
+        <span class="font-mono text-xs tracking-widest text-copper/60 uppercase">Fiscal</span>
+        <h3 class="font-editorial font-bold text-2xl text-midnight mt-3">Fiscalité des Entreprises</h3>
+        <p class="text-ink/50 text-sm mt-3 leading-relaxed">Optimisation fiscale, choix du régime d'imposition, structuration patrimoniale, accompagnement contrôle fiscal.</p>
+      </div>
+      <div class="md:col-span-4 hover-lift bg-copper/10 rounded-2xl p-8 border border-copper/20 relative overflow-hidden">
+        <div class="absolute -bottom-4 -right-4 w-24 h-24 rounded-full bg-copper/10"></div>
+        <span class="font-mono text-xs tracking-widest text-copper uppercase">Accès entreprise</span>
+        <h3 class="font-editorial font-bold text-2xl text-midnight mt-3">Droit Commercial</h3>
+        <p class="text-ink/50 text-sm mt-3 leading-relaxed">Baux commerciaux, cession de droit au bail, CGV/CGU, relations fournisseurs et partenaires commerciaux.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- PARCOURS — EDITORIAL SPLIT ASYMMETRIC         -->
+<!-- ============================================ -->
+<section id="parcours" class="py-20 md:py-32 bg-parchment relative overflow-hidden">
+  <!-- Decorative vertical line -->
+  <div class="absolute left-1/2 top-0 w-px h-full bg-midnight/5 hidden lg:block"></div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20 items-start">
+      <!-- Left Column — 40% -->
+      <div class="lg:col-span-2 lg:sticky lg:top-32">
+        <span class="section-label fade-up">02 &mdash; Le Cabinet</span>
+        <h2 class="font-editorial font-bold text-4xl md:text-5xl text-midnight mt-6 leading-tight fade-up">
+          Un avocat,<br>universitaire<br>&amp; <span class="text-copper italic">praticien.</span>
+        </h2>
+        <div class="editorial-line mt-8 mb-8"></div>
+        <div class="fade-up">
+          <p class="text-ink/60 leading-relaxed">
+            Maître Jagot-Lacoussière allie rigueur académique et pragmatisme du terrain. Docteur en droit privé, ancien du monde de la finance parisienne, il a choisi de mettre son expertise au service des entrepreneurs de Centre-Val de Loire.
+          </p>
+          <a href="#contact" class="inline-flex items-center gap-2 mt-8 text-copper font-medium text-sm hover:gap-4 transition-all">
+            <span>Prendre rendez-vous</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column — 60% Timeline -->
+      <div class="lg:col-span-3">
+        <!-- Timeline Items -->
+        <div class="space-y-12">
+          <!-- Item 1 -->
+          <div class="fade-right relative pl-8 border-l-2 border-copper/30">
+            <div class="absolute left-0 top-0 w-3 h-3 rounded-full bg-copper -translate-x-[7px]"></div>
+            <span class="font-mono text-xs tracking-widest text-copper uppercase">Formation</span>
+            <h3 class="font-editorial font-bold text-xl text-midnight mt-2">Doctorat en Droit Privé</h3>
+            <p class="text-ink/50 text-sm mt-2 leading-relaxed">Université de Cergy-Pontoise. Sujet de recherche : <em>Les salariés et le droit des sociétés par actions</em>. Complété par un Master II PME-PMI.</p>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="fade-right relative pl-8 border-l-2 border-copper/30" style="transition-delay: 0.15s;">
+            <div class="absolute left-0 top-0 w-3 h-3 rounded-full bg-copper -translate-x-[7px]"></div>
+            <span class="font-mono text-xs tracking-widest text-copper uppercase">Académique</span>
+            <h3 class="font-editorial font-bold text-xl text-midnight mt-2">Enseignement &amp; Recherche</h3>
+            <p class="text-ink/50 text-sm mt-2 leading-relaxed">Chargé de cours aux Universités de Reims et du Mans. Aujourd'hui enseignant à l'École de Commerce EXCELIA (Tours). Publications dans la Revue des Sociétés, Lamy Droit Civil, Lexis 360.</p>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="fade-right relative pl-8 border-l-2 border-copper/30" style="transition-delay: 0.3s;">
+            <div class="absolute left-0 top-0 w-3 h-3 rounded-full bg-copper -translate-x-[7px]"></div>
+            <span class="font-mono text-xs tracking-widest text-copper uppercase">Finance</span>
+            <h3 class="font-editorial font-bold text-xl text-midnight mt-2">Expérience Financière à Paris</h3>
+            <p class="text-ink/50 text-sm mt-2 leading-relaxed">Plusieurs années dans le monde de la finance parisienne avant de prêter serment. Une double compétence rare qui enrichit le conseil aux dirigeants.</p>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="fade-right relative pl-8 border-l-2 border-copper/30" style="transition-delay: 0.45s;">
+            <div class="absolute left-0 top-0 w-3 h-3 rounded-full bg-copper_bright -translate-x-[7px] ring-4 ring-copper/20"></div>
+            <span class="font-mono text-xs tracking-widest text-copper uppercase">Aujourd'hui</span>
+            <h3 class="font-editorial font-bold text-xl text-midnight mt-2">Cabinet AJL — Tours</h3>
+            <p class="text-ink/50 text-sm mt-2 leading-relaxed">Inscrit au Barreau de Tours (37) et à la Cour d'Appel d'Orléans (45). Accompagnement des PME, TPE, start-ups et ETI de toute la région Centre-Val de Loire.</p>
+          </div>
+        </div>
+
+        <!-- Ecosystem Box -->
+        <div class="mt-16 fade-up bg-ivory rounded-2xl p-8 border border-midnight/5">
+          <h4 class="font-editorial font-bold text-lg text-midnight">Un réseau de partenaires qualifiés</h4>
+          <p class="text-ink/50 text-sm mt-3 leading-relaxed">Experts-comptables, notaires, gestionnaires de patrimoine, assureurs &mdash; Maître Jagot-Lacoussière s'entoure systématiquement des meilleurs spécialistes pour un suivi complet de vos dossiers.</p>
+          <div class="flex flex-wrap gap-3 mt-6">
+            <span class="px-4 py-1.5 bg-parchment text-ink/40 text-xs font-mono rounded-full">Experts-comptables</span>
+            <span class="px-4 py-1.5 bg-parchment text-ink/40 text-xs font-mono rounded-full">Notaires</span>
+            <span class="px-4 py-1.5 bg-parchment text-ink/40 text-xs font-mono rounded-full">Patrimoine</span>
+            <span class="px-4 py-1.5 bg-parchment text-ink/40 text-xs font-mono rounded-full">Assureurs</span>
+            <span class="px-4 py-1.5 bg-parchment text-ink/40 text-xs font-mono rounded-full">Banquiers</span>
+          </div>
+        </div>
+
+        <!-- Sectors -->
+        <div class="mt-8 fade-up">
+          <h4 class="font-mono text-xs tracking-widest text-copper uppercase mb-4">Secteurs d'activité</h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 border border-midnight/10 text-ink/50 text-xs rounded-full">BTP</span>
+            <span class="px-3 py-1 border border-midnight/10 text-ink/50 text-xs rounded-full">Transport</span>
+            <span class="px-3 py-1 border border-midnight/10 text-ink/50 text-xs rounded-full">Professions libérales</span>
+            <span class="px-3 py-1 border border-midnight/10 text-ink/50 text-xs rounded-full">Cliniques</span>
+            <span class="px-3 py-1 border border-midnight/10 text-ink/50 text-xs rounded-full">Négoce</span>
+            <span class="px-3 py-1 border border-midnight/10 text-ink/50 text-xs rounded-full">Agriculture</span>
+            <span class="px-3 py-1 border border-midnight/10 text-ink/50 text-xs rounded-full">Informatique</span>
+            <span class="px-3 py-1 border border-midnight/10 text-ink/50 text-xs rounded-full">Artisanat</span>
+            <span class="px-3 py-1 border border-midnight/10 text-ink/50 text-xs rounded-full">Restauration</span>
+            <span class="px-3 py-1 border border-midnight/10 text-ink/50 text-xs rounded-full">Start-ups</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- TEMOIGNAGES — EDITORIAL FULL-WIDTH QUOTES      -->
+<!-- ============================================ -->
+<section id="temoignages" class="navy-section py-20 md:py-32 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-5" style="background: radial-gradient(ellipse at 80% 30%, #C4884D, transparent 60%);"></div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-16 md:mb-20">
+      <div>
+        <span class="section-label !text-copper_light !border-copper_light fade-up">03 &mdash; Témoignages</span>
+        <h2 class="font-editorial font-bold text-4xl md:text-5xl text-ivory mt-6 fade-up">
+          Ce que disent<br>nos <span class="text-copper_bright italic">clients.</span>
+        </h2>
+      </div>
+      <p class="fade-up text-ivory/40 text-sm max-w-xs">Des dirigeants de Centre-Val de Loire témoignent de leur collaboration avec le cabinet AJL.</p>
+    </div>
+
+    <!-- Testimonials Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-children">
+      <!-- Testimonial 1 -->
+      <div class="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-white/10 hover-lift group">
+        <div class="quote-mark">&ldquo;</div>
+        <div class="relative z-10">
+          <div class="flex gap-1 mb-6">
+            <span class="text-copper">&#9733;</span><span class="text-copper">&#9733;</span><span class="text-copper">&#9733;</span><span class="text-copper">&#9733;</span><span class="text-copper">&#9733;</span>
+          </div>
+          <p class="text-ivory/80 text-sm leading-relaxed italic">
+            &laquo; Maître Jagot-Lacoussière a su trouver la structure juridique idéale pour notre projet. Sa double compétence finance et droit est un vrai plus. Trois ans après, il gère toujours notre secrétariat juridique annuel avec une rigueur exemplaire. &raquo;
+          </p>
+          <div class="mt-8 pt-6 border-t border-white/10">
+            <span class="block text-ivory font-medium text-sm">Laurent M.</span>
+            <span class="block text-ivory/40 text-xs mt-1">Dirigeant de PME industrielle &mdash; Tours</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 — Featured -->
+      <div class="relative bg-copper/15 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-copper/30 hover-lift group md:-translate-y-4">
+        <div class="quote-mark !text-copper_bright !opacity-30">&ldquo;</div>
+        <div class="relative z-10">
+          <div class="flex gap-1 mb-6">
+            <span class="text-copper_bright">&#9733;</span><span class="text-copper_bright">&#9733;</span><span class="text-copper_bright">&#9733;</span><span class="text-copper_bright">&#9733;</span><span class="text-copper_bright">&#9733;</span>
+          </div>
+          <p class="text-ivory/90 text-sm leading-relaxed italic">
+            &laquo; Lors du redressement judiciaire de notre société, Me Jagot-Lacoussière a été d'un calme et d'une efficacité remarquables. Il a négocié un plan de continuation qui nous a permis de sauver 12 emplois. Un avocat qui connaît vraiment la réalité des entreprises. &raquo;
+          </p>
+          <div class="mt-8 pt-6 border-t border-copper/30">
+            <span class="block text-ivory font-medium text-sm">Stéphanie R.</span>
+            <span class="block text-ivory/40 text-xs mt-1">Gérante SARL &mdash; Secteur BTP, Orléans</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-white/10 hover-lift group">
+        <div class="quote-mark">&ldquo;</div>
+        <div class="relative z-10">
+          <div class="flex gap-1 mb-6">
+            <span class="text-copper">&#9733;</span><span class="text-copper">&#9733;</span><span class="text-copper">&#9733;</span><span class="text-copper">&#9733;</span><span class="text-copper">&#9733;</span>
+          </div>
+          <p class="text-ivory/80 text-sm leading-relaxed italic">
+            &laquo; Le Pack Start-Up nous a permis de démarrer sereinement : statuts, pacte d'actionnaires, CGV, tout était prêt en deux semaines. Et le prix est transparent, sans surprise. Je recommande à tous les créateurs d'entreprise de la région. &raquo;
+          </p>
+          <div class="mt-8 pt-6 border-t border-white/10">
+            <span class="block text-ivory font-medium text-sm">Thomas D.</span>
+            <span class="block text-ivory/40 text-xs mt-1">Co-fondateur start-up tech &mdash; Tours</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- OFFRES — PACK START-UP HIGHLIGHT              -->
+<!-- ============================================ -->
+<section class="py-20 md:py-28 bg-ivory relative">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Left -->
+      <div class="fade-left">
+        <span class="section-label">04 &mdash; Offre dédiée</span>
+        <h2 class="font-editorial font-bold text-4xl md:text-5xl text-midnight mt-6 leading-tight">
+          Pack <span class="text-copper italic">Start-Up</span>
+        </h2>
+        <p class="text-ink/60 mt-6 leading-relaxed max-w-lg">
+          Une offre clé-en-main pour les créateurs d'entreprise : du rendez-vous conseil jusqu'à l'obtention de votre Kbis, tout est inclus.
+        </p>
+        <div class="mt-8 space-y-4">
+          <div class="flex items-start gap-3">
+            <div class="w-5 h-5 rounded-full bg-copper/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-3 h-3 text-copper" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <span class="text-ink/60 text-sm">Rendez-vous conseil d'1h (visio, téléphone ou sur place)</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-5 h-5 rounded-full bg-copper/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-3 h-3 text-copper" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <span class="text-ink/60 text-sm">Rédaction de statuts adaptés à votre projet</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-5 h-5 rounded-full bg-copper/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-3 h-3 text-copper" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <span class="text-ink/60 text-sm">Pacte d'actionnaires + CGV/CGU</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-5 h-5 rounded-full bg-copper/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-3 h-3 text-copper" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <span class="text-ink/60 text-sm">Mise en relation partenaires (expert-comptable, banque)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right — Price Card -->
+      <div class="fade-right">
+        <div class="bg-midnight rounded-3xl p-10 md:p-14 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-64 h-64 opacity-10" style="background: radial-gradient(circle, #C4884D, transparent 70%);"></div>
+          <div class="relative z-10">
+            <span class="font-mono text-xs tracking-widest text-copper_light uppercase">Offre complète</span>
+            <div class="mt-4 flex items-baseline gap-2">
+              <span class="font-editorial font-bold text-6xl md:text-7xl text-ivory">1 700</span>
+              <span class="text-ivory/50 text-lg">€ HT</span>
+            </div>
+            <p class="text-ivory/40 text-sm mt-2">Économie de 900€ vs tarifs individuels</p>
+            <div class="editorial-line mt-8 mb-8 !bg-copper/30"></div>
+            <div class="space-y-3">
+              <div class="flex justify-between text-sm">
+                <span class="text-ivory/60">Création d'entreprise</span>
+                <span class="text-ivory/40 font-mono">800€</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-ivory/60">Pacte d'actionnaires</span>
+                <span class="text-ivory/40 font-mono">1 100€</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-ivory/60">CGV / CGU</span>
+                <span class="text-ivory/40 font-mono">700€</span>
+              </div>
+            </div>
+            <a href="#contact" class="mt-10 w-full flex items-center justify-center gap-2 px-8 py-4 bg-copper text-midnight font-semibold rounded-full hover:bg-copper_bright transition-colors duration-300">
+              <span>Demander un devis</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- FAQ — EDITORIAL TWO-COLUMN                     -->
+<!-- ============================================ -->
+<section id="faq" class="py-20 md:py-32 bg-parchment relative">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20">
+      <!-- Left -->
+      <div class="lg:col-span-2 lg:sticky lg:top-32">
+        <span class="section-label fade-up">05 &mdash; Questions fréquentes</span>
+        <h2 class="font-editorial font-bold text-4xl md:text-5xl text-midnight mt-6 fade-up">
+          Vos<br><span class="text-copper italic">questions.</span>
+        </h2>
+        <p class="fade-up text-ink/50 mt-6 leading-relaxed">
+          Les réponses aux interrogations les plus courantes de nos clients entrepreneurs.
+        </p>
+      </div>
+
+      <!-- Right — FAQ Accordion -->
+      <div class="lg:col-span-3 fade-up">
+        <div class="space-y-0">
+          <!-- FAQ 1 -->
+          <div class="faq-item py-6">
+            <div class="faq-question flex items-center justify-between gap-4" onclick="toggleFaq(this)">
+              <h3 class="font-editorial font-semibold text-lg text-midnight pr-4">Quels types d'entreprises accompagnez-vous ?</h3>
+              <span class="faq-toggle text-copper text-2xl flex-shrink-0 font-light">+</span>
+            </div>
+            <div class="faq-answer text-ink/60 text-sm leading-relaxed">
+              Le cabinet accompagne tous types de structures : SAS, SARL, SCI, SA, SELAS, SELARL, SCOP, SNC, SCEA et GAEC. Nos clients vont de la start-up en création aux PME établies, en passant par les TPE et artisans. Nous intervenons dans de nombreux secteurs : BTP, transport, professions libérales, santé, négoce, agriculture, informatique et restauration.
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item py-6">
+            <div class="faq-question flex items-center justify-between gap-4" onclick="toggleFaq(this)">
+              <h3 class="font-editorial font-semibold text-lg text-midnight pr-4">Quel est le délai de réponse pour une première consultation ?</h3>
+              <span class="faq-toggle text-copper text-2xl flex-shrink-0 font-light">+</span>
+            </div>
+            <div class="faq-answer text-ink/60 text-sm leading-relaxed">
+              Nous nous engageons à répondre à toute demande sous 48 heures maximum. La première consultation peut se faire en présentiel au cabinet (72 Boulevard Béranger, Tours), par téléphone ou par visioconférence selon votre préférence.
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item py-6">
+            <div class="faq-question flex items-center justify-between gap-4" onclick="toggleFaq(this)">
+              <h3 class="font-editorial font-semibold text-lg text-midnight pr-4">Intervenez-vous uniquement à Tours ?</h3>
+              <span class="faq-toggle text-copper text-2xl flex-shrink-0 font-light">+</span>
+            </div>
+            <div class="faq-answer text-ink/60 text-sm leading-relaxed">
+              Maître Jagot-Lacoussière est inscrit au Barreau de Tours (37) et à la Cour d'Appel d'Orléans (45). Il intervient sur l'ensemble de la région Centre-Val de Loire et peut également plaider devant les juridictions nationales pour les dossiers qui le nécessitent.
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item py-6">
+            <div class="faq-question flex items-center justify-between gap-4" onclick="toggleFaq(this)">
+              <h3 class="font-editorial font-semibold text-lg text-midnight pr-4">Comment sont déterminés vos honoraires ?</h3>
+              <span class="faq-toggle text-copper text-2xl flex-shrink-0 font-light">+</span>
+            </div>
+            <div class="faq-answer text-ink/60 text-sm leading-relaxed">
+              Nous pratiquons une politique de transparence totale. Un devis détaillé vous est systématiquement envoyé avant toute prestation. Pour la création d'entreprise, nos offres packagées (Pack Start-Up à 1 700€ HT, Création à 1 000€ HT, SCI à 800€ HT) garantissent un budget maîtrisé sans mauvaise surprise.
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item py-6">
+            <div class="faq-question flex items-center justify-between gap-4" onclick="toggleFaq(this)">
+              <h3 class="font-editorial font-semibold text-lg text-midnight pr-4">Mon entreprise est en difficulté, pouvez-vous m'aider en urgence ?</h3>
+              <span class="faq-toggle text-copper text-2xl flex-shrink-0 font-light">+</span>
+            </div>
+            <div class="faq-answer text-ink/60 text-sm leading-relaxed">
+              Absolument. Le cabinet est spécialisé dans l'accompagnement des entreprises en difficulté : prévention, déclaration de cessation de paiements, redressement judiciaire, déclaration de créances. En situation urgente, contactez-nous directement au 06 11 38 38 90 pour une prise en charge rapide.
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="faq-item py-6">
+            <div class="faq-question flex items-center justify-between gap-4" onclick="toggleFaq(this)">
+              <h3 class="font-editorial font-semibold text-lg text-midnight pr-4">Proposez-vous un suivi juridique régulier ?</h3>
+              <span class="faq-toggle text-copper text-2xl flex-shrink-0 font-light">+</span>
+            </div>
+            <div class="faq-answer text-ink/60 text-sm leading-relaxed">
+              Oui, nous proposons deux formules de suivi annuel : le secrétariat juridique annuel à 650€ HT (assemblées, registres, rapport de gestion) et la formule complète à 1 100€ HT incluant 4 consultations juridiques par an pour un accompagnement au quotidien.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- CONTACT — DARK EDITORIAL                       -->
+<!-- ============================================ -->
+<section id="contact" class="navy-section py-20 md:py-32 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-5" style="background: radial-gradient(ellipse at 30% 70%, #C4884D, transparent 60%);"></div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20">
+      <!-- Left -->
+      <div class="lg:col-span-2">
+        <span class="section-label !text-copper_light !border-copper_light fade-up">06 &mdash; Contact</span>
+        <h2 class="font-editorial font-bold text-4xl md:text-5xl text-ivory mt-6 fade-up leading-tight">
+          Parlons de<br>votre <span class="text-copper_bright italic">projet.</span>
+        </h2>
+        <div class="editorial-line mt-8 mb-8 !bg-copper/30"></div>
+
+        <!-- Contact Info -->
+        <div class="space-y-6 fade-up">
+          <div>
+            <span class="font-mono text-xs tracking-widest text-copper_light/60 uppercase block mb-2">Adresse</span>
+            <p class="text-ivory/70 text-sm leading-relaxed">72 Boulevard Béranger<br>37000 Tours</p>
+          </div>
+          <div>
+            <span class="font-mono text-xs tracking-widest text-copper_light/60 uppercase block mb-2">Téléphone</span>
+            <a href="tel:+33611383890" class="text-ivory/70 text-sm hover:text-copper_bright transition-colors">06 11 38 38 90</a>
+          </div>
+          <div>
+            <span class="font-mono text-xs tracking-widest text-copper_light/60 uppercase block mb-2">Barreaux</span>
+            <p class="text-ivory/70 text-sm leading-relaxed">Barreau de Tours (37)<br>Cour d'Appel d'Orléans (45)</p>
+          </div>
+          <div>
+            <span class="font-mono text-xs tracking-widest text-copper_light/60 uppercase block mb-2">Réponse garantie</span>
+            <p class="text-ivory/70 text-sm">Sous 48 heures</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right — Form -->
+      <div class="lg:col-span-3 fade-up">
+        <form class="space-y-8" onsubmit="event.preventDefault(); alert('Merci pour votre message. Ma\u00eetre Jagot-Lacoussi\u00e8re vous r\u00e9pondra sous 48h.');">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div>
+              <label class="font-mono text-xs tracking-widest text-copper_light/60 uppercase block mb-3">Nom complet</label>
+              <input type="text" class="form-input" placeholder="Votre nom" required>
+            </div>
+            <div>
+              <label class="font-mono text-xs tracking-widest text-copper_light/60 uppercase block mb-3">Société</label>
+              <input type="text" class="form-input" placeholder="Nom de l'entreprise">
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div>
+              <label class="font-mono text-xs tracking-widest text-copper_light/60 uppercase block mb-3">Téléphone</label>
+              <input type="tel" class="form-input" placeholder="06 00 00 00 00" required>
+            </div>
+            <div>
+              <label class="font-mono text-xs tracking-widest text-copper_light/60 uppercase block mb-3">Email</label>
+              <input type="email" class="form-input" placeholder="vous@entreprise.fr" required>
+            </div>
+          </div>
+          <div>
+            <label class="font-mono text-xs tracking-widest text-copper_light/60 uppercase block mb-3">Domaine d'intervention</label>
+            <select class="form-input bg-transparent" style="-webkit-appearance: none;">
+              <option value="" class="bg-midnight">Sélectionnez un domaine</option>
+              <option value="societes" class="bg-midnight">Droit des Sociétés</option>
+              <option value="cession" class="bg-midnight">Cession &amp; Acquisition</option>
+              <option value="difficulte" class="bg-midnight">Entreprise en difficulté</option>
+              <option value="contentieux" class="bg-midnight">Contentieux commercial</option>
+              <option value="fiscalite" class="bg-midnight">Fiscalité</option>
+              <option value="autre" class="bg-midnight">Autre</option>
+            </select>
+          </div>
+          <div>
+            <label class="font-mono text-xs tracking-widest text-copper_light/60 uppercase block mb-3">Votre message</label>
+            <textarea class="form-input resize-none" rows="4" placeholder="Décrivez brièvement votre situation ou votre projet..."></textarea>
+          </div>
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <button type="submit" class="group flex items-center gap-3 px-10 py-4 bg-copper text-midnight font-semibold rounded-full hover:bg-copper_bright transition-colors duration-300">
+              <span>Envoyer ma demande</span>
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </button>
+            <span class="text-ivory/30 text-xs">Données traitées conformément au RGPD</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- FOOTER                                        -->
+<!-- ============================================ -->
+<footer class="bg-midnight border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 md:px-10 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+      <!-- Brand -->
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-full border-2 border-copper flex items-center justify-center">
+            <span class="font-editorial font-bold text-lg text-copper">A</span>
+          </div>
+          <div class="leading-tight">
+            <span class="font-editorial font-bold text-xl tracking-wide text-ivory">AJL</span>
+            <span class="block text-[0.6rem] font-mono tracking-[0.3em] uppercase text-ivory/40">Avocats</span>
+          </div>
+        </div>
+        <p class="text-ivory/30 text-sm leading-relaxed max-w-sm">
+          Cabinet d'avocats dédié au droit des affaires et à l'accompagnement des entreprises en Centre-Val de Loire. Disponibilité, proximité et solutions adaptées.
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <h4 class="font-mono text-xs tracking-widest text-copper uppercase mb-6">Navigation</h4>
+        <div class="space-y-3">
+          <a href="#expertises" class="block text-ivory/40 text-sm hover:text-copper transition-colors">Expertises</a>
+          <a href="#parcours" class="block text-ivory/40 text-sm hover:text-copper transition-colors">Le Cabinet</a>
+          <a href="#temoignages" class="block text-ivory/40 text-sm hover:text-copper transition-colors">Témoignages</a>
+          <a href="#faq" class="block text-ivory/40 text-sm hover:text-copper transition-colors">FAQ</a>
+          <a href="#contact" class="block text-ivory/40 text-sm hover:text-copper transition-colors">Contact</a>
+        </div>
+      </div>
+
+      <!-- Contact Quick -->
+      <div>
+        <h4 class="font-mono text-xs tracking-widest text-copper uppercase mb-6">Coordonnées</h4>
+        <div class="space-y-3 text-sm text-ivory/40">
+          <p>72 Boulevard Béranger<br>37000 Tours</p>
+          <a href="tel:+33611383890" class="block hover:text-copper transition-colors">06 11 38 38 90</a>
+          <p>Barreau de Tours</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="border-t border-white/5 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-ivory/20 text-xs">&copy; 2024 Cabinet AJL Avocats &mdash; Tous droits réservés</p>
+      <p class="text-ivory/20 text-xs">Site conçu par <a href="https://aegis-gallery.netlify.app" target="_blank" class="text-copper/40 hover:text-copper transition-colors">AEGIS Agency</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================ -->
+<!-- JAVASCRIPT                                    -->
+<!-- ============================================ -->
+<script>
+  // === PROGRESS BAR ===
+  const progressBar = document.getElementById('progress-bar');
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (scrollTop / docHeight) * 100;
+    progressBar.style.width = progress + '%';
+  });
+
+  // === HEADER SCROLL EFFECT ===
+  const header = document.getElementById('site-header');
+  const logoText = document.getElementById('logo-text');
+  let lastScroll = 0;
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+    if (currentScroll > 80) {
+      header.style.background = 'rgba(253,251,247,0.95)';
+      header.style.backdropFilter = 'blur(20px)';
+      header.style.boxShadow = '0 1px 0 rgba(12,20,37,0.05)';
+    } else {
+      header.style.background = 'transparent';
+      header.style.backdropFilter = 'none';
+      header.style.boxShadow = 'none';
+    }
+    lastScroll = currentScroll;
+  });
+
+  // === MOBILE MENU ===
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const b1 = document.getElementById('b1');
+  const b2 = document.getElementById('b2');
+  const b3 = document.getElementById('b3');
+  let menuOpen = false;
+
+  burger.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    mobileMenu.classList.toggle('open');
+    if (menuOpen) {
+      b1.style.transform = 'rotate(45deg) translateY(6px)';
+      b2.style.opacity = '0';
+      b3.style.transform = 'rotate(-45deg) translateY(-6px)';
+      b3.style.width = '1.5rem';
+      b1.style.background = b3.style.background = '#C4884D';
+    } else {
+      b1.style.transform = 'none';
+      b2.style.opacity = '1';
+      b3.style.transform = 'none';
+      b3.style.width = '1rem';
+      b1.style.background = b2.style.background = b3.style.background = '#0C1425';
+    }
+  });
+
+  document.querySelectorAll('.mobile-close').forEach(link => {
+    link.addEventListener('click', () => {
+      menuOpen = false;
+      mobileMenu.classList.remove('open');
+      b1.style.transform = 'none';
+      b2.style.opacity = '1';
+      b3.style.transform = 'none';
+      b3.style.width = '1rem';
+      b1.style.background = b2.style.background = b3.style.background = '#0C1425';
+    });
+  });
+
+  // === INTERSECTION OBSERVER — SCROLL REVEAL ===
+  const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -50px 0px' };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        if (!entry.target.classList.contains('editorial-line')) {
+          // Don't unobserve editorial lines for re-trigger effect
+        }
+      }
+    });
+  }, observerOptions);
+
+  // Observe all animated elements
+  document.querySelectorAll('.fade-up, .fade-left, .fade-right, .curtain-reveal, .editorial-line, .stagger-children').forEach(el => {
+    observer.observe(el);
+  });
+
+  // === FAQ TOGGLE ===
+  function toggleFaq(questionEl) {
+    const item = questionEl.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    // Open clicked if it was closed
+    if (!wasOpen) item.classList.add('open');
+  }
+
+  // === SMOOTH SCROLL FOR ANCHOR LINKS ===
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      e.preventDefault();
+      const target = document.querySelector(targetId);
+      if (target) {
+        const offset = 80;
+        const y = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // === AUTO REVEAL HERO ON LOAD ===
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.querySelector('.curtain-reveal')?.classList.add('revealed');
+    }, 300);
+    setTimeout(() => {
+      document.querySelectorAll('.fade-up').forEach((el, i) => {
+        if (el.getBoundingClientRect().top < window.innerHeight) {
+          setTimeout(() => el.classList.add('visible'), i * 150);
+        }
+      });
+    }, 600);
+    setTimeout(() => {
+      document.querySelectorAll('.editorial-line').forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight) {
+          el.classList.add('visible');
+        }
+      });
+    }, 900);
+  });
+</script>
+
+</body>
+</html>
