@@ -1,1 +1,1315 @@
-{"id":"/demo-lacroix-avocat/index.html","path":"/demo-lacroix-avocat/index.html","sha":"714f39a96979fbf70734bf4570b823e84701841e","mime_type":"text/html","size":28644,"site_id":"4c3dbfa6-f3d7-495d-8a15-3db158b88252","deploy_id":"69af858c2e4a894555af51ff"}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabinet Lacroix — Avocate en Droit des Affaires | Paris</title>
+    <meta name="description" content="Me Eloïse Lacroix, avocate au barreau de Paris. Droit des affaires, entreprises en difficulté, création de sociétés, contentieux commercial. Diplômée Paris 1 Panthéon-Sorbonne.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ivoire': '#faf9f6',
+                        'noir': '#1a1a1a',
+                        'or-rose': '#c9a96e',
+                        'or-rose-light': '#d4bc8a',
+                        'perle': '#e8e6e1',
+                        'gris-doux': '#8a8680',
+                        'creme': '#f3f1ec',
+                    },
+                    fontFamily: {
+                        'serif': ['Cormorant Garamond', 'Georgia', 'Times New Roman', 'serif'],
+                        'sans': ['Outfit', 'system-ui', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        'editorial': '0.25em',
+                        'wide-editorial': '0.35em',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* ===== EDITORIAL PARISIEN CHIC — Cabinet Lacroix ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { 
+            background: #faf9f6; 
+            color: #1a1a1a; 
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Scrollbar editorial */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #faf9f6; }
+        ::-webkit-scrollbar-thumb { background: #c9a96e; border-radius: 3px; }
+
+        /* Selection */
+        ::selection { background: #c9a96e; color: #faf9f6; }
+
+        /* ===== HERO LINE ANIMATION ===== */
+        @keyframes expandLine {
+            from { width: 0; }
+            to { width: 180px; }
+        }
+        @keyframes expandLineMobile {
+            from { width: 0; }
+            to { width: 100px; }
+        }
+        .hero-line {
+            display: block;
+            height: 1.5px;
+            background: linear-gradient(90deg, transparent, #c9a96e, transparent);
+            animation: expandLine 2s ease-out 0.8s forwards;
+            width: 0;
+            margin: 2rem auto;
+        }
+        @media (max-width: 768px) {
+            .hero-line { animation: expandLineMobile 2s ease-out 0.8s forwards; }
+        }
+
+        /* ===== FADE IN ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .reveal { opacity: 0; transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .reveal.visible { opacity: 1; }
+        .reveal-up { opacity: 0; transform: translateY(40px); }
+        .reveal-up.visible { opacity: 1; transform: translateY(0); }
+        .reveal-left { opacity: 0; transform: translateX(-40px); }
+        .reveal-left.visible { opacity: 1; transform: translateX(0); }
+        .reveal-right { opacity: 0; transform: translateX(40px); }
+        .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+        /* ===== HERO TYPOGRAPHY ===== */
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-size: clamp(2.5rem, 6vw, 5.5rem);
+            line-height: 1.1;
+            letter-spacing: 0.04em;
+            color: #1a1a1a;
+        }
+        .hero-title em {
+            font-style: italic;
+            color: #c9a96e;
+            font-weight: 400;
+        }
+
+        /* ===== EDITORIAL LINKS ===== */
+        .link-editorial {
+            position: relative;
+            display: inline-block;
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+        .link-editorial::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #c9a96e;
+            transition: width 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .link-editorial:hover::after {
+            width: 100%;
+        }
+
+        /* ===== EXPERTISE CARDS ===== */
+        .card-luxe {
+            background: #fff;
+            border: 1px solid #e8e6e1;
+            padding: 2.5rem;
+            position: relative;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            overflow: hidden;
+        }
+        .card-luxe::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, #c9a96e, transparent);
+            transform: scaleX(0);
+            transition: transform 0.6s ease;
+        }
+        .card-luxe:hover {
+            border-color: #c9a96e;
+            box-shadow: 0 8px 40px rgba(201, 169, 110, 0.08);
+            transform: translateY(-4px);
+        }
+        .card-luxe:hover::before {
+            transform: scaleX(1);
+        }
+
+        /* ===== DECORATIVE QUOTE ===== */
+        .quote-mark {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 8rem;
+            line-height: 1;
+            color: #c9a96e;
+            opacity: 0.3;
+            position: absolute;
+            top: -1.5rem;
+            left: -0.5rem;
+            user-select: none;
+        }
+
+        /* ===== COUNTER ===== */
+        .counter-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-size: clamp(3rem, 5vw, 4.5rem);
+            color: #c9a96e;
+            line-height: 1;
+        }
+
+        /* ===== FAQ ACCORDION ===== */
+        .faq-item {
+            border-bottom: 1px solid #e8e6e1;
+            overflow: hidden;
+        }
+        .faq-question {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            transition: color 0.3s ease;
+        }
+        .faq-question:hover { color: #c9a96e; }
+        .faq-question .faq-icon {
+            font-size: 1.5rem;
+            color: #c9a96e;
+            transition: transform 0.4s ease;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), padding 0.5s ease;
+            padding: 0 0;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 0 1.5rem 0;
+        }
+
+        /* ===== FORM STYLING ===== */
+        .form-input {
+            width: 100%;
+            padding: 1rem 0;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #e8e6e1;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            color: #1a1a1a;
+            outline: none;
+            transition: border-color 0.4s ease;
+        }
+        .form-input:focus {
+            border-color: #c9a96e;
+        }
+        .form-input::placeholder {
+            color: #8a8680;
+            font-weight: 300;
+        }
+        textarea.form-input {
+            resize: none;
+            min-height: 120px;
+        }
+
+        /* ===== BUTTON LUXE ===== */
+        .btn-luxe {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #1a1a1a;
+            color: #faf9f6;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid #1a1a1a;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-luxe::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: #c9a96e;
+            transition: left 0.5s ease;
+            z-index: 0;
+        }
+        .btn-luxe:hover::before {
+            left: 0;
+        }
+        .btn-luxe:hover {
+            border-color: #c9a96e;
+        }
+        .btn-luxe span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-outline-luxe {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: #1a1a1a;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid #c9a96e;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+        .btn-outline-luxe:hover {
+            background: #c9a96e;
+            color: #faf9f6;
+        }
+
+        /* ===== PARALLAX ===== */
+        .parallax-section {
+            position: relative;
+            overflow: hidden;
+        }
+        .parallax-bg {
+            position: absolute;
+            top: -20%; left: 0;
+            width: 100%; height: 140%;
+            background-size: cover;
+            background-position: center;
+            will-change: transform;
+        }
+
+        /* ===== MOBILE NAV ===== */
+        .mobile-nav {
+            position: fixed;
+            top: 0; right: -100%;
+            width: 100%; height: 100vh;
+            background: #faf9f6;
+            z-index: 100;
+            transition: right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .mobile-nav.open { right: 0; }
+
+        /* ===== SECTION DIVIDER ===== */
+        .section-divider {
+            width: 60px;
+            height: 1px;
+            background: #c9a96e;
+        }
+
+        /* ===== EDITORIAL IMAGE TREATMENT ===== */
+        .img-editorial {
+            filter: sepia(8%) contrast(1.02) brightness(1.01);
+            transition: filter 0.6s ease, transform 0.8s ease;
+        }
+        .img-editorial:hover {
+            filter: sepia(0%) contrast(1.05);
+            transform: scale(1.02);
+        }
+
+        /* ===== METHODE TIMELINE ===== */
+        .timeline-dot {
+            width: 12px; height: 12px;
+            border: 2px solid #c9a96e;
+            border-radius: 50%;
+            background: #faf9f6;
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+        .timeline-dot.active,
+        .timeline-dot:hover {
+            background: #c9a96e;
+        }
+        .timeline-line {
+            width: 2px;
+            background: linear-gradient(to bottom, #c9a96e, #e8e6e1);
+            position: absolute;
+            top: 0; bottom: 0;
+            left: 5px;
+            z-index: 1;
+        }
+
+        /* ===== NAV SCROLL ===== */
+        .nav-scrolled {
+            background: rgba(250, 249, 246, 0.95) !important;
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #e8e6e1;
+        }
+
+        /* ===== STAGGERED ANIMATIONS ===== */
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+        .stagger-5 { transition-delay: 0.5s; }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav id="mainNav" class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3">
+                    <span class="font-serif text-2xl font-light tracking-wide text-noir">Lacroix</span>
+                    <span class="hidden sm:inline text-gris-doux text-xs tracking-editorial uppercase font-sans">Avocate</span>
+                </a>
+
+                <!-- Desktop Nav -->
+                <div class="hidden lg:flex items-center gap-10">
+                    <a href="#presentation" class="link-editorial text-sm tracking-widest uppercase font-light">Presentation</a>
+                    <a href="#expertises" class="link-editorial text-sm tracking-widest uppercase font-light">Expertises</a>
+                    <a href="#methode" class="link-editorial text-sm tracking-widest uppercase font-light">Methode</a>
+                    <a href="#temoignages" class="link-editorial text-sm tracking-widest uppercase font-light">Avis</a>
+                    <a href="#faq" class="link-editorial text-sm tracking-widest uppercase font-light">FAQ</a>
+                    <a href="#contact" class="btn-outline-luxe text-xs">Consultation</a>
+                </div>
+
+                <!-- Burger -->
+                <button id="burgerBtn" class="lg:hidden flex flex-col gap-1.5 p-2 z-[110]" aria-label="Menu">
+                    <span class="burger-line w-6 h-[1px] bg-noir transition-all duration-300"></span>
+                    <span class="burger-line w-6 h-[1px] bg-noir transition-all duration-300"></span>
+                    <span class="burger-line w-4 h-[1px] bg-noir transition-all duration-300 ml-auto"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== MOBILE NAV ===== -->
+    <div id="mobileNav" class="mobile-nav">
+        <div class="flex flex-col items-center gap-8">
+            <a href="#presentation" class="mobile-link font-serif text-3xl font-light text-noir">Presentation</a>
+            <a href="#expertises" class="mobile-link font-serif text-3xl font-light text-noir">Expertises</a>
+            <a href="#methode" class="mobile-link font-serif text-3xl font-light text-noir">Methode</a>
+            <a href="#temoignages" class="mobile-link font-serif text-3xl font-light text-noir">Temoignages</a>
+            <a href="#faq" class="mobile-link font-serif text-3xl font-light text-noir">FAQ</a>
+            <div class="section-divider my-4"></div>
+            <a href="#contact" class="btn-luxe"><span>Consultation</span></a>
+            <a href="tel:+33600000000" class="text-gris-doux text-sm tracking-widest">Appeler le cabinet</a>
+        </div>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <header class="min-h-screen flex flex-col justify-center items-center px-6 text-center relative">
+        <!-- Decorative corner lines -->
+        <div class="absolute top-24 left-8 lg:left-16 w-16 h-16 border-l border-t border-or-rose opacity-30"></div>
+        <div class="absolute bottom-12 right-8 lg:right-16 w-16 h-16 border-r border-b border-or-rose opacity-30"></div>
+
+        <div class="max-w-4xl mx-auto" style="animation: fadeInUp 1.2s ease-out">
+            <p class="font-sans text-xs tracking-editorial uppercase text-gris-doux mb-8">Barreau de Paris &mdash; Droit des Affaires</p>
+            
+            <h1 class="hero-title">
+                L'excellence juridique<br>
+                au service de votre<br>
+                <em>ambition</em>
+            </h1>
+
+            <span class="hero-line"></span>
+
+            <p class="font-sans text-gris-doux font-light text-lg max-w-xl mx-auto leading-relaxed">
+                Me Eloise Lacroix accompagne les entrepreneurs et les entreprises 
+                avec rigueur, devotion et une approche resolument strategique.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+                <a href="#contact" class="btn-luxe"><span>Prendre rendez-vous</span></a>
+                <a href="#expertises" class="btn-outline-luxe">Decouvrir le cabinet</a>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+            <span class="text-xs tracking-editorial uppercase font-sans text-gris-doux">Scroll</span>
+            <div class="w-[1px] h-8 bg-or-rose animate-pulse"></div>
+        </div>
+    </header>
+
+    <!-- ===== PRESENTATION — Editorial Asymmetric ===== -->
+    <section id="presentation" class="py-24 lg:py-36 relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <!-- Section label -->
+            <div class="flex items-center gap-4 mb-16 reveal-up">
+                <div class="section-divider"></div>
+                <span class="text-xs tracking-editorial uppercase text-gris-doux font-sans">Portrait</span>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+                <!-- Image side — offset grid -->
+                <div class="lg:col-span-5 lg:col-start-1 reveal-left">
+                    <div class="relative">
+                        <div class="aspect-[3/4] bg-creme overflow-hidden">
+                            <img src="https://www.lacroixavocat.com/-_-/eloise_lacroix.jpeg" 
+                                 alt="Me Eloise Lacroix, Avocate au Barreau de Paris" 
+                                 class="w-full h-full object-cover img-editorial"
+                                 loading="lazy">
+                        </div>
+                        <!-- Decorative offset frame -->
+                        <div class="absolute -bottom-4 -right-4 w-full h-full border border-or-rose opacity-20 -z-10"></div>
+                    </div>
+                    <!-- Credential tag -->
+                    <div class="mt-6 flex items-center gap-3">
+                        <div class="w-2 h-2 bg-or-rose rounded-full"></div>
+                        <span class="text-xs tracking-editorial uppercase text-gris-doux font-sans">Paris 1 Pantheon-Sorbonne</span>
+                    </div>
+                </div>
+
+                <!-- Text side -->
+                <div class="lg:col-span-6 lg:col-start-7 reveal-right">
+                    <h2 class="font-serif text-4xl lg:text-5xl font-light leading-tight mb-8">
+                        Une avocate engagee<br>
+                        <span class="italic text-or-rose">a vos cotes</span>
+                    </h2>
+
+                    <div class="space-y-5 font-sans font-light text-gris-doux leading-relaxed">
+                        <p>
+                            Avocate au barreau de Paris et chargee d'enseignement a l'Universite 
+                            Paris 1 Pantheon-Sorbonne, Eloise Lacroix a forge son expertise au sein 
+                            de cabinets anglo-saxons de premier plan avant de fonder son propre cabinet.
+                        </p>
+                        <p>
+                            Titulaire d'un double Master 2 en droit des affaires et en droit des entreprises 
+                            en difficulte de la Sorbonne, enrichi d'un diplome en Common Law et d'un 
+                            certificat en droit international des affaires (Bucerius Law School, Hambourg), 
+                            elle offre une vision globale et biculturelle du droit.
+                        </p>
+                        <p>
+                            Son approche : rendre le droit accessible et intelligible, conseiller avec 
+                            conviction et pugnacite, et toujours anticiper plutot que subir.
+                        </p>
+                    </div>
+
+                    <!-- Key figures inline -->
+                    <div class="grid grid-cols-3 gap-6 mt-10 pt-10 border-t border-perle">
+                        <div>
+                            <div class="counter-value" data-target="2">0</div>
+                            <p class="text-xs tracking-editorial uppercase text-gris-doux font-sans mt-2">Masters Sorbonne</p>
+                        </div>
+                        <div>
+                            <div class="counter-value" data-target="5">0</div>
+                            <p class="text-xs tracking-editorial uppercase text-gris-doux font-sans mt-2">Publications</p>
+                        </div>
+                        <div>
+                            <div class="counter-value" data-target="2">0</div>
+                            <p class="text-xs tracking-editorial uppercase text-gris-doux font-sans mt-2">Langues</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BANNER QUOTE ===== -->
+    <section class="py-20 lg:py-28 bg-noir relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <div class="w-full h-full" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 49px, rgba(201,169,110,0.3) 50px); background-size: 50px 50px;"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative reveal-up">
+            <p class="font-serif text-3xl lg:text-5xl font-light text-ivoire leading-snug italic">
+                &laquo; Conseiller, assister et representer<br class="hidden lg:block">
+                avec conviction, devotion et rigueur &raquo;
+            </p>
+            <div class="section-divider mx-auto mt-8 bg-or-rose"></div>
+            <p class="text-or-rose-light text-sm tracking-editorial uppercase font-sans mt-6">Me Eloise Lacroix</p>
+        </div>
+    </section>
+
+    <!-- ===== EXPERTISES ===== -->
+    <section id="expertises" class="py-24 lg:py-36">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <!-- Section header -->
+            <div class="grid lg:grid-cols-12 gap-8 mb-16">
+                <div class="lg:col-span-4 reveal-up">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="section-divider"></div>
+                        <span class="text-xs tracking-editorial uppercase text-gris-doux font-sans">Expertises</span>
+                    </div>
+                    <h2 class="font-serif text-4xl lg:text-6xl font-light leading-tight">
+                        Domaines<br><span class="italic text-or-rose">d'intervention</span>
+                    </h2>
+                </div>
+                <div class="lg:col-span-5 lg:col-start-7 flex items-end reveal-right">
+                    <p class="font-sans font-light text-gris-doux leading-relaxed">
+                        Le cabinet intervient en droit des affaires et en droit des entreprises en difficulte, 
+                        avec une expertise reconnue dans l'accompagnement des entrepreneurs a chaque etape 
+                        de la vie de leur entreprise.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Cards grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 : Creation -->
+                <div class="card-luxe reveal-up stagger-1">
+                    <div class="flex items-center gap-3 mb-5">
+                        <svg class="w-6 h-6 text-or-rose" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        <span class="text-xs tracking-editorial uppercase text-gris-doux font-sans">01</span>
+                    </div>
+                    <h3 class="font-serif text-2xl font-medium mb-4">Creation de societe</h3>
+                    <p class="font-sans font-light text-gris-doux text-sm leading-relaxed">
+                        Choix de la structure juridique, redaction des statuts, immatriculations, 
+                        pactes d'associes, conditions generales et politiques de confidentialite. 
+                        Chaque projet merite une fondation solide.
+                    </p>
+                </div>
+
+                <!-- Card 2 : Affaires -->
+                <div class="card-luxe reveal-up stagger-2">
+                    <div class="flex items-center gap-3 mb-5">
+                        <svg class="w-6 h-6 text-or-rose" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                        <span class="text-xs tracking-editorial uppercase text-gris-doux font-sans">02</span>
+                    </div>
+                    <h3 class="font-serif text-2xl font-medium mb-4">Developpement commercial</h3>
+                    <p class="font-sans font-light text-gris-doux text-sm leading-relaxed">
+                        Negociation et redaction de contrats commerciaux, strategies juridiques 
+                        de croissance, transfert de siege social, cessions de parts, augmentation 
+                        de capital et acquisitions de fonds de commerce.
+                    </p>
+                </div>
+
+                <!-- Card 3 : Contrats -->
+                <div class="card-luxe reveal-up stagger-3">
+                    <div class="flex items-center gap-3 mb-5">
+                        <svg class="w-6 h-6 text-or-rose" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                        <span class="text-xs tracking-editorial uppercase text-gris-doux font-sans">03</span>
+                    </div>
+                    <h3 class="font-serif text-2xl font-medium mb-4">Redaction de contrats</h3>
+                    <p class="font-sans font-light text-gris-doux text-sm leading-relaxed">
+                        Contrats fournisseurs, contrats clients, CGV, CGU, NDA — chaque clause 
+                        est pensee pour proteger vos interets. Une redaction rigoureuse 
+                        pour securiser chaque relation commerciale.
+                    </p>
+                </div>
+
+                <!-- Card 4 : Difficulte -->
+                <div class="card-luxe reveal-up stagger-4">
+                    <div class="flex items-center gap-3 mb-5">
+                        <svg class="w-6 h-6 text-or-rose" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <span class="text-xs tracking-editorial uppercase text-gris-doux font-sans">04</span>
+                    </div>
+                    <h3 class="font-serif text-2xl font-medium mb-4">Entreprises en difficulte</h3>
+                    <p class="font-sans font-light text-gris-doux text-sm leading-relaxed">
+                        Prevention des difficultes, mandat ad hoc, conciliation, sauvegarde, 
+                        redressement et liquidation judiciaire. Chaque situation appelle 
+                        une intervention rapide et un traitement sur-mesure.
+                    </p>
+                </div>
+
+                <!-- Card 5 : Contentieux -->
+                <div class="card-luxe reveal-up stagger-5">
+                    <div class="flex items-center gap-3 mb-5">
+                        <svg class="w-6 h-6 text-or-rose" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        <span class="text-xs tracking-editorial uppercase text-gris-doux font-sans">05</span>
+                    </div>
+                    <h3 class="font-serif text-2xl font-medium mb-4">Contentieux commercial</h3>
+                    <p class="font-sans font-light text-gris-doux text-sm leading-relaxed">
+                        Representation devant les tribunaux civils et commerciaux. Strategies 
+                        contentieuses et conciliation entre les parties. Defense 
+                        de vos interets avec conviction et pugnacite.
+                    </p>
+                </div>
+
+                <!-- Card CTA -->
+                <div class="card-luxe flex flex-col justify-center items-center text-center bg-creme border-or-rose border-dashed reveal-up stagger-5">
+                    <p class="font-serif text-2xl font-light italic text-noir mb-4">Une question ?</p>
+                    <p class="font-sans font-light text-gris-doux text-sm mb-6">Parlons de votre projet</p>
+                    <a href="#contact" class="btn-luxe text-xs"><span>Consulter</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== METHODE DE TRAVAIL ===== -->
+    <section id="methode" class="py-24 lg:py-36 bg-creme relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+                <!-- Left: title -->
+                <div class="lg:col-span-4 reveal-up">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="section-divider"></div>
+                        <span class="text-xs tracking-editorial uppercase text-gris-doux font-sans">Approche</span>
+                    </div>
+                    <h2 class="font-serif text-4xl lg:text-5xl font-light leading-tight mb-6">
+                        Une methode<br><span class="italic text-or-rose">eprouvee</span>
+                    </h2>
+                    <p class="font-sans font-light text-gris-doux leading-relaxed">
+                        Chaque dossier est unique. Ma methode repose sur l'ecoute, 
+                        l'analyse approfondie et l'action strategique. L'objectif : 
+                        anticiper plutot que subir.
+                    </p>
+                </div>
+
+                <!-- Right: timeline -->
+                <div class="lg:col-span-7 lg:col-start-6">
+                    <div class="relative">
+                        <!-- Vertical line -->
+                        <div class="absolute left-[5px] top-2 bottom-2 w-[2px] bg-gradient-to-b from-or-rose via-or-rose-light to-perle"></div>
+
+                        <!-- Step 1 -->
+                        <div class="flex gap-8 mb-12 reveal-right stagger-1">
+                            <div class="flex-shrink-0 pt-1">
+                                <div class="timeline-dot"></div>
+                            </div>
+                            <div>
+                                <span class="text-xs tracking-editorial uppercase text-or-rose font-sans">Etape 01</span>
+                                <h3 class="font-serif text-2xl font-medium mt-2 mb-3">Ecoute & Diagnostic</h3>
+                                <p class="font-sans font-light text-gris-doux text-sm leading-relaxed">
+                                    Premiere consultation pour comprendre votre situation, vos objectifs 
+                                    et les enjeux de votre entreprise. Analyse complete du contexte 
+                                    juridique et des risques potentiels.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="flex gap-8 mb-12 reveal-right stagger-2">
+                            <div class="flex-shrink-0 pt-1">
+                                <div class="timeline-dot"></div>
+                            </div>
+                            <div>
+                                <span class="text-xs tracking-editorial uppercase text-or-rose font-sans">Etape 02</span>
+                                <h3 class="font-serif text-2xl font-medium mt-2 mb-3">Strategie & Conseil</h3>
+                                <p class="font-sans font-light text-gris-doux text-sm leading-relaxed">
+                                    Elaboration d'une strategie juridique sur-mesure, adaptee 
+                                    a vos contraintes et ambitions. Presentation claire des options, 
+                                    des risques et des recommandations.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="flex gap-8 mb-12 reveal-right stagger-3">
+                            <div class="flex-shrink-0 pt-1">
+                                <div class="timeline-dot"></div>
+                            </div>
+                            <div>
+                                <span class="text-xs tracking-editorial uppercase text-or-rose font-sans">Etape 03</span>
+                                <h3 class="font-serif text-2xl font-medium mt-2 mb-3">Action & Execution</h3>
+                                <p class="font-sans font-light text-gris-doux text-sm leading-relaxed">
+                                    Mise en oeuvre de la strategie : redaction d'actes, negociations, 
+                                    representations. Chaque action est menee avec rigueur 
+                                    et dans le respect de vos interets.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="flex gap-8 reveal-right stagger-4">
+                            <div class="flex-shrink-0 pt-1">
+                                <div class="timeline-dot"></div>
+                            </div>
+                            <div>
+                                <span class="text-xs tracking-editorial uppercase text-or-rose font-sans">Etape 04</span>
+                                <h3 class="font-serif text-2xl font-medium mt-2 mb-3">Suivi & Prevention</h3>
+                                <p class="font-sans font-light text-gris-doux text-sm leading-relaxed">
+                                    Accompagnement continu, veille juridique et anticipation 
+                                    des evolutions. L'objectif : prevenir les difficultes avant 
+                                    qu'elles ne surviennent.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TEMOIGNAGES ===== -->
+    <section id="temoignages" class="py-24 lg:py-36">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex items-center gap-4 mb-6 reveal-up">
+                <div class="section-divider"></div>
+                <span class="text-xs tracking-editorial uppercase text-gris-doux font-sans">Temoignages</span>
+            </div>
+            <h2 class="font-serif text-4xl lg:text-6xl font-light leading-tight mb-16 reveal-up">
+                La parole a nos <span class="italic text-or-rose">clients</span>
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                <!-- Temoignage 1 -->
+                <div class="relative p-8 lg:p-10 bg-white border border-perle reveal-up stagger-1">
+                    <span class="quote-mark">&ldquo;</span>
+                    <div class="relative z-10">
+                        <p class="font-serif text-lg lg:text-xl italic leading-relaxed text-noir mb-6 pt-8">
+                            Me Lacroix a accompagne la creation de ma SAS avec une precision 
+                            remarquable. Statuts, pacte d'associes, CGV : tout etait boucle 
+                            en trois semaines. Son expertise anglo-saxonne apporte une vraie 
+                            valeur ajoutee pour nos partenariats internationaux.
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-creme flex items-center justify-center">
+                                <span class="font-serif text-or-rose text-lg">A</span>
+                            </div>
+                            <div>
+                                <p class="font-sans text-sm font-medium text-noir">Antoine D.</p>
+                                <p class="font-sans text-xs text-gris-doux">Fondateur, startup SaaS &mdash; Paris</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Temoignage 2 -->
+                <div class="relative p-8 lg:p-10 bg-white border border-perle reveal-up stagger-2">
+                    <span class="quote-mark">&ldquo;</span>
+                    <div class="relative z-10">
+                        <p class="font-serif text-lg lg:text-xl italic leading-relaxed text-noir mb-6 pt-8">
+                            Quand notre tresorerie a commence a se tendre, Me Lacroix a su 
+                            nous orienter vers une procedure de conciliation avant qu'il ne soit 
+                            trop tard. Resultat : un accord avec nos creanciers et une entreprise 
+                            sauvee. Sa reactivite a fait toute la difference.
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-creme flex items-center justify-center">
+                                <span class="font-serif text-or-rose text-lg">S</span>
+                            </div>
+                            <div>
+                                <p class="font-sans text-sm font-medium text-noir">Sophie M.</p>
+                                <p class="font-sans text-xs text-gris-doux">Gerante, PME commerce &mdash; Ile-de-France</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Temoignage 3 -->
+                <div class="relative p-8 lg:p-10 bg-white border border-perle reveal-up stagger-3">
+                    <span class="quote-mark">&ldquo;</span>
+                    <div class="relative z-10">
+                        <p class="font-serif text-lg lg:text-xl italic leading-relaxed text-noir mb-6 pt-8">
+                            Un contentieux commercial qui trainait depuis des mois a ete 
+                            resolu en quelques semaines grace a l'approche strategique de 
+                            Me Lacroix. Elle privilegiait la conciliation tout en preparant 
+                            une defense solide. Parfaitement maitrise.
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-creme flex items-center justify-center">
+                                <span class="font-serif text-or-rose text-lg">M</span>
+                            </div>
+                            <div>
+                                <p class="font-sans text-sm font-medium text-noir">Marc L.</p>
+                                <p class="font-sans text-xs text-gris-doux">Directeur general, societe de services</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Temoignage 4 -->
+                <div class="relative p-8 lg:p-10 bg-white border border-perle reveal-up stagger-4">
+                    <span class="quote-mark">&ldquo;</span>
+                    <div class="relative z-10">
+                        <p class="font-serif text-lg lg:text-xl italic leading-relaxed text-noir mb-6 pt-8">
+                            En tant que creancier impaye dans une procedure collective, 
+                            j'avais besoin d'un avocat qui maitrise parfaitement le sujet. 
+                            Me Lacroix a declare et defendu ma creance avec une rigueur 
+                            exemplaire. Je la recommande les yeux fermes.
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-creme flex items-center justify-center">
+                                <span class="font-serif text-or-rose text-lg">P</span>
+                            </div>
+                            <div>
+                                <p class="font-sans text-sm font-medium text-noir">Philippe R.</p>
+                                <p class="font-sans text-xs text-gris-doux">Dirigeant, industrie &mdash; Hauts-de-Seine</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PUBLICATIONS BANNER ===== -->
+    <section class="py-16 lg:py-20 bg-noir">
+        <div class="max-w-6xl mx-auto px-6 lg:px-12">
+            <div class="text-center mb-10 reveal-up">
+                <span class="text-xs tracking-editorial uppercase text-or-rose font-sans">Recherche & Publications</span>
+                <h3 class="font-serif text-2xl lg:text-3xl font-light text-ivoire mt-4">Contributions academiques</h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 reveal-up">
+                <div class="p-6 border border-gray-800 hover:border-or-rose transition-colors duration-500">
+                    <p class="font-serif text-ivoire text-base italic leading-relaxed mb-3">
+                        La communaute d'interet suffisante ou le noeud gordien de la constitution 
+                        des classes de creanciers
+                    </p>
+                    <p class="font-sans text-gris-doux text-xs">Bulletin Joly Entreprises en difficulte, Lextenso, 2021</p>
+                </div>
+                <div class="p-6 border border-gray-800 hover:border-or-rose transition-colors duration-500">
+                    <p class="font-serif text-ivoire text-base italic leading-relaxed mb-3">
+                        L'opposabilite des cessions de creances : consequences pratiques 
+                        et perspectives d'avenir
+                    </p>
+                    <p class="font-sans text-gris-doux text-xs">Les Petites Affiches, Lextenso, 2019 (co-auteur R. Dammann)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq" class="py-24 lg:py-36">
+        <div class="max-w-4xl mx-auto px-6 lg:px-12">
+            <div class="flex items-center gap-4 mb-6 reveal-up">
+                <div class="section-divider"></div>
+                <span class="text-xs tracking-editorial uppercase text-gris-doux font-sans">Questions frequentes</span>
+            </div>
+            <h2 class="font-serif text-4xl lg:text-5xl font-light leading-tight mb-16 reveal-up">
+                Vos questions,<br><span class="italic text-or-rose">nos reponses</span>
+            </h2>
+
+            <div class="reveal-up">
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quels types d'entreprises accompagnez-vous ?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="font-sans font-light text-gris-doux text-sm leading-relaxed">
+                            J'accompagne des entrepreneurs individuels, des startups, des PME et des 
+                            commercants, principalement dans le secteur des services et du commerce. 
+                            Que vous soyez en phase de creation ou de developpement, le cabinet 
+                            s'adapte a la taille et aux besoins specifiques de votre structure.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quand faut-il consulter un avocat pour des difficultes financieres ?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="font-sans font-light text-gris-doux text-sm leading-relaxed">
+                            Le plus tot possible. Des les premiers signes de tension de tresorerie 
+                            — baisse de chiffre d'affaires, impayes, dependance economique — 
+                            il est crucial d'anticiper. Les procedures preventives (mandat ad hoc, 
+                            conciliation) sont d'autant plus efficaces qu'elles sont initiees rapidement, 
+                            avant l'aggravation de la situation.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quelle est la difference entre sauvegarde et redressement judiciaire ?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="font-sans font-light text-gris-doux text-sm leading-relaxed">
+                            La sauvegarde est ouverte avant la cessation de paiements : le dirigeant 
+                            reste aux commandes et beneficie d'un plan de reorganisation. Le 
+                            redressement judiciaire intervient apres la cessation de paiements, 
+                            avec la nomination d'un administrateur. Plus l'intervention est precoce, 
+                            plus les chances de redressement sont elevees.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Pouvez-vous intervenir en anglais pour des partenaires etrangers ?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="font-sans font-light text-gris-doux text-sm leading-relaxed">
+                            Absolument. Diplomee en Common Law (Paris 1) et certifiee en droit 
+                            international des affaires (Bucerius Law School, Hambourg), j'ai 
+                            exerce dans des cabinets anglo-saxons et fournis mes services 
+                            aussi bien en francais qu'en anglais, a l'ecrit comme a l'oral.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Comment se deroule la premiere consultation ?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="font-sans font-light text-gris-doux text-sm leading-relaxed">
+                            La premiere consultation permet de comprendre votre situation, 
+                            d'identifier les enjeux et de definir ensemble les besoins de votre 
+                            entreprise. Elle peut se derouler au cabinet, par telephone ou en 
+                            visioconference. A l'issue, une strategie et un devis vous seront 
+                            proposes en toute transparence.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Je suis creancier impaye : que peut faire le cabinet ?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="font-sans font-light text-gris-doux text-sm leading-relaxed">
+                            Le cabinet vous accompagne dans la declaration et la defense de vos 
+                            creances, que ce soit en procedure amiable ou contentieuse. 
+                            Mise en demeure, injonction de payer, declaration de creances 
+                            dans les procedures collectives : l'objectif est le recouvrement 
+                            optimal de vos droits.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="py-24 lg:py-36 bg-creme">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+                <!-- Left: Info -->
+                <div class="lg:col-span-5 reveal-left">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="section-divider"></div>
+                        <span class="text-xs tracking-editorial uppercase text-gris-doux font-sans">Contact</span>
+                    </div>
+                    <h2 class="font-serif text-4xl lg:text-5xl font-light leading-tight mb-8">
+                        Prenons<br><span class="italic text-or-rose">rendez-vous</span>
+                    </h2>
+                    <p class="font-sans font-light text-gris-doux leading-relaxed mb-10">
+                        Contactez le cabinet pour toute question juridique, demande 
+                        d'accompagnement ou prise de rendez-vous. Premiere consultation 
+                        pour definir ensemble les besoins de votre entreprise.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <svg class="w-5 h-5 text-or-rose mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                            <div>
+                                <p class="font-sans text-xs tracking-editorial uppercase text-gris-doux mb-1">Email</p>
+                                <a href="mailto:eloise@lacroixavocat.com" class="link-editorial font-sans text-noir">eloise@lacroixavocat.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <svg class="w-5 h-5 text-or-rose mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                            <div>
+                                <p class="font-sans text-xs tracking-editorial uppercase text-gris-doux mb-1">Localisation</p>
+                                <p class="font-sans text-noir">Paris &mdash; Barreau de Paris</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <svg class="w-5 h-5 text-or-rose mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+                            <div>
+                                <p class="font-sans text-xs tracking-editorial uppercase text-gris-doux mb-1">Langues</p>
+                                <p class="font-sans text-noir">Francais & Anglais</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <svg class="w-5 h-5 text-or-rose mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
+                            <div>
+                                <p class="font-sans text-xs tracking-editorial uppercase text-gris-doux mb-1">Formation</p>
+                                <p class="font-sans text-noir">Paris 1 Pantheon-Sorbonne</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="lg:col-span-6 lg:col-start-7 reveal-right">
+                    <div class="bg-white p-8 lg:p-12 border border-perle">
+                        <h3 class="font-serif text-2xl font-light mb-2">Demande de consultation</h3>
+                        <p class="font-sans text-sm text-gris-doux font-light mb-8">Reponse sous 48 heures</p>
+                        
+                        <form id="contactForm" class="space-y-6">
+                            <div class="grid sm:grid-cols-2 gap-6">
+                                <div>
+                                    <input type="text" class="form-input" placeholder="Votre nom" required>
+                                </div>
+                                <div>
+                                    <input type="text" class="form-input" placeholder="Votre societe">
+                                </div>
+                            </div>
+                            <div>
+                                <input type="email" class="form-input" placeholder="Votre email" required>
+                            </div>
+                            <div>
+                                <input type="tel" class="form-input" placeholder="Votre telephone">
+                            </div>
+                            <div>
+                                <select class="form-input bg-transparent appearance-none cursor-pointer">
+                                    <option value="" disabled selected>Domaine d'intervention</option>
+                                    <option>Creation de societe</option>
+                                    <option>Contrats commerciaux</option>
+                                    <option>Entreprise en difficulte</option>
+                                    <option>Contentieux commercial</option>
+                                    <option>Autre</option>
+                                </select>
+                            </div>
+                            <div>
+                                <textarea class="form-input" placeholder="Decrivez brievement votre besoin..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-luxe w-full sm:w-auto">
+                                <span>Envoyer ma demande</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="py-16 bg-noir">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-3 gap-10 mb-12">
+                <!-- Col 1 : Brand -->
+                <div>
+                    <span class="font-serif text-2xl font-light text-ivoire">Lacroix</span>
+                    <span class="text-or-rose font-sans text-xs tracking-editorial uppercase ml-2">Avocate</span>
+                    <p class="font-sans font-light text-gray-500 text-sm mt-4 leading-relaxed">
+                        Me Eloise Lacroix, Avocate au Barreau de Paris. 
+                        Droit des affaires & entreprises en difficulte.
+                    </p>
+                </div>
+
+                <!-- Col 2 : Links -->
+                <div>
+                    <p class="font-sans text-xs tracking-editorial uppercase text-or-rose mb-4">Navigation</p>
+                    <div class="space-y-2">
+                        <a href="#presentation" class="block font-sans text-sm text-gray-400 hover:text-ivoire transition-colors">Presentation</a>
+                        <a href="#expertises" class="block font-sans text-sm text-gray-400 hover:text-ivoire transition-colors">Expertises</a>
+                        <a href="#methode" class="block font-sans text-sm text-gray-400 hover:text-ivoire transition-colors">Methode</a>
+                        <a href="#temoignages" class="block font-sans text-sm text-gray-400 hover:text-ivoire transition-colors">Temoignages</a>
+                        <a href="#faq" class="block font-sans text-sm text-gray-400 hover:text-ivoire transition-colors">FAQ</a>
+                        <a href="#contact" class="block font-sans text-sm text-gray-400 hover:text-ivoire transition-colors">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Col 3 : Legal -->
+                <div>
+                    <p class="font-sans text-xs tracking-editorial uppercase text-or-rose mb-4">Informations legales</p>
+                    <p class="font-sans text-sm text-gray-400 leading-relaxed">
+                        Me Eloise Lacroix<br>
+                        Avocate au Barreau de Paris<br>
+                        Entreprise individuelle<br>
+                        eloise@lacroixavocat.com
+                    </p>
+                    <a href="https://www.lacroixavocat.com/mentions-legales" target="_blank" rel="noopener" class="inline-block font-sans text-xs text-gray-500 hover:text-or-rose transition-colors mt-4">Mentions legales</a>
+                </div>
+            </div>
+
+            <!-- Bottom bar -->
+            <div class="border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="font-sans text-xs text-gray-600">
+                    &copy; 2025 Cabinet Lacroix. Tous droits reserves.
+                </p>
+                <p class="font-sans text-xs text-gray-700">
+                    Conception : <span class="text-or-rose">AEGIS Agency</span> &mdash; Agence digitale pour avocats
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+    (function() {
+        'use strict';
+
+        // ===== MOBILE NAV =====
+        const burger = document.getElementById('burgerBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileLinks = mobileNav.querySelectorAll('.mobile-link');
+        let navOpen = false;
+
+        function toggleNav() {
+            navOpen = !navOpen;
+            mobileNav.classList.toggle('open', navOpen);
+            const lines = burger.querySelectorAll('.burger-line');
+            if (navOpen) {
+                lines[0].style.transform = 'rotate(45deg) translate(4px, 4px)';
+                lines[1].style.opacity = '0';
+                lines[2].style.transform = 'rotate(-45deg) translate(4px, -4px)';
+                lines[2].style.width = '24px';
+                document.body.style.overflow = 'hidden';
+            } else {
+                lines[0].style.transform = '';
+                lines[1].style.opacity = '1';
+                lines[2].style.transform = '';
+                lines[2].style.width = '16px';
+                document.body.style.overflow = '';
+            }
+        }
+
+        burger.addEventListener('click', toggleNav);
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navOpen) toggleNav();
+            });
+        });
+
+        // ===== NAV SCROLL =====
+        const mainNav = document.getElementById('mainNav');
+        let lastScroll = 0;
+        window.addEventListener('scroll', function() {
+            const st = window.pageYOffset;
+            if (st > 80) {
+                mainNav.classList.add('nav-scrolled');
+            } else {
+                mainNav.classList.remove('nav-scrolled');
+            }
+            lastScroll = st;
+        }, { passive: true });
+
+        // ===== SCROLL REVEAL =====
+        const reveals = document.querySelectorAll('.reveal, .reveal-up, .reveal-left, .reveal-right');
+        const revealObs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        reveals.forEach(el => revealObs.observe(el));
+
+        // ===== COUNTER ANIMATION =====
+        const counters = document.querySelectorAll('.counter-value[data-target]');
+        const counterObs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.dataset.target);
+                    let current = 0;
+                    const duration = 1500;
+                    const step = target / (duration / 16);
+                    const timer = setInterval(() => {
+                        current += step;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        el.textContent = Math.round(current);
+                    }, 16);
+                    counterObs.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+        counters.forEach(el => counterObs.observe(el));
+
+        // ===== FAQ ACCORDION =====
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const wasActive = item.classList.contains('active');
+                faqItems.forEach(i => i.classList.remove('active'));
+                if (!wasActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    const offset = 80;
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // ===== FORM HANDLER =====
+        const form = document.getElementById('contactForm');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const btn = form.querySelector('button[type="submit"] span');
+                const originalText = btn.textContent;
+                btn.textContent = 'Message envoye !';
+                btn.closest('button').style.pointerEvents = 'none';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.closest('button').style.pointerEvents = '';
+                    form.reset();
+                }, 3000);
+            });
+        }
+
+        // ===== PARALLAX SUBTLE =====
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallaxBgs = document.querySelectorAll('.parallax-bg');
+            parallaxBgs.forEach(bg => {
+                const speed = 0.3;
+                const rect = bg.parentElement.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    bg.style.transform = 'translateY(' + (scrolled * speed * 0.1) + 'px)';
+                }
+            });
+        }, { passive: true });
+
+        // ===== TIMELINE DOTS ACTIVATION =====
+        const timelineDots = document.querySelectorAll('.timeline-dot');
+        const dotObs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.5 });
+        timelineDots.forEach(dot => dotObs.observe(dot));
+
+    })();
+    </script>
+
+</body>
+</html>
